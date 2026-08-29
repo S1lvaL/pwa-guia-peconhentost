@@ -1,11 +1,10 @@
 [
   {
-    "id": "",
-    "nome": "",
-    "nomeCientifico": "",
-    "grupo": "",
+    "id": "anfibiogenerico",
+    "nome": "anfibio-generico",
+    "grupo": "anfibios",
     "imagem": "",
-    "sintomas": "",
+    "sintomas": "Irritacao",
     "primeirosSocorros": ["", "", ""],
     "oQueNaoFazer": ""
   }
