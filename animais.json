@@ -4,8 +4,12 @@
     "nome": "anfibio-generico",
     "grupo": "anfibios",
     "imagem": "",
-    "sintomas": "Irritacao",
-    "primeirosSocorros": ["", "", ""],
-    "oQueNaoFazer": ""
+    "sintomas": "Sinais na ferida ou no corpo:\n Dor ou sensação de queimação, vermelhidão, inchaço, dormência, Secreção.\nSinais gerais: náusea, vômito ou cólicas estomacais, febre ou calafrios, tontura dor de cabeçaou fraqueza muscular",
+    "primeirosSocorros": [
+      "Lavar a ferida imediatamente;\nAplicar antissépico;\nMonitore seu corpo;\nBusque atendimento médico caso haja sintomas sistemicos persistente"
+    ],
+    "oQueNaoFazer": [
+      "Não esfregue a região com força\nNão coloque as mãos na boca, olhos e nariz;\nNão use medicamentos ou substâncias caseiras;\nNão chupar local"
+    ]
   }
 ]
