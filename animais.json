@@ -3,8 +3,12 @@
     "id": "anfibio-generico",
     "nome": "Anfíbio Genérico",
     "categoria": "anfibios",
-    "imagem": "images/anfibio-generico.jpg",
-    "sintomas": "Sinais na ferida ou no corpo: Dor ou sensação de queimação, vermelhidão, inchaço, dormência, secreção. Sinais gerais: náusea, vômito, cólicas estomacais, febre, calafrios, tontura, dor de cabeça ou fraqueza muscular.",
+    "imagem": [
+      "imagens/anfibio-generico.jpg",
+      "imagens/anfibio-generic.jpg",
+      "imagens/anfibio-generi.jpg"
+    ],
+    "sintomas": "Sinais na ferida ou no corpo: dor ou sensação de queimação, vermelhidão, inchaço, dormência, secreção. Sinais gerais: náusea, vômito, cólicas estomacais, febre, calafrios, tontura, dor de cabeça ou fraqueza muscular.",
     "primeirosSocorros": [
       "Lavar a ferida imediatamente com água e sabão.",
       "Aplicar antisséptico no local.",
@@ -21,82 +25,75 @@
   {
     "id": "perereca-capacete",
     "nome": "Perereca de Capacete",
-    "categoria": "anfibio,",
-    "imagem": "images/perereca-capacete.jpg",
-    "sintomas": "Dor intensa que dura horas, Inchaço prolongado, pode ter atividade necrosante, além de um alto grau de toxicidade, podendo durar por horas.",
+    "categoria": "anfibios",
+    "imagem": "imagens/perereca-capacete.jpg",
+    "sintomas": "Dor intensa que dura horas, inchaço prolongado, atividade necrosante e alto grau de toxicidade.",
     "primeirosSocorros": [
-      "Lavar com agua corrente e sabão neutro;",
-      "Evitar agitação mantendo a vítima em repouso;",
-      "Retire adereços, adornos e acessorios;",
-      "Eleve o membro afetado;",
-      "Busque atendimento médico urgente."
+      "Lavar com água corrente e sabão neutro.",
+      "Evitar agitação, mantendo a vítima em repouso.",
+      "Retirar adereços, adornos e acessórios.",
+      "Elevar o membro afetado.",
+      "Buscar atendimento médico urgente."
     ],
     "oQueNaoFazer": [
-      "Nunca fazer torniquete ou garrote;",
-      "Não tentar sugar o veneno;",
-      "Não cortar furar ou espremer o local;",
-      "Evite aplicar substâncias caseiras ou qualquer coisa do tipo sem auxílio do médico."
+      "Nunca fazer torniquete ou garrote.",
+      "Não tentar sugar o veneno.",
+      "Não cortar, furar ou espremer o local.",
+      "Evitar aplicar substâncias caseiras sem auxílio médico."
     ]
   },
   {
     "id": "sapo-cururu",
     "nome": "Sapo Cururu / Sapo Boi",
     "categoria": "anfibios",
-    "imagem": "images/sapo-cururu.jpg",
-    "sintomas": [
-      "Nos Olhos: Dor imediata lancinante, conjuntivite química severa, inchaço na palpebral e inflamação no olho.",
-      "Na Boca: Dormencia, queimação e salivação excessiva.",
-      "Por Ingestão: Náuseas severas, vômito persistentes, dor abdominal, diarreia, tremores musculares e tonturas."
-    ],
+    "imagem": "imagens/sapo-cururu.jpg",
+    "sintomas": "Nos olhos: dor lancinante, conjuntivite química severa e inchaço palpebral. Na boca: dormência, queimação e salivação excessiva. Por ingestão: náuseas severas, vômitos, diarreia, tremores e tonturas.",
     "primeirosSocorros": [
-      "Ingestão: Procure atendimento médico urgente.",
-      "Lavar com água corrente e sabão neutro;",
-      "Contato com olhos, boca ou feridas: Busque médico apenas se os sintomas persistirem."
+      "Em caso de ingestão: procure atendimento médico urgente.",
+      "Lavar o local atingido com água corrente e sabão neutro.",
+      "Contato com olhos ou boca: buscar médico caso os sintomas persistam."
     ],
     "oQueNaoFazer": [
-      "Nunca fazer torniquete ou garrote;",
-      "Não tentar sugar o veneno;",
-      "Não cortar furar ou espremer o local;",
-      "Evite aplicar substâncias caseiras ou qualquer coisa do tipo sem auxílio do médico."
+      "Nunca fazer torniquete ou garrote.",
+      "Não tentar sugar o veneno.",
+      "Não cortar, furar ou espremer o local.",
+      "Evitar aplicar substâncias caseiras."
     ]
   },
   {
     "id": "caravelas-portuguesas",
     "nome": "Caravela Portuguesa",
     "categoria": "aquaticos",
-    "imagem": "images/caravela-portuguesa.jpg",
-    "sintomas": "Dor intensa no local, Caso absorção de doses maiores pode levar a mal-estar, cefaleia, náuseas, vômitos, espasmos musculares, febre, arritmias cardíacas.",
+    "imagem": "imagens/caravela-portuguesa.jpg",
+    "sintomas": "Dor intensa no local. Em caso de maior absorção de toxinas: mal-estar, dor de cabeça, náuseas, vômitos, espasmos musculares, febre e arritmias cardíacas.",
     "primeirosSocorros": [
-      "Lavar local com água do mar;",
-      "Aplicar compressa gelada;",
-      "Remover os tentáculos aderidos à pele com pinça, lamina ou mão enluvada;",
-      "Procurar atendimento medico."
+      "Lavar o local apenas com água do mar.",
+      "Aplicar compressa gelada.",
+      "Remover os tentáculos aderidos à pele com pinça, lâmina ou mão enluvada.",
+      "Procurar atendimento médico."
     ],
     "oQueNaoFazer": [
-      "Não lavar com agua doce ou urinar em cima, pois faz com que mais toxinas sejam liberadas;",
-      "Não esfregar o local;",
+      "Não lavar com água doce nem urinar no local (libera mais toxinas).",
+      "Não esfregar o local.",
       "Não usar substâncias caseiras."
     ]
   },
   {
     "id": "agua-viva",
-    "nome": "Água Viva",
+    "nome": "Água-Viva",
     "categoria": "aquaticos",
-    "imagem": "images/agua-viva.jpg",
-    "sintomas": [
-      "Dor intensa, inchaço, sensação de queimação no local, coceira e marcas avermelhadas ou escurecidas.",
-      "Em casos mais serios: dificuldade de respirar  e engolir, náuseas, vômitos, câimbras e dores no peito e cabeça"
-    ],
+    "imagem": ["imagens/agua-viva.jpg", "imagens/agua-viva-invertida.jpg"],
+    "sintomas": "Dor intensa, inchaço, sensação de queimação, coceira e marcas avermelhadas. Em casos graves: dificuldade de respirar, náuseas, vômitos e dores no peito.",
     "primeirosSocorros": [
-      "Lavar local com água do mar ou vinagre;",
-      "Aplicar compressa gelada;",
-      "Remover os tentáculos aderidos à pele com pinça, lamina ou mão enluvada;",
-      "Buscar atendimento medico, caso dor prolongada."
+      "Lavar o local com água do mar ou vinagre.",
+      "Aplicar compressa gelada.",
+      "Remover tentáculos aderidos com pinça ou mão enluvada.",
+      "Buscar atendimento médico caso a dor seja prolongada."
     ],
     "oQueNaoFazer": [
-      "Não lavar com agua doce ou urinar em cima, pois faz com que mais toxinas sejam liberadas;",
-      "Não usar sabonete;",
-      "Não esfregar o local;",
+      "Não lavar com água doce nem urinar no local.",
+      "Não usar sabonete.",
+      "Não esfregar o local.",
       "Não usar substâncias caseiras."
     ]
   },
@@ -104,44 +101,43 @@
     "id": "vespa-mar",
     "nome": "Vespa do Mar",
     "categoria": "aquaticos",
-    "imagem": "images/vespa-mar.jpg",
+    "imagem": "imagens/vespa-mar.jpg",
     "sintomas": "Dor imediata e excruciante, queimaduras na pele, paralisia, insuficiência circulatória e dificuldade respiratória.",
     "primeirosSocorros": [
-      "Antes de tudo pedir ajuda médica;",
-      "Jogar vinagre (preferivel para neutralizar as celulas de veneno) ou agua do mar;",
-      "Remova os tentáculos com proteção, usando cartão, luva ou pinça;",
-      "Monitore os sinais vitais.",
-      "Em caso de desmaio ou a respiração parar inicie a massagem cardíaca até o socorro chegar;"
+      "Pedir ajuda médica imediatamente.",
+      "Banhado local com vinagre para neutralizar o veneno (ou água do mar).",
+      "Remover tentáculos com proteção (cartão, luvas ou pinça).",
+      "Monitorar os sinais vitais da vítima."
     ],
     "oQueNaoFazer": [
-      "Não lavar com água doce ou urinar em cima, pois faz com que mais toxinas sejam liberadas;",
-      "Não usar sabonete;",
-      "Não esfregar o local;",
-      "Não tire os tentáculos sem vinagre;",
-      "Não usar substâncias caseiras."
+      "Não lavar com água doce nem urinar no local.",
+      "Não usar sabonete.",
+      "Não esfregar o local.",
+      "Não remover tentáculos sem aplicar vinagre antes."
     ]
   },
   {
     "id": "anemona",
     "nome": "Anêmona",
     "categoria": "aquaticos",
-    "imagem": "images/anemona.jpg",
-    "sintomas": [
-      "Sensação de queimação, dor aguda, manchas escuras, marca dos tentáculos na pele, inchaço.",
-      "Em casos mais serios: náuseas, vomitos, espasmos, dores pelo corpo, clafrios, frebe, tontura.",
-      "Complicações raras: dificuldade respiratória, arritmias cardíacas, choque anafilático ou insuficiência renal aguda."
+    "imagem": [
+      "imagens/anemona-tubo.jpg",
+      "imagens/anemona-caribe.jpg",
+      "imagens/anemona-praia.jpg",
+      "imagens/anemona-praia2.jpg"
     ],
+    "sintomas": "Sensação de queimação, dor aguda, manchas escuras, marcas de tentáculos e inchaço. Casos sérios: náuseas, espasmos, febre e tontura.",
     "primeirosSocorros": [
-      "Lavar local com água do mar;",
-      "Aplicar compressa gelada;",
-      "Remover os tentáculos aderidos à pele com pinça, lamina ou mão enluvada;",
-      "Compressas de vinagre;",
-      "Buscar atendimento medico caso a dor seja prolongada."
+      "Lavar o local com água do mar.",
+      "Aplicar compressas de vinagre.",
+      "Remover tentáculos aderidos à pele com pinça ou luvas.",
+      "Aplicar compressa gelada.",
+      "Buscar atendimento médico se a dor persistir."
     ],
     "oQueNaoFazer": [
-      "Não lavar com agua doce ou urinar em cima, pois faz com que mais toxinas sejam liberadas;",
-      "Não usar sabonete;",
-      "Não esfregar o local;",
+      "Não lavar com água doce ou urinar no local.",
+      "Não usar sabonete.",
+      "Não esfregar o local.",
       "Não usar substâncias caseiras."
     ]
   },
@@ -149,164 +145,161 @@
     "id": "corais",
     "nome": "Corais",
     "categoria": "aquaticos",
-    "imagem": "images/corais.jpg",
-    "sintomas": [
-      "Coceira, necrose leve, dor aguda, sensação de ardência intensa, bolhas de água, pele irritada e avermelhada.",
-      "Em caso de contato com grandes areas: náuseas, vomito, inchaço."
-    ],
+    "imagem": "imagens/coral.jpg",
+    "sintomas": "Coceira, dor aguda, sensação de ardência intensa, bolhas e pele irritada. Em grande contato: náuseas e inchaço.",
     "primeirosSocorros": [
-      "Lavar local com água do mar;",
-      "Aplicar vinagre;",
-      "Remover os fragmentos aderidos à pele com pinça ou mão enluvada;",
-      "Buscar atendimento medico caso a dor seja prolongada."
+      "Lavar o local com água do mar.",
+      "Aplicar vinagre.",
+      "Remover fragmentos de coral com pinça ou mão enluvada.",
+      "Buscar atendimento médico se a dor for prolongada."
     ],
     "oQueNaoFazer": [
-      "Não lavar com água doce ou urinar em cima, pois faz com que mais toxinas sejam liberadas;",
-      "Não usar sabonete;",
-      "Não esfregar o local;",
+      "Não lavar com água doce ou urinar no local.",
+      "Não usar sabonete.",
+      "Não esfregar o local.",
       "Não usar substâncias caseiras."
     ]
   },
   {
     "id": "arraias",
-    "nome": "Arraias de água doce e salgada",
-    "categoria": "Aquatico",
-    "imagem": "images/arraias.jpg",
-    "sintomas": [
-      "Dor aguda e imediata que pode se intensificar por até duas horas,  inchaço, vermelhidão.",
-      "Dependendo da contidade injetada: Náuseas, vômito, desmaio, ansiedade, dores musculares, arritimia cardíaca, necrose e infeção bacteriana."
+    "nome": "Arraia (Água Doce e Salgada)",
+    "categoria": "aquaticos",
+    "imagem": [
+      "imagens/arraia-pintada.jpg",
+      "imagens/arraia-fogo.jpg",
+      "imagens/arraia-prego.jpg",
+      "imagens/arraia-manteiga.jpg",
+      "imagens/arraia-chita.jpg"
     ],
+    "sintomas": "Dor aguda e intensa (que pode aumentar por até 2 horas), inchaço e vermelhidão. Casos graves: náuseas, desmaio, dores musculares e risco de infecção/necrose.",
     "primeirosSocorros": [
-      "Lavar a ferida com água limpa;",
-      "Imesão da região em água quente;",
-      "Buscar atentimento médico."
+      "Lavar a ferida com água limpa.",
+      "Imergir a região afetada em água morna/quente (ajuda a inativar o veneno).",
+      "Buscar atendimento médico imediato."
     ],
     "oQueNaoFazer": [
-      "Não tente puxar o ferrão;",
-      "Não fazer cortes na pele;",
-      "Não esfregar;",
-      "Não usar água fria ou gelada;",
-      "Não usar substâncias caseiras."
+      "Não tente puxar o ferrão se estiver profundo.",
+      "Não fazer cortes na pele.",
+      "Não esfregar o local.",
+      "Não usar água fria ou gelada."
     ]
   },
   {
     "id": "bagre",
-    "nome": "Bagre de água doce e salgada",
+    "nome": "Bagre (Água Doce e Salgada)",
     "categoria": "aquaticos",
-    "imagem": "images/bagre.jpg",
-    "sintomas": "Dor intensa, infecção, comprometimento respiratório, hipotensão, retenção de corpos estranhos, sangramento, inchaço, vermelhidão, taquicardia, náuseas e vômitos, tontura, insuficiência respiratória e perda de consciência.",
+    "imagem": [
+      "imagens/bagre-amarelo.jpg",
+      "imagens/bagre-mandijuba.jpg",
+      "imagens/bagre-bandeira.jpg",
+      "imagens/bagre-guri.jpg",
+      "imagens/bagre-aricu.jpg"
+    ],
+    "sintomas": "Dor intensa, inchaço, vermelhidão, sangramento, risco de infecção bacteriana e retenção de fragmentos do ferrão.",
     "primeirosSocorros": [
-      "Busque imediatamente atendimento médico;",
-      "Lave com água; Use água quente para aliviar a dor;",
-      "Corte o peixe se necessário;",
-      "Evite movimentação excessiva."
+      "Buscar atendimento médico imediatamente.",
+      "Lavar o local e imergir em água quente para aliviar a dor.",
+      "Evitar movimentação excessiva do membro."
     ],
     "oQueNaoFazer": [
-      "Não tente puxar o ferrão;",
-      "Não fazer cortes na pele;",
-      "Não esfregar;",
-      "Não usar água fria ou gelada;",
-      "Não usar substâncias caseiras;",
-      "Não tente fechar a ferrida."
+      "Não tente puxar o ferrão por conta própria.",
+      "Não fazer cortes na pele.",
+      "Não esfregar o local.",
+      "Não usar água fria ou gelada."
     ]
   },
   {
     "id": "pinauna",
-    "nome": "Ouriços do Mar / Pnaúna",
+    "nome": "Ouriço-do-Mar / Pinaúna",
     "categoria": "aquaticos",
-    "imagem": "imagen/pinauna.jpg",
-    "sintomas": "Dor intensa, inflamação, coloração escura, sangramento leve, dores musculare, dificuldade respiratória, sensação de formigamento, náuseas, vômito.",
+    "imagem": "imagens/pinauna.jpg",
+    "sintomas": "Dor intensa imediata, inflamação, marcação escura dos espinhos e sangramento leve.",
     "primeirosSocorros": [
-      "Mergulha a região na água quente;",
-      "Montorar o local com atenção, se apresentão sintomas sistêmicos ou for perto das articulações e tendões procurar atendimento médico;",
-      "tirar os espinhos que estão superficiais/visíveis."
+      "Mergulhar a região em água quente para aliviar a dor.",
+      "Remover cuidadosamente apenas os espinhos superficiais e visíveis.",
+      "Procurar atendimento médico se houver espinhos profundos ou perto de articulações."
     ],
     "oQueNaoFazer": [
-      "Não espremer para tirar os espinhos;",
-      "Não cavar a pele em busca de espinhos escondidos;",
-      "Não usar substâncias caseiras;",
-      "Não urinar em cima;",
-      "Não bater no local com objetos duros;",
-      "Não abafe o local por muito tempo."
+      "Não espremer para tentar tirar os espinhos.",
+      "Não cavar a pele com agulhas ou objetos não esterilizados.",
+      "Não urinar em cima.",
+      "Não bater no local com objetos duros."
     ]
   },
   {
     "id": "peixe-sapo",
-    "nome": "Peixe Sapo / Niquim",
+    "nome": "Peixe-Sapo / Niquim",
     "categoria": "aquaticos",
     "imagem": "imagens/peixe-sapo.jpg",
-    "sintomas": "Dor intensa, inchaço, sensação de queimação vermelhidão, febre, necrose, infecção bacteriana secundária, limitação do movimento.",
+    "sintomas": "Dor intensa, inchaço, sensação de queimação, febre local e risco de necrose/infecção.",
     "primeirosSocorros": [
-      "Mergulhar a região em água quente;",
-      "Lave a região;",
-      "Remova os espinhos visiveis e superficiais;",
-      "Busque imediatamenete atendimento médico."
+      "Mergulhar a região afetada em água quente.",
+      "Lavar a região com água limpa.",
+      "Remover espinhos superficiais com cuidado.",
+      "Buscar atendimento médico imediatamente."
     ],
     "oQueNaoFazer": [
-      "Não espremer para tirar os espinhos;",
-      "Não cavar a pele em busca de espinhos escondidos;",
-      "Não usar gelo ou água fria;",
-      "Não usar substâncias caseiras;",
-      "Não ignore o ferimento."
+      "Não espremer o local.",
+      "Não cavar a pele atrás de espinhos.",
+      "Não usar gelo ou água fria.",
+      "Não ignorar o ferimento."
     ]
   },
   {
     "id": "peixe-escorpiao",
-    "nome": "Peixe Escorpiaõ",
+    "nome": "Peixe-Escorpião",
     "categoria": "aquaticos",
     "imagem": "imagens/peixe-escorpiao.jpg",
-    "sintomas": "Dor extrema, queimação, dor de cabeça, dormência, formigamento, alteração na pele, náuseas, vômitos, dor abdominal, dor no peito, arritmias cardíacas, isquemia miocárdica, fraqueza muscular, tremores.",
+    "sintomas": "Dor extrema e irradiada, queimação, inchaço, dor de cabeça, dormência, náuseas e tremores.",
     "primeirosSocorros": [
-      "Lave a região com água e sabão neutro; Megulhe em água quente; Busque atendimento médico imediatamente;",
-      "Mantenha membro elevado."
+      "Lavar a região com água e sabão neutro.",
+      "Mergulhar a área afetada em água quente.",
+      "Manter o membro elevado.",
+      "Buscar atendimento médico imediatamente."
     ],
     "oQueNaoFazer": [
-      "Não espremer para tirar os espinhos;",
-      "Não cavar a pele em busca de espinhos;",
-      "Não usar gelo ou água fria;",
-      "Não usar substâncias caseiras."
+      "Não espremer o local.",
+      "Não cavar a pele.",
+      "Não usar água fria ou gelada.",
+      "Não aplicar substâncias caseiras."
     ]
   },
   {
     "id": "peixe-leao",
-    "nome": "Peixe Leão",
+    "nome": "Peixe-Leão",
     "categoria": "aquaticos",
     "imagem": "imagens/peixe-leao.jpg",
-    "sintomas": "Dor forte, inchaço, vermelhidão, calor no local, bolhas, tontura, febre, náuseas, vômitos, sensibilidade, formigamento, fraqueza muscular.",
+    "sintomas": "Dor forte, inchaço, vermelhidão, calor no local, tontura, febre e náuseas.",
     "primeirosSocorros": [
-      "Remova os espinhos comcuidado e com luvas e pinça;",
-      "Lave a região com água e sabão;",
-      "Megulha a região em água quente;",
-      "Busque atendimento médico."
+      "Remover espinhos visíveis com cuidado usando pinça e luvas.",
+      "Lavar a região com água e sabão.",
+      "Mergulhar o local afetado em água quente.",
+      "Buscar atendimento médico."
     ],
     "oQueNaoFazer": [
-      "Não espremer para tirar os espinhos;",
-      "Não cavar a pele em busca de espinhos;",
-      "Não usar gelo ou água fria;",
-      "Não usar substâncias caseiras."
+      "Não espremer o local.",
+      "Não cavar a pele.",
+      "Não usar gelo ou água fria.",
+      "Não aplicar substâncias caseiras."
     ]
   },
   {
     "id": "baiacu",
-    "nome": "Baiacu",
+    "nome": "Baiacu (Ingestão)",
     "categoria": "aquaticos",
-    "imagem": "imagen/baiacu.jpg",
-    "sintomas": [
-      "Fase leve: Dormencia e formigamento nos lábios, língua, posteriomente nas extremidades, náuseas, vômitos, dores abdominais e diarreia.",
-      "Fase moderada: Fraqueza muscular, dificuldade de articular palavras e fala arrastada, perda de equilibrio e coordenação motora, disturbios visuais e salivação excessiva.",
-      "Fase avançada: Paralisia muscular progressiva,dificuldade respiratória, problemas cardíacos e convulsões."
-    ],
+    "imagem": "imagens/baiacu-pintado.jpg",
+    "sintomas": "Fase leve: dormência nos lábios e língua, náuseas e diarreia. Fase moderada: fraqueza muscular, dificuldade de falar e perda de equilíbrio. Fase avançada: paralisia e insuficiência respiratória.",
     "primeirosSocorros": [
-      "Busque imediatamente o atendimento médico informando a suspeita da ingestão do baiacu;",
-      "Monitore a respiração;",
-      "Caso pare de respirar começe a reamimação se tiver treinamento;",
-      "Guarde amostra do peixe se possível."
+      "Buscar atendimento médico URGENTE informando a ingestão de baiacu.",
+      "Monitorar constantemente a respiração da vítima.",
+      "Iniciar reanimação cardiorrespiratória se a pessoa parar de respirar (se tiver treinamento).",
+      "Guardar amostra do peixe consumido, se possível."
     ],
     "oQueNaoFazer": [
-      "Não force o vômito se a pessoa tiver tonta ou sonolenta;",
-      "Não Consuma substâncias e remédios caseiros;",
-      "Não deixar a vítima soxinha;",
-      "Não assuma que 'cozinhar bem' elemina o perigo."
+      "Não provocar vômito se a pessoa estiver tonta ou sonolenta.",
+      "Não dar remédios ou substâncias caseiras.",
+      "Não deixar a vítima sozinha.",
+      "Não achar que 'cozinhar bem' elimina a toxina do baiacu."
     ]
   },
   {
