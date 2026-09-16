@@ -1,1 +1,11 @@
 @import "tailwindcss";
+/*Adicionar as cores que faltam e ajustar esssas*/
+/*@theme {
+  --color-verde-escuro: #0e3d10;
+  --color-verde-principal: #059669;
+  --color-verde-claro: #ecfdf5;
+  --color-alerta-fundo: #fffbeb;
+  --color-alerta-borda: #fde68a;
+  --color-alerta-texto: #d97706;
+  --color-vermelho-emergencia: #dc2626;
+}*/

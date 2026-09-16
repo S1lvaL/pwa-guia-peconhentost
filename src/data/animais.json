@@ -4,9 +4,9 @@
     "nome": "Anfíbio Genérico",
     "categoria": "anfibios",
     "imagem": [
-      "imagens/anfibio-generico.jpg",
-      "imagens/anfibio-generic.jpg",
-      "imagens/anfibio-generi.jpg"
+      "/imagens/anfibio-generico.jpg",
+      "/imagens/anfibio-generic.jpg",
+      "/imagens/anfibio-generi.jpg"
     ],
     "sintomas": "Sinais na ferida ou no corpo: dor ou sensação de queimação, vermelhidão, inchaço, dormência, secreção. Sinais gerais: náusea, vômito, cólicas estomacais, febre, calafrios, tontura, dor de cabeça ou fraqueza muscular.",
     "primeirosSocorros": [
@@ -26,7 +26,7 @@
     "id": "perereca-capacete",
     "nome": "Perereca de Capacete",
     "categoria": "anfibios",
-    "imagem": "imagens/perereca-capacete.jpg",
+    "imagem": "/imagens/perereca-capacete.jpg",
     "sintomas": "Dor intensa que dura horas, inchaço prolongado, atividade necrosante e alto grau de toxicidade.",
     "primeirosSocorros": [
       "Lavar com água corrente e sabão neutro.",
@@ -46,7 +46,7 @@
     "id": "sapo-cururu",
     "nome": "Sapo Cururu / Sapo Boi",
     "categoria": "anfibios",
-    "imagem": "imagens/sapo-cururu.jpg",
+    "imagem": "/imagens/sapo-cururu.jpg",
     "sintomas": "Nos olhos: dor lancinante, conjuntivite química severa e inchaço palpebral. Na boca: dormência, queimação e salivação excessiva. Por ingestão: náuseas severas, vômitos, diarreia, tremores e tonturas.",
     "primeirosSocorros": [
       "Em caso de ingestão: procure atendimento médico urgente.",
@@ -64,7 +64,7 @@
     "id": "caravelas-portuguesas",
     "nome": "Caravela Portuguesa",
     "categoria": "aquaticos",
-    "imagem": "imagens/caravela-portuguesa.jpg",
+    "imagem": "/imagens/caravela-portuguesa.jpg",
     "sintomas": "Dor intensa no local. Em caso de maior absorção de toxinas: mal-estar, dor de cabeça, náuseas, vômitos, espasmos musculares, febre e arritmias cardíacas.",
     "primeirosSocorros": [
       "Lavar o local apenas com água do mar.",
@@ -82,7 +82,7 @@
     "id": "agua-viva",
     "nome": "Água-Viva",
     "categoria": "aquaticos",
-    "imagem": ["imagens/agua-viva.jpg", "imagens/agua-viva-invertida.jpg"],
+    "imagem": ["/imagens/agua-viva.jpg", "/imagens/agua-viva-invertida.jpg"],
     "sintomas": "Dor intensa, inchaço, sensação de queimação, coceira e marcas avermelhadas. Em casos graves: dificuldade de respirar, náuseas, vômitos e dores no peito.",
     "primeirosSocorros": [
       "Lavar o local com água do mar ou vinagre.",
@@ -101,7 +101,7 @@
     "id": "vespa-mar",
     "nome": "Vespa do Mar",
     "categoria": "aquaticos",
-    "imagem": "imagens/vespa-mar.jpg",
+    "imagem": "/imagens/vespa-mar.jpg",
     "sintomas": "Dor imediata e excruciante, queimaduras na pele, paralisia, insuficiência circulatória e dificuldade respiratória.",
     "primeirosSocorros": [
       "Pedir ajuda médica imediatamente.",
@@ -121,10 +121,10 @@
     "nome": "Anêmona",
     "categoria": "aquaticos",
     "imagem": [
-      "imagens/anemona-tubo.jpg",
-      "imagens/anemona-caribe.jpg",
-      "imagens/anemona-praia.jpg",
-      "imagens/anemona-praia2.jpg"
+      "/imagens/anemona-tubo.jpg",
+      "/imagens/anemona-caribe.jpg",
+      "/imagens/anemona-praia.jpg",
+      "/imagens/anemona-praia2.jpg"
     ],
     "sintomas": "Sensação de queimação, dor aguda, manchas escuras, marcas de tentáculos e inchaço. Casos sérios: náuseas, espasmos, febre e tontura.",
     "primeirosSocorros": [
@@ -165,11 +165,11 @@
     "nome": "Arraia (Água Doce e Salgada)",
     "categoria": "aquaticos",
     "imagem": [
-      "imagens/arraia-pintada.jpg",
-      "imagens/arraia-fogo.jpg",
-      "imagens/arraia-prego.jpg",
-      "imagens/arraia-manteiga.jpg",
-      "imagens/arraia-chita.jpg"
+      "/imagens/arraia-pintada.jpg",
+      "/imagens/arraia-fogo.jpg",
+      "/imagens/arraia-prego.jpg",
+      "/imagens/arraia-manteiga.jpg",
+      "/imagens/arraia-chita.jpg"
     ],
     "sintomas": "Dor aguda e intensa (que pode aumentar por até 2 horas), inchaço e vermelhidão. Casos graves: náuseas, desmaio, dores musculares e risco de infecção/necrose.",
     "primeirosSocorros": [
@@ -189,11 +189,11 @@
     "nome": "Bagre (Água Doce e Salgada)",
     "categoria": "aquaticos",
     "imagem": [
-      "imagens/bagre-amarelo.jpg",
-      "imagens/bagre-mandijuba.jpg",
-      "imagens/bagre-bandeira.jpg",
-      "imagens/bagre-guri.jpg",
-      "imagens/bagre-aricu.jpg"
+      "/imagens/bagre-amarelo.jpg",
+      "/imagens/bagre-mandijuba.jpg",
+      "/imagens/bagre-bandeira.jpg",
+      "/imagens/bagre-guri.jpg",
+      "/imagens/bagre-aricu.jpg"
     ],
     "sintomas": "Dor intensa, inchaço, vermelhidão, sangramento, risco de infecção bacteriana e retenção de fragmentos do ferrão.",
     "primeirosSocorros": [
@@ -212,7 +212,7 @@
     "id": "pinauna",
     "nome": "Ouriço-do-Mar / Pinaúna",
     "categoria": "aquaticos",
-    "imagem": "imagens/pinauna.jpg",
+    "imagem": "/imagens/pinauna.jpg",
     "sintomas": "Dor intensa imediata, inflamação, marcação escura dos espinhos e sangramento leve.",
     "primeirosSocorros": [
       "Mergulhar a região em água quente para aliviar a dor.",
@@ -230,7 +230,7 @@
     "id": "peixe-sapo",
     "nome": "Peixe-Sapo / Niquim",
     "categoria": "aquaticos",
-    "imagem": "imagens/peixe-sapo.jpg",
+    "imagem": "/imagens/peixe-sapo.jpg",
     "sintomas": "Dor intensa, inchaço, sensação de queimação, febre local e risco de necrose/infecção.",
     "primeirosSocorros": [
       "Mergulhar a região afetada em água quente.",
@@ -249,7 +249,7 @@
     "id": "peixe-escorpiao",
     "nome": "Peixe-Escorpião",
     "categoria": "aquaticos",
-    "imagem": "imagens/peixe-escorpiao.jpg",
+    "imagem": "/imagens/peixe-escorpiao.jpg",
     "sintomas": "Dor extrema e irradiada, queimação, inchaço, dor de cabeça, dormência, náuseas e tremores.",
     "primeirosSocorros": [
       "Lavar a região com água e sabão neutro.",
@@ -268,7 +268,7 @@
     "id": "peixe-leao",
     "nome": "Peixe-Leão",
     "categoria": "aquaticos",
-    "imagem": "imagens/peixe-leao.jpg",
+    "imagem": "/imagens/peixe-leao.jpg",
     "sintomas": "Dor forte, inchaço, vermelhidão, calor no local, tontura, febre e náuseas.",
     "primeirosSocorros": [
       "Remover espinhos visíveis com cuidado usando pinça e luvas.",
@@ -287,7 +287,7 @@
     "id": "baiacu",
     "nome": "Baiacu (Ingestão)",
     "categoria": "aquaticos",
-    "imagem": "imagens/baiacu-pintado.jpg",
+    "imagem": "/imagens/baiacu-pintado.jpg",
     "sintomas": "Fase leve: dormência nos lábios e língua, náuseas e diarreia. Fase moderada: fraqueza muscular, dificuldade de falar e perda de equilíbrio. Fase avançada: paralisia e insuficiência respiratória.",
     "primeirosSocorros": [
       "Buscar atendimento médico URGENTE informando a ingestão de baiacu.",

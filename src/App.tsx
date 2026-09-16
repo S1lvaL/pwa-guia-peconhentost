@@ -1,25 +1,27 @@
 import { useState } from "react";
-import BottomNav from "./components/BottomNav";
+import Prevencao from "./pages/Prevencao";
 import Animais from "./pages/Animais";
 import Emergencia from "./pages/Emergencia";
-import Prevencao from "./pages/Prevencao";
+import BottomNav from "./components/BottomNav";
 
-function App() {
-  const [abaAtiva, setAbaAtiva] = useState<
-    "animais" | "emergencia" | "prevencao"
-  >("animais");
+type Tab = "animais" | "emergencia" | "prevencao";
+
+export default function App() {
+  const [abaAtiva, setAbaAtiva] = useState<Tab>("prevencao");
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-between max-w-md mx-auto relative pb-20">
-      <main className="flex-1 p-4">
-        {abaAtiva === "animais" && <Animais />}
-        {abaAtiva === "emergencia" && <Emergencia />}
+    <div className="flex justify-center items-start min-h-screen bg-gray-300">
+      <div className="relative flex flex-col w-full max-w-md min-h-screen bg-white shadow-xl overflow-hidden pb-16">
+        {/* Navegação de Telas */}
         {abaAtiva === "prevencao" && <Prevencao />}
-      </main>
 
-      <BottomNav abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
+        {abaAtiva === "emergencia" && <Emergencia />}
+
+        {abaAtiva === "animais" && <Animais />}
+
+        {/* Barra de Navegação Inferior */}
+        <BottomNav abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
+      </div>
     </div>
   );
 }
-
-export default App;

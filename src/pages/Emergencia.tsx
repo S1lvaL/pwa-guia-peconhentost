@@ -1,4 +1,4 @@
-import { PhoneCall } from "lucide-react";
+import { PhoneCall } from "lucide-react"; //AINDA FALTA AS TELAS PARA FAZER ESSA PARTE
 
 export default function Emergencia() {
   return (
