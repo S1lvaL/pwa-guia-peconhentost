@@ -11,12 +11,12 @@ interface BottomNavProps {
 export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
   return (
     //Trava e limita a barra de navegação
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 max-w-md mx-auto shadow-lg z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 max-w-md mx-auto shadow-md shadow-[#0e3d10]/50 z-50">
       {/* Botão da Aba Animais */}
       <button
         onClick={() => setAbaAtiva("animais")} //Ao clicar, atualiza a aba ativa para "animais"
         className={`flex flex-col items-center text-xs font-medium ${
-          abaAtiva === "animais" ? "text-green-600 font-bold" : "text-gray-500" //Se a aba for ativa adiciona a cor de desyaque
+          abaAtiva === "animais" ? "text-[#780F0F]  font-bold" : "text-gray-500" //Se a aba for ativa adiciona a cor de desyaque
         }`}
       >
         <Bug className="w-6 h-6 mb-1" /> {/*Estilizando o botão*/}
@@ -27,7 +27,9 @@ export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
       <button
         onClick={() => setAbaAtiva("emergencia")}
         className={`flex flex-col items-center text-xs font-medium ${
-          abaAtiva === "emergencia" ? "text-red-600 font-bold" : "text-gray-500"
+          abaAtiva === "emergencia"
+            ? "text-[#780F0F]  font-bold"
+            : "text-gray-500"
         }`}
       >
         <ShieldAlert className="w-6 h-6 mb-1" />
@@ -39,7 +41,7 @@ export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
         onClick={() => setAbaAtiva("prevencao")}
         className={`flex flex-col items-center text-xs font-medium ${
           abaAtiva === "prevencao"
-            ? "text-green-600 font-bold"
+            ? "text-[#780F0F] font-bold"
             : "text-gray-500"
         }`}
       >

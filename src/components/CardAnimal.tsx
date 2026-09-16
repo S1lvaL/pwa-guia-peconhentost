@@ -14,7 +14,7 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
   return (
     <div
       onClick={onClick}
-      className="bg-white border border-[#e2e8f0] drop-shadow-[0px_2px_4px_rgba(15,23,42,0.04)] flex gap-[16px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-[#059669]/50 transition-all"
+      className="bg-white border border-[#e2e8f0] drop-shadow-[0px_2px_4px_rgba(15,23,42,0.04)] flex gap-[16px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-[#059669]/50 transition-all  shadow-sm shadow-[#780F0F]/15"
     >
       {/*Imagem do Animal*/}
       <div className="relative rounded-[12px] shrink-0 size-[80px] overflow-hidden bg-slate-100">

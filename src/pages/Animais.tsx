@@ -52,15 +52,15 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
   };
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pb-6">
+    <div className="bg-[#f8fafc] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-6">
       <div className="pt-[24px] px-[16px] space-y-[20px] flex-1">
         {/* Header */}
         <div className="flex items-center justify-between py-[5px]">
           <div className="flex flex-col gap-[2px]">
-            <h1 className="font-extrabold text-[#0e3d10] text-[32px] leading-[32px]">
+            <h1 className="font-extrabold text-[#0e3d10]/90 text-[40px] leading-[32px]">
               Guia de Animais
             </h1>
-            <p className="font-bold text-[#475569] text-[12px] uppercase">
+            <p className="font-bold text-[#475569] text-[11px] uppercase tracking-wide mt-0.5 pt-3">
               Consulte espécies e saiba como agir
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
         </div>
 
         {/* Campo de Busca */}
-        <div className="bg-[#f1f5f9] flex gap-[10px] items-center px-[16px] py-[12px] rounded-[24px]">
+        <div className="bg-[#f1f5f9] flex gap-[10px] items-center px-[16px] py-[12px] rounded-[24px] shadow-sm shadow-[#780F0F]/15">
           <svg
             className="size-[18px] text-[#475569]"
             fill="none"
@@ -89,7 +89,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome (ex: Peixe-Leão)..."
-            className="bg-transparent font-bold text-[14px] text-[#0f172a] placeholder-[#94a3b8] outline-none flex-1"
+            className="bg-transparent font-bold text-[14px] text-[#0e3d10] placeholder-[#0e3d10]/35 outline-none flex-1"
           />
           {busca && (
             <button
@@ -103,7 +103,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
 
         {/* Filtros de Categoria */}
         <div className="relative overflow-x-auto no-scrollbar py-1">
-          <div className="flex gap-[8px] whitespace-nowrap">
+          <div className="flex gap-[8px] whitespace-nowrap pb-3">
             {listaCategorias.map((cat) => {
               const isActive = categoriaAtiva === cat.id;
               return (
@@ -112,8 +112,8 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
                   onClick={() => setCategoriaAtiva(cat.id)}
                   className={`px-[16px] py-[8px] rounded-[20px] text-[14px] transition-colors ${
                     isActive
-                      ? "bg-[#059669] text-white font-semibold"
-                      : "bg-white text-[#475569] font-bold border border-[#e2e8f0]"
+                      ? "bg-[#780F0F] text-white font-semibold shadow-md shadow-[#780F0F]/25"
+                      : "bg-white text-[#475569] font-bold border border-[#e2e8f0] shadow-sm shadow-[#780F0F]/15"
                   }`}
                 >
                   {cat.label}
@@ -135,8 +135,10 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             ))
           ) : (
             <div className="text-center py-10 text-[#64748b]">
-              <p className="font-bold text-[14px]">Nenhum animal encontrado</p>
-              <p className="text-[12px]">
+              <p className="font-bold text-[19px] text-[#0e3d10]">
+                Nenhum animal encontrado
+              </p>
+              <p className="text-[12px] text-[#0e3d10]/75">
                 Verifique o termo buscado ou altere o filtro.
               </p>
             </div>

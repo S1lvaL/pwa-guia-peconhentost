@@ -79,36 +79,37 @@ export default function Prevencao() {
     totalItens > 0 ? Math.round((totalConcluidos / totalItens) * 100) : 0;
 
   return (
-    <div className="bg-[#efefef] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pb-10">
+    <div className="bg-[#efefef] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-10">
       <div className="p-4 space-y-5 flex-1">
-        {/* AppHeader */}
+        {/*AppHeader*/}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-[32px] font-extrabold leading-[32px] text-[#0e3d10]">
+            <h1 className="text-[40px] font-extrabold leading-[32px] text-[#0e3d10] ">
               Sistema de prevenção
             </h1>
-            <p className="text-[12px] font-bold text-[#0e3d10]/70 uppercase tracking-wide mt-1">
+            <p className="text-[12px] font-bold text-[#0e3d10]/70 uppercase tracking-wide mt-1 pt-3">
               informação hoje, segurança sempre
             </p>
           </div>
+          {/*MUDAR QUANDO FIZERMOS NOSSA LOGO*/}
           <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center space-x-1.5 shrink-0">
             <div className="w-2 h-2 rounded-full bg-[#601212]" />
             <span className="text-[12px] font-bold text-[#601212]">Logo</span>
           </div>
         </div>
 
-        {/* SafetyAreaContainer */}
-        <div className="bg-[#a9f69a]/70 border border-[#0e3d10] p-4 rounded-[24px] space-y-4 shadow-sm">
+        {/*SafetyAreaContainer*/}
+        <div className="bg-[#a9f69a]/70 border border-[#0e3d10] p-4 rounded-[24px] space-y-4 shadow-md shadow-[#0e3d10]/40">
           <div>
             <h2 className="text-[18px] font-bold text-[#0e3d10] leading-tight">
               Prevenção e segurança por área
             </h2>
-            <p className="text-[13px] font-medium text-[#0e3d10] mt-0.5">
+            <p className="text-[12px] font-medium text-[#0e3d10] mt-0.5">
               Selecione o cenário para listar as tarefas:
             </p>
           </div>
 
-          {/* Botões de Filtro */}
+          {/*Botões de Filtro*/}
           <div className="flex gap-2">
             {(["casa", "campo", "trilha", "mar"] as const).map((area) => {
               const isActive = areaAtiva === area;
@@ -118,8 +119,8 @@ export default function Prevencao() {
                   onClick={() => setAreaAtiva(isActive ? null : area)}
                   className={`flex-1 py-2.5 rounded-[12px] text-[14px] font-bold capitalize transition border ${
                     isActive
-                      ? "bg-[#0e3d10] text-white border-[#a9f69a]/80"
-                      : "bg-[#a9f69a] text-[#0e3d10] border-[#0e3d10]"
+                      ? "bg-[#780F0F]/80 text-white border-[#0e3d10] boder[5px] shadow-md shadow-[#0e3d10]/40"
+                      : "bg-[#a9f69a] text-[#0e3d10] border-[#0e3d10] shadow-md shadow-[#0e3d10]/20"
                   }`}
                 >
                   {area}
@@ -128,7 +129,7 @@ export default function Prevencao() {
             })}
           </div>
 
-          {/* Exibe o Progresso SOMENTE quando algum filtro estiver ativo */}
+          {/*Exibe o Progresso SOMENTE quando algum filtro estiver ativo*/}
           {areaAtiva && (
             <div className="space-y-1.5 pt-1">
               <div className="flex gap-1.5">
@@ -152,7 +153,7 @@ export default function Prevencao() {
           )}
         </div>
 
-        {/* VISÃO INICIAL (Sem filtro ativo) */}
+        {/*VISÃO INICIAL (Sem filtro ativo)*/}
         {!areaAtiva ? (
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
@@ -169,7 +170,7 @@ export default function Prevencao() {
                   <div
                     key={idx}
                     onClick={() => toggleCheck(item)}
-                    className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-[0px_4px_8px_0px_rgba(0,0,0,0.03)]"
+                    className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-md shadow-[#0e3d10]/25"
                   >
                     <div
                       className={`w-6 h-6 rounded-[12px] border-2 border-[#d1d5db] bg-white flex items-center justify-center shrink-0 ${isChecked ? "border-[#0e3d10] bg-emerald-100" : ""}`}
@@ -206,7 +207,7 @@ export default function Prevencao() {
                     <div
                       key={idx}
                       onClick={() => toggleCheck(item)}
-                      className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-[0px_4px_8px_0px_rgba(0,0,0,0.03)]"
+                      className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-md shadow-[#0e3d10]/25"
                     >
                       <div
                         className={`w-6 h-6 rounded-[12px] border-2 border-[#d1d5db] bg-white flex items-center justify-center shrink-0 ${isChecked ? "border-[#0e3d10] bg-emerald-100" : ""}`}
@@ -239,7 +240,7 @@ export default function Prevencao() {
                     <div
                       key={idx}
                       onClick={() => toggleCheck(item)}
-                      className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-[0px_4px_8px_0px_rgba(0,0,0,0.03)]"
+                      className="bg-[#a9f69a]/80 border border-[#0e3d10] p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer shadow-md shadow-[#0e3d10]/25"
                     >
                       <div
                         className={`w-6 h-6 rounded-[12px] border-2 border-[#d1d5db] bg-white flex items-center justify-center shrink-0 ${isChecked ? "border-[#0e3d10] bg-emerald-100" : ""}`}
