@@ -287,7 +287,7 @@
     "id": "baiacu",
     "nome": "Baiacu (Ingestão)",
     "categoria": "aquaticos",
-    "imagem": "/imagens/baiacu-pintado.jpg",
+    "imagem": ["/imagens/baiacu.jpg", "/imagens/baiacu-mirim.jpg"],
     "sintomas": "Fase leve: dormência nos lábios e língua, náuseas e diarreia. Fase moderada: fraqueza muscular, dificuldade de falar e perda de equilíbrio. Fase avançada: paralisia e insuficiência respiratória.",
     "primeirosSocorros": [
       "Buscar atendimento médico URGENTE informando a ingestão de baiacu.",

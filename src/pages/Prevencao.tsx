@@ -79,7 +79,7 @@ export default function Prevencao() {
     totalItens > 0 ? Math.round((totalConcluidos / totalItens) * 100) : 0;
 
   return (
-    <div className="bg-[#efefef] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-10">
+    <div className="bg-[#efefef] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-10 min-h-screen overflow-y-auto">
       <div className="p-4 space-y-5 flex-1">
         {/*AppHeader*/}
         <div className="flex justify-between items-center">

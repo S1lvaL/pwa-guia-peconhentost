@@ -1,9 +1,12 @@
-import { useState } from "react";
+/*
+  Pagina de listagem de animais, com filtros por categoria e busca por nome
+*/
+import { useState } from "react"; //Hook (função especial) do React para guardar estados
 import dadosAnimais from "../data/animais.json";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import type { Animal } from "../types/animal";
-
+//Tipos de categorias para filtro
 type CategoriaFiltro =
   | "todos"
   | "serpentes"
@@ -11,7 +14,7 @@ type CategoriaFiltro =
   | "aranhas"
   | "anfibios"
   | "aquaticos";
-
+//Array  para exibir os filtros na tela
 const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "todos", label: "Todos" },
   { id: "serpentes", label: "Serpentes" },
@@ -20,11 +23,11 @@ const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "anfibios", label: "Anfíbios" },
   { id: "aquaticos", label: "Aquáticos" },
 ];
-
+//Usa a interface para definir uma props opcional e identificar qual animal foi selecionado
 interface AnimaisProps {
   onSelectAnimal?: (animal: Animal) => void;
 }
-
+//Componente principal da página de listagem de animais
 export default function Animais({ onSelectAnimal }: AnimaisProps) {
   const [busca, setBusca] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] =
@@ -32,9 +35,9 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
   const [animalSelecionado, setAnimalSelecionado] = useState<Animal | null>(
     null,
   );
-
+  //Converte os dados do JSON para o tipo Animal
   const animais: Animal[] = dadosAnimais as Animal[];
-
+  //Filtra os animais usando duas regras: a categoria selecionada e o termo de busca
   const animaisFiltrados = animais.filter((animal) => {
     const atendeCategoria =
       categoriaAtiva === "todos" ||
@@ -43,16 +46,16 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
 
     return atendeCategoria && atendeBusca;
   });
-
+  //Função para lidar com o clique em um animal e dispara o prop onSelectAnimal
   const handleAnimalClick = (animal: Animal) => {
     setAnimalSelecionado(animal);
     if (onSelectAnimal) {
       onSelectAnimal(animal);
     }
   };
-
+  //Renderiza a página com o cabeçalho, campo de busca, filtros de categoria, lista de cards e modal de detalhes
   return (
-    <div className="bg-[#f8fafc] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-6">
+    <div className="bg-[#f8fafc] min-h-screen flex flex-col justify-between w-full max-w-md md:max-w-2xl lg:max-w-4xl mx-auto pt-8 pb-6 px-4">
       <div className="pt-[24px] px-[16px] space-y-[20px] flex-1">
         {/* Header */}
         <div className="flex items-center justify-between py-[5px]">
@@ -101,9 +104,10 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
           )}
         </div>
 
-        {/* Filtros de Categoria */}
-        <div className="relative overflow-x-auto no-scrollbar py-1">
-          <div className="flex gap-[8px] whitespace-nowrap pb-3">
+        {/* Filtros de Categoria 
+        Permite que os botões quebrem linha (flex-wrap) em telas maiores (md:)*/}
+        <div className="relative overflow-x-auto md:overflow-visible no-scrollbar py-1">
+          <div className="flex md:flex-wrap gap-[8px] whitespace-nowrap md:whitespace-normal pb-3">
             {listaCategorias.map((cat) => {
               const isActive = categoriaAtiva === cat.id;
               return (
@@ -112,8 +116,8 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
                   onClick={() => setCategoriaAtiva(cat.id)}
                   className={`px-[16px] py-[8px] rounded-[20px] text-[14px] transition-colors ${
                     isActive
-                      ? "bg-[#780F0F] text-white font-semibold shadow-md shadow-[#780F0F]/25"
-                      : "bg-white text-[#475569] font-bold border border-[#e2e8f0] shadow-sm shadow-[#780F0F]/15"
+                      ? "bg-[#780F0F] text-white font-semibold shadow-md shadow-[#780F0F]/35"
+                      : "bg-white text-[#0e3d10]/80 font-bold border border-[#e2e8f0] shadow-sm shadow-[#0e3d10]/20"
                   }`}
                 >
                   {cat.label}
@@ -123,8 +127,8 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
           </div>
         </div>
 
-        {/* Lista de Cards */}
-        <div className="flex flex-col gap-[12px]">
+        {/*Lista de Cards*/}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[12px]">
           {animaisFiltrados.length > 0 ? (
             animaisFiltrados.map((animal) => (
               <CardAnimal
