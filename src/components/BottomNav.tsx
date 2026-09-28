@@ -2,7 +2,7 @@
 import { ShieldAlert, Bug, ShieldCheck } from "lucide-react";
 
 interface BottomNavProps {
-  //guarda qual das trÊs abas está ativa
+  //guarda qual das três abas está ativa
   abaAtiva: "animais" | "emergencia" | "prevencao";
   //Função para atualizar a aba selecionada
   setAbaAtiva: (aba: "animais" | "emergencia" | "prevencao") => void;
@@ -11,12 +11,12 @@ interface BottomNavProps {
 export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
   return (
     //Trava e limita a barra de navegação
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 max-w-md mx-auto shadow-md shadow-[#0e3d10]/50 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around py-2 w-full max-w-full mx-auto shadow-md shadow-[#0e3d10]/50 z-50">
       {/* Botão da Aba Animais */}
       <button
         onClick={() => setAbaAtiva("animais")} //Ao clicar, atualiza a aba ativa para "animais"
         className={`flex flex-col items-center text-xs font-medium ${
-          abaAtiva === "animais" ? "text-[#780F0F]  font-bold" : "text-gray-500" //Se a aba for ativa adiciona a cor de desyaque
+          abaAtiva === "animais" ? "text-[#780F0F]  font-bold" : "text-gray-500" //Se a aba for ativa adiciona a cor de destaque
         }`}
       >
         <Bug className="w-6 h-6 mb-1" /> {/*Estilizando o botão*/}

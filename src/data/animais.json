@@ -145,7 +145,7 @@
     "id": "corais",
     "nome": "Corais",
     "categoria": "aquaticos",
-    "imagem": "imagens/coral.jpg",
+    "imagem": "/imagens/coral.jpg",
     "sintomas": "Coceira, dor aguda, sensação de ardência intensa, bolhas e pele irritada. Em grande contato: náuseas e inchaço.",
     "primeirosSocorros": [
       "Lavar o local com água do mar.",
