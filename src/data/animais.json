@@ -303,12 +303,290 @@
     ]
   },
   {
-    "id": "",
-    "nome": "",
-    "categoria": "",
-    "imagem": "",
-    "sintomas": "",
-    "primeirosSocorros": [""],
-    "oQueNaoFazer": [""]
+    "id": "jararaca-malha-de-sapo",
+    "nome": "Jararaca Malha de Sapo",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/jararaca-malha-de-sapo.jpg"
+    ],
+    "sintomas": "Dor intensa local, inchaço (edema), manchas arroxeadas (equimose), sangramento no local ou nas gengivas e risco de necrose",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vítima em repouso e hidratada.",
+      "Elevar o membro atingido.",
+      "Buscar atendimento médico urgente para aplicação de soro antibotrópico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas).",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "jararaca-da-seca",
+    "nome": "Jararaca da Seca",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/jararaca-da-seca.jpg"
+    ],
+    "sintomas": "Dor e inchaço progressivo no local, alteração da coagulação, sangramentos e possível queda da pressão arterial.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a pessoa deitada e calma.",
+      "Tirar anéis e calçados apertados.",
+      "Procurar socorro médico imediato para soroterapia específica."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não colocar nada sobre a ferida.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "jararacuçu",
+    "nome": "Jararacuçu",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/jararacuçu.jpg"
+    ],
+    "sintomas": "Dor dor extrema local, edema volumoso, equimose, bolhas, sangramentos intensos e elevado risco de necrose e choque.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vítima em repouso e com o membro elevado.",
+      "Buscar atendimento hospitalar urgente ."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias ou produtos caseiras.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "surucucu-pico-de-jaca",
+    "nome": "Surucucu Pico de Jaca",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/surucucu-pico-de-jaca.jpg"
+    ],
+    "sintomas": "Dor intensa e edema local, além de diarreia, cólicas abdominais, diminuição dos batimentos cardíacos (bradicardia) e queda de pressão.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vítima deitada e em repouso.",
+      "Retirar anéis, pulseiras.",
+      "Transportar imediatamente ao hospital para soro antilaquético e antibotrópico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "cascavel",
+    "nome": "Cascavel",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/cascavel.jpg"
+    ],
+    "sintomas": "Dor e inchaço discretos no local, pálpebras caídas (ptose), visão dupla, dores musculares generalizadas e urina escura.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vítima em repouso absoluto e hidratada.",
+      "Buscar atendimento hospitalar urgente."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras.",
+      "Não massagear a área nem ingerir bebida alcoólica."
+    ]
+  },
+  {
+    "id": "coral-verdadeira",
+    "nome": "Coral Verdadeira",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/coral-verdadeira.jpg"
+    ],
+    "sintomas": "Dor local discreta, pálpebras caídas, visão dupla, falta de ar e paralisia muscular progressiva com risco de parada respiratória; vítima nitidamente pálida.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vítima em repouso e monitorar a respiração.",
+      "Buscar atendimento hospitalar urgente para aplicação de soro antielapídico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras ou adiar atendimento hospitalar.",
+      "Não ingerir álcool.",
+      "Não andar"
+    ]
+  },
+  {
+    "id": "escorpiao-do-nordeste",
+    "nome": "Escorpião do Nordeste",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/escorpiao-do-nordeste.jpg"
+    ],
+    "sintomas": "Dor intensa e imediata no local, vermelhidão, inchaço e dormência; casos graves (crianças) podem ter vômitos e suor frio.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Aplicar compressas mornas para aliviar a dor.",
+      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Encaminhar a vítima ao atendimento médico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "escorpiao-amarelo",
+    "nome": "Escorpião Amarelo",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/escorpiao-amarelo.jpg"
+    ],
+    "sintomas": "Dor local muito intensa, ardor e suor; em casos moderados e graves pode causar vômitos, alteração cardíaca e acúmulo de fluido nos pulmões.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Aplicar compressas mornas para aliviar a dor (não colocar gelo).",
+      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Encaminhar a vítima ao atendimento médico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "escorpiao-preto-da-bahia",
+    "nome": "Escorpião Preto da Bahia",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/escorpiao-preto-da-bahia.jpg"
+    ],
+    "sintomas": "Dor intensa imediata, edema e eritema discretos, sensação de queimadura e formigamento no local.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Aplicar compressas mornas para aliviar a dor (não aplicar gelo).",
+      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Encaminhar a vítima ao atendimento médico para aplicação de soro antiescorpiônico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "escorpiao-marrom",
+    "nome": "Escorpião Marrom",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/escorpiao-marrom.jpg"
+    ],
+    "sintomas": "Dor de início imediato no local, dormência regional, leve inchaço e sudorese, espasmos musculares e queda da pressão arterial.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Aplicar compressas mornas para aliviar a dor (não aplicar gelo).",
+      "Manter a vítima em repouso e manter o local voltado para cima.",
+      "Buscar atendimento médico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "aranha-marrom",
+    "nome": "Aranha Marrom",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/aranha-marrom.jpg"
+    ],
+    "sintomas": "Picada pouco dolorosa no início, evoluindo após horas para dor; vermelhidão; inchaço; bolhas e necrose local (ferida escura) em casos mais graves.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter o paciente em respouso e elevar o membro picado.",
+      "Buscar atendimento médico para avaliação e medicação/soro."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "aranha-armadeira",
+    "nome": "Aranha Armadeira",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/aranha-armadeira.jpg"
+    ],
+    "sintomas": "Dor extremamente intensa imediata, inchaço, vermelhidão, suor local e salivação excessiva; em casos mais graves pode haver alteração da pressão e dos batimentos.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Aplicar compressa morna para aliviar a dor (não aplicar gelo).",
+      "Buscar atendimento médico para aplicação de soro antiaracnídico."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "viuva-negra",
+    "nome": "Aranha Viúva-Negra",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/aranha-viuva-negra.jpg"
+    ],
+    "sintomas": "Dor local com sensação de queimadura, dores musculares intensas, cólicas abdominais, suor excessivo e tremores; alteração de pressão e batimentos cardíacos.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão.",
+      "Manter a vitima calma e em repouso.",
+      "Buscar atendimento médico imediatamente."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, chupar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
+      "Não ingerir álcool."
+    ]
+  },
+  {
+    "id": "besouro-bombardeiro",
+    "nome": "Besouro-Bombardeiro",
+    "categoria": "terrestres",
+    "imagem": [
+      "/imagens/besouro-bombardeiro.jpg"
+    ],
+    "sintomas": "Sensação imediata de queimadura na pele, vermelhidão, coceira, dor e formação de bolhas ou manchas castanhas.",
+    "primeirosSocorros": [
+      "Lavar abundantemente o local atingido com água corrente e sabão neutro.",
+      "Fazer compressas mornas se houver ardor.",
+      "Buscar atendimento médico para avaliação."
+    ],
+    "oQueNaoFazer": [
+      "Não esfregar a região afetada.",
+      "Não estourar as bolhas.",
+      "Não aplicar substâncias caseiras, produtos químicos sobre a queimadura."
+    ]
   }
 ]
