@@ -145,7 +145,7 @@
     "id": "corais",
     "nome": "Corais",
     "categoria": "aquaticos",
-    "imagem": "imagens/coral.jpg",
+    "imagem": "/imagens/coral.jpg",
     "sintomas": "Coceira, dor aguda, sensação de ardência intensa, bolhas e pele irritada. Em grande contato: náuseas e inchaço.",
     "primeirosSocorros": [
       "Lavar o local com água do mar.",
@@ -287,7 +287,7 @@
     "id": "baiacu",
     "nome": "Baiacu (Ingestão)",
     "categoria": "aquaticos",
-    "imagem": "/imagens/baiacu-pintado.jpg",
+    "imagem": ["/imagens/baiacu.jpg", "/imagens/baiacu-mirim.jpg"],
     "sintomas": "Fase leve: dormência nos lábios e língua, náuseas e diarreia. Fase moderada: fraqueza muscular, dificuldade de falar e perda de equilíbrio. Fase avançada: paralisia e insuficiência respiratória.",
     "primeirosSocorros": [
       "Buscar atendimento médico URGENTE informando a ingestão de baiacu.",

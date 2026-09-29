@@ -79,15 +79,15 @@ export default function Prevencao() {
     totalItens > 0 ? Math.round((totalConcluidos / totalItens) * 100) : 0;
 
   return (
-    <div className="bg-[#efefef] min-h-screen flex flex-col justify-between max-w-[390px] mx-auto pt-8 pb-10">
+    <div className="bg-verde-fundo min-h-screen flex flex-col justify-between w-full max-w-full mx-auto pt-8 pb-10 min-h-screen overflow-y-auto">
       <div className="p-4 space-y-5 flex-1">
         {/*AppHeader*/}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-[40px] font-extrabold leading-[32px] text-[#0e3d10] ">
+            <h1 className="text-[40px] font-extrabold leading-[32px] text-verde-principal ">
               Sistema de prevenção
             </h1>
-            <p className="text-[12px] font-bold text-[#0e3d10]/70 uppercase tracking-wide mt-1 pt-3">
+            <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-1 pt-3">
               informação hoje, segurança sempre
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function Prevencao() {
         </div>
 
         {/*SafetyAreaContainer*/}
-        <div className="bg-[#a9f69a]/70 border border-[#0e3d10] p-4 rounded-[24px] space-y-4 shadow-md shadow-[#0e3d10]/40">
+        <div className="bg-[#a9f69a]/70 border border-verde-principal p-4 rounded-[24px] space-y-4 shadow-md shadow-verde-principal/40">
           <div>
             <h2 className="text-[18px] font-bold text-[#0e3d10] leading-tight">
               Prevenção e segurança por área
