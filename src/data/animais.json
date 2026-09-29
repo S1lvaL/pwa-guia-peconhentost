@@ -306,9 +306,7 @@
     "id": "jararaca-malha-de-sapo",
     "nome": "Jararaca Malha de Sapo",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/jararaca-malha-de-sapo.jpg"
-    ],
+    "imagem": "/imagens/jararaca-malha-de-sapo.jpg",
     "sintomas": "Dor intensa local, inchaço (edema), manchas arroxeadas (equimose), sangramento no local ou nas gengivas e risco de necrose",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -327,9 +325,7 @@
     "id": "jararaca-da-seca",
     "nome": "Jararaca da Seca",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/jararaca-da-seca.jpg"
-    ],
+    "imagem": "/imagens/jararaca-da-seca.jpg",
     "sintomas": "Dor e inchaço progressivo no local, alteração da coagulação, sangramentos e possível queda da pressão arterial.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -348,9 +344,7 @@
     "id": "jararacuçu",
     "nome": "Jararacuçu",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/jararacuçu.jpg"
-    ],
+    "imagem": "/imagens/jararacuçu.jpg",
     "sintomas": "Dor dor extrema local, edema volumoso, equimose, bolhas, sangramentos intensos e elevado risco de necrose e choque.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -368,9 +362,7 @@
     "id": "surucucu-pico-de-jaca",
     "nome": "Surucucu Pico de Jaca",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/surucucu-pico-de-jaca.jpg"
-    ],
+    "imagem": "/imagens/surucucu-pico-de-jaca.jpg",
     "sintomas": "Dor intensa e edema local, além de diarreia, cólicas abdominais, diminuição dos batimentos cardíacos (bradicardia) e queda de pressão.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -389,9 +381,7 @@
     "id": "cascavel",
     "nome": "Cascavel",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/cascavel.jpg"
-    ],
+    "imagem": "/imagens/cascavel.jpg",
     "sintomas": "Dor e inchaço discretos no local, pálpebras caídas (ptose), visão dupla, dores musculares generalizadas e urina escura.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -409,9 +399,7 @@
     "id": "coral-verdadeira",
     "nome": "Coral Verdadeira",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/coral-verdadeira.jpg"
-    ],
+    "imagem": "/imagens/coral-verdadeira.jpg",
     "sintomas": "Dor local discreta, pálpebras caídas, visão dupla, falta de ar e paralisia muscular progressiva com risco de parada respiratória; vítima nitidamente pálida.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -430,9 +418,7 @@
     "id": "escorpiao-do-nordeste",
     "nome": "Escorpião do Nordeste",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/escorpiao-do-nordeste.jpg"
-    ],
+    "imagem": "/imagens/escorpiao-do-nordeste.jpg",
     "sintomas": "Dor intensa e imediata no local, vermelhidão, inchaço e dormência; casos graves (crianças) podem ter vômitos e suor frio.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -451,9 +437,7 @@
     "id": "escorpiao-amarelo",
     "nome": "Escorpião Amarelo",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/escorpiao-amarelo.jpg"
-    ],
+    "imagem": "/imagens/escorpiao-amarelo.jpg",
     "sintomas": "Dor local muito intensa, ardor e suor; em casos moderados e graves pode causar vômitos, alteração cardíaca e acúmulo de fluido nos pulmões.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -472,9 +456,7 @@
     "id": "escorpiao-preto-da-bahia",
     "nome": "Escorpião Preto da Bahia",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/escorpiao-preto-da-bahia.jpg"
-    ],
+    "imagem": "/imagens/escorpiao-preto-da-bahia.jpg",
     "sintomas": "Dor intensa imediata, edema e eritema discretos, sensação de queimadura e formigamento no local.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -493,9 +475,7 @@
     "id": "escorpiao-marrom",
     "nome": "Escorpião Marrom",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/escorpiao-marrom.jpg"
-    ],
+    "imagem": "/imagens/escorpiao-marrom.jpg",
     "sintomas": "Dor de início imediato no local, dormência regional, leve inchaço e sudorese, espasmos musculares e queda da pressão arterial.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -514,9 +494,7 @@
     "id": "aranha-marrom",
     "nome": "Aranha Marrom",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/aranha-marrom.jpg"
-    ],
+    "imagem": "/imagens/aranha-marrom.jpg",
     "sintomas": "Picada pouco dolorosa no início, evoluindo após horas para dor; vermelhidão; inchaço; bolhas e necrose local (ferida escura) em casos mais graves.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -534,9 +512,7 @@
     "id": "aranha-armadeira",
     "nome": "Aranha Armadeira",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/aranha-armadeira.jpg"
-    ],
+    "imagem": "/imagens/aranha-armadeira.jpg",
     "sintomas": "Dor extremamente intensa imediata, inchaço, vermelhidão, suor local e salivação excessiva; em casos mais graves pode haver alteração da pressão e dos batimentos.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -554,9 +530,7 @@
     "id": "viuva-negra",
     "nome": "Aranha Viúva-Negra",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/aranha-viuva-negra.jpg"
-    ],
+    "imagem": "/imagens/aranha-viuva-negra.jpg",
     "sintomas": "Dor local com sensação de queimadura, dores musculares intensas, cólicas abdominais, suor excessivo e tremores; alteração de pressão e batimentos cardíacos.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -574,9 +548,7 @@
     "id": "besouro-bombardeiro",
     "nome": "Besouro-Bombardeiro",
     "categoria": "terrestres",
-    "imagem": [
-      "/imagens/besouro-bombardeiro.jpg"
-    ],
+    "imagem": "/imagens/besouro-bombardeiro.jpg",
     "sintomas": "Sensação imediata de queimadura na pele, vermelhidão, coceira, dor e formação de bolhas ou manchas castanhas.",
     "primeirosSocorros": [
       "Lavar abundantemente o local atingido com água corrente e sabão neutro.",

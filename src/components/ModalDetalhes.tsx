@@ -12,17 +12,13 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
   if (!animal) return null;
 
   return (
-    /* 1. O fundo/backdrop escuro ocupa toda a tela */
+    //Fundo do modal ficar opaco e escurecido, cobrindo toda a tela
     <div className="fixed inset-0 z-40 bg-black/60 flex flex-col justify-end">
-      {/* Backdrop para fechar ao clicar fora */}
+      {/*Fecha ao clicar fora*/}
       <div className="absolute inset-0" onClick={onClose} />
 
-      {/* 
-        2. O Modal é posicionado acima do BottomNav:
-           - bottom-[64px]: substitua 64px pela altura exata do seu BottomNav (ex: h-16 = 64px, h-20 = 80px).
-           - h-[calc(85vh-64px)]: ajusta a altura máxima para não estourar no topo da tela.
-      */}
-      <div className="relative bg-white w-full max-w-[390px] mx-auto h-[calc(85vh-64px)] mb-[64px] rounded-[32px] p-[20px] pb-[20px] flex flex-col gap-[16px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
+      {/*O Modal é posicionado acima do BottomNav*/}
+      <div className="relative bg-white mx-4 lg:max-w-[800px] mx-auto h-[calc(85vh-64px)] mb-[64px] rounded-[32px] p-[20px] pb-[20px] flex flex-col gap-[16px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
         {/* Barra superior / Fechar (Fixo no topo) */}
         <div className="flex items-center justify-between h-[32px] shrink-0">
           <div className="size-[32px]" />
@@ -205,11 +201,13 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           </div>
         </div>
 
-        {/*BOTÃO DE EMERGÊNCIA (Fixo na parte inferior do modal)*/}
+        {/*BOTÃO DE EMERGÊNCIA (Fixo na parte inferior do modal)
+          Fazer uma interação*/}
         <a
           href="tel:192"
           className="bg-[#780F0F] drop-shadow-[0px_4px_6px_rgba(220,38,38,0.25)] h-[56px] rounded-[16px] flex items-center justify-center gap-[12px] text-white font-bold text-[16px] shrink-0 mt-auto hover:bg-[#b91c1c] transition-colors"
         >
+          {/*Icone de telefone*/}
           <svg className="size-[20px]" fill="none" viewBox="0 0 20 20">
             <path
               d="M3.5 3.5C3.5 3.5 5 2 7 4C9 6 7.5 7.5 7.5 7.5L10 10L12.5 12.5C12.5 12.5 14 11 16 13C18 15 16.5 16.5 16.5 16.5C14.5 18.5 7.5 16 3.5 12C-0.5 8 -3 1.5 3.5 3.5Z"
