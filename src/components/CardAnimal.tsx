@@ -30,21 +30,19 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
       </div>
 
       {/*Conteúdo*/}
-      <div className="flex flex-col gap-[6px] flex-1">
+      <div className="flex flex-col gap-[6px] flex-1 min-w-0">
         <div className="flex gap-[6px] items-center flex-wrap">
           <span className="bg-[#ecfdf5] text-[#064e3b] px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
             {animal.categoria}
           </span>
           <span className="bg-[#fef3c7] text-[#92400e] px-[8px] py-[2px] rounded-[6px] font-bold text-[11px]">
-            {animal.periculosidade || "Atenção"}
+            {animal.periculosidade}
           </span>
         </div>
 
-        <div>
-          <h3 className="font-bold text-[#0f172a] text-[16px] leading-tight">
-            {animal.nome}
-          </h3>
-        </div>
+        <h3 className="font-bold text-[#0f172a] text-[15px] leading-tight break-words">
+          {animal.nome}
+        </h3>
       </div>
 
       {/*Ícone Seta*/}

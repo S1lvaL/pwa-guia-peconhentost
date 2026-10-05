@@ -11,5 +11,8 @@ export interface Animal {
   sintomas?: string; //'?' indica que o campo é opcional
   primeirosSocorros?: string[];
   oQueNaoFazer?: string[];
-  periculosidade?: "Baixa" | "Media" | "Alta";
+  periculosidade?:
+    | "Baixa periculosidade"
+    | "Media periculosidade"
+    | "Alta periculosidade";
 }
