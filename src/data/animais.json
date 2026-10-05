@@ -3,7 +3,7 @@
     "id": "anfibio-generico",
     "nome": "Anfíbio Genérico",
     "categoria": "anfibios",
-    "nomePopular": ["rã, sapo, perereca"],
+    "nomesPopulares": ["rã, sapo, perereca"],
     "imagem": [
       "/imagens/anfibio-generico.jpg",
       "/imagens/anfibio-generic.jpg",
@@ -27,7 +27,7 @@
     "id": "perereca-capacete",
     "nome": "Perereca de Capacete",
     "categoria": "anfibios",
-    "nomePopular": ["rã, sapo, perereca"],
+    "nomesPopulares": ["rã, sapo, perereca"],
     "imagem": "/imagens/perereca-capacete.jpg",
     "periculosidade": "Perigo!",
     "sintomas": "Dor intensa que dura horas, inchaço prolongado, atividade necrosante e alto grau de toxicidade.",
@@ -48,7 +48,7 @@
   {
     "id": "sapo-cururu",
     "nome": "Sapo Cururu / Sapo Boi",
-    "nomePopular": ["sapo cururu", "sapo boi"],
+    "nomesPopulares": ["sapo cururu", "sapo boi"],
     "categoria": "anfibios",
     "imagem": "/imagens/sapo-cururu.jpg",
     "sintomas": "Nos olhos: dor lancinante, conjuntivite química severa e inchaço palpebral. Na boca: dormência, queimação e salivação excessiva. Por ingestão: náuseas severas, vômitos, diarreia, tremores e tonturas.",
@@ -67,7 +67,7 @@
   {
     "id": "caravelas-portuguesas",
     "nome": "Caravela Portuguesa",
-    "nomePopular": ["agua-viva", "vespa-do-mar"],
+    "nomesPopulares": ["agua-viva", "vespa-do-mar"],
     "categoria": "aquaticos",
     "imagem": "/imagens/caravela-portuguesa.jpg",
     "sintomas": "Dor intensa no local. Em caso de maior absorção de toxinas: mal-estar, dor de cabeça, náuseas, vômitos, espasmos musculares, febre e arritmias cardíacas.",
@@ -86,7 +86,7 @@
   {
     "id": "agua-viva",
     "nome": "Água-Viva",
-    "nomePopular": ["caravela", "vespa-do-mar"],
+    "nomesPopulares": ["caravela", "vespa-do-mar"],
     "categoria": "aquaticos",
     "imagem": ["/imagens/agua-viva.jpg", "/imagens/agua-viva-invertida.jpg"],
     "sintomas": "Dor intensa, inchaço, sensação de queimação, coceira e marcas avermelhadas. Em casos graves: dificuldade de respirar, náuseas, vômitos e dores no peito.",
@@ -107,7 +107,7 @@
     "id": "vespa-mar",
     "nome": "Vespa do Mar",
     "categoria": "aquaticos",
-    "nomePopular": ["agua-viva", "caravela"],
+    "nomesPopulares": ["agua-viva", "caravela"],
     "imagem": "/imagens/vespa-mar.jpg",
     "periculosidade": "Perigo!",
     "sintomas": "Dor imediata e excruciante, queimaduras na pele, paralisia, insuficiência circulatória e dificuldade respiratória.",
@@ -127,7 +127,7 @@
   {
     "id": "anemona",
     "nome": "Anêmona",
-    "nomePopular": ["corais"],
+    "nomesPopulares": ["corais"],
     "categoria": "aquaticos",
     "imagem": [
       "/imagens/anemona-tubo.jpg",
@@ -153,7 +153,7 @@
   {
     "id": "corais",
     "nome": "Corais",
-    "nomePopular": ["anemona"],
+    "nomesPopulares": ["anemona"],
     "categoria": "aquaticos",
     "imagem": "/imagens/coral.jpg",
     "sintomas": "Coceira, dor aguda, sensação de ardência intensa, bolhas e pele irritada. Em grande contato: náuseas e inchaço.",
@@ -199,7 +199,7 @@
     "id": "bagre",
     "nome": "Bagre (Água Doce e Salgada)",
     "categoria": "aquaticos",
-    "nomePopular": ["peixe"],
+    "nomesPopulares": ["peixe"],
     "imagem": [
       "/imagens/bagre-amarelo.jpg",
       "/imagens/bagre-mandijuba.jpg",
@@ -301,7 +301,7 @@
     "id": "baiacu",
     "nome": "Baiacu (Ingestão)",
     "categoria": "aquaticos",
-    "nomePopular": ["peixe"],
+    "nomesPopulares": ["peixe"],
     "imagem": ["/imagens/baiacu.jpg", "/imagens/baiacu-mirim.jpg"],
     "periculosidade": "Perigo!",
     "sintomas": "Fase leve: dormência nos lábios e língua, náuseas e diarreia. Fase moderada: fraqueza muscular, dificuldade de falar e perda de equilíbrio. Fase avançada: paralisia e insuficiência respiratória.",
