@@ -10,16 +10,20 @@ import type { Animal } from "../types/animal";
 type CategoriaFiltro =
   | "todos"
   | "serpentes"
-  | "escorpioes"
+  | "escorpiões"
   | "aranhas"
+  | "lacraias"
+  | "besouros"
   | "anfibios"
   | "aquaticos";
 //Array  para exibir os filtros na tela
 const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "todos", label: "Todos" },
   { id: "serpentes", label: "Serpentes" },
-  { id: "escorpioes", label: "Escorpiões" },
+  { id: "escorpiões", label: "Escorpiões" },
   { id: "aranhas", label: "Aranhas" },
+  { id: "lacraias", label: "Lacraias" },
+  { id: "besouros", label: "Besouros" },
   { id: "anfibios", label: "Anfíbios" },
   { id: "aquaticos", label: "Aquáticos" },
 ];

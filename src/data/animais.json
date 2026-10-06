@@ -305,7 +305,7 @@
   {
     "id": "jararaca-malha-de-sapo",
     "nome": "Jararaca Malha de Sapo",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
       "/imagens/jararaca-malha-de-sapo.jpg"
     ],
@@ -326,7 +326,7 @@
   {
     "id": "jararaca-da-seca",
     "nome": "Jararaca da Seca",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
       "/imagens/jararaca-da-seca.jpg"
     ],
@@ -347,7 +347,7 @@
   {
     "id": "jararacuçu",
     "nome": "Jararacuçu",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
       "/imagens/jararacuçu.jpg"
     ],
@@ -367,7 +367,7 @@
   {
     "id": "surucucu-pico-de-jaca",
     "nome": "Surucucu Pico de Jaca",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
       "/imagens/surucucu-pico-de-jaca.jpg"
     ],
@@ -388,9 +388,9 @@
   {
     "id": "cascavel",
     "nome": "Cascavel",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
-      "/imagens/cascavel.jpg"
+      "/imagens/cascavel-sul-americana.jpg"
     ],
     "sintomas": "Dor e inchaço discretos no local, pálpebras caídas (ptose), visão dupla, dores musculares generalizadas e urina escura.",
     "primeirosSocorros": [
@@ -408,7 +408,7 @@
   {
     "id": "coral-verdadeira",
     "nome": "Coral Verdadeira",
-    "categoria": "terrestres",
+    "categoria": "serpentes",
     "imagem": [
       "/imagens/coral-verdadeira.jpg"
     ],
@@ -429,7 +429,7 @@
   {
     "id": "escorpiao-do-nordeste",
     "nome": "Escorpião do Nordeste",
-    "categoria": "terrestres",
+    "categoria": "escorpiões",
     "imagem": [
       "/imagens/escorpiao-do-nordeste.jpg"
     ],
@@ -450,7 +450,7 @@
   {
     "id": "escorpiao-amarelo",
     "nome": "Escorpião Amarelo",
-    "categoria": "terrestres",
+    "categoria": "escorpiões",
     "imagem": [
       "/imagens/escorpiao-amarelo.jpg"
     ],
@@ -469,11 +469,11 @@
     ]
   },
   {
-    "id": "escorpiao-preto-da-bahia",
-    "nome": "Escorpião Preto da Bahia",
-    "categoria": "terrestres",
+    "id": "escorpiao-marrom",
+    "nome": "Escorpião Marrom/Preto da Bahia",
+    "categoria": "escorpiões",
     "imagem": [
-      "/imagens/escorpiao-preto-da-bahia.jpg"
+      "/imagens/escorpiao-marrom.jpg"
     ],
     "sintomas": "Dor intensa imediata, edema e eritema discretos, sensação de queimadura e formigamento no local.",
     "primeirosSocorros": [
@@ -490,30 +490,9 @@
     ]
   },
   {
-    "id": "escorpiao-marrom",
-    "nome": "Escorpião Marrom",
-    "categoria": "terrestres",
-    "imagem": [
-      "/imagens/escorpiao-marrom.jpg"
-    ],
-    "sintomas": "Dor de início imediato no local, dormência regional, leve inchaço e sudorese, espasmos musculares e queda da pressão arterial.",
-    "primeirosSocorros": [
-      "Lavar o local com água e sabão.",
-      "Aplicar compressas mornas para aliviar a dor (não aplicar gelo).",
-      "Manter a vítima em repouso e manter o local voltado para cima.",
-      "Buscar atendimento médico."
-    ],
-    "oQueNaoFazer": [
-      "Não fazer torniquete ou garrote.",
-      "Não cortar, chupar ou espremer o local da picada.",
-      "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
-      "Não ingerir álcool."
-    ]
-  },
-  {
     "id": "aranha-marrom",
     "nome": "Aranha Marrom",
-    "categoria": "terrestres",
+    "categoria": "aranhas",
     "imagem": [
       "/imagens/aranha-marrom.jpg"
     ],
@@ -533,7 +512,7 @@
   {
     "id": "aranha-armadeira",
     "nome": "Aranha Armadeira",
-    "categoria": "terrestres",
+    "categoria": "aranhas",
     "imagem": [
       "/imagens/aranha-armadeira.jpg"
     ],
@@ -553,9 +532,9 @@
   {
     "id": "viuva-negra",
     "nome": "Aranha Viúva-Negra",
-    "categoria": "terrestres",
+    "categoria": "aranhas",
     "imagem": [
-      "/imagens/aranha-viuva-negra.jpg"
+      "/imagens/viuva-negra-do-norte.jpg"
     ],
     "sintomas": "Dor local com sensação de queimadura, dores musculares intensas, cólicas abdominais, suor excessivo e tremores; alteração de pressão e batimentos cardíacos.",
     "primeirosSocorros": [
@@ -571,22 +550,79 @@
     ]
   },
   {
-    "id": "besouro-bombardeiro",
-    "nome": "Besouro-Bombardeiro",
-    "categoria": "terrestres",
+    "id": "viuva-marrom",
+    "nome": "Aranha Viúva-Marrom",
+    "categoria": "aranhas",
     "imagem": [
-      "/imagens/besouro-bombardeiro.jpg"
+      "/imagens/viuva-marrom.jpg"
     ],
-    "sintomas": "Sensação imediata de queimadura na pele, vermelhidão, coceira, dor e formação de bolhas ou manchas castanhas.",
+    "sintomas": "Dor local intensa que pode irradiar, suor excessivo, rigidez muscular, cãibras, tremores, ansiedade e hipertensão.",
     "primeirosSocorros": [
-      "Lavar abundantemente o local atingido com água corrente e sabão neutro.",
-      "Fazer compressas mornas se houver ardor.",
-      "Buscar atendimento médico para avaliação."
+      "Lavar o local com água e sabão.",
+      "Aplicar compressas mornas para aliviar a dor.",
+      "Buscar atendimento médico urgente para avaliação de soroterapia."
     ],
     "oQueNaoFazer": [
-      "Não esfregar a região afetada.",
-      "Não estourar as bolhas.",
+      "Não fazer torniquete ou garrote.",
+      "Não cortar, perfurar ou espremer o local.",
       "Não aplicar substâncias caseiras, produtos químicos sobre a queimadura."
+    ]
+  },
+  {
+    "id": "besouro-poto",
+    "nome": "Besouro Potó",
+    "categoria": "besouros",
+    "imagem": [
+      "/imagens/besouro-poto.jpg"
+    ],
+    "sintomas": "Sensação de queimação, vermelhidão (eritema), formação de bolhas e pústulas (semelhante a uma queimadura química de 2º grau) e dor local.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Aplicar compressas frias.",
+      "Procurar atendimento médico para uso de antissépticos ou pomadas adequadas."
+    ],
+    "oQueNaoFazer": [
+      "Não esmagar o inseto sobre a pele.",
+      "Não estourar as bolhas.",
+      "Não coçar nem esfregar o loca.",
+      "Não aplicar substâncias caseiras (como pasta de dente, café ou óleo)."
+    ]
+  },
+  {
+    "id": "besouro-escorpiao",
+    "nome": "Besouro Escorpião",
+    "categoria": "besouros",
+    "imagem": [
+      "/imagens/besouro-escorpiao.jpg"
+    ],
+    "sintomas": "Dor leve a moderada no local da pinça ou beliscão, pequena vermelhidão ou edema passageiro (não possuem peçonha tóxica relevante para humanos).",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Aplicar compressas frias se houver inchaço leve."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer incisões ou espremer o local.",
+      "Não utilizar torniquetes."
+    ]
+  },
+  {
+    "id": "lacraias",
+    "nome": "Lacraias",
+    "categoria": "lacraias",
+    "imagem": [
+      "/imagens/lacraia1.jpg",
+      "/imagens/lacraia2.jpg",
+      "/imagens/lacraia4.jpg"
+    ],
+    "sintomas": "Dor local forte e imediata (semelhante a uma queimação), inchaço local, vermelhidão e calor na região.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Usar compressas mornas para aliviar a dor.",
+      "Buscar atendimento médico se a dor persistir ou houver reação alérgica."
+    ],
+    "oQueNaoFazer": [
+      "Não fazer torniquete; não cortar ou perfurar o local da picada.",
+      "Não utilizar receitas caseiras na ferida."
     ]
   }
 ]
