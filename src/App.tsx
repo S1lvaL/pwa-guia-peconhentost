@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div className="flex justify-center items-start min-h-screen bg-gray-300">
-      <div className="relative flex flex-col w-full lg:max-w-[1024px] min-h-screen bg-verde-fundo shadow-xl overflow-hidden pb-16">
+      <div className="relative flex flex-col w-full lg:max-w-[1024px] min-h-screen bg-verde-fundo shadow-xl overflow-x-clip pb-16">
         {/* Navegação de Telas*/}
         {abaAtiva === "prevencao" && <Prevencao />}
 

@@ -131,8 +131,9 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
 
         {/*Filtros de Categoria
           Transforma cada item num botão*/}
-        <div className="relative overflow-x-auto no-scrollbar py-1">
-          <div className="flex gap-[8px] whitespace-nowrap pb-3">
+        {/*Filtros de Categoria (fixos no topo ao rolar)*/}
+        <div className="sticky top-0 z-30 bg-verde-fundo -mx-[16px] px-[16px] py-2 overflow-x-auto no-scrollbar">
+          <div className="flex gap-[8px] whitespace-nowrap">
             {listaCategorias.map((cat) => {
               const isActive = categoriaAtiva === cat.id;
               return (
@@ -141,7 +142,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
                   onClick={() => setCategoriaAtiva(cat.id)}
                   className={`px-[16px] py-[8px] rounded-[20px] text-[14px] transition-colors ${
                     isActive
-                      ? "bg-vermelho-principal text-white font-semibold border border-vermelho-borda/40 shadow-md shadow-vermelho-principal/50"
+                      ? "bg-vermelho-principal text-white font-semibold border border-vermelho-bordaa/40 shadow-md shadow-vermelho-principal/50"
                       : "bg-white text-verde-principal/80 font-bold border border-cinza-borda shadow-sm shadow-verde-principal/20"
                   }`}
                 >
