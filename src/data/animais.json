@@ -68,6 +68,7 @@
     "id": "caravelas-portuguesas",
     "nome": "Caravela Portuguesa",
     "nomesPopulares": ["agua-viva", "vespa-do-mar"],
+    "periculosidade": "Risco moderado",
     "categoria": "aquaticos",
     "imagem": "/imagens/caravela-portuguesa.jpg",
     "sintomas": "Dor intensa no local. Em caso de maior absorção de toxinas: mal-estar, dor de cabeça, náuseas, vômitos, espasmos musculares, febre e arritmias cardíacas.",
@@ -87,6 +88,7 @@
     "id": "agua-viva",
     "nome": "Água-Viva",
     "nomesPopulares": ["caravela", "vespa-do-mar"],
+    "periculosidade": "Risco moderado",
     "categoria": "aquaticos",
     "imagem": ["/imagens/agua-viva.jpg", "/imagens/agua-viva-invertida.jpg"],
     "sintomas": "Dor intensa, inchaço, sensação de queimação, coceira e marcas avermelhadas. Em casos graves: dificuldade de respirar, náuseas, vômitos e dores no peito.",
@@ -128,6 +130,7 @@
     "id": "anemona",
     "nome": "Anêmona",
     "nomesPopulares": ["corais"],
+    "periculosidade": "Risco moderado",
     "categoria": "aquaticos",
     "imagem": [
       "/imagens/anemona-tubo.jpg",
@@ -153,6 +156,7 @@
   {
     "id": "corais",
     "nome": "Corais",
+    "periculosidade": "Risco moderado",
     "nomesPopulares": ["anemona"],
     "categoria": "aquaticos",
     "imagem": "/imagens/coral.jpg",
@@ -200,6 +204,7 @@
     "nome": "Bagre (Água Doce e Salgada)",
     "categoria": "aquaticos",
     "nomesPopulares": ["peixe"],
+    "periculosidade": "Perigo!",
     "imagem": [
       "/imagens/bagre-amarelo.jpg",
       "/imagens/bagre-mandijuba.jpg",
@@ -283,6 +288,7 @@
     "nome": "Peixe-Leão",
     "categoria": "aquaticos",
     "imagem": "/imagens/peixe-leao.jpg",
+    "periculosidade": "Perigo!",
     "sintomas": "Dor forte, inchaço, vermelhidão, calor no local, tontura, febre e náuseas.",
     "primeirosSocorros": [
       "Remover espinhos visíveis com cuidado usando pinça e luvas.",

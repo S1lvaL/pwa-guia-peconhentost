@@ -1,5 +1,5 @@
 import type { Animal } from "../types/animal";
-//import type{ corPericulosidade } from "../utils/periculosidade";
+import { corPericulosidade } from "../utils/periculosidade";
 
 interface CardAnimalProps {
   animal: Animal;
@@ -7,13 +7,13 @@ interface CardAnimalProps {
 }
 
 export function CardAnimal({ animal, onClick }: CardAnimalProps) {
-  /*Se for array (ex: Anfíbios Genéricos), pega o primeiro item
+  /*Se for array pega o primeiro item
    Se for string, usa ela diretamente.*/
   const imagemCapa = Array.isArray(animal.imagem)
     ? animal.imagem[0]
     : animal.imagem;
 
-  //const corBadge = corPericulosidade(animal.periculosidade);
+  const corBadge = corPericulosidade(animal.periculosidade);
 
   return (
     <div
@@ -32,25 +32,30 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
       {/*Conteúdo*/}
       <div className="flex flex-col gap-[6px] flex-1 min-w-0">
         <div className="flex gap-[6px] items-center flex-wrap">
-          <span className="bg-[#ecfdf5] text-[#064e3b] px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
+          <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda/30  px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
             {animal.categoria}
           </span>
-          <span className="bg-[#fef3c7] text-[#92400e] px-[8px] py-[2px] rounded-[6px] font-bold text-[11px]">
-            {animal.periculosidade}
-          </span>
+          {corBadge && (
+            <span
+              className={`${corBadge} px-[8px] py-[2px] rounded-[6px] font-bold text-[11px]`}
+            >
+              {animal.periculosidade}
+            </span>
+          )}
         </div>
 
-        <h3 className="font-bold text-[#0f172a] text-[15px] leading-tight break-words">
+        <h3 className="font-bold text-letra text-[15px] leading-tight break-words">
           {animal.nome}
         </h3>
       </div>
 
       {/*Ícone Seta*/}
       <svg
-        className="size-[20px] text-[#94a3b8] shrink-0"
+        className="size-[20px] text-letra/70 shrink-0"
         fill="none"
         viewBox="0 0 20 20"
       >
+        {/*Caminho da seta*/}
         <path
           d="M7.5 15L12.5 10L7.5 5"
           stroke="currentColor"

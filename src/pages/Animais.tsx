@@ -141,7 +141,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
                   onClick={() => setCategoriaAtiva(cat.id)}
                   className={`px-[16px] py-[8px] rounded-[20px] text-[14px] transition-colors ${
                     isActive
-                      ? "bg-vermelho-principal text-white font-semibold border border-vermelho-bordaa/40 shadow-md shadow-vermelho-principal/50"
+                      ? "bg-vermelho-principal text-white font-semibold border border-vermelho-borda/40 shadow-md shadow-vermelho-principal/50"
                       : "bg-white text-verde-principal/80 font-bold border border-cinza-borda shadow-sm shadow-verde-principal/20"
                   }`}
                 >
@@ -163,7 +163,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
               />
             ))
           ) : (
-            <div className="text-center py-10 text-vermelho-principal">
+            <div className="col-span-full text-center py-10 text-vermelho-principal">
               <p className="font-bold text-[20px] text-vermelho-principal/75">
                 Nenhum animal encontrado
               </p>
