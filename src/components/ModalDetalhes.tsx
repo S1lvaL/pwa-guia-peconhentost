@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Animal } from "../types/animal";
+import { corPericulosidade } from "../utils/periculosidade";
 
 interface ModalDetalhesProps {
   animal: Animal | null;
@@ -11,19 +12,17 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
 
   if (!animal) return null;
 
+  const corBadge = corPericulosidade(animal.periculosidade);
+
   return (
-    /* 1. O fundo/backdrop escuro ocupa toda a tela */
+    //Fundo do modal ficar opaco e escurecido, cobrindo toda a tela
     <div className="fixed inset-0 z-40 bg-black/60 flex flex-col justify-end">
-      {/* Backdrop para fechar ao clicar fora */}
+      {/*Fecha ao clicar fora*/}
       <div className="absolute inset-0" onClick={onClose} />
 
-      {/* 
-        2. O Modal é posicionado acima do BottomNav:
-           - bottom-[64px]: substitua 64px pela altura exata do seu BottomNav (ex: h-16 = 64px, h-20 = 80px).
-           - h-[calc(85vh-64px)]: ajusta a altura máxima para não estourar no topo da tela.
-      */}
-      <div className="relative bg-white w-full max-w-[390px] mx-auto h-[calc(85vh-64px)] mb-[64px] rounded-[32px] p-[20px] pb-[20px] flex flex-col gap-[16px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
-        {/* Barra superior / Fechar (Fixo no topo) */}
+      {/*O Modal é posicionado acima do BottomNav*/}
+      <div className="relative bg-white mx-4 lg:max-w-[800px] mx-auto h-[calc(85vh-64px)] mb-[64px] rounded-[32px] p-[20px] pb-[20px] flex flex-col gap-[16px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
+        {/* Barra superior / Fechar (Fixo no topo)*/}
         <div className="flex items-center justify-between h-[32px] shrink-0">
           <div className="size-[32px]" />
           <div className="w-[48px] h-[5px] bg-[#d1d5db] rounded-[10px]" />
@@ -42,15 +41,16 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           </button>
         </div>
 
-        {/* 3. ÁREA ROLÁVEL (Conteúdo) */}
+        {/*Conteúdo principal*/}
         <div className="flex-1 overflow-y-auto flex flex-col gap-[16px] pr-1">
-          {/* EXIBIÇÃO DA FOTO OU GALERIA DE FOTOS */}
+          {/*Fotos/Galeria
+            As imagens se ajustam automaticamente com forme o tamanho da tela*/}
           {Array.isArray(animal.imagem) ? (
-            <div className="grid grid-cols-2 gap-2 shrink-0 max-h-[280px] overflow-y-auto pr-1">
+            <div className="grid grid-cols-2 gap-2 shrink-0">
               {animal.imagem.map((imgUrl, index) => (
                 <div
                   key={index}
-                  className="h-[120px] relative rounded-[12px] overflow-hidden bg-slate-100"
+                  className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
                 >
                   <img
                     src={imgUrl}
@@ -61,7 +61,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
               ))}
             </div>
           ) : (
-            <div className="h-[250px] relative rounded-[13px] shrink-0 overflow-hidden bg-slate-100">
+            <div className="aspect-video relative rounded-[13px] shrink-0 overflow-hidden bg-slate-100">
               <img
                 src={animal.imagem}
                 alt={animal.nome}
@@ -70,26 +70,31 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
             </div>
           )}
 
-          {/* Nome e Categorias */}
+          {/*Nome e Categorias*/}
           <div className="flex flex-col gap-[10px] shrink-0">
-            <h2 className="font-extrabold text-[#0f172a] text-[26px] leading-tight">
+            <h2 className="font-extrabold text-letra text-[26px] leading-tight">
               {animal.nome}
             </h2>
             <div className="flex gap-[8px] items-center">
-              <span className="bg-[#ecfdf5] border border-[#059669] text-[#059669] px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] capitalize shadow-sm shadow-[#0e3d10]/40 ml-2">
+              <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] capitalize shadow-sm shadow-[#0e3d10]/40 ml-2">
                 {animal.categoria}
               </span>
-              <span className="bg-[#fee2e2] border border-[#dc2626] text-[#dc2626] px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] shadow-sm shadow-[#780F0F]/40">
-                {animal.periculosidade || "Alta Periculosidade"}
-              </span>
+              {corBadge && (
+                <span
+                  className={`px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] shadow-sm ${corBadge}`}
+                >
+                  {animal.periculosidade}
+                </span>
+              )}
             </div>
           </div>
 
-          {/* Sintomas Comuns */}
+          {/*Sintomas Comuns*/}
           {animal.sintomas && (
-            <div className="bg-[#fffbeb] border border-[#fde68a] p-[12px] rounded-[12px] flex gap-[12px] items-center shrink-0 ml-1">
+            <div className="bg-destaque-fundo border border-destaque-borda p-[12px] rounded-[12px] flex gap-[12px] items-center shrink-0 ml-1">
               <div className="bg-[#fef3c7] size-[32px] rounded-[16px] flex items-center justify-center shrink-0">
                 <svg className="size-[18px]" fill="none" viewBox="0 0 18 18">
+                  {/*Icone de alerta*/}
                   <path
                     d="M9 3L16 15H2L9 3Z"
                     stroke="#ce7209"
@@ -112,25 +117,25 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
                 </svg>
               </div>
               <div className="flex flex-col gap-[2px] ">
-                <h4 className="font-bold text-[#d97706] text-[15px] leading-[18px]">
+                <h4 className="font-bold text-destaque-texto text-[15px] leading-[18px]">
                   Sintomas Comuns
                 </h4>
-                <p className="font-medium text-[#475569] text-[13px] leading-[18px]">
+                <p className="font-medium text-letra text-[13px] leading-[18px]">
                   {animal.sintomas}
                 </p>
               </div>
             </div>
           )}
 
-          {/* Abas: Primeiros Socorros / O que NÃO fazer */}
+          {/*Abas: Primeiros Socorros / O que NÃO fazer*/}
           <div className="flex flex-col gap-[12px] shrink-0 ml-2">
             <div className="flex gap-[8px]">
               <button
                 onClick={() => setAbaAtiva("socorros")}
                 className={`flex-1 py-[8px] px-[12px] rounded-[10px] flex items-center justify-center gap-[6px] font-bold text-[13px] transition-colors ${
                   abaAtiva === "socorros"
-                    ? "bg-[#059669] text-white shadow-sm shadow-[#0e3d10]"
-                    : "bg-[#f1f5f9] text-[#475569] shadow-sm shadow-[#780F0F]/45 "
+                    ? "bg-[#059669] text-white shadow-md shadow-verde-principal/35"
+                    : "bg-[#f1f5f9] text-letra shadow-md shadow-vermelho-principal/20 "
                 }`}
               >
                 <span>Primeiros Socorros</span>
@@ -139,14 +144,14 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
                 onClick={() => setAbaAtiva("donts")}
                 className={`flex-1 py-[8px] px-[12px] rounded-[10px] flex items-center justify-center gap-[6px] font-bold text-[13px] transition-colors  ${
                   abaAtiva === "donts"
-                    ? "bg-[#dc2626] text-white  shadow-sm shadow-[#780F0F]"
-                    : "bg-[#f1f5f9] text-[#475569] shadow-sm shadow-[#0e3d10]/45"
+                    ? "bg-[#dc2626] text-white  shadow-md shadow-vermelho-principal/45"
+                    : "bg-[#f1f5f9] text-letra shadow-md shadow-verde-principal/25"
                 }`}
               >
                 <span>O que NÃO Fazer</span>
               </button>
             </div>
-
+            {/*Icones das Abas*/}
             <div className="flex flex-col gap-[8px]">
               {abaAtiva === "socorros"
                 ? animal.primeirosSocorros?.map((item, index) => (
@@ -205,11 +210,13 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           </div>
         </div>
 
-        {/*BOTÃO DE EMERGÊNCIA (Fixo na parte inferior do modal)*/}
+        {/*BOTÃO DE EMERGÊNCIA (Fixo na parte inferior do modal)
+          Duvida, vai levar ao telefone?*/}
         <a
           href="tel:192"
-          className="bg-[#780F0F] drop-shadow-[0px_4px_6px_rgba(220,38,38,0.25)] h-[56px] rounded-[16px] flex items-center justify-center gap-[12px] text-white font-bold text-[16px] shrink-0 mt-auto hover:bg-[#b91c1c] transition-colors"
+          className="bg-vermelho-principal drop-shadow-[0px_4px_6px_rgba(220,38,38,0.25)] h-[56px] rounded-[16px] flex items-center justify-center gap-[12px] text-white font-bold text-[16px] shrink-0 mt-auto hover:bg-[#b91c1c] transition-colors"
         >
+          {/*Icone de telefone*/}
           <svg className="size-[20px]" fill="none" viewBox="0 0 20 20">
             <path
               d="M3.5 3.5C3.5 3.5 5 2 7 4C9 6 7.5 7.5 7.5 7.5L10 10L12.5 12.5C12.5 12.5 14 11 16 13C18 15 16.5 16.5 16.5 16.5C14.5 18.5 7.5 16 3.5 12C-0.5 8 -3 1.5 3.5 3.5Z"

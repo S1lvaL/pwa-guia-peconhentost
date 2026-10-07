@@ -7,19 +7,19 @@ import BottomNav from "./components/BottomNav";
 type Tab = "animais" | "emergencia" | "prevencao";
 
 export default function App() {
-  const [abaAtiva, setAbaAtiva] = useState<Tab>("prevencao");
+  const [abaAtiva, setAbaAtiva] = useState<Tab>("emergencia");
 
   return (
     <div className="flex justify-center items-start min-h-screen bg-gray-300">
-      <div className="relative flex flex-col w-full lg:max-w-[1024px] min-h-screen bg-verde-fundo shadow-xl overflow-hidden pb-16">
-        {/* Navegação de Telas */}
+      <div className="relative flex flex-col w-full lg:max-w-[1024px] min-h-screen bg-verde-fundo shadow-xl overflow-x-clip pb-16">
+        {/* Navegação de Telas*/}
         {abaAtiva === "prevencao" && <Prevencao />}
 
         {abaAtiva === "emergencia" && <Emergencia />}
 
         {abaAtiva === "animais" && <Animais />}
 
-        {/* Barra de Navegação Inferior */}
+        {/*Barra de Navegação Inferior*/}
         <BottomNav abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
       </div>
     </div>

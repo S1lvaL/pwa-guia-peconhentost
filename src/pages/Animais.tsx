@@ -6,6 +6,7 @@ import dadosAnimais from "../data/animais.json";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import type { Animal } from "../types/animal";
+
 //Tipos de categorias para filtro
 type CategoriaFiltro =
   | "todos"
@@ -16,6 +17,15 @@ type CategoriaFiltro =
   | "besouros"
   | "anfibios"
   | "aquaticos";
+
+//Remove acentos e deixa minúsculo
+const normalizar = (texto: string) =>
+  texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
 //Array  para exibir os filtros na tela
 const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "todos", label: "Todos" },
@@ -27,10 +37,12 @@ const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "anfibios", label: "Anfíbios" },
   { id: "aquaticos", label: "Aquáticos" },
 ];
+
 //Usa a interface para definir uma props opcional e identificar qual animal foi selecionado
 interface AnimaisProps {
   onSelectAnimal?: (animal: Animal) => void;
 }
+
 //Componente principal da página de listagem de animais
 export default function Animais({ onSelectAnimal }: AnimaisProps) {
   const [busca, setBusca] = useState("");
@@ -39,22 +51,27 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
   const [animalSelecionado, setAnimalSelecionado] = useState<Animal | null>(
     null,
   );
-  //Busca 
-  // Converte os dados do JSON para o tipo Animal
+
+  //Busca
+  //Converte os dados do JSON para o tipo Animal
   const animais: Animal[] = dadosAnimais as Animal[];
   //Filtra os animais usando duas regras: a categoria selecionada e o termo de busca
+  const termo = normalizar(busca);
   const animaisFiltrados = animais.filter((animal) => {
     const atendeCategoria =
       categoriaAtiva === "todos" ||
-      animal.categoria.toLowerCase() === categoriaAtiva.toLowerCase();
+      normalizar(animal.categoria) === categoriaAtiva;
+
     const atendeBusca =
-      animal.nome.toLowerCase().includes(busca.toLowerCase()) ||
+      termo === "" ||
+      normalizar(animal.nome).includes(termo) ||
       animal.nomesPopulares?.some((apelido) =>
-      apelido.toLowerCase().includes(busca.toLowerCase())
-    );
+        normalizar(apelido).includes(termo),
+      );
 
     return atendeCategoria && atendeBusca;
   });
+
   //Função para lidar com o clique em um animal e dispara o prop onSelectAnimal
   const handleAnimalClick = (animal: Animal) => {
     setAnimalSelecionado(animal);
@@ -62,6 +79,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
       onSelectAnimal(animal);
     }
   };
+
   //Renderiza a página com o cabeçalho, campo de busca, filtros de categoria, lista de cards e modal de detalhes
   return (
     <div className="bg-verde-fundo min-h-screen flex flex-col justify-between w-full max-w-full mx-auto pt-8 pb-6 px-4">
@@ -117,8 +135,9 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
 
         {/*Filtros de Categoria
           Transforma cada item num botão*/}
-        <div className="relative overflow-x-auto no-scrollbar py-1">
-          <div className="flex gap-[8px] whitespace-nowrap pb-3">
+        {/*Filtros de Categoria (fixos no topo ao rolar)*/}
+        <div className="sticky top-0 z-30 bg-verde-fundo -mx-[16px] px-[16px] py-2 overflow-x-auto no-scrollbar">
+          <div className="flex gap-[8px] whitespace-nowrap">
             {listaCategorias.map((cat) => {
               const isActive = categoriaAtiva === cat.id;
               return (
@@ -139,7 +158,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
         </div>
 
         {/*Lista de Cards*/}
-        <div className="flex flex-col gap-[12px]">
+        <div className="grid grid-cols-2 max-[630px]:grid-cols-1 gap-[12px]">
           {animaisFiltrados.length > 0 ? (
             animaisFiltrados.map((animal) => (
               <CardAnimal
@@ -149,7 +168,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
               />
             ))
           ) : (
-            <div className="text-center py-10 text-vermelho-principal">
+            <div className="col-span-full text-center py-10 text-vermelho-principal">
               <p className="font-bold text-[20px] text-vermelho-principal/75">
                 Nenhum animal encontrado
               </p>
