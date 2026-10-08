@@ -367,3 +367,1141 @@ export default function Prevencao() {
     </div>
   );
 }
+import { useState } from "react";
+
+
+// ============================================================
+// TIPOS
+// ============================================================
+
+type Categoria =
+  | "escorpioes"
+  | "cobras"
+  | "aranhas"
+  | "lacraias";
+
+
+// ============================================================
+// DADOS DOS ANIMAIS
+// ============================================================
+
+const animais = [
+  {
+    id: "surucucu",
+    nome: "Surucucu pico de jaca",
+    categoria: "cobras" as Categoria,
+    descricao: "Ver esta para colocar aqui",
+    foto: "/imagens/surucucu.jpg",
+  },
+
+  {
+    id: "jararaca-seca",
+    nome: "Jararaca da seca",
+    categoria: "cobras" as Categoria,
+    descricao: "Ver esta para colocar aqui",
+    foto: "/imagens/jararaca.jpg",
+  },
+
+  {
+    id: "escorpiao-amarelo",
+    nome: "Escorpião-Amarelo",
+    categoria: "escorpioes" as Categoria,
+    descricao: "Ver informações sobre este animal",
+    foto: "/imagens/escorpiao-amarelo.jpg",
+  },
+
+  {
+    id: "aranha-marrom",
+    nome: "Aranha-marrom",
+    categoria: "aranhas" as Categoria,
+    descricao: "Ver informações sobre este animal",
+    foto: "/imagens/aranha-marrom.jpg",
+  },
+
+  {
+    id: "lacraia",
+    nome: "Lacraia",
+    categoria: "lacraias" as Categoria,
+    descricao: "Ver informações sobre este animal",
+    foto: "/imagens/lacraia.jpg",
+  },
+];
+
+
+// ============================================================
+// CATEGORIAS
+// ============================================================
+
+const categorias = [
+  {
+    id: "escorpioes" as Categoria,
+    nome: "Escorpiões",
+    icone: "🦂",
+  },
+
+  {
+    id: "cobras" as Categoria,
+    nome: "Cobras",
+    icone: "🐍",
+  },
+
+  {
+    id: "aranhas" as Categoria,
+    nome: "Aranhas",
+    icone: "🕷️",
+  },
+
+  {
+    id: "lacraias" as Categoria,
+    nome: "Lacraias",
+    icone: "🪱",
+  },
+];
+
+
+// ============================================================
+// CARACTERÍSTICAS
+// ============================================================
+
+const caracteristicas = [
+  "Presença de ferrão",
+  "Tamanho pequeno",
+  "Muitas pernas",
+  "Ambiente aquático",
+  "Padrão de manchas",
+  "Ambiente terrestre",
+  "Tamanho grande",
+  "Dor na picada ou contato",
+];
+
+
+// ============================================================
+// COMPONENTE CHECKBOX
+// ============================================================
+
+function CaracteristicaCheck({
+  texto,
+  marcado,
+  onToggle,
+}: {
+  texto: string;
+  marcado: boolean;
+  onToggle: () => void;
+}) {
+
+  return (
+
+    <label
+      className="
+        bg-white
+        rounded-[10px]
+        min-h-[30px]
+        px-2
+        py-1
+        flex
+        items-center
+        gap-1.5
+        text-[8px]
+        cursor-pointer
+        select-none
+        transition
+        hover:bg-[#fff7f8]
+      "
+    >
+
+      <input
+        type="checkbox"
+        checked={marcado}
+        onChange={onToggle}
+        className="sr-only"
+      />
+
+
+      <span
+        className={`
+          w-[17px]
+          h-[17px]
+          rounded-[2px]
+          border
+          flex
+          items-center
+          justify-center
+          shrink-0
+          text-[12px]
+          font-bold
+
+          ${
+            marcado
+              ? "bg-[#c9000b] border-[#c9000b] text-white"
+              : "bg-white border-gray-300"
+          }
+        `}
+      >
+
+        {marcado && "✓"}
+
+      </span>
+
+
+      <span>
+        {texto}
+      </span>
+
+    </label>
+  );
+}
+
+
+// ============================================================
+// COMPONENTE PRINCIPAL
+// ============================================================
+
+export default function Emergencia() {
+
+
+  // ==========================================================
+  // ESTADOS
+  // ==========================================================
+
+  const [pesquisa, setPesquisa] =
+    useState("");
+
+
+  const [categoriaAtiva, setCategoriaAtiva] =
+    useState<Categoria | null>(null);
+
+
+  const [caracteristicasMarcadas, setCaracteristicasMarcadas] =
+    useState<Record<string, boolean>>({
+      "Padrão de manchas": true,
+      "Tamanho grande": true,
+    });
+
+
+
+  // ==========================================================
+  // MARCAR / DESMARCAR CARACTERÍSTICAS
+  // ==========================================================
+
+  const alterarCaracteristica = (
+    nome: string,
+  ) => {
+
+    setCaracteristicasMarcadas(
+      (anterior) => ({
+        ...anterior,
+        [nome]: !anterior[nome],
+      }),
+    );
+  };
+
+
+
+  // ==========================================================
+  // PESQUISA DOS ANIMAIS
+  // ==========================================================
+
+  const animaisFiltrados =
+    animais.filter((animal) => {
+
+
+      const textoPesquisa =
+        pesquisa
+          .toLowerCase()
+          .trim();
+
+
+      const correspondePesquisa =
+        textoPesquisa === "" ||
+        animal.nome
+          .toLowerCase()
+          .includes(textoPesquisa) ||
+        animal.categoria
+          .toLowerCase()
+          .includes(textoPesquisa);
+
+
+      const correspondeCategoria =
+        categoriaAtiva === null ||
+        animal.categoria === categoriaAtiva;
+
+
+      return (
+        correspondePesquisa &&
+        correspondeCategoria
+      );
+
+    });
+
+
+
+  // ==========================================================
+  // SELECIONAR CATEGORIA
+  // ==========================================================
+
+  const selecionarCategoria = (
+    categoria: Categoria,
+  ) => {
+
+    if (categoriaAtiva === categoria) {
+
+      setCategoriaAtiva(null);
+
+    } else {
+
+      setCategoriaAtiva(categoria);
+
+    }
+
+  };
+
+
+
+  // ==========================================================
+  // VISUAL DA TELA
+  // ==========================================================
+
+  return (
+
+    <div
+      className="
+        bg-white
+        min-h-screen
+        flex
+        flex-col
+        w-full
+        max-w-full
+        mx-auto
+        overflow-y-auto
+        pb-20
+      "
+    >
+
+
+      {/* =====================================================
+          CABEÇALHO
+      ====================================================== */}
+
+      <header
+        className="
+          bg-[#ca1018]
+          text-white
+          px-5
+          py-3
+          flex
+          items-center
+          gap-3
+          shrink-0
+        "
+      >
+
+
+        {/* ÍCONE DE ALERTA */}
+
+        <div
+          className="
+            w-[44px]
+            h-[44px]
+            border-2
+            border-white
+            flex
+            items-center
+            justify-center
+            text-[28px]
+            font-bold
+            shrink-0
+          "
+        >
+          !
+        </div>
+
+
+
+        {/* TÍTULO */}
+
+        <div
+          className="
+            leading-[1.05]
+          "
+        >
+
+          <span
+            className="
+              block
+              text-[17px]
+              font-semibold
+            "
+          >
+            Atendimento de
+          </span>
+
+          <strong
+            className="
+              block
+              text-[23px]
+              font-extrabold
+            "
+          >
+            Emergência
+          </strong>
+
+        </div>
+
+
+      </header>
+
+
+
+      {/* =====================================================
+          CONTEÚDO
+      ====================================================== */}
+
+      <main
+        className="
+          p-4
+          space-y-4
+          flex-1
+        "
+      >
+
+
+        {/* ===================================================
+            PESQUISA
+        ==================================================== */}
+
+        <section>
+
+          <div
+            className="
+              flex
+              items-start
+              gap-2
+            "
+          >
+
+            {/* LUPA */}
+
+            <div
+              className="
+                text-[#c9000b]
+                text-[38px]
+                leading-[32px]
+                shrink-0
+              "
+            >
+              ⌕
+            </div>
+
+
+            <div>
+
+              <h2
+                className="
+                  text-[13px]
+                  font-bold
+                  text-[#171717]
+                "
+              >
+                Pesquise o animal ou o grupo
+              </h2>
+
+
+              <p
+                className="
+                  text-[8px]
+                  text-gray-600
+                  leading-[1.3]
+                "
+              >
+                Digite o nome do animal ou selecione
+                uma categoria abaixo para encontrar
+                informações e características.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          {/* BARRA DE PESQUISA */}
+
+          <div
+            className="
+              flex
+              h-[29px]
+              mt-2
+              border
+              border-gray-300
+              rounded-[5px]
+              overflow-hidden
+              bg-white
+            "
+          >
+
+            <input
+              type="text"
+              value={pesquisa}
+              onChange={(e) =>
+                setPesquisa(e.target.value)
+              }
+              placeholder="Ex.: aranha marrom, cascavel, escorpião..."
+              className="
+                flex-1
+                min-w-0
+                outline-none
+                px-2
+                text-[8px]
+                text-gray-700
+              "
+            />
+
+
+            <button
+              type="button"
+              onClick={() => {
+                // A pesquisa já acontece automaticamente
+                // enquanto o usuário digita.
+              }}
+              className="
+                bg-[#bd0008]
+                text-white
+                px-3
+                text-[8px]
+                font-bold
+                hover:bg-[#990006]
+                transition
+              "
+            >
+              Pesquisar →
+            </button>
+
+          </div>
+
+        </section>
+
+
+
+        {/* ===================================================
+            CATEGORIAS
+        ==================================================== */}
+
+        <section>
+
+          <h2
+            className="
+              text-[13px]
+              font-bold
+              mb-2
+              flex
+              items-center
+              gap-2
+            "
+          >
+
+            <span
+              className="
+                text-[#c50009]
+                text-[21px]
+                leading-none
+              "
+            >
+              ▦
+            </span>
+
+            Selecione uma categoria
+
+          </h2>
+
+
+
+          <div
+            className="
+              grid
+              grid-cols-4
+              gap-2
+            "
+          >
+
+            {categorias.map(
+              (categoria) => {
+
+                const selecionada =
+                  categoriaAtiva ===
+                  categoria.id;
+
+
+                return (
+
+                  <button
+                    key={categoria.id}
+                    type="button"
+                    onClick={() =>
+                      selecionarCategoria(
+                        categoria.id,
+                      )
+                    }
+                    className={`
+                      h-[62px]
+                      rounded-[8px]
+                      flex
+                      flex-col
+                      items-center
+                      justify-center
+                      gap-0.5
+                      font-bold
+                      text-[9px]
+                      transition-all
+
+                      ${
+                        selecionada
+                          ? "bg-[#c9000b] text-white shadow-md"
+                          : "bg-[#ffd9dc] text-[#4d0b0d]"
+                      }
+                    `}
+                  >
+
+                    <span
+                      className="
+                        text-[25px]
+                        leading-[25px]
+                      "
+                    >
+                      {categoria.icone}
+                    </span>
+
+
+                    <span>
+                      {categoria.nome}
+                    </span>
+
+                  </button>
+
+                );
+
+              },
+            )}
+
+          </div>
+
+
+        </section>
+
+
+
+        {/* ===================================================
+            POSSÍVEIS SINAIS
+        ==================================================== */}
+
+        <section
+          className="
+            bg-[#ffecef]
+            rounded-[10px]
+            p-2.5
+          "
+        >
+
+
+          {/* TÍTULO */}
+
+          <div
+            className="
+              flex
+              items-start
+              gap-1.5
+              mb-2
+            "
+          >
+
+
+            {/* ÍCONE */}
+
+            <div
+              className="
+                w-[22px]
+                h-[22px]
+                rounded-full
+                border-2
+                border-[#c50009]
+                text-[#c50009]
+                flex
+                items-center
+                justify-center
+                text-[14px]
+                font-bold
+                shrink-0
+              "
+            >
+              ✓
+            </div>
+
+
+            <div>
+
+              <h2
+                className="
+                  text-[12px]
+                  font-bold
+                  leading-tight
+                "
+              >
+                Possíveis sinais e características
+              </h2>
+
+
+              <p
+                className="
+                  text-[8px]
+                  text-gray-600
+                  mt-0.5
+                "
+              >
+                Marque as opções que podem ajudar
+                a identificar o animal:
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          {/* CHECKBOXES */}
+
+          <div
+            className="
+              grid
+              grid-cols-2
+              gap-2
+            "
+          >
+
+            {caracteristicas.map(
+              (caracteristica) => (
+
+                <CaracteristicaCheck
+                  key={caracteristica}
+                  texto={caracteristica}
+                  marcado={
+                    !!caracteristicasMarcadas[
+                      caracteristica
+                    ]
+                  }
+                  onToggle={() =>
+                    alterarCaracteristica(
+                      caracteristica,
+                    )
+                  }
+                />
+
+              ),
+            )}
+
+          </div>
+
+
+        </section>
+
+
+
+        {/* ===================================================
+            POSSÍVEIS ANIMAIS ENCONTRADOS
+        ==================================================== */}
+
+        <section>
+
+
+          {/* TÍTULO */}
+
+          <div
+            className="
+              flex
+              items-center
+              gap-1
+              mb-2
+            "
+          >
+
+            <h2
+              className="
+                text-[12px]
+                font-bold
+                flex-1
+              "
+            >
+              🐾 Possíveis animais encontrados
+            </h2>
+
+
+            <span
+              className="
+                bg-[#ffd3d6]
+                text-[#a60008]
+                rounded-[8px]
+                px-1.5
+                py-1
+                text-[5px]
+                font-bold
+              "
+            >
+              Resultados da busca
+            </span>
+
+
+            <span
+              className="
+                w-[15px]
+                h-[15px]
+                rounded-full
+                bg-[#c80009]
+                text-white
+                flex
+                items-center
+                justify-center
+                text-[7px]
+                font-bold
+              "
+            >
+              {animaisFiltrados.length}
+            </span>
+
+          </div>
+
+
+
+          {/* =================================================
+              LISTA DE ANIMAIS
+          ================================================== */}
+
+          <div className="space-y-1">
+
+
+            {animaisFiltrados.length === 0 ? (
+
+              <div
+                className="
+                  py-5
+                  text-center
+                  text-[11px]
+                  text-gray-500
+                "
+              >
+                Nenhum animal encontrado.
+              </div>
+
+            ) : (
+
+              animaisFiltrados.map(
+                (animal) => (
+
+                  <button
+                    key={animal.id}
+                    type="button"
+                    onClick={() => {
+
+                      alert(
+                        `Você selecionou ${animal.nome}.`
+                      );
+
+                    }}
+                    className="
+                      w-full
+                      h-[44px]
+                      flex
+                      items-center
+                      text-left
+                      border-b
+                      border-gray-200
+                      hover:bg-[#fff5f5]
+                      transition
+                    "
+                  >
+
+
+                    {/* FOTO */}
+
+                    <div
+                      className="
+                        w-[65px]
+                        h-[37px]
+                        rounded-[6px]
+                        overflow-hidden
+                        bg-[#c5a274]
+                        mr-2
+                        shrink-0
+                      "
+                    >
+
+                      <img
+                        src={animal.foto}
+                        alt={animal.nome}
+                        className="
+                          w-full
+                          h-full
+                          object-cover
+                        "
+                      />
+
+                    </div>
+
+
+
+                    {/* INFORMAÇÕES */}
+
+                    <div
+                      className="
+                        min-w-0
+                        flex-1
+                      "
+                    >
+
+                      <h3
+                        className="
+                          text-[10px]
+                          font-bold
+                          truncate
+                        "
+                      >
+                        {animal.nome}
+                      </h3>
+
+
+                      <p
+                        className="
+                          text-[7px]
+                          text-gray-500
+                          truncate
+                        "
+                      >
+                        {animal.descricao}
+                      </p>
+
+                    </div>
+
+
+                  </button>
+
+                ),
+              )
+
+            )}
+
+          </div>
+
+
+
+          {/* =================================================
+              BOTÃO SAMU
+          ================================================== */}
+
+          <a
+            href="tel:192"
+            className="
+              w-[145px]
+              h-[39px]
+              bg-[#d0000b]
+              text-white
+              rounded-[9px]
+              flex
+              items-center
+              gap-1.5
+              px-2
+              ml-auto
+              mt-1
+              shadow-md
+              hover:bg-[#a90008]
+              transition
+            "
+          >
+
+
+            {/* TELEFONE */}
+
+            <div
+              className="
+                w-[25px]
+                h-[25px]
+                bg-white
+                text-[#d0000b]
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-[13px]
+                shrink-0
+              "
+            >
+              ☎
+            </div>
+
+
+            {/* TEXTO */}
+
+            <div>
+
+              <strong
+                className="
+                  block
+                  text-[6px]
+                  leading-tight
+                "
+              >
+                LIGUE PARA O
+              </strong>
+
+
+              <strong
+                className="
+                  block
+                  text-[11px]
+                  leading-tight
+                "
+              >
+                SAMU 192
+              </strong>
+
+            </div>
+
+
+          </a>
+
+
+        </section>
+
+
+      </main>
+
+
+
+      {/* =====================================================
+          MENU INFERIOR
+      ====================================================== */}
+
+      <nav
+        className="
+          fixed
+          bottom-0
+          left-0
+          right-0
+          mx-auto
+          w-full
+          max-w-[390px]
+          h-[58px]
+          bg-white
+          border-t
+          border-gray-200
+          grid
+          grid-cols-3
+          z-50
+        "
+      >
+
+
+        {/* PREVENÇÃO */}
+
+        <button
+          type="button"
+          onClick={() => {
+            console.log(
+              "Abrir tela de Prevenção",
+            );
+          }}
+          className="
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-0.5
+            text-[#626a72]
+            text-[8px]
+            font-bold
+          "
+        >
+
+          <span
+            className="
+              text-[21px]
+              leading-[21px]
+            "
+          >
+            🛡️
+          </span>
+
+          Prevenção
+
+        </button>
+
+
+
+        {/* EMERGÊNCIA */}
+
+        <button
+          type="button"
+          className="
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-0.5
+            text-[#c9000b]
+            text-[8px]
+            font-bold
+          "
+        >
+
+          <span
+            className="
+              text-[26px]
+              leading-[21px]
+            "
+          >
+            ✚
+          </span>
+
+          Emergência
+
+        </button>
+
+
+
+        {/* ANIMAIS */}
+
+        <button
+          type="button"
+          onClick={() => {
+            console.log(
+              "Abrir tela de Animais",
+            );
+          }}
+          className="
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-0.5
+            text-[#626a72]
+            text-[8px]
+            font-bold
+          "
+        >
+
+          <span
+            className="
+              text-[21px]
+              leading-[21px]
+            "
+          >
+            🐾
+          </span>
+
+          Animais
+
+        </button>
+
+
+      </nav>
+
+
+    </div>
+  );
+}
