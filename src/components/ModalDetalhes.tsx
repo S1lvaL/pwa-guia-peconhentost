@@ -22,7 +22,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
       <div className="absolute inset-0" onClick={onClose} />
 
       {/*O Modal é posicionado acima do BottomNav*/}
-      <div className="relative bg-white mx-2  lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(75vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
+      <div className="relative bg-white mx-2 sm:mx-6 lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(75vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
         {/* Barra superior / Fechar (Fixo no topo)*/}
         <div className="flex items-center justify-between h-[32px] shrink-0">
           <div className="size-[32px]" />

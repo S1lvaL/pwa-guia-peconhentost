@@ -1,4 +1,4 @@
-import { CircleChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import type { Animal } from "../types/animal";
 import { corPericulosidade } from "../utils/periculosidade";
 
@@ -51,7 +51,7 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
       </div>
 
       {/*Ícone Seta*/}
-      <CircleChevronRight
+      <ChevronRight
         className="size-[20px] text-letra/70 shrink-0"
         strokeWidth={2}
         aria-hidden="true"

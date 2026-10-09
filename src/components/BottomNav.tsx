@@ -1,5 +1,5 @@
 //Importa os ícones visuais da biblioteca lucide-react
-import { Siren, PawPrint, ShieldCheck } from "lucide-react";
+import { BriefcaseMedical, PawPrint, ShieldCheck } from "lucide-react";
 
 interface BottomNavProps {
   //guarda qual das três abas está ativa
@@ -34,7 +34,7 @@ export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
             : "text-verde-principal"
         }`}
       >
-        <Siren className="w-6 h-6 mb-1" />
+        <BriefcaseMedical className="w-6 h-6 mb-1" />
         Emergência
       </button>
 

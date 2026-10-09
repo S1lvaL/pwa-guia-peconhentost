@@ -6,6 +6,7 @@
   --color-verde-fundo: #fafefced;
   --color-verdeclaro-fundo: #e6fdf5;
   --color-verde-letra: #064e3b;
+  --color-verde-prenvencao: #a9f69a;
   --color-cinza-borda: #b6c2d2;
   --color-pesquisa-fundo: #dbdfe2ad;
   --color-letra: #364a37;
@@ -13,6 +14,5 @@
   --color-destaque-borda: #fde68a;
   --color-destaque-texto: #d97706;
   --color-vermelho-borda: #462a2a;
-  --color-vermelho-emergencia: #dc2626;
   --color-vermelho-principal: #780f0f;
 }
