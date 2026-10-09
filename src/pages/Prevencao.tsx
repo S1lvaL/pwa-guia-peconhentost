@@ -71,7 +71,6 @@ function IconeArea({ area }: { area: Area }) {
 }
 
 /*ver se foi clicado e decide o que fazer*/
-//tipo: "fazer" (verde, padrão) ou "evite" (vinho) - muda só as cores do card
 function ItemCheck({
   texto,
   marcado,
@@ -127,8 +126,6 @@ function ItemCheck({
   );
 }
 
-//Título de seção com a barrinha verde ao lado
-//(a barrinha agora é vinho; no "Evite" o título também fica vinho)
 function TituloSecao({
   children,
   tipo = "fazer",
@@ -227,6 +224,7 @@ export default function Prevencao() {
           <h2 className="text-[18px] font-bold leading-tight">
             Animais Peçonhentos Frequentes nesta Região
           </h2>
+          {/*Lista que rola para o lado (overflow-x-auto) e "encaixa" cada card*/}
           <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
             {animaisExemplo.map((animal) => (
               <article
@@ -239,6 +237,7 @@ export default function Prevencao() {
                   loading="lazy"
                   className="w-[52px] h-[52px] rounded-[12px] object-cover bg-verde-principal/10"
                 />
+                {/*Depois: ligar este botão à tela animais*/}
                 <div className="min-w-0">
                   <strong className="block text-[13px] text-verde-principal truncate">
                     {animal.nome}
