@@ -1,3 +1,4 @@
+import { CircleChevronRight } from "lucide-react";
 import type { Animal } from "../types/animal";
 import { corPericulosidade } from "../utils/periculosidade";
 
@@ -50,19 +51,11 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
       </div>
 
       {/*Ícone Seta*/}
-      <svg
+      <CircleChevronRight
         className="size-[20px] text-letra/70 shrink-0"
-        fill="none"
-        viewBox="0 0 20 20"
-      >
-        {/*Caminho da seta*/}
-        <path
-          d="M7.5 15L12.5 10L7.5 5"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
+        strokeWidth={2}
+        aria-hidden="true"
+      />
     </div>
   );
 }

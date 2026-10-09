@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Phone, X, TriangleAlert, CircleCheck, CircleX } from "lucide-react";
 import type { Animal } from "../types/animal";
 import { corPericulosidade } from "../utils/periculosidade";
 
@@ -21,23 +22,21 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
       <div className="absolute inset-0" onClick={onClose} />
 
       {/*O Modal é posicionado acima do BottomNav*/}
-      <div className="relative bg-white mx-4 lg:max-w-[800px] mx-auto h-[calc(85vh-64px)] mb-[64px] rounded-[32px] p-[20px] pb-[20px] flex flex-col gap-[16px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
+      <div className="relative bg-white mx-2  lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(75vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
         {/* Barra superior / Fechar (Fixo no topo)*/}
         <div className="flex items-center justify-between h-[32px] shrink-0">
           <div className="size-[32px]" />
           <div className="w-[48px] h-[5px] bg-[#d1d5db] rounded-[10px]" />
           <button
             onClick={onClose}
+            aria-label="Fechar"
             className="bg-[#f1f5f9] size-[32px] rounded-[16px] flex items-center justify-center hover:bg-slate-200 transition-colors"
           >
-            <svg className="size-[16px]" fill="none" viewBox="0 0 16 16">
-              <path
-                d="M12 4L4 12M4 4L12 12"
-                stroke="#475569"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            <X
+              className="size-[16px] text-[#475569]"
+              strokeWidth={2.5}
+              aria-hidden="true"
+            />
           </button>
         </div>
 
@@ -93,28 +92,12 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           {animal.sintomas && (
             <div className="bg-destaque-fundo border border-destaque-borda p-[12px] rounded-[12px] flex gap-[12px] items-center shrink-0 ml-1">
               <div className="bg-[#fef3c7] size-[32px] rounded-[16px] flex items-center justify-center shrink-0">
-                <svg className="size-[18px]" fill="none" viewBox="0 0 18 18">
-                  {/*Icone de alerta*/}
-                  <path
-                    d="M9 3L16 15H2L9 3Z"
-                    stroke="#ce7209"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 8V10"
-                    stroke="#D97706"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M9 12.5H9.01"
-                    stroke="#D97706"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                </svg>
+                {/*Icone de alerta*/}
+                <TriangleAlert
+                  className="size-[18px] text-destaque-texto"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
               </div>
               <div className="flex flex-col gap-[2px] ">
                 <h4 className="font-bold text-destaque-texto text-[15px] leading-[18px]">
@@ -156,25 +139,11 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
               {abaAtiva === "socorros"
                 ? animal.primeirosSocorros?.map((item, index) => (
                     <div key={index} className="flex gap-[10px] items-center">
-                      <svg
+                      <CircleCheck
                         className="size-[16px] text-[#059669] shrink-0"
-                        fill="none"
-                        viewBox="0 0 16 16"
-                      >
-                        <circle
-                          cx="8"
-                          cy="8"
-                          r="7"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M5 8L7 10L11 6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                      </svg>
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
                       <p className="font-medium text-[#475569] text-[13px]">
                         {item}
                       </p>
@@ -182,25 +151,11 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
                   ))
                 : animal.oQueNaoFazer?.map((item, index) => (
                     <div key={index} className="flex gap-[10px] items-center">
-                      <svg
+                      <CircleX
                         className="size-[16px] text-[#dc2626] shrink-0"
-                        fill="none"
-                        viewBox="0 0 16 16"
-                      >
-                        <circle
-                          cx="8"
-                          cy="8"
-                          r="7"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M5 5L11 11M11 5L5 11"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                      </svg>
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
                       <p className="font-medium text-[#475569] text-[13px]">
                         {item}
                       </p>
@@ -217,14 +172,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           className="bg-vermelho-principal drop-shadow-[0px_4px_6px_rgba(220,38,38,0.25)] h-[56px] rounded-[16px] flex items-center justify-center gap-[12px] text-white font-bold text-[16px] shrink-0 mt-auto hover:bg-[#b91c1c] transition-colors"
         >
           {/*Icone de telefone*/}
-          <svg className="size-[20px]" fill="none" viewBox="0 0 20 20">
-            <path
-              d="M3.5 3.5C3.5 3.5 5 2 7 4C9 6 7.5 7.5 7.5 7.5L10 10L12.5 12.5C12.5 12.5 14 11 16 13C18 15 16.5 16.5 16.5 16.5C14.5 18.5 7.5 16 3.5 12C-0.5 8 -3 1.5 3.5 3.5Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
+          <Phone className="size-[20px]" strokeWidth={2} aria-hidden="true" />
           Emergência · Chamar SAMU (192)
         </a>
       </div>

@@ -11,7 +11,7 @@ import type { Animal } from "../types/animal";
 type CategoriaFiltro =
   | "todos"
   | "serpentes"
-  | "escorpiões"
+  | "escorpioes"
   | "aranhas"
   | "lacraias"
   | "besouros"
@@ -30,7 +30,7 @@ const normalizar = (texto: string) =>
 const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "todos", label: "Todos" },
   { id: "serpentes", label: "Serpentes" },
-  { id: "escorpiões", label: "Escorpiões" },
+  { id: "escorpioes", label: "Escorpiões" },
   { id: "aranhas", label: "Aranhas" },
   { id: "lacraias", label: "Lacraias" },
   { id: "besouros", label: "Besouros" },

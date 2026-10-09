@@ -1,5 +1,5 @@
 //Importa os ícones visuais da biblioteca lucide-react
-import { ShieldAlert, Bug, ShieldCheck } from "lucide-react";
+import { Siren, PawPrint, ShieldCheck } from "lucide-react";
 
 interface BottomNavProps {
   //guarda qual das três abas está ativa
@@ -21,7 +21,7 @@ export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
             : "text-verde-principal" //Se a aba for ativa adiciona a cor de destaque
         }`}
       >
-        <Bug className="w-6 h-6 mb-1" /> {/*Estilizando o botão*/}
+        <PawPrint className="w-6 h-6 mb-1" /> {/*Estilizando o botão*/}
         Animais
       </button>
 
@@ -34,7 +34,7 @@ export default function BottomNav({ abaAtiva, setAbaAtiva }: BottomNavProps) {
             : "text-verde-principal"
         }`}
       >
-        <ShieldAlert className="w-6 h-6 mb-1" />
+        <Siren className="w-6 h-6 mb-1" />
         Emergência
       </button>
 
