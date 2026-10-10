@@ -220,7 +220,7 @@ export default function Prevencao() {
         </div>
 
         {/*Card principal: animais da região (por enquanto dados de exemplo)*/}
-        <section className="bg-verde-principal text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
+        <section className="bg-verde-principal/87 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
           <h2 className="text-[18px] font-bold leading-tight">
             Animais Peçonhentos Frequentes nesta Região
           </h2>

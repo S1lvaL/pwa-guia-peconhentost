@@ -12,4 +12,5 @@ export interface Animal {
   primeirosSocorros?: string[];
   oQueNaoFazer?: string[];
   periculosidade?: "Risco moderado" | "Perigo!";
+  Caracteristicas?: string[];
 }
