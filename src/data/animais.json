@@ -21,7 +21,9 @@
       "Não leve as mãos aos olhos, boca ou nariz após o contato.",
       "Não use medicamentos ou substâncias caseiras na ferida.",
       "Não tente sugar o local da lesão."
-    ]
+    ],
+    "descricao": "Anfíbios podem liberar toxinas através da pele; evite contato direto",
+    "caracteristicas": ["pequeno", "terrestre", "venenoso"]
   },
   {
     "id": "perereca-capacete",
@@ -43,6 +45,14 @@
       "Não tentar sugar o veneno.",
       "Não cortar, furar ou espremer o local.",
       "Evitar aplicar substâncias caseiras sem auxílio médico."
+    ],
+    "descricao": "Perereca da Caatinga com espinhos na cabeça que inoculam veneno.",
+    "caracteristicas": [
+      "cabeça com formato de capacete",
+      "espinhos na cabeça",
+      "Caatinga",
+      "peçonhento",
+      "terrestre"
     ]
   },
   {
@@ -62,6 +72,15 @@
       "Não tentar sugar o veneno.",
       "Não cortar, furar ou espremer o local.",
       "Evitar aplicar substâncias caseiras."
+    ],
+    "descricao": "Sapo grande que libera veneno pela pele e pelas glândulas atrás dos olhos.",
+    "caracteristicas": [
+      "grande",
+      "pele rugosa",
+      "glândulas atrás dos olhos",
+      "terrestre",
+      "venenoso",
+      "ativo à noite"
     ]
   },
   {
@@ -82,6 +101,14 @@
       "Não lavar com água doce nem urinar no local (libera mais toxinas).",
       "Não esfregar o local.",
       "Não usar substâncias caseiras."
+    ],
+    "descricao": "Organismo marinho flutuante, de tentáculos longos e muito urticantes.",
+    "caracteristicas": [
+      "flutuador azulado ou arroxeado",
+      "tentáculos longos",
+      "marinho",
+      "flutua na superfície",
+      "encalha em praias"
     ]
   },
   {
@@ -103,6 +130,14 @@
       "Não usar sabonete.",
       "Não esfregar o local.",
       "Não usar substâncias caseiras."
+    ],
+    "descricao": "Animal marinho gelatinoso com tentáculos urticantes.",
+    "caracteristicas": [
+      "corpo gelatinoso em forma de sino",
+      "tentáculos",
+      "transparente",
+      "marinho",
+      "urticante"
     ]
   },
   {
@@ -115,7 +150,7 @@
     "sintomas": "Dor imediata e excruciante, queimaduras na pele, paralisia, insuficiência circulatória e dificuldade respiratória.",
     "primeirosSocorros": [
       "Pedir ajuda médica imediatamente.",
-      "Banhado local com vinagre para neutralizar o veneno (ou água do mar).",
+      "Banhar o local com vinagre para neutralizar o veneno (ou água do mar).",
       "Remover tentáculos com proteção (cartão, luvas ou pinça).",
       "Monitorar os sinais vitais da vítima."
     ],
@@ -124,6 +159,14 @@
       "Não usar sabonete.",
       "Não esfregar o local.",
       "Não remover tentáculos sem aplicar vinagre antes."
+    ],
+    "descricao": "Medusa transparente em forma de caixa, de veneno muito potente.",
+    "caracteristicas": [
+      "corpo em forma de caixa",
+      "quase transparente",
+      "tentáculos longos",
+      "marinho",
+      "veneno potente"
     ]
   },
   {
@@ -151,6 +194,15 @@
       "Não usar sabonete.",
       "Não esfregar o local.",
       "Não usar substâncias caseiras."
+    ],
+    "descricao": "Animal marinho fixo em rochas, com tentáculos urticantes.",
+    "caracteristicas": [
+      "corpo cilíndrico",
+      "tentáculos ao redor da boca",
+      "colorida",
+      "fixa em rochas",
+      "poças de maré",
+      "urticante"
     ]
   },
   {
@@ -172,6 +224,15 @@
       "Não usar sabonete.",
       "Não esfregar o local.",
       "Não usar substâncias caseiras."
+    ],
+    "descricao": "Colônias marinhas de esqueleto cortante; algumas causam queimadura.",
+    "caracteristicas": [
+      "esqueleto calcário",
+      "superfície cortante",
+      "forma ramificada ou arredondada",
+      "fixo em recifes",
+      "marinho",
+      "urticante"
     ]
   },
   {
@@ -197,6 +258,14 @@
       "Não fazer cortes na pele.",
       "Não esfregar o local.",
       "Não usar água fria ou gelada."
+    ],
+    "descricao": "Peixe achatado que se camufla no fundo e fere com o ferrão da cauda.",
+    "caracteristicas": [
+      "corpo achatado em disco",
+      "cauda com ferrão serrilhado",
+      "camuflada no fundo",
+      "água doce e salgada",
+      "acidente ao pisar"
     ]
   },
   {
@@ -223,6 +292,14 @@
       "Não fazer cortes na pele.",
       "Não esfregar o local.",
       "Não usar água fria ou gelada."
+    ],
+    "descricao": "Peixe sem escamas, com ferrões nas nadadeiras que causam feridas dolorosas.",
+    "caracteristicas": [
+      "sem escamas",
+      "barbilhões ao redor da boca",
+      "ferrões nas nadadeiras",
+      "água doce e salgada",
+      "acidente ao pescar"
     ]
   },
   {
@@ -241,6 +318,15 @@
       "Não cavar a pele com agulhas ou objetos não esterilizados.",
       "Não urinar em cima.",
       "Não bater no local com objetos duros."
+    ],
+    "descricao": "Animal marinho esférico coberto de espinhos que ficam presos na pele.",
+    "caracteristicas": [
+      "corpo esférico",
+      "espinhos longos e finos",
+      "escuro",
+      "fixo em rochas e recifes",
+      "marinho",
+      "acidente ao pisar"
     ]
   },
   {
@@ -261,6 +347,15 @@
       "Não cavar a pele atrás de espinhos.",
       "Não usar gelo ou água fria.",
       "Não ignorar o ferimento."
+    ],
+    "descricao": "Peixe pequeno enterrado na areia, com espinhos venenosos nas nadadeiras.",
+    "caracteristicas": [
+      "pequeno",
+      "cabeça grande e achatada",
+      "camuflado no fundo",
+      "espinhos venenosos",
+      "águas rasas e estuários",
+      "acidente ao pisar"
     ]
   },
   {
@@ -281,6 +376,14 @@
       "Não cavar a pele.",
       "Não usar água fria ou gelada.",
       "Não aplicar substâncias caseiras."
+    ],
+    "descricao": "Peixe marinho camuflado como pedra, com espinhos venenosos.",
+    "caracteristicas": [
+      "camuflagem perfeita",
+      "corpo irregular com aparência de pedra",
+      "espinhos nas nadadeiras",
+      "fundo rochoso e recifes",
+      "marinho"
     ]
   },
   {
@@ -301,6 +404,15 @@
       "Não cavar a pele.",
       "Não usar gelo ou água fria.",
       "Não aplicar substâncias caseiras."
+    ],
+    "descricao": "Peixe listrado de espinhos longos, espécie invasora no Atlântico.",
+    "caracteristicas": [
+      "listras vermelhas e brancas",
+      "nadadeiras em forma de leque",
+      "espinhos longos",
+      "espécie invasora",
+      "recifes",
+      "marinho"
     ]
   },
   {
@@ -322,15 +434,21 @@
       "Não dar remédios ou substâncias caseiras.",
       "Não deixar a vítima sozinha.",
       "Não achar que 'cozinhar bem' elimina a toxina do baiacu."
+    ],
+    "descricao": "Peixe com toxina potente que o cozimento não elimina.",
+    "caracteristicas": [
+      "corpo arredondado",
+      "infla ao ser ameaçado",
+      "dentes em forma de bico",
+      "marinho e estuários",
+      "tóxico por ingestão"
     ]
   },
   {
     "id": "jararaca-malha-de-sapo",
     "nome": "Jararaca Malha de Sapo",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/jararaca-malha-de-sapo.jpg"
-    ],
+    "imagem": ["/imagens/jararaca-malha-de-sapo.jpg"],
     "sintomas": "Dor intensa local, inchaço (edema), manchas arroxeadas (equimose), sangramento no local ou nas gengivas e risco de necrose",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -343,15 +461,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas).",
       "Não ingerir álcool."
+    ],
+    "descricao": "Serpente peçonhenta de manchas irregulares e hábitos noturnos.",
+    "caracteristicas": [
+      "manchas irregulares",
+      "cabeça triangular",
+      "fosseta loreal",
+      "terrestre",
+      "peçonhenta",
+      "hábitos noturnos"
     ]
   },
   {
     "id": "jararaca-da-seca",
     "nome": "Jararaca da Seca",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/jararaca-da-seca.jpg"
-    ],
+    "imagem": ["/imagens/jararaca-da-seca.jpg"],
     "sintomas": "Dor e inchaço progressivo no local, alteração da coagulação, sangramentos e possível queda da pressão arterial.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -364,35 +489,49 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não colocar nada sobre a ferida.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Serpente peçonhenta pequena, típica da Caatinga.",
+    "caracteristicas": [
+      "pequeno porte",
+      "manchas em forma de trapézio",
+      "Caatinga",
+      "terrestre",
+      "peçonhenta",
+      "picada"
     ]
   },
   {
     "id": "jararacuçu",
     "nome": "Jararacuçu",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/jararacuçu.jpg"
-    ],
-    "sintomas": "Dor dor extrema local, edema volumoso, equimose, bolhas, sangramentos intensos e elevado risco de necrose e choque.",
+    "imagem": ["/imagens/jararacuçu.jpg"],
+    "sintomas": "Dor extrema local, edema volumoso, equimose, bolhas, sangramentos intensos e elevado risco de necrose e choque.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima em repouso e com o membro elevado.",
-      "Buscar atendimento hospitalar urgente ."
+      "Buscar atendimento hospitalar urgente."
     ],
     "oQueNaoFazer": [
       "Não fazer torniquete ou garrote.",
       "Não cortar, chupar ou espremer o local da picada.",
-      "Não aplicar substâncias ou produtos caseiras.",
+      "Não aplicar substâncias ou produtos caseiros.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Jararaca grande da Mata Atlântica, de picada muito grave.",
+    "caracteristicas": [
+      "grande porte",
+      "corpo robusto",
+      "manchas em forma de V invertido",
+      "Mata Atlântica",
+      "terrestre",
+      "peçonhenta"
     ]
   },
   {
     "id": "surucucu-pico-de-jaca",
     "nome": "Surucucu Pico de Jaca",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/surucucu-pico-de-jaca.jpg"
-    ],
+    "imagem": ["/imagens/surucucu-pico-de-jaca.jpg"],
     "sintomas": "Dor intensa e edema local, além de diarreia, cólicas abdominais, diminuição dos batimentos cardíacos (bradicardia) e queda de pressão.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -405,15 +544,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Maior serpente peçonhenta das Américas, de florestas úmidas.",
+    "caracteristicas": [
+      "maior víbora das Américas",
+      "escamas ásperas, parecidas com casca de jaca",
+      "losangos escuros no dorso",
+      "florestas úmidas",
+      "terrestre",
+      "peçonhenta"
     ]
   },
   {
     "id": "cascavel",
     "nome": "Cascavel",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/cascavel-sul-americana.jpg"
-    ],
+    "imagem": ["/imagens/cascavel-sul-americana.jpg"],
     "sintomas": "Dor e inchaço discretos no local, pálpebras caídas (ptose), visão dupla, dores musculares generalizadas e urina escura.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -425,15 +571,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras.",
       "Não massagear a área nem ingerir bebida alcoólica."
+    ],
+    "descricao": "Serpente peçonhenta com guizo na cauda, de áreas secas e abertas.",
+    "caracteristicas": [
+      "guizo na cauda",
+      "losangos no dorso",
+      "cabeça triangular",
+      "áreas secas e abertas",
+      "terrestre",
+      "peçonhenta"
     ]
   },
   {
     "id": "coral-verdadeira",
     "nome": "Coral Verdadeira",
     "categoria": "serpentes",
-    "imagem": [
-      "/imagens/coral-verdadeira.jpg"
-    ],
+    "imagem": ["/imagens/coral-verdadeira.jpg"],
     "sintomas": "Dor local discreta, pálpebras caídas, visão dupla, falta de ar e paralisia muscular progressiva com risco de parada respiratória; vítima nitidamente pálida.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -445,16 +598,23 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras ou adiar atendimento hospitalar.",
       "Não ingerir álcool.",
-      "Não andar"
+      "Não andar."
+    ],
+    "descricao": "Serpente de anéis coloridos e veneno neurotóxico potente.",
+    "caracteristicas": [
+      "anéis vermelhos, pretos e brancos ou amarelos",
+      "corpo fino",
+      "cabeça pequena",
+      "hábitos subterrâneos",
+      "veneno neurotóxico",
+      "peçonhenta"
     ]
   },
   {
     "id": "escorpiao-do-nordeste",
     "nome": "Escorpião do Nordeste",
     "categoria": "escorpiões",
-    "imagem": [
-      "/imagens/escorpiao-do-nordeste.jpg"
-    ],
+    "imagem": ["/imagens/escorpiao-do-nordeste.jpg"],
     "sintomas": "Dor intensa e imediata no local, vermelhidão, inchaço e dormência; casos graves (crianças) podem ter vômitos e suor frio.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -467,15 +627,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Escorpião amarelado com faixa escura, comum em cidades do Nordeste.",
+    "caracteristicas": [
+      "amarelado",
+      "faixa escura no dorso",
+      "pequeno",
+      "áreas urbanas",
+      "hábitos noturnos",
+      "peçonhento"
     ]
   },
   {
     "id": "escorpiao-amarelo",
     "nome": "Escorpião Amarelo",
     "categoria": "escorpiões",
-    "imagem": [
-      "/imagens/escorpiao-amarelo.jpg"
-    ],
+    "imagem": ["/imagens/escorpiao-amarelo.jpg"],
     "sintomas": "Dor local muito intensa, ardor e suor; em casos moderados e graves pode causar vômitos, alteração cardíaca e acúmulo de fluido nos pulmões.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -488,15 +655,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Escorpião mais perigoso do Brasil, comum em áreas urbanas.",
+    "caracteristicas": [
+      "corpo amarelo-claro",
+      "pernas e cauda amareladas",
+      "serrilha na cauda",
+      "áreas urbanas",
+      "hábitos noturnos",
+      "peçonhento"
     ]
   },
   {
     "id": "escorpiao-marrom",
     "nome": "Escorpião Marrom/Preto da Bahia",
     "categoria": "escorpiões",
-    "imagem": [
-      "/imagens/escorpiao-marrom.jpg"
-    ],
+    "imagem": ["/imagens/escorpiao-marrom.jpg"],
     "sintomas": "Dor intensa imediata, edema e eritema discretos, sensação de queimadura e formigamento no local.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -509,15 +683,21 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Escorpião escuro de picada dolorosa, em geral menos grave.",
+    "caracteristicas": [
+      "marrom-escuro ou preto",
+      "pinças robustas",
+      "hábitos noturnos",
+      "mata e áreas urbanas",
+      "peçonhento"
     ]
   },
   {
     "id": "aranha-marrom",
     "nome": "Aranha Marrom",
     "categoria": "aranhas",
-    "imagem": [
-      "/imagens/aranha-marrom.jpg"
-    ],
+    "imagem": ["/imagens/aranha-marrom.jpg"],
     "sintomas": "Dor de início imediato no local, dormência regional, leve inchaço e sudorese, espasmos musculares e queda da pressão arterial.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -530,15 +710,22 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Aranha pequena que se esconde em frestas, roupas e calçados.",
+    "caracteristicas": [
+      "pequena",
+      "cor marrom",
+      "mancha em forma de violino no dorso",
+      "hábitos noturnos",
+      "esconde-se em frestas e roupas",
+      "peçonhenta"
     ]
   },
   {
     "id": "aranha-armadeira",
     "nome": "Aranha Armadeira",
     "categoria": "aranhas",
-    "imagem": [
-      "/imagens/aranha-armadeira.jpg"
-    ],
+    "imagem": ["/imagens/aranha-armadeira.jpg"],
     "sintomas": "Dor extremamente intensa imediata, inchaço, vermelhidão, suor local e salivação excessiva; em casos mais graves pode haver alteração da pressão e dos batimentos.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -550,19 +737,26 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Aranha grande e agressiva que ergue as patas da frente ao se defender.",
+    "caracteristicas": [
+      "grande porte",
+      "marrom acinzentada",
+      "ergue as patas dianteiras",
+      "não faz teia",
+      "hábitos noturnos",
+      "peçonhenta"
     ]
   },
   {
     "id": "viuva-negra",
     "nome": "Aranha Viúva-Negra",
     "categoria": "aranhas",
-    "imagem": [
-      "/imagens/viuva-negra-do-norte.jpg"
-    ],
+    "imagem": ["/imagens/viuva-negra-do-norte.jpg"],
     "sintomas": "Dor local com sensação de queimadura, dores musculares intensas, cólicas abdominais, suor excessivo e tremores; alteração de pressão e batimentos cardíacos.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
-      "Manter a vitima calma e em repouso.",
+      "Manter a vítima calma e em repouso.",
       "Buscar atendimento médico imediatamente."
     ],
     "oQueNaoFazer": [
@@ -570,15 +764,21 @@
       "Não cortar, chupar ou espremer o local da picada.",
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
+    ],
+    "descricao": "Aranha preta com mancha vermelha embaixo do abdômen.",
+    "caracteristicas": [
+      "corpo preto brilhante",
+      "abdômen globoso",
+      "mancha vermelha embaixo do abdômen",
+      "teia irregular",
+      "peçonhenta"
     ]
   },
   {
     "id": "viuva-marrom",
     "nome": "Aranha Viúva-Marrom",
     "categoria": "aranhas",
-    "imagem": [
-      "/imagens/viuva-marrom.jpg"
-    ],
+    "imagem": ["/imagens/viuva-marrom.jpg"],
     "sintomas": "Dor local intensa que pode irradiar, suor excessivo, rigidez muscular, cãibras, tremores, ansiedade e hipertensão.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -589,15 +789,21 @@
       "Não fazer torniquete ou garrote.",
       "Não cortar, perfurar ou espremer o local.",
       "Não aplicar substâncias caseiras, produtos químicos sobre a queimadura."
+    ],
+    "descricao": "Aranha marrom com marca de ampulheta e teia irregular.",
+    "caracteristicas": [
+      "marrom com manchas",
+      "abdômen globoso",
+      "marca em forma de ampulheta alaranjada embaixo",
+      "teia irregular",
+      "peçonhenta"
     ]
   },
   {
     "id": "besouro-poto",
     "nome": "Besouro Potó",
     "categoria": "besouros",
-    "imagem": [
-      "/imagens/besouro-poto.jpg"
-    ],
+    "imagem": ["/imagens/besouro-poto.jpg"],
     "sintomas": "Sensação de queimação, vermelhidão (eritema), formação de bolhas e pústulas (semelhante a uma queimadura química de 2º grau) e dor local.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão neutro.",
@@ -607,17 +813,23 @@
     "oQueNaoFazer": [
       "Não esmagar o inseto sobre a pele.",
       "Não estourar as bolhas.",
-      "Não coçar nem esfregar o loca.",
+      "Não coçar nem esfregar o local.",
       "Não aplicar substâncias caseiras (como pasta de dente, café ou óleo)."
+    ],
+    "descricao": "Besouro que não pica, mas queima a pele se for esmagado.",
+    "caracteristicas": [
+      "pequeno e alongado",
+      "corpo preto e alaranjado",
+      "atraído pela luz",
+      "causa queimadura química",
+      "não pica"
     ]
   },
   {
     "id": "besouro-escorpiao",
     "nome": "Besouro Escorpião",
     "categoria": "besouros",
-    "imagem": [
-      "/imagens/besouro-escorpiao.jpg"
-    ],
+    "imagem": ["/imagens/besouro-escorpiao.jpg"],
     "sintomas": "Dor leve a moderada no local da pinça ou beliscão, pequena vermelhidão ou edema passageiro (não possuem peçonha tóxica relevante para humanos).",
     "primeirosSocorros": [
       "Lavar o local com água e sabão neutro.",
@@ -626,6 +838,13 @@
     "oQueNaoFazer": [
       "Não fazer incisões ou espremer o local.",
       "Não utilizar torniquetes."
+    ],
+    "descricao": "Inseto de aparência intimidadora e baixo risco.",
+    "caracteristicas": [
+      "aparência de escorpião",
+      "pinças ou mandíbulas",
+      "baixo risco",
+      "não peçonhento"
     ]
   },
   {
@@ -646,6 +865,15 @@
     "oQueNaoFazer": [
       "Não fazer torniquete; não cortar ou perfurar o local da picada.",
       "Não utilizar receitas caseiras na ferida."
+    ],
+    "descricao": "Animal alongado de muitas patas, com ganchos venenosos perto da cabeça.",
+    "caracteristicas": [
+      "corpo achatado e segmentado",
+      "muitas patas",
+      "ganchos venenosos perto da cabeça",
+      "locais úmidos e escuros",
+      "hábitos noturnos",
+      "peçonhenta"
     ]
   }
 ]

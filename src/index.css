@@ -13,6 +13,10 @@
   --color-destaque-fundo: #fffbeb;
   --color-destaque-borda: #fde68a;
   --color-destaque-texto: #d97706;
+  --color-vermelho-emergencia: #d0000b;
+  --color-vermelho-claro: #f7e4e6;
+  --color-vermelho-medio: #fcc5cc;
   --color-vermelho-borda: #462a2a;
   --color-vermelho-principal: #780f0f;
+  --color-vermelho: #a60008;
 }
