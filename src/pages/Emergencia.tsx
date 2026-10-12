@@ -52,7 +52,6 @@ const animais = dadosAnimais as AnimalEmergencia[];
 const categorias: {
   id: Categoria;
   nome: string;
-  emoji: string;
   termos: string[];
 }[] = [
   {
@@ -98,6 +97,129 @@ const categorias: {
     termos: ["anfibios", "anfibio"],
   },
 ];
+
+
+// Ícones vetoriais renovados: estilo preenchido, com formas simples e fáceis de reconhecer.
+function IconeCategoria({ categoria }: { categoria: Categoria }) {
+  const svgProps = {
+    width: 30,
+    height: 30,
+    viewBox: "0 0 32 32",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
+  };
+
+  switch (categoria) {
+    case "escorpioes":
+      return (
+        <svg {...svgProps} viewBox="0 0 32 32">
+          {/* Corpo */}
+          <ellipse cx="15" cy="17" rx="5" ry="6" fill="currentColor" fillOpacity=".2" />
+          <path d="M12 13c-2-3 0-6 3-6s5 3 3 6" />
+          <path d="M12 17c-3 0-5 2-5 4s3 3 5 1" />
+          <path d="M18 17c3 0 5 2 5 4s-3 3-5 1" />
+          {/* Pinças */}
+          <path d="M11 13 7 10 4 12 2 10" />
+          <path d="M20 13 24 10 27 12 29 10" />
+          <path d="m4 12-2 3 4 1 2-3" />
+          <path d="m27 12 2 3-4 1-2-3" />
+          {/* Pernas */}
+          <path d="m11 17-5 1-2 3" />
+          <path d="m11 20-4 3-1 3" />
+          <path d="m19 17 5 1 2 3" />
+          <path d="m19 20 4 3 1 3" />
+          {/* Cauda curvada e ferrão */}
+          <path d="M16 11c4-2 7-5 6-8-1-2-4-1-4 1" strokeWidth="2.5" />
+          <path d="m18 4 4-3-1 5" fill="currentColor" />
+          {/* Olhos */}
+          <circle cx="13" cy="9" r=".8" fill="currentColor" />
+          <circle cx="17" cy="9" r=".8" fill="currentColor" />
+        </svg>
+      );
+    case "serpentes":
+      return (
+        <svg {...svgProps} viewBox="0 0 24 24">
+          {/* Corpo enrolado da cobra */}
+          <path d="M17 5 C14 2 9 3 8 6 C7 9 11 11 14 10 C18 9 20 12 18 15 C16 18 10 18 8 15 C6 12 9 10 11 12 C13 14 11 17 8 18" fill="currentColor" fillOpacity=".15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Cabeça */}
+          <path d="M15 4 C16 2 19 2 21 4 L20 7 C18 8 16 7 15 6 Z" fill="currentColor" fillOpacity=".25" strokeWidth="1.5" strokeLinejoin="round" />
+          {/* Olho */}
+          <circle cx="19" cy="4.5" r=".7" fill="currentColor" stroke="none" />
+          {/* Língua bifurcada */}
+          <path d="M20 7 L22 9 M22 9 L23 8 M22 9 L22 10" strokeWidth="1" strokeLinecap="round" />
+          {/* Detalhes das escamas */}
+          <path d="M10 7 Q11 6 12 7" />
+          <path d="M14 13 Q15 12 16 13" />
+          <path d="M10 15 Q11 14 12 15" />
+        </svg>
+      );
+    case "aranhas":
+      return (
+        <svg {...svgProps} viewBox="0 0 24 24">
+          {/* Corpo */}
+          <ellipse cx="12" cy="15" rx="4" ry="5" fill="currentColor" fillOpacity=".2" />
+          <ellipse cx="12" cy="15" rx="4" ry="5" />
+          <circle cx="12" cy="8" r="2.5" />
+          {/* Pernas esquerdas */}
+          <path d="M9 9 6 6 3 7" />
+          <path d="M8.5 12 5 10 2 12" />
+          <path d="M8.5 16 5 16 3 19" />
+          <path d="M9 19 7 21 7 23" />
+          {/* Pernas direitas */}
+          <path d="m15 9 3-3 3 1" />
+          <path d="m15.5 12 3.5-2 3 2" />
+          <path d="m15.5 16 3.5 0 2 3" />
+          <path d="m15 19 2 2 0 2" />
+          {/* Olhos */}
+          <circle cx="11" cy="7.5" r=".6" fill="currentColor" stroke="none" />
+          <circle cx="13" cy="7.5" r=".6" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "lacraias":
+      return (
+        <svg {...svgProps}>
+          <path d="M6 9c2-3 5-2 6 0s-1 4 1 5 4-1 5 1-1 4 2 5 5-1 6-4" strokeWidth="4" />
+          <path d="m7 8-3-3M10 8l-1-4M12 12l-4 2M15 14l-1 4M19 16l3 1M22 19l2 4M25 16l4 0" strokeWidth="1.7" />
+          <path d="M5 9 3 11M25 16l3-3" />
+        </svg>
+      );
+    case "besouros":
+      return (
+        <svg {...svgProps}>
+          <path d="M12 8 9 4M20 8l3-4" strokeWidth="2.2" />
+          <path d="M8 12c0-4 3-6 8-6s8 2 8 6v7c0 4-4 7-8 7s-8-3-8-7Z" fill="currentColor" fillOpacity=".2" strokeWidth="2" />
+          <path d="M16 7v18M8 13l-4-2M8 18l-4 2M24 13l4-2M24 18l4 2M11 24l-2 3M21 24l2 3" />
+          <circle cx="12" cy="11" r="1" fill="currentColor" stroke="none" />
+          <circle cx="20" cy="11" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "aquaticos":
+      return (
+        <svg {...svgProps}>
+          <path d="M4 15c4-6 10-8 17-5l6 5-6 5c-7 3-13 1-17-5Z" fill="currentColor" fillOpacity=".2" strokeWidth="2" />
+          <path d="m4 15-3-5v10l3-5ZM14 11c2 2 2 6 0 8" />
+          <circle cx="21" cy="13" r="1" fill="currentColor" stroke="none" />
+          <path d="M4 26c2-1 4-1 6 0s4 1 6 0 4-1 6 0" />
+        </svg>
+      );
+    case "anfibios":
+      return (
+        <svg {...svgProps}>
+          <path d="M8 12 4 8 2 10l4 6M24 12l4-4 2 2-4 6" strokeWidth="2.2" />
+          <path d="M7 15c0-5 3-7 9-7s9 2 9 7v4c0 4-4 6-9 6s-9-2-9-6Z" fill="currentColor" fillOpacity=".2" strokeWidth="2" />
+          <circle cx="10" cy="8" r="3.2" fill="currentColor" fillOpacity=".25" />
+          <circle cx="22" cy="8" r="3.2" fill="currentColor" fillOpacity=".25" />
+          <circle cx="10" cy="8" r=".9" fill="currentColor" stroke="none" />
+          <circle cx="22" cy="8" r=".9" fill="currentColor" stroke="none" />
+          <path d="M12 17c2 2 6 2 8 0M8 23l-3 3M24 23l3 3" />
+        </svg>
+      );
+  }
+}
 
 //Converte a categoria do JSON para o filtro correspondente desta tela.
 function categoriaCompativel(
@@ -149,6 +271,7 @@ function ItemCaracteristica({
 
 export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [pesquisa, setPesquisa] = useState("");
+  const [outrasCaracteristicas, setOutrasCaracteristicas] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
   const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<
     Caracteristica[]
@@ -308,10 +431,10 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                       }`}
                     >
                       <span
-                        className="text-[25px] leading-7"
+                        className="flex h-7 items-center justify-center"
                         aria-hidden="true"
                       >
-                        {categoria.emoji}
+                        <IconeCategoria categoria={categoria.id} />
                       </span>
                       <span>{categoria.nome}</span>
                     </button>
@@ -358,6 +481,23 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                   onToggle={alternarCaracteristica}
                 />
               ))}
+              <div className="col-span-2 flex h-[42px] items-center gap-2 rounded-xl border border-[#e0b8bc] bg-white px-3 shadow-sm focus-within:ring-2 focus-within:ring-[#c9000b]/20">
+                <label
+                  htmlFor="outras-caracteristicas"
+                  className="shrink-0 text-[12px] font-semibold text-[#292929]"
+                >
+                  Outros:
+                </label>
+                <input
+                  id="outras-caracteristicas"
+                  type="text"
+                  value={outrasCaracteristicas}
+                  onChange={(event) => setOutrasCaracteristicas(event.target.value)}
+                  placeholder="Digite aqui..."
+                  aria-label="Outras características do animal"
+                  className="min-w-0 flex-1 bg-transparent text-[12px] text-[#292929] outline-none placeholder:text-[#888]"
+                />
+              </div>
             </div>
             {caracteristicasAtivas.length > 0 && (
               <button
