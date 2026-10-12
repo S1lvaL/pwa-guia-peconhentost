@@ -36,6 +36,8 @@ type AnimalEmergencia = AnimalCatalogo & {
   categoria: string;
   caracteristicas?: Caracteristica[];
   nomesPopulares?: string[];
+  descricao?: string;
+  sinaisSintomas?: string[];
 };
 
 const normalizar = (texto: string) =>
@@ -47,7 +49,7 @@ const normalizar = (texto: string) =>
 
 const animais = dadosAnimais as AnimalEmergencia[];
 
-// Mapeamento atualizado para buscar da pasta public/categorias/
+// Mapeamento corrigido para a pasta "categoria" (no singular)
 const imagensCategoria: Record<Categoria, string> = {
   escorpioes: "/categorias/escorpiao.png",
   serpentes: "/categorias/serpente.png",
@@ -133,13 +135,19 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [pesquisa, setPesquisa] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
   const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<Caracteristica[]>([]);
+  const [outroFiltro, setOutroFiltro] = useState("");
   const [animalSelecionado, setAnimalSelecionado] = useState<AnimalEmergencia | null>(null);
 
   const resultados = useMemo(() => {
     const termo = normalizar(pesquisa);
+    const termoOutro = normalizar(outroFiltro);
+
     return animais.filter((animal) => {
       const nomes = [animal.nome, ...(animal.nomesPopulares ?? [])].map(normalizar);
       const categoriaNome = normalizar(animal.categoria);
+      const descricaoAnimal = normalizar(animal.descricao ?? "");
+      const sintomasAnimal = (animal.sinaisSintomas ?? []).map(normalizar);
+
       const correspondeTexto =
         !termo ||
         nomes.some((nome) => nome.includes(termo)) ||
@@ -149,16 +157,26 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             categoria.termos.some((item) => item.includes(termo) || termo.includes(item)) &&
             categoriaCompativel(animal.categoria, categoria.id),
         );
+
       const correspondeCategoria =
         !categoriaAtiva || categoriaCompativel(animal.categoria, categoriaAtiva);
+
       const caracteristicasAnimal = animal.caracteristicas ?? [];
       const correspondeCaracteristicas =
         caracteristicasAtivas.length === 0 ||
-        caracteristicasAnimal.length === 0 ||
         caracteristicasAtivas.every((item) => caracteristicasAnimal.includes(item));
-      return correspondeTexto && correspondeCategoria && correspondeCaracteristicas;
+
+      // Filtro para o campo "Outros" (busca livre na descrição, nome ou sintomas)
+      const correspondeOutro =
+        !termoOutro ||
+        nomes.some((n) => n.includes(termoOutro)) ||
+        descricaoAnimal.includes(termoOutro) ||
+        sintomasAnimal.some((s) => s.includes(termoOutro)) ||
+        caracteristicasAnimal.some((c) => normalizar(c).includes(termoOutro));
+
+      return correspondeTexto && correspondeCategoria && correspondeCaracteristicas && correspondeOutro;
     });
-  }, [pesquisa, categoriaAtiva, caracteristicasAtivas]);
+  }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
 
   const alternarCaracteristica = (valor: Caracteristica) => {
     setCaracteristicasAtivas((atuais) =>
@@ -287,10 +305,36 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 />
               ))}
             </div>
-            {caracteristicasAtivas.length > 0 && (
+
+            {/* Campo "Outros" idêntico ao modelo visual */}
+            <div className="mt-2 flex min-h-[42px] items-center gap-2 rounded-xl bg-white px-3 py-2 text-[12px] text-[#292929] shadow-sm border border-transparent focus-within:ring-2 focus-within:ring-[#c9000b]">
+              <input
+                type="checkbox"
+                checked={outroFiltro.length > 0}
+                readOnly
+                className="h-4 w-4 shrink-0 accent-[#c9000b]"
+              />
+              <span className="font-bold text-[#292929] shrink-0">Outros:</span>
+              <input
+                type="text"
+                value={outroFiltro}
+                onChange={(e) => setOutroFiltro(e.target.value)}
+                placeholder="Digite aqui outra característica..."
+                className="w-full bg-transparent outline-none text-[12px] text-[#292929]"
+              />
+            </div>
+
+            <p className="mt-2 text-[11px] text-letra/70">
+              Selecione os sinais identificados ou digite outra característica do animal.
+            </p>
+
+            {(caracteristicasAtivas.length > 0 || outroFiltro.length > 0) && (
               <button
                 type="button"
-                onClick={() => setCaracteristicasAtivas([])}
+                onClick={() => {
+                  setCaracteristicasAtivas([]);
+                  setOutroFiltro("");
+                }}
                 className="mt-3 text-[12px] font-bold text-[#ca1018] underline"
               >
                 Limpar características
