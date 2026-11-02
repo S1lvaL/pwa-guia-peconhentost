@@ -25,7 +25,7 @@ type Categoria =
 type Caracteristica =
   | "ferrão"
   | "pequeno"
-  | "muitas pernas"
+  | "muitas patas"
   | "aquático"
   | "manchas"
   | "terrestre"
@@ -79,7 +79,7 @@ function IconeCategoria({ categoria }: { categoria: Categoria }) {
     <img
       src={imagensCategoria[categoria]}
       alt=""
-      className="h-12 w-12 object-contain"
+      className="h-10 w-10 object-contain"
     />
   );
 }
@@ -99,7 +99,7 @@ function categoriaCompativel(
 const filtrosDisponiveis: { valor: Caracteristica; rotulo: string }[] = [
   { valor: "ferrão", rotulo: "Presença de ferrão" },
   { valor: "pequeno", rotulo: "Tamanho pequeno" },
-  { valor: "muitas pernas", rotulo: "Muitas pernas" },
+  { valor: "muitas patas", rotulo: "Muitas patas" },
   { valor: "aquático", rotulo: "Ambiente aquático" },
   { valor: "manchas", rotulo: "Padrão de manchas" },
   { valor: "terrestre", rotulo: "Ambiente terrestre" },
@@ -137,6 +137,15 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<Caracteristica[]>([]);
   const [outroFiltro, setOutroFiltro] = useState("");
   const [animalSelecionado, setAnimalSelecionado] = useState<AnimalEmergencia | null>(null);
+
+  // Limpa os filtros e a seleção ao sair do catálogo para a área de prevenção/checklist.
+  const limparFiltros = () => {
+    setPesquisa("");
+    setCategoriaAtiva(null);
+    setCaracteristicasAtivas([]);
+    setOutroFiltro("");
+    setAnimalSelecionado(null);
+  };
 
   const resultados = useMemo(() => {
     const termo = normalizar(pesquisa);
@@ -178,7 +187,25 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
     });
   }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
 
+  // A pesquisa, a categoria e o checklist funcionam como filtros independentes.
+  // Ao começar a usar um deles, os filtros dos outros dois são limpos.
+  const limparChecklist = () => {
+    setCaracteristicasAtivas([]);
+    setOutroFiltro("");
+  };
+
+  const alterarPesquisa = (valor: string) => {
+    setPesquisa(valor);
+    if (valor.trim()) {
+      setCategoriaAtiva(null);
+      limparChecklist();
+    }
+  };
+
   const alternarCaracteristica = (valor: Caracteristica) => {
+    // Ao usar o checklist, limpa a pesquisa e a categoria.
+    setPesquisa("");
+    setCategoriaAtiva(null);
     setCaracteristicasAtivas((atuais) =>
       atuais.includes(valor)
         ? atuais.filter((item) => item !== valor)
@@ -186,34 +213,51 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
     );
   };
 
+  const alterarOutroFiltro = (valor: string) => {
+    // O campo "Outros" também faz parte do checklist.
+    setPesquisa("");
+    setCategoriaAtiva(null);
+    setOutroFiltro(valor);
+  };
+
   const selecionarCategoria = (id: Categoria) => {
+    // Ao usar uma categoria, limpa a pesquisa e todo o checklist.
+    setPesquisa("");
+    limparChecklist();
     setCategoriaAtiva((atual) => (atual === id ? null : id));
   };
 
   return (
     <div className="min-h-screen w-full bg-verde-fundo font-sans text-[#171717] sm:flex sm:justify-center sm:pt-5">
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
-        <header className="flex min-h-[82px] pt-5 items-center gap-3 bg-[#ca1018] px-5 py-3 text-white">
-          <div className="flex h-10 w-11 shrink-0 items-center justify-between" aria-hidden="true">
-            <TriangleAlert className="size-[25px] text-white" strokeWidth={3} aria-hidden="true" />
-          </div>
-          <div className="flex items-center justify-between w-full">
-            <h1 className="text-[25px] mr-5 font-extrabold leading-[32px] text-white">
-              Atendimento de Emergência
-            </h1>
-            <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center justify-between space-x-1.5 shrink-0">
-              <div className="w-2 h-2 rounded-full bg-[#601212]" />
-              <span className="text-[12px] font-bold text-[#601212]">Logo</span>
-            </div>
-          </div>
-        </header>
+{/* Cabeçalho no mesmo estilo da tela Prevenção */}
+
+  <header className="flex justify-between items-center px-4 pt-8 pb-4 bg-verde-fundo">
+   <div className="min-w-0">
+    <h1 className="text-[32px] font-extrabold leading-[34px] text-vermelho-principal">
+      Atendimento de Emergência
+    </h1>
+
+    <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-2">
+      informação rápida, cuidado imediato
+    </p>
+  </div>
+
+  {/* Logo */}
+  <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center space-x-1.5 shrink-0 ml-2">
+    <div className="w-2 h-2 rounded-full bg-[#601212]" />
+    <span className="text-[12px] font-bold text-[#601212]">
+      Logo
+    </span>
+  </div>
+</header>
 
         <main className="flex-1 space-y-4 overflow-y-auto px-[18px] pb-40 pt-4">
           <section className="space-y-2">
             <div className="flex items-start gap-2">
               <span className="-mt-1 text-[35px] leading-none text-[#c9000b]" aria-hidden="true">⌕</span>
               <div>
-                <h2 className="text-[15px] font-bold">Pesquise o animal ou o grupo</h2>
+                <h2 className="text-[17px] font-bold">Pesquise o animal ou o grupo</h2>
                 <p className="mt-1 text-[12px] leading-snug text-[#555]">
                   Digite o nome do animal ou selecione uma categoria para encontrar informações e características.
                 </p>
@@ -221,12 +265,18 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             </div>
             <form
               className="flex h-10 overflow-hidden rounded-lg border border-[#d4d4d4] shadow-sm shadow-vermelho-principal/10 focus-within:ring-2 focus-within:ring-[#c9000b]/30"
-              onSubmit={(event) => event.preventDefault()}
+              onSubmit={(event) => {
+                event.preventDefault();
+                if (pesquisa.trim()) {
+                  setCategoriaAtiva(null);
+                  limparChecklist();
+                }
+              }}
             >
               <input
                 type="search"
                 value={pesquisa}
-                onChange={(event) => setPesquisa(event.target.value)}
+                onChange={(event) => alterarPesquisa(event.target.value)}
                 placeholder="Ex.: aranha-marrom, cascavel, escorpião..."
                 aria-label="Pesquisar animal ou grupo"
                 className="min-w-0 flex-1 px-3 text-[12px] text-verde-principal outline-none"
@@ -241,14 +291,19 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
           </section>
 
           <section>
-            <h2 className="mb-2 flex items-center gap-2 text-[15px] font-bold">
+            <h2 className="mb-2 flex items-center gap-2 text-[17px] font-bold">
               <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#c50009" strokeWidth="2" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M12 3v18M3 12h18" />
               </svg>
               Selecione uma categoria
             </h2>
-            <div className="overflow-x-auto overflow-y-hidden rounded-xl p-3" aria-label="Categorias de animais">
+            <div className="overflow-x-auto overflow-y-hidden rounded-xl p-3 pb-4" aria-label="Categorias de animais"
+              style={{
+              scrollbarWidth: "auto",
+              scrollbarColor: "#ca1018 #ffecef",
+              }}
+            >
               <div className="flex w-max gap-2">
                 {categorias.map((categoria) => {
                   const selecionada = categoriaAtiva === categoria.id;
@@ -258,10 +313,10 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                       type="button"
                       aria-pressed={selecionada}
                       onClick={() => selecionarCategoria(categoria.id)}
-                      className={`flex min-h-[120px] w-[120px] shrink-0 flex-col items-center justify-center gap-2 rounded-xl px-2 py-3 text-[12px] font-bold transition ${
+                      className={`flex min-h-[100px] w-[100px] shrink-0 flex-col items-center justify-center gap-2 rounded-xl px-2 py-3 text-[12px] font-bold transition ${
                         selecionada
-                          ? "bg-[#ca1018] text-white border border-vermelho-borda/60 shadow-md shadow-vermelho-principal/50"
-                          : "bg-[#ffecef] text-verde-principal border border-verde-principal/15 shadow-sm shadow-verde-principal/35 hover:bg-vermelho-medio"
+                          ? "bg-[#ca1018] text-white border border-[#bd0008] shadow-md shadow-vermelho-principal/50"
+                          : "bg-[#ffecef] text-verde-principal border border-[#bd0008] shadow-sm shadow-verde-principal/35 hover:bg-vermelho-medio"
                       }`}
                     >
                       <span className="flex h-12 w-12 items-center justify-center" aria-hidden="true">
@@ -284,11 +339,11 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             )}
           </section>
 
-          <section className="rounded-xl border border-verde-principal/70 bg-[#ffecef] shadow-md shadow-vermelho-principal/40 p-3">
+          <section className="rounded-xl border border-[#bd0008] bg-[#ffecef] shadow-md shadow-vermelho-principal/40 p-3">
             <div className="mb-3 flex items-start gap-2">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#c50009] text-[14px] font-bold text-[#c50009]" aria-hidden="true">✓</span>
               <div>
-                <h2 className="text-[14px] font-bold">Possíveis sinais e características</h2>
+                <h2 className="text-[15px] font-bold">Possíveis sinais e características</h2>
                 <p className="mt-1 text-[12px] text-letra/80">
                   Marque as opções que podem ajudar a identificar o animal:
                 </p>
@@ -318,7 +373,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
               <input
                 type="text"
                 value={outroFiltro}
-                onChange={(e) => setOutroFiltro(e.target.value)}
+                onChange={(e) => alterarOutroFiltro(e.target.value)}
                 placeholder="Digite aqui outra característica..."
                 className="w-full bg-transparent outline-none text-[12px] text-[#292929]"
               />
@@ -378,7 +433,15 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
           </a>
         </main>
 
-        <BottomNav abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
+        <BottomNav
+          abaAtiva={abaAtiva}
+          setAbaAtiva={(novaAba) => {
+            if (novaAba === "prevencao") {
+              limparFiltros();
+            }
+            setAbaAtiva(novaAba);
+          }}
+        />
 
         <ModalDetalhes
           animal={animalSelecionado}

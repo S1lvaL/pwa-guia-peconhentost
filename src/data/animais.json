@@ -578,6 +578,7 @@
       "losangos no dorso",
       "cabeça triangular",
       "áreas secas e abertas",
+      "urina escura",
       "terrestre",
       "peçonhenta"
     ]
@@ -603,10 +604,12 @@
     "descricao": "Serpente de anéis coloridos e veneno neurotóxico potente.",
     "caracteristicas": [
       "anéis vermelhos, pretos e brancos ou amarelos",
+      "várias cores",
       "corpo fino",
       "cabeça pequena",
       "hábitos subterrâneos",
       "veneno neurotóxico",
+      "terrestre",
       "peçonhenta"
     ]
   },
@@ -634,6 +637,8 @@
       "faixa escura no dorso",
       "pequeno",
       "áreas urbanas",
+      "ferrão",
+      "terrestre",
       "hábitos noturnos",
       "peçonhento"
     ]
@@ -662,6 +667,8 @@
       "pernas e cauda amareladas",
       "serrilha na cauda",
       "áreas urbanas",
+      "ferrão",
+      "terrestre",
       "hábitos noturnos",
       "peçonhento"
     ]
@@ -690,6 +697,10 @@
       "pinças robustas",
       "hábitos noturnos",
       "mata e áreas urbanas",
+      "ferrão",
+      "dor intensa",
+      "sensação de queimadura",
+      "terrestre",
       "peçonhento"
     ]
   },
@@ -718,6 +729,8 @@
       "mancha em forma de violino no dorso",
       "hábitos noturnos",
       "esconde-se em frestas e roupas",
+      "muitas patas",
+      "terrestre",
       "peçonhenta"
     ]
   },
@@ -745,6 +758,11 @@
       "ergue as patas dianteiras",
       "não faz teia",
       "hábitos noturnos",
+      "muitas patas",
+      "patas pra cima",
+      "terrestre",
+      "manchas ou várias cores",
+      "preto, amarelo e marrom",
       "peçonhenta"
     ]
   },
@@ -771,6 +789,9 @@
       "abdômen globoso",
       "mancha vermelha embaixo do abdômen",
       "teia irregular",
+      "muitas patas",
+      "terrestre",
+      "grave",
       "peçonhenta"
     ]
   },
@@ -796,6 +817,8 @@
       "abdômen globoso",
       "marca em forma de ampulheta alaranjada embaixo",
       "teia irregular",
+      "muitas patas",
+      "terrestre",
       "peçonhenta"
     ]
   },
@@ -819,9 +842,10 @@
     "descricao": "Besouro que não pica, mas queima a pele se for esmagado.",
     "caracteristicas": [
       "pequeno e alongado",
-      "corpo preto e alaranjado",
+      "preto e alaranjado ou vermelho",
       "atraído pela luz",
       "causa queimadura química",
+      "terrestre",
       "não pica"
     ]
   },
@@ -844,6 +868,15 @@
       "aparência de escorpião",
       "pinças ou mandíbulas",
       "baixo risco",
+      "besouro",
+      "antena",
+      "ferrão",
+      "pequeno",
+      "dor leve",
+      "várias cores",
+      "manchas",
+      "preto, marrom e branco",
+      "terrestre",
       "não peçonhento"
     ]
   },
@@ -870,10 +903,17 @@
     "caracteristicas": [
       "corpo achatado e segmentado",
       "muitas patas",
+      "antena",
       "ganchos venenosos perto da cabeça",
       "locais úmidos e escuros",
       "hábitos noturnos",
+      "terrestre",
+      "manchas",
+      "várias cores",
+      "dor intensa",
       "peçonhenta"
     ]
   }
 ]
+
+
