@@ -918,6 +918,7 @@
     "categoria": "besouros",
     "imagem": ["/imagens/besouro-escorpiao.jpg"],
     "sintomas": "Dor leve a moderada no local da pinça ou beliscão, pequena vermelhidão ou edema passageiro (não possuem peçonha tóxica relevante para humanos).",
+    "periculosidade": "Risco moderado",
     "primeirosSocorros": [
       "Lavar o local com água e sabão neutro.",
       "Aplicar compressas frias se houver inchaço leve."
