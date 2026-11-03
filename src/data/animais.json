@@ -454,6 +454,7 @@
     "categoria": "serpentes",
     "imagem": ["/imagens/jararaca-malha-de-sapo.jpg"],
     "sintomas": "Dor intensa local, inchaço (edema), manchas arroxeadas (equimose), sangramento no local ou nas gengivas e risco de necrose",
+    "periculosidade": "Perigo!",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima em repouso e hidratada.",
@@ -483,6 +484,7 @@
     "categoria": "serpentes",
     "imagem": ["/imagens/jararaca-da-seca.jpg"],
     "sintomas": "Dor e inchaço progressivo no local, alteração da coagulação, sangramentos e possível queda da pressão arterial.",
+    "periculosidade": "Perigo!",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a pessoa deitada e calma.",
@@ -514,6 +516,7 @@
     "categoria": "serpentes",
     "imagem": ["/imagens/jararacuçu.jpg"],
     "sintomas": "Dor extrema local, edema volumoso, equimose, bolhas, sangramentos intensos e elevado risco de necrose e choque.",
+    "periculosidade": "Perigo!",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima em repouso e com o membro elevado.",
@@ -544,6 +547,7 @@
     "categoria": "serpentes",
     "imagem": ["/imagens/surucucu-pico-de-jaca.jpg"],
     "sintomas": "Dor intensa e edema local, além de diarreia, cólicas abdominais, diminuição dos batimentos cardíacos (bradicardia) e queda de pressão.",
+    "periculosidade": "Perigo!",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima deitada e em repouso.",
@@ -573,6 +577,7 @@
     "nome": "Cascavel",
     "categoria": "serpentes",
     "imagem": ["/imagens/cascavel-sul-americana.jpg"],
+    "periculosidade": "Perigo!",
     "sintomas": "Dor e inchaço discretos no local, pálpebras caídas (ptose), visão dupla, dores musculares generalizadas e urina escura.",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
@@ -602,6 +607,7 @@
     "id": "coral-verdadeira",
     "nome": "Coral Verdadeira",
     "categoria": "serpentes",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/coral-verdadeira.jpg"],
     "sintomas": "Dor local discreta, pálpebras caídas, visão dupla, falta de ar e paralisia muscular progressiva com risco de parada respiratória; vítima nitidamente pálida.",
     "primeirosSocorros": [
@@ -639,6 +645,7 @@
     "id": "escorpiao-do-nordeste",
     "nome": "Escorpião do Nordeste",
     "categoria": "escorpiões",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/escorpiao-do-nordeste.jpg"],
     "sintomas": "Dor intensa e imediata no local, vermelhidão, inchaço e dormência; casos graves (crianças) podem ter vômitos e suor frio.",
     "primeirosSocorros": [
@@ -671,6 +678,7 @@
     "id": "escorpiao-amarelo",
     "nome": "Escorpião Amarelo",
     "categoria": "escorpiões",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/escorpiao-amarelo.jpg"],
     "sintomas": "Dor local muito intensa, ardor e suor; em casos moderados e graves pode causar vômitos, alteração cardíaca e acúmulo de fluido nos pulmões.",
     "primeirosSocorros": [
@@ -704,6 +712,7 @@
     "id": "escorpiao-marrom",
     "nome": "Escorpião Marrom/Preto da Bahia",
     "categoria": "escorpiões",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/escorpiao-marrom.jpg"],
     "sintomas": "Dor intensa imediata, edema e eritema discretos, sensação de queimadura e formigamento no local.",
     "primeirosSocorros": [
@@ -736,6 +745,7 @@
     "id": "aranha-marrom",
     "nome": "Aranha Marrom",
     "categoria": "aranhas",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/aranha-marrom.jpg"],
     "sintomas": "Dor de início imediato no local, dormência regional, leve inchaço e sudorese, espasmos musculares e queda da pressão arterial.",
     "primeirosSocorros": [
@@ -771,6 +781,7 @@
     "id": "aranha-armadeira",
     "nome": "Aranha Armadeira",
     "categoria": "aranhas",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/aranha-armadeira.jpg"],
     "sintomas": "Dor extremamente intensa imediata, inchaço, vermelhidão, suor local e salivação excessiva; em casos mais graves pode haver alteração da pressão e dos batimentos.",
     "primeirosSocorros": [
@@ -809,6 +820,7 @@
     "id": "viuva-negra",
     "nome": "Aranha Viúva-Negra",
     "categoria": "aranhas",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/viuva-negra-do-norte.jpg"],
     "sintomas": "Dor local com sensação de queimadura, dores musculares intensas, cólicas abdominais, suor excessivo e tremores; alteração de pressão e batimentos cardíacos.",
     "primeirosSocorros": [
@@ -841,6 +853,7 @@
     "id": "viuva-marrom",
     "nome": "Aranha Viúva-Marrom",
     "categoria": "aranhas",
+    "periculosidade": "Perigo!",
     "imagem": ["/imagens/viuva-marrom.jpg"],
     "sintomas": "Dor local intensa que pode irradiar, suor excessivo, rigidez muscular, cãibras, tremores, ansiedade e hipertensão.",
     "primeirosSocorros": [
@@ -873,6 +886,7 @@
     "categoria": "besouros",
     "imagem": ["/imagens/besouro-poto.jpg"],
     "sintomas": "Sensação de queimação, vermelhidão (eritema), formação de bolhas e pústulas (semelhante a uma queimadura química de 2º grau) e dor local.",
+    "periculosidade": "Risco moderado",
     "primeirosSocorros": [
       "Lavar o local com água e sabão neutro.",
       "Aplicar compressas frias.",
@@ -940,6 +954,7 @@
       "/imagens/lacraia4.jpg"
     ],
     "sintomas": "Dor local forte e imediata (semelhante a uma queimação), inchaço local, vermelhidão e calor na região.",
+    "periculosidade": "Risco moderado",
     "primeirosSocorros": [
       "Lavar o local com água e sabão neutro.",
       "Usar compressas mornas para aliviar a dor.",
