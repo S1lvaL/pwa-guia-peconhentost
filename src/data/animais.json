@@ -265,7 +265,10 @@
       "cauda com ferrão serrilhado",
       "camuflada no fundo",
       "água doce e salgada",
-      "acidente ao pisar"
+      "acidente ao pisar",
+      "ferrão",
+      "aquático"
+
     ]
   },
   {
@@ -299,7 +302,8 @@
       "barbilhões ao redor da boca",
       "ferrões nas nadadeiras",
       "água doce e salgada",
-      "acidente ao pescar"
+      "acidente ao pescar",
+      "ferrão"
     ]
   },
   {
@@ -500,6 +504,7 @@
       "terrestre",
       "peçonhenta",
       "inchaço",
+      "tamanho pequeno",
       "picada"
     ]
   },
@@ -523,6 +528,7 @@
     "descricao": "Jararaca grande da Mata Atlântica, de picada muito grave.",
     "caracteristicas": [
       "grande porte",
+      "tamanho grande",
       "corpo robusto",
       "manchas em forma de V invertido",
       "manchas",
@@ -552,10 +558,10 @@
     ],
     "descricao": "Maior serpente peçonhenta das Américas, de florestas úmidas.",
     "caracteristicas": [
-      "maior víbora das Américas",
       "escamas ásperas, parecidas com casca de jaca",
       "losangos escuros no dorso",
       "florestas úmidas",
+      "tamanho grande",
       "terrestre",
       "manchas",
       "picada",
@@ -612,7 +618,10 @@
     ],
     "descricao": "Serpente de anéis coloridos e veneno neurotóxico potente.",
     "caracteristicas": [
-      "anéis vermelhos, pretos e brancos ou amarelos",
+      "vermelha", 
+      "preta",
+      "branca",
+      "amarela",
       "várias cores",
       "corpo fino",
       "manchas",
@@ -653,6 +662,7 @@
       "ferrão",
       "picada",
       "terrestre",
+      "tamanho pequeno",
       "hábitos noturnos",
       "peçonhento"
     ]
@@ -677,14 +687,16 @@
     ],
     "descricao": "Escorpião mais perigoso do Brasil, comum em áreas urbanas.",
     "caracteristicas": [
-      "corpo amarelo-claro",
-      "pernas e cauda amareladas",
+      "amarelo-claro",
+      "patas amarelas",
+      "cauda amarela",
       "serrilha na cauda",
       "áreas urbanas",
       "ferrão",
       "terrestre",
       "hábitos noturnos",
       "picada",
+      "pequeno",
       "peçonhento"
     ]
   },
@@ -714,7 +726,7 @@
       "mata e áreas urbanas",
       "ferrão",
       "dor intensa",
-      "sensação de queimadura",
+      "queimadura",
       "terrestre",
       "picada",
       "peçonhento"
@@ -744,11 +756,13 @@
       "cor marrom",
       "mancha em forma de violino no dorso",
       "hábitos noturnos",
-      "esconde-se em frestas e roupas",
+      "frestas", 
+      "roupas",
       "muitas patas",
       "terrestre",
       "dor",
       "manchas",
+      "tamanho pequeno",
       "picada",
       "peçonhenta"
     ]
@@ -772,9 +786,9 @@
     ],
     "descricao": "Aranha grande e agressiva que ergue as patas da frente ao se defender.",
     "caracteristicas": [
-      "grande porte",
+      "tamanho grande",
       "marrom acinzentada",
-      "ergue as patas dianteiras",
+      "ergue as patas",
       "não faz teia",
       "hábitos noturnos",
       "dor intensa",
@@ -783,7 +797,10 @@
       "terrestre",
       "várias cores",
       "manchas",
-      "preto, amarelo e marrom",
+      "grande",
+      "preto",
+      "amarelo",
+      "marrom",
       "picada",
       "peçonhenta"
     ]
@@ -869,11 +886,15 @@
     ],
     "descricao": "Besouro que não pica, mas queima a pele se for esmagado.",
     "caracteristicas": [
-      "pequeno e alongado",
-      "preto e alaranjado ou vermelho",
+      "pequeno",
+      "alongado",
+      "preto", 
+      "alaranjado",
+      "vermelho",
       "atraído pela luz",
       "queimadura",
       "terrestre",
+      "tamanho pequeno",
       "não pica"
     ]
   },
@@ -905,6 +926,7 @@
       "manchas",
       "preto, marrom e branco",
       "terrestre",
+      "tamanho pequeno",
       "não peçonhento"
     ]
   },
@@ -934,7 +956,7 @@
       "antena",
       "ganchos venenosos perto da cabeça",
       "locais úmidos e escuros",
-      "hábitos noturnos",
+      "noturno",
       "terrestre",
       "manchas",
       "várias cores",
