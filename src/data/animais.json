@@ -465,6 +465,7 @@
     "descricao": "Serpente peçonhenta de manchas irregulares e hábitos noturnos.",
     "caracteristicas": [
       "manchas irregulares",
+      "manchas",
       "cabeça triangular",
       "fosseta loreal",
       "terrestre",
@@ -494,9 +495,11 @@
     "caracteristicas": [
       "pequeno porte",
       "manchas em forma de trapézio",
+      "manchas",
       "Caatinga",
       "terrestre",
       "peçonhenta",
+      "inchaço",
       "picada"
     ]
   },
@@ -522,8 +525,10 @@
       "grande porte",
       "corpo robusto",
       "manchas em forma de V invertido",
+      "manchas",
       "Mata Atlântica",
       "terrestre",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -552,6 +557,8 @@
       "losangos escuros no dorso",
       "florestas úmidas",
       "terrestre",
+      "manchas",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -576,10 +583,12 @@
     "caracteristicas": [
       "guizo na cauda",
       "losangos no dorso",
+      "manchas",
       "cabeça triangular",
       "áreas secas e abertas",
       "urina escura",
       "terrestre",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -606,10 +615,14 @@
       "anéis vermelhos, pretos e brancos ou amarelos",
       "várias cores",
       "corpo fino",
+      "manchas",
       "cabeça pequena",
       "hábitos subterrâneos",
       "veneno neurotóxico",
       "terrestre",
+      "picada",
+      "pálpebras caídas",
+      "falta de ar",
       "peçonhenta"
     ]
   },
@@ -638,6 +651,7 @@
       "pequeno",
       "áreas urbanas",
       "ferrão",
+      "picada",
       "terrestre",
       "hábitos noturnos",
       "peçonhento"
@@ -670,6 +684,7 @@
       "ferrão",
       "terrestre",
       "hábitos noturnos",
+      "picada",
       "peçonhento"
     ]
   },
@@ -701,6 +716,7 @@
       "dor intensa",
       "sensação de queimadura",
       "terrestre",
+      "picada",
       "peçonhento"
     ]
   },
@@ -731,6 +747,9 @@
       "esconde-se em frestas e roupas",
       "muitas patas",
       "terrestre",
+      "dor",
+      "manchas",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -758,11 +777,14 @@
       "ergue as patas dianteiras",
       "não faz teia",
       "hábitos noturnos",
+      "dor intensa",
       "muitas patas",
       "patas pra cima",
       "terrestre",
-      "manchas ou várias cores",
+      "várias cores",
+      "manchas",
       "preto, amarelo e marrom",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -792,6 +814,9 @@
       "muitas patas",
       "terrestre",
       "grave",
+      "manchas",
+      "dor",
+      "picada",
       "peçonhenta"
     ]
   },
@@ -813,12 +838,15 @@
     ],
     "descricao": "Aranha marrom com marca de ampulheta e teia irregular.",
     "caracteristicas": [
-      "marrom com manchas",
+      "marrom",
       "abdômen globoso",
       "marca em forma de ampulheta alaranjada embaixo",
       "teia irregular",
       "muitas patas",
       "terrestre",
+      "manchas",
+      "picada",
+      "dor intensa",
       "peçonhenta"
     ]
   },
@@ -844,7 +872,7 @@
       "pequeno e alongado",
       "preto e alaranjado ou vermelho",
       "atraído pela luz",
-      "causa queimadura química",
+      "queimadura",
       "terrestre",
       "não pica"
     ]
@@ -911,6 +939,7 @@
       "manchas",
       "várias cores",
       "dor intensa",
+      "picada",
       "peçonhenta"
     ]
   }
