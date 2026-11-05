@@ -1,6 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AREAS, dadosPrevencao } from "../data/DicasPrevencao";
 import type { Area } from "../data/DicasPrevencao";
+
+const CHAVE_STORAGE = "prevencao:itensChecados";
+
+//Lê o progresso salvo no localStorage (ou retorna um objeto vazio se não houver nada)
+function carregarProgresso(): Record<string, boolean> {
+  try {
+    const salvo = localStorage.getItem(CHAVE_STORAGE);
+    return salvo ? JSON.parse(salvo) : {};
+  } catch {
+    return {};
+  }
+}
 
 //Só para o layout: depois estes dados virão da localização / do animais.json
 const animaisExemplo = [
@@ -9,7 +21,7 @@ const animaisExemplo = [
     nome: "Escorpião-Amarelo",
     foto: "/imagens/escorpiao-amarelo.jpg",
   },
-  { id: "jararaca", nome: "Jararaca", foto: "/imagens/jararaca.jpg" },
+  { id: "jararaca", nome: "Jararaca", foto: "/imagens/jararaca-da-seca.jpg" },
 ];
 
 //Ícones dos filtros caracteristicas gerais deles
@@ -151,9 +163,17 @@ function TituloSecao({
 export default function Prevencao() {
   //Estado inicial como null (nenhum filtro selecionado = dicas gerais)
   const [areaAtiva, setAreaAtiva] = useState<Area | null>(null);
-  const [itensChecados, setItensChecados] = useState<Record<string, boolean>>(
-    {},
-  );
+  const [itensChecados, setItensChecados] =
+    useState<Record<string, boolean>>(carregarProgresso);
+
+  //Salva toda vez que o progresso mudar
+  useEffect(() => {
+    try {
+      localStorage.setItem(CHAVE_STORAGE, JSON.stringify(itensChecados));
+    } catch {
+      //se o storage estiver cheio/bloqueado, o app continua funcionando sem salvar
+    }
+  }, [itensChecados]);
 
   //Marca ou desmarca uma dica
   const toggleCheck = (item: string) =>

@@ -13,4 +13,5 @@ export interface Animal {
   oQueNaoFazer?: string[];
   periculosidade?: "Risco moderado" | "Perigo!";
   Caracteristicas?: string[];
+  invasora?: boolean;
 }
