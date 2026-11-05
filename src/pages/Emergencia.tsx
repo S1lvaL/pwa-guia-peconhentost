@@ -4,7 +4,7 @@ import type { Animal as AnimalCatalogo } from "../types/animal";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import BottomNav from "../components/BottomNav";
-import { Phone, TriangleAlert } from "lucide-react";
+import { Phone } from "lucide-react";
 
 type Aba = "animais" | "emergencia" | "prevencao";
 
@@ -66,11 +66,19 @@ const categorias: {
   termos: string[];
 }[] = [
   { id: "escorpioes", nome: "Escorpiões", termos: ["escorpioes", "escorpiao"] },
-  { id: "serpentes", nome: "Serpentes", termos: ["serpentes", "serpente", "cobra", "cobras"] },
+  {
+    id: "serpentes",
+    nome: "Serpentes",
+    termos: ["serpentes", "serpente", "cobra", "cobras"],
+  },
   { id: "aranhas", nome: "Aranhas", termos: ["aranhas", "aranha"] },
   { id: "lacraias", nome: "Lacraias", termos: ["lacraias", "lacraia"] },
   { id: "besouros", nome: "Besouros", termos: ["besouros", "besouro"] },
-  { id: "aquaticos", nome: "Aquáticos", termos: ["aquaticos", "aquatico", "marinhos", "marinho"] },
+  {
+    id: "aquaticos",
+    nome: "Aquáticos",
+    termos: ["aquaticos", "aquatico", "marinhos", "marinho"],
+  },
   { id: "anfibios", nome: "Anfíbios", termos: ["anfibios", "anfibio"] },
 ];
 
@@ -134,9 +142,12 @@ function ItemCaracteristica({
 export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [pesquisa, setPesquisa] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
-  const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<Caracteristica[]>([]);
+  const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<
+    Caracteristica[]
+  >([]);
   const [outroFiltro, setOutroFiltro] = useState("");
-  const [animalSelecionado, setAnimalSelecionado] = useState<AnimalEmergencia | null>(null);
+  const [animalSelecionado, setAnimalSelecionado] =
+    useState<AnimalEmergencia | null>(null);
 
   // Limpa os filtros e a seleção ao sair do catálogo para a área de prevenção/checklist.
   const limparFiltros = () => {
@@ -152,7 +163,9 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
     const termoOutro = normalizar(outroFiltro);
 
     return animais.filter((animal) => {
-      const nomes = [animal.nome, ...(animal.nomesPopulares ?? [])].map(normalizar);
+      const nomes = [animal.nome, ...(animal.nomesPopulares ?? [])].map(
+        normalizar,
+      );
       const categoriaNome = normalizar(animal.categoria);
       const descricaoAnimal = normalizar(animal.descricao ?? "");
       const sintomasAnimal = (animal.sinaisSintomas ?? []).map(normalizar);
@@ -163,17 +176,21 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
         categoriaNome.includes(termo) ||
         categorias.some(
           (categoria) =>
-            categoria.termos.some((item) => item.includes(termo) || termo.includes(item)) &&
-            categoriaCompativel(animal.categoria, categoria.id),
+            categoria.termos.some(
+              (item) => item.includes(termo) || termo.includes(item),
+            ) && categoriaCompativel(animal.categoria, categoria.id),
         );
 
       const correspondeCategoria =
-        !categoriaAtiva || categoriaCompativel(animal.categoria, categoriaAtiva);
+        !categoriaAtiva ||
+        categoriaCompativel(animal.categoria, categoriaAtiva);
 
       const caracteristicasAnimal = animal.caracteristicas ?? [];
       const correspondeCaracteristicas =
         caracteristicasAtivas.length === 0 ||
-        caracteristicasAtivas.every((item) => caracteristicasAnimal.includes(item));
+        caracteristicasAtivas.every((item) =>
+          caracteristicasAnimal.includes(item),
+        );
 
       // Filtro para o campo "Outros" (busca livre na descrição, nome ou sintomas)
       const correspondeOutro =
@@ -183,7 +200,12 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
         sintomasAnimal.some((s) => s.includes(termoOutro)) ||
         caracteristicasAnimal.some((c) => normalizar(c).includes(termoOutro));
 
-      return correspondeTexto && correspondeCategoria && correspondeCaracteristicas && correspondeOutro;
+      return (
+        correspondeTexto &&
+        correspondeCategoria &&
+        correspondeCaracteristicas &&
+        correspondeOutro
+      );
     });
   }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
 
@@ -230,36 +252,42 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   return (
     <div className="min-h-screen w-full bg-verde-fundo font-sans text-[#171717] sm:flex sm:justify-center sm:pt-5">
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
-{/* Cabeçalho no mesmo estilo da tela Prevenção */}
+        {/* Cabeçalho no mesmo estilo da tela Prevenção */}
 
-  <header className="flex justify-between items-center px-4 pt-8 pb-4 bg-verde-fundo">
-   <div className="min-w-0">
-    <h1 className="text-[32px] font-extrabold leading-[34px] text-vermelho-principal">
-      Atendimento de Emergência
-    </h1>
+        <header className="flex justify-between items-center px-4 pt-8 pb-4 bg-verde-fundo">
+          <div className="min-w-0">
+            <h1 className="text-[32px] font-extrabold leading-[34px] text-vermelho-principal">
+              Atendimento de Emergência
+            </h1>
 
-    <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-2">
-      informação rápida, cuidado imediato
-    </p>
-  </div>
+            <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-2">
+              informação rápida, cuidado imediato
+            </p>
+          </div>
 
-  {/* Logo */}
-  <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center space-x-1.5 shrink-0 ml-2">
-    <div className="w-2 h-2 rounded-full bg-[#601212]" />
-    <span className="text-[12px] font-bold text-[#601212]">
-      Logo
-    </span>
-  </div>
-</header>
+          {/* Logo */}
+          <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center space-x-1.5 shrink-0 ml-2">
+            <div className="w-2 h-2 rounded-full bg-[#601212]" />
+            <span className="text-[12px] font-bold text-[#601212]">Logo</span>
+          </div>
+        </header>
 
         <main className="flex-1 space-y-4 overflow-y-auto px-[18px] pb-40 pt-4">
           <section className="space-y-2">
             <div className="flex items-start gap-2">
-              <span className="-mt-1 text-[35px] leading-none text-[#c9000b]" aria-hidden="true">⌕</span>
+              <span
+                className="-mt-1 text-[35px] leading-none text-[#c9000b]"
+                aria-hidden="true"
+              >
+                ⌕
+              </span>
               <div>
-                <h2 className="text-[17px] font-bold">Pesquise o animal ou o grupo</h2>
+                <h2 className="text-[17px] font-bold">
+                  Pesquise o animal ou o grupo
+                </h2>
                 <p className="mt-1 text-[12px] leading-snug text-[#555]">
-                  Digite o nome do animal ou selecione uma categoria para encontrar informações e características.
+                  Digite o nome do animal ou selecione uma categoria para
+                  encontrar informações e características.
                 </p>
               </div>
             </div>
@@ -292,16 +320,26 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
 
           <section>
             <h2 className="mb-2 flex items-center gap-2 text-[17px] font-bold">
-              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#c50009" strokeWidth="2" aria-hidden="true">
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#c50009"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M12 3v18M3 12h18" />
               </svg>
               Selecione uma categoria
             </h2>
-            <div className="overflow-x-auto overflow-y-hidden rounded-xl p-3 pb-4" aria-label="Categorias de animais"
+            <div
+              className="overflow-x-auto overflow-y-hidden rounded-xl p-3 pb-4"
+              aria-label="Categorias de animais"
               style={{
-              scrollbarWidth: "auto",
-              scrollbarColor: "#ca1018 #ffecef",
+                scrollbarWidth: "auto",
+                scrollbarColor: "#ca1018 #ffecef",
               }}
             >
               <div className="flex w-max gap-2">
@@ -319,7 +357,10 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                           : "bg-[#ffecef] text-verde-principal border border-[#bd0008] shadow-sm shadow-verde-principal/35 hover:bg-vermelho-medio"
                       }`}
                     >
-                      <span className="flex h-12 w-12 items-center justify-center" aria-hidden="true">
+                      <span
+                        className="flex h-12 w-12 items-center justify-center"
+                        aria-hidden="true"
+                      >
                         <IconeCategoria categoria={categoria.id} />
                       </span>
                       <span>{categoria.nome}</span>
@@ -341,9 +382,16 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
 
           <section className="rounded-xl border border-[#bd0008] bg-[#ffecef] shadow-md shadow-vermelho-principal/40 p-3">
             <div className="mb-3 flex items-start gap-2">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#c50009] text-[14px] font-bold text-[#c50009]" aria-hidden="true">✓</span>
+              <span
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#c50009] text-[14px] font-bold text-[#c50009]"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
               <div>
-                <h2 className="text-[15px] font-bold">Possíveis sinais e características</h2>
+                <h2 className="text-[15px] font-bold">
+                  Possíveis sinais e características
+                </h2>
                 <p className="mt-1 text-[12px] text-letra/80">
                   Marque as opções que podem ajudar a identificar o animal:
                 </p>
@@ -380,7 +428,8 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             </div>
 
             <p className="mt-2 text-[11px] text-letra/70">
-              Selecione os sinais identificados ou digite outra característica do animal.
+              Selecione os sinais identificados ou digite outra característica
+              do animal.
             </p>
 
             {(caracteristicasAtivas.length > 0 || outroFiltro.length > 0) && (
@@ -399,7 +448,9 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
 
           <section>
             <div className="mb-2 flex items-center gap-2">
-              <h2 className="flex-1 text-[15px] font-bold">Possíveis animais encontrados</h2>
+              <h2 className="flex-1 text-[15px] font-bold">
+                Possíveis animais encontrados
+              </h2>
               <span className="rounded-md bg-[#ffd3d6] px-2 py-1 text-[9px] border border-vermelho font-bold text-vermelho">
                 Resultados da busca
               </span>
@@ -407,7 +458,10 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 {resultados.length}
               </span>
             </div>
-            <div className="flex min-h-[400px] flex-col overflow-y-auto gap-[10px] p-2" aria-live="polite">
+            <div
+              className="flex min-h-[400px] flex-col overflow-y-auto gap-[10px] p-2"
+              aria-live="polite"
+            >
               {resultados.length > 0 ? (
                 resultados.map((animal) => (
                   <CardAnimal
@@ -418,7 +472,8 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 ))
               ) : (
                 <p className="px-2 py-5 text-center text-[12px] text-verde-principal">
-                  Nenhum animal encontrado. Tente alterar a pesquisa ou os filtros.
+                  Nenhum animal encontrado. Tente alterar a pesquisa ou os
+                  filtros.
                 </p>
               )}
             </div>

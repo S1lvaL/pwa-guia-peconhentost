@@ -6,6 +6,8 @@ import dadosAnimais from "../data/animais.json";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import type { Animal } from "../types/animal";
+import { useRegiao } from "../context/RegiaoContexto";
+import { filtrarPorRegiao } from "../utils/regiao";
 
 //Tipos de categorias para filtro
 type CategoriaFiltro =
@@ -52,12 +54,20 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
     null,
   );
 
+  //Região: o filtro só fica ativo quando o usuário veio do "Ver todos" da Prevenção
+  const { municipio, filtrarCatalogo, setFiltrarCatalogo } = useRegiao();
+  const filtroRegiaoAtivo = filtrarCatalogo && !!municipio;
+
   //Busca
   //Converte os dados do JSON para o tipo Animal
   const animais: Animal[] = dadosAnimais as Animal[];
+  //Lista de partida: só os animais da região (se o filtro estiver ativo) ou todos
+  const listaBase = filtroRegiaoAtivo
+    ? filtrarPorRegiao(animais, municipio)
+    : animais;
   //Filtra os animais usando duas regras: a categoria selecionada e o termo de busca
   const termo = normalizar(busca);
-  const animaisFiltrados = animais.filter((animal) => {
+  const animaisFiltrados = listaBase.filter((animal) => {
     const atendeCategoria =
       categoriaAtiva === "todos" ||
       normalizar(animal.categoria) === categoriaAtiva;
@@ -100,6 +110,18 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             <span className="font-bold text-[#601212] text-[12px]">Logo</span>
           </div>
         </div>
+
+        {/*Chip da região: aparece só quando veio do "Ver todos"; o ✕ desliga o filtro*/}
+        {filtroRegiaoAtivo && (
+          <button
+            type="button"
+            onClick={() => setFiltrarCatalogo(false)}
+            aria-label="Remover filtro de região"
+            className="flex items-center gap-1.5 rounded-[16px] border border-verde-principal/40 bg-verde-principal/10 px-3 py-1.5 text-[13px] font-bold text-verde-principal shadow-sm shadow-verde-principal/20"
+          >
+            Região: {municipio} – BA ✕
+          </button>
+        )}
 
         {/*Campo de Busca*/}
         <div className="bg-pesquisa-fundo flex gap-[10px] items-center px-[16px] py-[12px] rounded-[24px] border border-cinza-borda/60 shadow-sm shadow-vermelho-principal/30">

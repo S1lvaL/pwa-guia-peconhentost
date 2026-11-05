@@ -1,8 +1,39 @@
 import { useState, useEffect } from "react";
 import { AREAS, dadosPrevencao } from "../data/DicasPrevencao";
 import type { Area } from "../data/DicasPrevencao";
+import { useRegiao } from "../context/RegiaoContexto";
+import animaisJson from "../data/animais.json";
+import cidadesBiomasJson from "../data/CidadesBiomas.json";
+import type { Animal, Habitat } from "../types/animal";
 
 const CHAVE_STORAGE = "prevencao:itensChecados";
+
+//Quantos animais aparecem no card antes do "Ver todos"
+const LIMITE_CARDS = 2;
+
+//Diz ao TypeScript o formato dos JSONs (eles são lidos como string comum)
+const animais = animaisJson as unknown as Animal[];
+type InfoCidade = { bioma: Habitat; litoral: boolean };
+const cidadesBiomas = cidadesBiomasJson as unknown as Record<
+  string,
+  InfoCidade
+>;
+const nomesCidades = Object.keys(cidadesBiomas);
+
+//Tira acentos e maiúsculas: "Camaçari" e "camacari" ficam iguais na busca
+const normalizar = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+//Animais "Perigo!" aparecem primeiro, depois "Risco moderado", depois os sem valor
+const pesoPericulosidade = (a: Animal) =>
+  a.periculosidade === "Perigo!"
+    ? 0
+    : a.periculosidade === "Risco moderado"
+      ? 1
+      : 2;
 
 //Lê o progresso salvo no localStorage (ou retorna um objeto vazio se não houver nada)
 function carregarProgresso(): Record<string, boolean> {
@@ -13,16 +44,6 @@ function carregarProgresso(): Record<string, boolean> {
     return {};
   }
 }
-
-//Só para o layout: depois estes dados virão da localização / do animais.json
-const animaisExemplo = [
-  {
-    id: "escorpiao-amarelo",
-    nome: "Escorpião-Amarelo",
-    foto: "/imagens/escorpiao-amarelo.jpg",
-  },
-  { id: "jararaca", nome: "Jararaca", foto: "/imagens/jararaca-da-seca.jpg" },
-];
 
 //Ícones dos filtros caracteristicas gerais deles
 const svgProps = {
@@ -160,11 +181,18 @@ function TituloSecao({
 }
 
 //Componente principal da tela
-export default function Prevencao() {
+//onVerTodos: função enviada pelo App para trocar para a aba "animais"
+export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
   //Estado inicial como null (nenhum filtro selecionado = dicas gerais)
   const [areaAtiva, setAreaAtiva] = useState<Area | null>(null);
   const [itensChecados, setItensChecados] =
     useState<Record<string, boolean>>(carregarProgresso);
+
+  //Cidade escolhida (vem do contexto, então continua salva ao trocar de aba)
+  const { municipio, setMunicipio, setFiltrarCatalogo } = useRegiao();
+  //Controla se o campo de busca da cidade está aberto e o que foi digitado
+  const [editandoLocal, setEditandoLocal] = useState(false);
+  const [busca, setBusca] = useState("");
 
   //Salva toda vez que o progresso mudar
   useEffect(() => {
@@ -178,6 +206,48 @@ export default function Prevencao() {
   //Marca ou desmarca uma dica
   const toggleCheck = (item: string) =>
     setItensChecados((prev) => ({ ...prev, [item]: !prev[item] }));
+
+  //Sugestões de cidade: só aparecem a partir de 2 letras, no máximo 6
+  const sugestoes =
+    busca.trim().length >= 2
+      ? nomesCidades
+          .filter((cidade) =>
+            normalizar(cidade).includes(normalizar(busca.trim())),
+          )
+          .slice(0, 6)
+      : [];
+
+  const escolherCidade = (cidade: string) => {
+    setMunicipio(cidade);
+    setBusca("");
+    setEditandoLocal(false);
+  };
+
+  const alternarBusca = () => {
+    setBusca("");
+    setEditandoLocal((aberto) => !aberto);
+  };
+
+  //Animais da região: bioma da cidade + água doce (todas) + marinho (se for litoral)
+  const infoCidade = municipio ? cidadesBiomas[municipio] : undefined;
+  const habitatsDaCidade: Habitat[] = infoCidade
+    ? [
+        infoCidade.bioma,
+        "agua-doce",
+        ...(infoCidade.litoral ? (["marinho"] as Habitat[]) : []),
+      ]
+    : [];
+  const animaisDaRegiao = animais
+    .filter((a) => (a.habitats ?? []).some((h) => habitatsDaCidade.includes(h)))
+    .sort((a, b) => pesoPericulosidade(a) - pesoPericulosidade(b));
+  const animaisVisiveis = animaisDaRegiao.slice(0, LIMITE_CARDS);
+  const restantes = animaisDaRegiao.length - LIMITE_CARDS;
+
+  //"Ver todos": liga o filtro de região no catálogo e troca de aba
+  const verTodos = () => {
+    setFiltrarCatalogo(true);
+    onVerTodos?.();
+  };
 
   //Cálculo de progresso (somente ativo quando um filtro for escolhido)
   const areaSelecionada = areaAtiva ? dadosPrevencao[areaAtiva] : null;
@@ -212,66 +282,137 @@ export default function Prevencao() {
           </div>
         </div>
 
-        {/*Barra de localização (por enquanto fixa, só o visual)*/}
-        <div className="flex items-center gap-1.5 bg-verde-principal/10 border border-verde-principal/40 rounded-[16px] px-3 py-2 text-[13px] text-letra shadow-sm shadow-verde-principal/20">
-          <svg
-            className="size-[18px] shrink-0 text-vermelho-principal"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z" />
-            <circle cx="12" cy="10" r="2.5" />
-          </svg>
-          <span className="flex-1">
-            Sua localização atual:{" "}
-            <strong className="text-verde-principal">Salvador - BA</strong>
-          </span>
-          <button
-            type="button"
-            className="font-bold underline text-vermelho-principal"
-          >
-            [Alterar]
-          </button>
+        {/*Barra de localização + campo de busca da cidade*/}
+        <div className="space-y-2">
+          <div className="flex items-center gap-1.5 bg-verde-principal/10 border border-verde-principal/40 rounded-[16px] px-3 py-2 text-[13px] text-letra shadow-sm shadow-verde-principal/20">
+            <svg
+              className="size-[18px] shrink-0 text-vermelho-principal"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <span className="flex-1">
+              Sua localização atual:{" "}
+              <strong className="text-verde-principal">
+                {municipio ? `${municipio} - BA` : "Escolha sua cidade"}
+              </strong>
+            </span>
+            <button
+              type="button"
+              onClick={alternarBusca}
+              className="font-bold underline text-vermelho-principal"
+            >
+              {editandoLocal
+                ? "[Cancelar]"
+                : municipio
+                  ? "[Alterar]"
+                  : "[Escolher]"}
+            </button>
+          </div>
+
+          {editandoLocal && (
+            <div className="space-y-1">
+              <input
+                type="text"
+                value={busca}
+                onChange={(e) => setBusca(e.target.value)}
+                autoFocus
+                autoComplete="off"
+                placeholder="Digite o nome da cidade"
+                aria-label="Buscar cidade"
+                className="w-full rounded-[12px] border border-verde-principal/40 bg-white px-3 py-2 text-[14px] text-letra outline-none focus:ring-2 focus:ring-verde-principal"
+              />
+              {sugestoes.length > 0 && (
+                <ul className="rounded-[12px] border border-verde-principal/40 bg-white overflow-hidden shadow-sm">
+                  {sugestoes.map((cidade) => (
+                    <li key={cidade}>
+                      <button
+                        type="button"
+                        onClick={() => escolherCidade(cidade)}
+                        className="w-full text-left px-3 py-2 text-[14px] text-letra hover:bg-verde-principal/10"
+                      >
+                        {cidade} - BA
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {busca.trim().length >= 2 && sugestoes.length === 0 && (
+                <p className="px-1 text-[12px] text-letra/75">
+                  Nenhuma cidade encontrada. Confira se o nome está certo.
+                </p>
+              )}
+            </div>
+          )}
         </div>
 
-        {/*Card principal: animais da região (por enquanto dados de exemplo)*/}
+        {/*Card principal: animais da região*/}
         <section className="bg-verde-principal/87 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
           <h2 className="text-[18px] font-bold leading-tight">
-            Animais Peçonhentos Frequentes nesta Região
+            Animais Peçonhentos nesta Região
           </h2>
-          {/*Lista que rola para o lado (overflow-x-auto) e "encaixa" cada card*/}
-          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
-            {animaisExemplo.map((animal) => (
-              <article
-                key={animal.id}
-                className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white rounded-[16px] p-2"
-              >
-                <img
-                  src={animal.foto}
-                  alt={animal.nome}
-                  loading="lazy"
-                  className="w-[52px] h-[52px] rounded-[12px] object-cover bg-verde-principal/10"
-                />
-                {/*Depois: ligar este botão à tela animais*/}
-                <div className="min-w-0">
-                  <strong className="block text-[13px] text-verde-principal truncate">
-                    {animal.nome}
-                  </strong>
-                  <button
-                    type="button"
-                    className="text-[12px] text-vermelho-principal underline"
-                  >
-                    Ver no Catálogo
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
+
+          {!municipio ? (
+            <p className="text-[13px] leading-snug">
+              Escolha sua cidade acima para ver os animais que ocorrem na
+              região.
+            </p>
+          ) : animaisDaRegiao.length === 0 ? (
+            <p className="text-[13px] leading-snug">
+              Nenhum animal cadastrado para esta região ainda.
+            </p>
+          ) : (
+            /*Lista que rola para o lado (overflow-x-auto) e "encaixa" cada card*/
+            <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
+              {animaisVisiveis.map((animal) => (
+                <article
+                  key={animal.id}
+                  className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white rounded-[16px] p-2"
+                >
+                  <img
+                    src={
+                      Array.isArray(animal.imagem)
+                        ? animal.imagem[0]
+                        : animal.imagem
+                    }
+                    alt={animal.nome}
+                    loading="lazy"
+                    className="w-[52px] h-[52px] rounded-[12px] object-cover bg-verde-principal/10"
+                  />
+                  {/*Depois: ligar este botão à tela animais*/}
+                  <div className="min-w-0">
+                    <strong className="block text-[13px] text-verde-principal truncate">
+                      {animal.nome}
+                    </strong>
+                    <button
+                      type="button"
+                      className="text-[12px] text-vermelho-principal underline"
+                    >
+                      Ver no Catálogo
+                    </button>
+                  </div>
+                </article>
+              ))}
+
+              {/*Último card: aparece só quando há mais animais do que o limite*/}
+              {restantes > 0 && (
+                <button
+                  type="button"
+                  onClick={verTodos}
+                  className="snap-start shrink-0 w-[150px] flex items-center justify-center bg-white/15 border border-white/40 rounded-[16px] p-2 text-[13px] font-bold text-white"
+                >
+                  Ver todos (+{restantes})
+                </button>
+              )}
+            </div>
+          )}
         </section>
 
         {/*Filtros*/}
