@@ -4,7 +4,7 @@ export const AREAS: { id: Area; rotulo: string }[] = [
   { id: "casa", rotulo: "Casa" },
   { id: "campo", rotulo: "Campo" },
   { id: "trilha", rotulo: "Trilha" },
-  { id: "mar", rotulo: "Mar" },
+  { id: "mar", rotulo: "Água" },
 ];
 
 export const dadosPrevencao = {

@@ -8,6 +8,7 @@ import { ModalDetalhes } from "../components/ModalDetalhes";
 import type { Animal } from "../types/animal";
 import { useRegiao } from "../context/RegiaoContexto";
 import { filtrarPorRegiao } from "../utils/regiao";
+import { AREAS } from "../data/DicasPrevencao";
 
 //Tipos de categorias para filtro
 type CategoriaFiltro =
@@ -54,17 +55,29 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
     null,
   );
 
-  //Região: o filtro só fica ativo quando o usuário veio do "Ver todos" da Prevenção
-  const { municipio, filtrarCatalogo, setFiltrarCatalogo } = useRegiao();
+  //Pega do contexto tudo o que vem da Prevenção ( cidade, se o filtro está ligado e a área escolhida)
+  const {
+    municipio,
+    filtrarCatalogo,
+    setFiltrarCatalogo,
+    areaCatalogo,
+    setAreaCatalogo,
+  } = useRegiao();
+  //Filtro de região só é considerado ativo se o usuário tiver escolhido uma cidade e o filtro estiver ligado
   const filtroRegiaoAtivo = filtrarCatalogo && !!municipio;
 
-  //Busca
   //Converte os dados do JSON para o tipo Animal
   const animais: Animal[] = dadosAnimais as Animal[];
-  //Lista de partida: só os animais da região (se o filtro estiver ativo) ou todos
+
+  //Lista de partida, filtra a região e a área de prevenção, caso estejam ativos
   const listaBase = filtroRegiaoAtivo
-    ? filtrarPorRegiao(animais, municipio)
+    ? filtrarPorRegiao(animais, municipio).filter(
+        (a) => !areaCatalogo || (a.areas ?? []).includes(areaCatalogo),
+      )
     : animais;
+
+  const rotuloAreaCatalogo = AREAS.find((a) => a.id === areaCatalogo)?.rotulo;
+
   //Filtra os animais usando duas regras: a categoria selecionada e o termo de busca
   const termo = normalizar(busca);
   const animaisFiltrados = listaBase.filter((animal) => {
@@ -111,15 +124,19 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
           </div>
         </div>
 
-        {/*Chip da região: aparece só quando veio do "Ver todos"; o ✕ desliga o filtro*/}
+        {/*Chip da região, aparece só quando veio do "Ver todos"; o ✕ desliga o filtro*/}
         {filtroRegiaoAtivo && (
           <button
             type="button"
-            onClick={() => setFiltrarCatalogo(false)}
+            onClick={() => {
+              setFiltrarCatalogo(false);
+              setAreaCatalogo(null);
+            }}
             aria-label="Remover filtro de região"
             className="flex items-center gap-1.5 rounded-[16px] border border-verde-principal/40 bg-verde-principal/10 px-3 py-1.5 text-[13px] font-bold text-verde-principal shadow-sm shadow-verde-principal/20"
           >
-            Região: {municipio} – BA ✕
+            Região: {municipio} – BA
+            {rotuloAreaCatalogo && ` · ${rotuloAreaCatalogo}`} ✕
           </button>
         )}
 

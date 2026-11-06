@@ -2,6 +2,8 @@
   Interface que define a estrutura de dados de um Animal
   Garante a validação de tipos no TypeScript e evita a repetição de código no projeto.
  */
+import type { Area } from "../data/DicasPrevencao";
+
 export type Habitat =
   | "mata-atlantica"
   | "caatinga"
@@ -22,4 +24,5 @@ export interface Animal {
   periculosidade?: "Risco moderado" | "Perigo!";
   Caracteristicas?: string[];
   invasora?: boolean;
+  areas: Area[];
 }

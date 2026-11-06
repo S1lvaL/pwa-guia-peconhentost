@@ -30,7 +30,8 @@
       "cor marrom",
       "peçonhento",
       "terrestre"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "sapo-cururu",
@@ -59,7 +60,8 @@
       "terrestre",
       "venenoso",
       "noturno"
-    ]
+    ],
+    "areas": ["casa"]
   },
   {
     "id": "caravelas-portuguesas",
@@ -90,7 +92,8 @@
       "flutua na superfície",
       "encalha em praias",
       "venenoso"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "agua-viva",
@@ -121,7 +124,8 @@
       "transparente",
       "ambiente aquatico",
       "urticante"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "vespa-mar",
@@ -154,7 +158,8 @@
       "tentaculos longos",
       "urticante",
       "extremamente venenoso"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "anemona",
@@ -192,7 +197,8 @@
       "fixa em rochas",
       "poças de maré",
       "urticante"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "corais",
@@ -225,7 +231,8 @@
       "aparencia gelatinosa",
       "tamanho pequeno",
       "urticante"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "arraias",
@@ -263,7 +270,8 @@
       "acidente ao pisar",
       "ferrão",
       "ambiente aquatico"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "bagre",
@@ -302,7 +310,8 @@
       "tamanho medio",
       "ambiente aquatico",
       "ferrão"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "pinauna",
@@ -331,7 +340,8 @@
       "ambiente aquatico",
       "tamanho pequeno",
       "acidente ao pisar"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "peixe-sapo",
@@ -364,7 +374,8 @@
       "ambiente aquatico",
       "pele sem escamas com verrugas",
       "acidente ao pisar"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "peixe-escorpiao",
@@ -394,7 +405,8 @@
       "ambiente aquatico",
       "espinhos nas nadadeiras",
       "fica no fundo rochoso e recifes"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "peixe-leao",
@@ -426,7 +438,8 @@
       "tamanho medio uns 30cm",
       "ambiente aquatico"
     ],
-    "invasora": true
+    "invasora": true,
+    "areas": ["mar"]
   },
   {
     "id": "baiacu",
@@ -458,7 +471,8 @@
       "venenoso ao comer",
       "tamanho pequeno a grande",
       "tóxico por ingestão"
-    ]
+    ],
+    "areas": ["mar"]
   },
   {
     "id": "jararaca-malha-de-sapo",
@@ -489,7 +503,8 @@
       "terrestre",
       "peçonhenta",
       "hábitos noturnos"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "jararaca-da-seca",
@@ -522,7 +537,8 @@
       "inchaço",
       "tamanho pequeno",
       "picada"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "jararacuçu",
@@ -554,7 +570,8 @@
       "terrestre",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "surucucu-pico-de-jaca",
@@ -586,7 +603,8 @@
       "manchas",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha"]
   },
   {
     "id": "cascavel",
@@ -618,7 +636,8 @@
       "terrestre",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "coral-verdadeira",
@@ -657,7 +676,8 @@
       "pálpebras caídas",
       "falta de ar",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "escorpiao-do-nordeste",
@@ -691,7 +711,8 @@
       "tamanho pequeno",
       "hábitos noturnos",
       "peçonhento"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "escorpiao-amarelo",
@@ -726,7 +747,8 @@
       "picada",
       "pequeno",
       "peçonhento"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "escorpiao-marrom",
@@ -760,7 +782,8 @@
       "terrestre",
       "picada",
       "peçonhento"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "aranha-marrom",
@@ -797,7 +820,8 @@
       "tamanho pequeno",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "aranha-armadeira",
@@ -837,7 +861,8 @@
       "marrom",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "viuva-negra",
@@ -871,7 +896,8 @@
       "dor",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "viuva-marrom",
@@ -903,7 +929,8 @@
       "picada",
       "dor intensa",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "besouro-poto",
@@ -936,7 +963,8 @@
       "terrestre",
       "tamanho pequeno",
       "não pica"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   },
   {
     "id": "besouro-escorpiao",
@@ -970,7 +998,8 @@
       "terrestre",
       "tamanho pequeno",
       "não peçonhento"
-    ]
+    ],
+    "areas": ["trilha", "campo"]
   },
   {
     "id": "lacraias",
@@ -1008,6 +1037,7 @@
       "dor intensa",
       "picada",
       "peçonhenta"
-    ]
+    ],
+    "areas": ["trilha", "campo", "casa"]
   }
 ]

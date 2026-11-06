@@ -2,32 +2,22 @@ import { useState, useEffect } from "react";
 import { AREAS, dadosPrevencao } from "../data/DicasPrevencao";
 import type { Area } from "../data/DicasPrevencao";
 import { useRegiao } from "../context/RegiaoContexto";
+import { SeletorCidade } from "../components/SeletorCidade";
+import { filtrarPorRegiao } from "../utils/regiao";
 import animaisJson from "../data/animais.json";
-import cidadesBiomasJson from "../data/CidadesBiomas.json";
-import type { Animal, Habitat } from "../types/animal";
+import type { Animal } from "../types/animal";
+import { ModalDetalhes } from "../components/ModalDetalhes";
 
+//Chave usada para salvar o progresso do checklist no navegador
 const CHAVE_STORAGE = "prevencao:itensChecados";
 
 //Quantos animais aparecem no card antes do "Ver todos"
 const LIMITE_CARDS = 2;
 
-//Diz ao TypeScript o formato dos JSONs (eles são lidos como string comum)
+//Diz ao TypeScript o formato do JSON (ele é lido como string comum)
 const animais = animaisJson as unknown as Animal[];
-type InfoCidade = { bioma: Habitat; litoral: boolean };
-const cidadesBiomas = cidadesBiomasJson as unknown as Record<
-  string,
-  InfoCidade
->;
-const nomesCidades = Object.keys(cidadesBiomas);
 
-//Tira acentos e maiúsculas: "Camaçari" e "camacari" ficam iguais na busca
-const normalizar = (s: string) =>
-  s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
-
-//Animais "Perigo!" aparecem primeiro, depois "Risco moderado", depois os sem valor
+//Coloca uma prioridade, ordena do mais perigoso ao menos perigoso
 const pesoPericulosidade = (a: Animal) =>
   a.periculosidade === "Perigo!"
     ? 0
@@ -103,7 +93,7 @@ function IconeArea({ area }: { area: Area }) {
   }
 }
 
-/*ver se foi clicado e decide o que fazer*/
+//Um item do checklist (uma dica que pode ser marcada)
 function ItemCheck({
   texto,
   marcado,
@@ -132,7 +122,7 @@ function ItemCheck({
         onChange={onToggle}
         className="sr-only"
       />
-      {/*Desenho da caixinha: fica escura com ✓ quando marcado*/}
+      {/*Desenho da caixinha: fica escura com check quando marcado*/}
       <span
         aria-hidden
         className={`w-6 h-6 rounded-[6px] border-2 flex items-center justify-center shrink-0 text-[14px] font-extrabold ${
@@ -188,11 +178,13 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
   const [itensChecados, setItensChecados] =
     useState<Record<string, boolean>>(carregarProgresso);
 
-  //Cidade escolhida (vem do contexto, então continua salva ao trocar de aba)
-  const { municipio, setMunicipio, setFiltrarCatalogo } = useRegiao();
-  //Controla se o campo de busca da cidade está aberto e o que foi digitado
-  const [editandoLocal, setEditandoLocal] = useState(false);
-  const [busca, setBusca] = useState("");
+  //Animal aberto no modal de detalhes
+  const [animalSelecionado, setAnimalSelecionado] = useState<Animal | null>(
+    null,
+  );
+
+  //Cidade escolhida e filtros do catálogo (vêm do contexto, então não se perdem ao trocar de aba)
+  const { municipio, setFiltrarCatalogo, setAreaCatalogo } = useRegiao();
 
   //Salva toda vez que o progresso mudar
   useEffect(() => {
@@ -207,50 +199,25 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
   const toggleCheck = (item: string) =>
     setItensChecados((prev) => ({ ...prev, [item]: !prev[item] }));
 
-  //Sugestões de cidade: só aparecem a partir de 2 letras, no máximo 6
-  const sugestoes =
-    busca.trim().length >= 2
-      ? nomesCidades
-          .filter((cidade) =>
-            normalizar(cidade).includes(normalizar(busca.trim())),
-          )
-          .slice(0, 6)
-      : [];
+  //Dicas da área escolhida
+  const areaSelecionada = areaAtiva ? dadosPrevencao[areaAtiva] : null;
+  const rotuloArea = AREAS.find((a) => a.id === areaAtiva)?.rotulo;
 
-  const escolherCidade = (cidade: string) => {
-    setMunicipio(cidade);
-    setBusca("");
-    setEditandoLocal(false);
-  };
-
-  const alternarBusca = () => {
-    setBusca("");
-    setEditandoLocal((aberto) => !aberto);
-  };
-
-  //Animais da região: bioma da cidade + água doce (todas) + marinho (se for litoral)
-  const infoCidade = municipio ? cidadesBiomas[municipio] : undefined;
-  const habitatsDaCidade: Habitat[] = infoCidade
-    ? [
-        infoCidade.bioma,
-        "agua-doce",
-        ...(infoCidade.litoral ? (["marinho"] as Habitat[]) : []),
-      ]
-    : [];
-  const animaisDaRegiao = animais
-    .filter((a) => (a.habitats ?? []).some((h) => habitatsDaCidade.includes(h)))
+  //Animais que vão aparecer no card com base nos filtros (região, área e periculosidade)
+  const animaisDaRegiao = filtrarPorRegiao(animais, municipio)
+    .filter((a) => !areaAtiva || (a.areas ?? []).includes(areaAtiva))
     .sort((a, b) => pesoPericulosidade(a) - pesoPericulosidade(b));
+  //Só os primeiros animais cabem no card; "restantes" é quantos ficaram de fora
   const animaisVisiveis = animaisDaRegiao.slice(0, LIMITE_CARDS);
   const restantes = animaisDaRegiao.length - LIMITE_CARDS;
 
-  //"Ver todos": liga o filtro de região no catálogo e troca de aba
+  //Função chamada quando clicar em "ver todos" para mudar de aba se ela existir
   const verTodos = () => {
     setFiltrarCatalogo(true);
+    setAreaCatalogo(areaAtiva);
     onVerTodos?.();
   };
 
-  //Cálculo de progresso (somente ativo quando um filtro for escolhido)
-  const areaSelecionada = areaAtiva ? dadosPrevencao[areaAtiva] : null;
   //Junta as duas listas da área ("domestica" e "evite") numa só
   const todosOsItens = areaSelecionada
     ? [...areaSelecionada.domestica, ...areaSelecionada.evite]
@@ -282,81 +249,14 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           </div>
         </div>
 
-        {/*Barra de localização + campo de busca da cidade*/}
-        <div className="space-y-2">
-          <div className="flex items-center gap-1.5 bg-verde-principal/10 border border-verde-principal/40 rounded-[16px] px-3 py-2 text-[13px] text-letra shadow-sm shadow-verde-principal/20">
-            <svg
-              className="size-[18px] shrink-0 text-vermelho-principal"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z" />
-              <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            <span className="flex-1">
-              Sua localização atual:{" "}
-              <strong className="text-verde-principal">
-                {municipio ? `${municipio} - BA` : "Escolha sua cidade"}
-              </strong>
-            </span>
-            <button
-              type="button"
-              onClick={alternarBusca}
-              className="font-bold underline text-vermelho-principal"
-            >
-              {editandoLocal
-                ? "[Cancelar]"
-                : municipio
-                  ? "[Alterar]"
-                  : "[Escolher]"}
-            </button>
-          </div>
+        {/*Barra de localização + busca de cidade (componente compartilhado)*/}
+        <SeletorCidade />
 
-          {editandoLocal && (
-            <div className="space-y-1">
-              <input
-                type="text"
-                value={busca}
-                onChange={(e) => setBusca(e.target.value)}
-                autoFocus
-                autoComplete="off"
-                placeholder="Digite o nome da cidade"
-                aria-label="Buscar cidade"
-                className="w-full rounded-[12px] border border-verde-principal/40 bg-white px-3 py-2 text-[14px] text-letra outline-none focus:ring-2 focus:ring-verde-principal"
-              />
-              {sugestoes.length > 0 && (
-                <ul className="rounded-[12px] border border-verde-principal/40 bg-white overflow-hidden shadow-sm">
-                  {sugestoes.map((cidade) => (
-                    <li key={cidade}>
-                      <button
-                        type="button"
-                        onClick={() => escolherCidade(cidade)}
-                        className="w-full text-left px-3 py-2 text-[14px] text-letra hover:bg-verde-principal/10"
-                      >
-                        {cidade} - BA
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {busca.trim().length >= 2 && sugestoes.length === 0 && (
-                <p className="px-1 text-[12px] text-letra/75">
-                  Nenhuma cidade encontrada. Confira se o nome está certo.
-                </p>
-              )}
-            </div>
-          )}
-        </div>
-
-        {/*Card principal: animais da região*/}
+        {/*Card principal: animais da região (e da área, quando houver uma escolhida)*/}
         <section className="bg-verde-principal/87 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
           <h2 className="text-[18px] font-bold leading-tight">
             Animais Peçonhentos nesta Região
+            {rotuloArea && <span> · {rotuloArea}</span>}
           </h2>
 
           {!municipio ? (
@@ -366,15 +266,18 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
             </p>
           ) : animaisDaRegiao.length === 0 ? (
             <p className="text-[13px] leading-snug">
-              Nenhum animal cadastrado para esta região ainda.
+              Nenhum animal cadastrado para{" "}
+              {areaAtiva ? "esta área nesta" : "esta"} região ainda.
             </p>
           ) : (
             /*Lista que rola para o lado (overflow-x-auto) e "encaixa" cada card*/
             <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
               {animaisVisiveis.map((animal) => (
-                <article
+                <button
                   key={animal.id}
-                  className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white rounded-[16px] p-2"
+                  type="button"
+                  onClick={() => setAnimalSelecionado(animal)}
+                  className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white rounded-[16px] p-2 text-left"
                 >
                   <img
                     src={
@@ -386,19 +289,15 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
                     loading="lazy"
                     className="w-[52px] h-[52px] rounded-[12px] object-cover bg-verde-principal/10"
                   />
-                  {/*Depois: ligar este botão à tela animais*/}
                   <div className="min-w-0">
                     <strong className="block text-[13px] text-verde-principal truncate">
                       {animal.nome}
                     </strong>
-                    <button
-                      type="button"
-                      className="text-[12px] text-vermelho-principal underline"
-                    >
-                      Ver no Catálogo
-                    </button>
+                    <span className="text-[12px] text-vermelho-principal underline">
+                      Ver detalhes
+                    </span>
                   </div>
-                </article>
+                </button>
               ))}
 
               {/*Último card: aparece só quando há mais animais do que o limite*/}
@@ -489,9 +388,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           //Com filtro: mostra as dicas da área selecionada
           <>
             <div className="space-y-3">
-              <TituloSecao>
-                <span className="capitalize">Prevenção {areaAtiva}</span>
-              </TituloSecao>
+              <TituloSecao>Prevenção · {rotuloArea}</TituloSecao>
               <div className="space-y-2">
                 {areaSelecionada.domestica.map((item) => (
                   <ItemCheck
@@ -521,6 +418,10 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           </>
         )}
       </div>
+      <ModalDetalhes
+        animal={animalSelecionado}
+        onClose={() => setAnimalSelecionado(null)}
+      />
     </div>
   );
 }
