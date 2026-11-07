@@ -1,0 +1,16 @@
+[
+  {
+    "id": "exemplo-camacari",
+    "nome": "EXEMPLO - Unidade de Teste (Camaçari)",
+    "municipio": "Camaçari",
+    "telefone": "123456789",
+    "soros": ["Soro A", "Soro B"]
+  },
+  {
+    "id": "exemplo-salvador",
+    "nome": "EXEMPLO - Unidade de Teste (Salvador)",
+    "municipio": "Salvador",
+    "telefone": "123456789",
+    "soros": ["Soro A", "Soro B"]
+  }
+]

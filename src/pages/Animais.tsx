@@ -5,7 +5,7 @@ import { useState } from "react"; //Hook (função especial) do React para guard
 import dadosAnimais from "../data/animais.json";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
-import type { Animal } from "../types/animal";
+import type { Animal } from "../types/animal.ts";
 import { useRegiao } from "../context/RegiaoContexto";
 import { filtrarPorRegiao } from "../utils/regiao";
 import { AREAS } from "../data/DicasPrevencao";
