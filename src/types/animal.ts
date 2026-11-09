@@ -23,6 +23,10 @@ export interface Animal {
   oQueNaoFazer?: string[];
   periculosidade?: "Risco moderado" | "Perigo!";
   Caracteristicas?: string[];
+<<<<<<< Updated upstream
   invasora?: boolean;
   areas: Area[];
 }
+=======
+}
+>>>>>>> Stashed changes
