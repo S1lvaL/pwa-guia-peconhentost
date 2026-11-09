@@ -1,16 +1,2490 @@
 [
   {
-    "id": "exemplo-camacari",
-    "nome": "EXEMPLO - Unidade de Teste (Camaçari)",
-    "municipio": "Camaçari",
-    "telefone": "123456789",
-    "soros": ["Soro A", "Soro B"]
+    "id": "cnes-6556450",
+    "nome": "Hospital Municipal Odin Melo",
+    "municipio": "Abaíra",
+    "telefone": "7734762496",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
   },
   {
-    "id": "exemplo-salvador",
-    "nome": "EXEMPLO - Unidade de Teste (Salvador)",
+    "id": "cnes-2304295",
+    "nome": "Hospital Jonival Lucas da Silva",
+    "municipio": "Abaré",
+    "telefone": "7532872222",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2602202",
+    "nome": "Hospital Maternidade Luis Eduardo Magalhães",
+    "municipio": "Água Fria",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2487438",
+    "nome": "Hospital Regional Dantas Bião",
+    "municipio": "Alagoinhas",
+    "telefone": "7534238376",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2304848",
+    "nome": "Hospital Municipal São Bernardo",
+    "municipio": "Alcobaça",
+    "telefone": "73999366008",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2414244",
+    "nome": "Hospital Municipal de Amargosa",
+    "municipio": "Amargosa",
+    "telefone": "7536343573",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-3827127",
+    "nome": "Hospital Municipal Tavina de Oliveira",
+    "municipio": "Anagé",
+    "telefone": "77999084933",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-4021460",
+    "nome": "Hospital Municipal de Andaraí",
+    "municipio": "Andaraí",
+    "telefone": "7533352083",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4021495",
+    "nome": "UPA Plabo Campos",
+    "municipio": "Andorinha",
+    "telefone": "74991071325",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2799820",
+    "nome": "Hospital Nossa Senhora de Lurdes",
+    "municipio": "Antas",
+    "telefone": "7532771147",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2799847",
+    "nome": "Hospital Santa Maria",
+    "municipio": "Antas",
+    "telefone": "7532771163",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2512084",
+    "nome": "Unidade Mista Julia Trindade Leal",
+    "municipio": "Araçás",
+    "telefone": "7534512162",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-7761112",
+    "nome": "UPA de Araci",
+    "municipio": "Araci",
+    "telefone": "7592051989",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2799766",
+    "nome": "Hospital Maternidade Milton Pamponet Ribeiro",
+    "municipio": "Baixa Grande",
+    "telefone": "7432581316",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-3048209",
+    "nome": "Hospital Municipal Santa Rita",
+    "municipio": "Barra",
+    "telefone": "7436622153",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2799855",
+    "nome": "Hospital Suzy Zanfreta",
+    "municipio": "Barra da Estiva",
+    "telefone": "7734501120",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2722844",
+    "nome": "Hospital Municipal Dr José Maria de Magalhães Neto",
+    "municipio": "Barra do Choça",
+    "telefone": "7734363025",
+    "soros": ["Botrópico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-3972925",
+    "nome": "Hospital do Oeste",
+    "municipio": "Barreiras",
+    "telefone": "7736129400",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4022416",
+    "nome": "Hospital Municipal Dr. Jose Maria de Magalhaes Neto",
+    "municipio": "Barrocas",
+    "telefone": "7536082105",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2413922",
+    "nome": "Hospital José da Costa Pinto Dantas",
+    "municipio": "Belmonte",
+    "telefone": "7332872991",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2304953",
+    "nome": "Hospital Municipal Vicente Vieira",
+    "municipio": "Belo Campo",
+    "telefone": "7734372672",
+    "soros": ["Botrópico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-2644827",
+    "nome": "Unidade Mista de Saúde de Biritinga (Hospital Municipal de Biritinga)",
+    "municipio": "Biritinga",
+    "telefone": "7532672672",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2771268",
+    "nome": "Hospital Geral de Boa Vista do Tupim",
+    "municipio": "Boa Vista do Tupim",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4022718",
+    "nome": "Hospital Municipal Carmela Dutra",
+    "municipio": "Bom Jesus da Lapa",
+    "telefone": "7734814215",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-4022750",
+    "nome": "Hospital Municipal de Bom Jesus da Serra",
+    "municipio": "Bom Jesus da Serra",
+    "telefone": "7734611549",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2523515",
+    "nome": "Hospital Marcus Allan de Castro Rocha",
+    "municipio": "Boninal",
+    "telefone": "7533302306",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-3246558",
+    "nome": "Maternidade Municipal Deputado José Carlos Araujo",
+    "municipio": "Bonito",
+    "telefone": "7533432137",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4022807",
+    "nome": "Hospital Municipal de Boquira",
+    "municipio": "Boquira",
+    "telefone": "7736452033",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2386305",
+    "nome": "Hospital Municipal e Maternidade de Botuporã",
+    "municipio": "Botuporã",
+    "telefone": "77981604761",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2801590",
+    "nome": "Hospital Municipal Joana Cajaíba de Andrade",
+    "municipio": "Brejões",
+    "telefone": "7536542129",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-6485235",
+    "nome": "Unidade Básica de Saúde 24h de Brotas de Macaúbas (Hosp. Munic. de Brotas de Macaubas)",
+    "municipio": "Brotas de Macaúbas",
+    "telefone": "7736442019",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2386569",
+    "nome": "Hospital Municipal Professor Magalhães Neto",
+    "municipio": "Brumado",
+    "telefone": "7734416780",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2386674",
+    "nome": "Hospital Maternidade Nossa Senhora da Luz",
+    "municipio": "Buritirama",
+    "telefone": "7734422179",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2386739",
+    "nome": "Hospital Municipal de Caatiba",
+    "municipio": "Caatiba",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2386879",
+    "nome": "Hospital São João de Deus (Santa Casa de Misericórdia de Cachoeira)",
+    "municipio": "Cachoeira",
+    "telefone": "7534254040",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4023463",
+    "nome": "Hospital Municipal Drª Josefa Monteiro",
+    "municipio": "Caém",
+    "telefone": "7436362212",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2387115",
+    "nome": "Centro de saúde de Caetanos",
+    "municipio": "Caetanos",
+    "telefone": "77981236657",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-2556901",
+    "nome": "Centro de saúde Dra. Lara Fernandes Teixeira",
+    "municipio": "Caetité",
+    "telefone": "7734662111",
+    "soros": ["Escorpiônico"],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2557096",
+    "nome": "UPA de Caetité",
+    "municipio": "Caetité",
+    "telefone": "7734548061",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2387190",
+    "nome": "Unidade Básica de Saúde Salustino Palma",
+    "municipio": "Cairu",
+    "telefone": "7536532027",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-4023536",
+    "nome": "Hospital Municipal João Durval Carneiro",
+    "municipio": "Caldeirão Grande",
+    "telefone": "7436342426",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2601710",
+    "nome": "Hospital Dr. Osvaldo Valverde (Fundação Hospital da Mata Atlântica)",
+    "municipio": "Camacan",
+    "telefone": "7332831788",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2388057",
+    "nome": "HGC - Hospital Geral de Camaçari",
+    "municipio": "Camaçari",
+    "telefone": "7136212277",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2387514",
+    "nome": "Hospital Municipal de Camamu (Unidade Mista de Saúde Dr. Álvaro Ernesto)",
+    "municipio": "Camamu",
+    "telefone": "7332551798",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-6600476",
+    "nome": "Hospital Municipal de Campo Alegre de Lourdes",
+    "municipio": "Campo Alegre de Lourdes",
+    "telefone": "7435332264",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2799839",
+    "nome": "União Hospitalar São Francisco",
+    "municipio": "Campo Formoso",
+    "telefone": "7436451217",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2602571",
+    "nome": "Hospital Municipal Mãe Simoa",
+    "municipio": "Canápolis",
+    "telefone": "7736872190",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2804042",
+    "nome": "Hospital Municipal Régis Pacheco",
+    "municipio": "Canavieiras",
+    "telefone": "7332842458",
+    "soros": ["Botrópico"]
+  },
+  {
+    "id": "cnes-2387581",
+    "nome": "Hospital Municipal de Candeias",
+    "municipio": "Candeias",
+    "telefone": "7136011814",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2387700",
+    "nome": "Hospital Municipal Luis Eduardo Magalhães",
+    "municipio": "Cândido Sales",
+    "telefone": "7734381384",
+    "soros": ["Botrópico", "Crotálico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2387719",
+    "nome": "Hospital Municipal Senhora Santana",
+    "municipio": "Cansanção",
+    "telefone": "7532741023",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2597586",
+    "nome": "Hospital Municipal Genário Rabelo de Alcântara",
+    "municipio": "Canudos",
+    "telefone": "7534942165",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-7148984",
+    "nome": "Unidade de Pronto Atendimento 24h",
+    "municipio": "Capim Grosso",
+    "telefone": "7436510998",
+    "soros": ["Botrópico"]
+  },
+  {
+    "id": "cnes-4024303",
+    "nome": "Hospital Municipal de Carinhana",
+    "municipio": "Carinhanha",
+    "telefone": "7734852038",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2388928",
+    "nome": "Hospital Municipal de Casa Nova",
+    "municipio": "Casa Nova",
+    "telefone": "7435362261",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2602075",
+    "nome": "Hospital Regional de Castro Alves",
+    "municipio": "Castro Alves",
+    "telefone": "7535221410",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2388685",
+    "nome": "Hospital Municipal de Catu",
+    "municipio": "Catu",
+    "telefone": "7136412742",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4024370",
+    "nome": "Hospital Municipal São Sebastião",
+    "municipio": "Caturama",
+    "telefone": "77981954897",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2532522",
+    "nome": "Hospital Municipal Luiz Eduardo Magalhães",
+    "municipio": "Cícero Dantas",
+    "telefone": "7532781993",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2389584",
+    "nome": "Hospital Municipal São Sebastião",
+    "municipio": "Cocos",
+    "telefone": "7734891583",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2598183",
+    "nome": "Hospital Português Unidade Regional de Conceição do Coité",
+    "municipio": "Conceição do Coité",
+    "telefone": "7532621408",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2512149",
+    "nome": "Hospital Givaldo Fontes Costas",
+    "municipio": "Conde",
+    "telefone": "7534291152",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2801566",
+    "nome": "Hospital Municipal Dr. José Cardoso dos Apóstolos",
+    "municipio": "Condeúba",
+    "telefone": "7734352023",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-5446333",
+    "nome": "Hospital Municipal Joaquim Mutti de Carvalho",
+    "municipio": "Cordeiros",
+    "telefone": "7734472162",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2801558",
+    "nome": "Hospital Municipal Antônio Joaquim Lopes",
+    "municipio": "Coribe",
+    "telefone": "7734802119",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2101547",
+    "nome": "Hospital Municipal Dr. Lauro Joaquim de Araújo",
+    "municipio": "Correntina",
+    "telefone": "7734883246",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-7111606",
+    "nome": "UPA - Unidade de Pronto Atendimento",
+    "municipio": "Cruz das Almas",
+    "telefone": "08000003261",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2400901",
+    "nome": "Hospital Dr. Jaime da Silveira Coelho",
+    "municipio": "Curaçá",
+    "telefone": "7435311118",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2602563",
+    "nome": "Hospital Maternidade Dr. Marilton Tanajura Matias",
+    "municipio": "Dom Basilio",
+    "telefone": "77981142118",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-4025121",
+    "nome": "Casa de Saúde Maria Lapa Bittencourt",
+    "municipio": "Elísio Medrado",
+    "telefone": "7536492129",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-4025148",
+    "nome": "Hospital Municipal Milton Rocha Souza",
+    "municipio": "Encruzilhada",
+    "telefone": "7734392157",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2620464",
+    "nome": "Hospital Municipal de Entre Rios (Hospital Municipal Prof. Edgard Santos)",
+    "municipio": "Entre Rios",
+    "telefone": "7534203438",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4021185",
+    "nome": "Hospital Unidade Mista de Saúde (Hosp. Munic. Dr. Monaliza Louzada)",
+    "municipio": "Érico Cardoso",
+    "telefone": "77991326085",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2627183",
+    "nome": "Hospital São Francisco e São Vicente (Santa Casa de Misericórdia)",
+    "municipio": "Esplanada",
+    "telefone": "7534271523",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-9130411",
+    "nome": "UPA Dr. Aristides Freitas de Queiroz",
+    "municipio": "Euclides da Cunha",
+    "telefone": "7532713883",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2507447",
+    "nome": "Hospital Regional de Eunápolis",
+    "municipio": "Eunápolis",
+    "telefone": "7332819200",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-3013359",
+    "nome": "Hospital Municipal de Feira da Mata",
+    "municipio": "Feira da Mata",
+    "telefone": "77998462395",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-6602533",
+    "nome": "Hospital Estadual da Criança",
+    "municipio": "Feira de Santana",
+    "telefone": "7536020300",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2799758",
+    "nome": "Hospital Geral Clériston Andrade",
+    "municipio": "Feira de Santana",
+    "telefone": "7536023300",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2401665",
+    "nome": "Hospital São Sebastião",
+    "municipio": "Filadélfia",
+    "telefone": "7435512201",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2412381",
+    "nome": "Hospital João Batista Assis",
+    "municipio": "Gandu",
+    "telefone": "7332541250",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2402394",
+    "nome": "Hospital Municipal Getúlio Reginaldo Cunha",
+    "municipio": "Gentio do Ouro",
+    "telefone": "7436372001",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2804034",
+    "nome": "Hospital Regional Guanambi",
+    "municipio": "Guanambi",
+    "telefone": "7734516060",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2412276",
+    "nome": "Hospital Maternidade Joana Moura",
+    "municipio": "Guaratinga",
+    "telefone": "7332772311",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2772671",
+    "nome": "Hosp. Municipal Dr. Waldir Cavalcanti Medrado",
+    "municipio": "Iaçu",
+    "telefone": "7533253030",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2412551",
+    "nome": "Hospital Municipal de Ibiassucê (Hosp. Municipal São Sebastião)",
+    "municipio": "Ibiassucê",
+    "telefone": "7734652237",
+    "soros": ["Escorpiônico"],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-3862984",
+    "nome": "Unidade de Saúde Retaguarda - 24 horas",
+    "municipio": "Ibicoara",
+    "telefone": "7734132196",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2412845",
+    "nome": "Hospital Maternidade Anita Rodrigues Leal",
+    "municipio": "Ibicuí",
+    "telefone": "7332722943",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-5020743",
+    "nome": "Unidade Mista de Saúde (Hospital Municipal de Ibipitanga)",
+    "municipio": "Ibipitanga",
+    "telefone": "7736742017",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2413043",
+    "nome": "Hospital Municipal Edvaldo Magalhães Nascimento",
+    "municipio": "Ibirapitanga",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-2412713",
+    "nome": "Hospital Padre Aldo Coppola",
+    "municipio": "Ibitiara",
+    "telefone": "7736472209",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2602121",
+    "nome": "Hospital Regional de Ibotirama",
+    "municipio": "Ibotirama",
+    "telefone": "7736981212",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2627256",
+    "nome": "Hospital Municipal José Olinto Cotrim",
+    "municipio": "Igaporã",
+    "telefone": "7734662112",
+    "soros": ["Escorpiônico"],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2413299",
+    "nome": "Hospital Maternidade Luiz Eduardo Magalhães",
+    "municipio": "Igrapiuna",
+    "telefone": "7332251140",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2413469",
+    "nome": "Hospital Manoel Martins de Souza",
+    "municipio": "Iguaí",
+    "telefone": "7332712136",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2413450",
+    "nome": "Hospital Somai",
+    "municipio": "Iguaí",
+    "telefone": "7332712520",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2415844",
+    "nome": "Hospital Materno Infantil Dr. Joaquim Sampaio",
+    "municipio": "Ilhéus",
+    "telefone": "7332343850",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-9388133",
+    "nome": "Hospital Regional Costa do Cacau",
+    "municipio": "Ilhéus",
+    "telefone": "7332355300",
+    "soros": ["Botrópico", "Laquético", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2653230",
+    "nome": "Hospital Municipal Antônio Carlos Magalhães",
+    "municipio": "Inhambupe",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2603055",
+    "nome": "Hospital Geral de Ipiaú",
+    "municipio": "Ipiaú",
+    "telefone": "7335313113",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4026675",
+    "nome": "Hospital Municipal Guilhermino Pereira Machado",
+    "municipio": "Ipupiara",
+    "telefone": "7736461293",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4026756",
+    "nome": "Hospital Municipal de Iramaia",
+    "municipio": "Iramaia",
+    "telefone": "7734122196",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-4026772",
+    "nome": "Hospital Américo Chagas",
+    "municipio": "Iraquara",
+    "telefone": "7533642140",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4026896",
+    "nome": "Hospital Regional Dr. Mário Dourado Sobrinho",
+    "municipio": "Irecê",
+    "telefone": "7436414716",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2802015",
+    "nome": "Hospital Frei Ricardo",
+    "municipio": "Itabela",
+    "telefone": "7332703164",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-9054122",
+    "nome": "UPA de Itaberaba",
+    "municipio": "Itaberaba",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2385171",
+    "nome": "Hospital de Base Luís Eduardo Magalhães",
+    "municipio": "Itabuna",
+    "telefone": "7321025150",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2525569",
+    "nome": "Hospital Manoel Novaes",
+    "municipio": "Itabuna",
+    "telefone": "7332144300",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2413507",
+    "nome": "Hospital Municipal de Itaetê",
+    "municipio": "Itaeté",
+    "telefone": "7533202106",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2601761",
+    "nome": "Hospital São José - Hospital Pequeno Porte (H.P.P.) / Clinica Municipal de Itagi",
+    "municipio": "Itagi",
+    "telefone": "7335392187",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-3043185",
+    "nome": "Hospital Municipal Luis Eduardo Magalhães",
+    "municipio": "Itagimirim",
+    "telefone": "7332892385",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2414074",
+    "nome": "Unidade Mista de Itajú do Colônia",
+    "municipio": "Itajú do Colônia",
+    "telefone": "73981494623",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2556847",
+    "nome": "Hospital Regional de Itamarajú",
+    "municipio": "Itamaraju",
+    "telefone": "7332941242",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-6416039",
+    "nome": "Secretaria Municipal de Saúde",
+    "municipio": "Itamari",
+    "telefone": "7335321295",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2414465",
+    "nome": "Hospital Regional São Sebastião",
+    "municipio": "Itambé",
+    "telefone": "7734321220",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2602083",
+    "nome": "Hospital Geral de Itaparica",
+    "municipio": "Itaparica",
+    "telefone": "7136318400",
+    "soros": ["Botrópico", "Crotálico", "Elapídico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2414651",
+    "nome": "Maternidade Nelson Moura",
+    "municipio": "Itapebi",
+    "telefone": "7332861724",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2417189",
+    "nome": "Santa Casa de Misericórdia (Hospital Cristo Redentor)",
+    "municipio": "Itapetinga",
+    "telefone": "7732621929",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-7116896",
+    "nome": "UPA 24h",
+    "municipio": "Itapetinga",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2417456",
+    "nome": "Hospital Regional de Itarantim",
+    "municipio": "Itarantim",
+    "telefone": "7332662276",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2423928",
+    "nome": "Hosp Munic. Pedro Pimentel Ribeiro",
+    "municipio": "Itiruçu",
+    "telefone": "7335381310",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2444704",
+    "nome": "Maternidade Maria Eunice Dultra Soares",
+    "municipio": "Itatim",
+    "telefone": "7531992279",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2423936",
+    "nome": "Hospital Municipal de Itiúba",
+    "municipio": "Itiúba",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2445204",
+    "nome": "Fundação Hospital e Maternidade de Itororó",
+    "municipio": "Itororó",
+    "telefone": "7332651117",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2445247",
+    "nome": "Hospital Municipal de Ituaçu",
+    "municipio": "Ituaçu",
+    "telefone": "7734152557",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2445352",
+    "nome": "Hospital Antonio da Costa Pinto Dantas",
+    "municipio": "Ituberá",
+    "telefone": "7332563255",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2801582",
+    "nome": "Hospital Municipal Hermenegildo Dias de Silva",
+    "municipio": "Jaborandi",
+    "telefone": "7736832160",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2466694",
+    "nome": "Hospital Municipal Nossa Senhora da Conceição",
+    "municipio": "Jacaraci",
+    "telefone": "7734662110",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-9078673",
+    "nome": "UPA Josefa Maia da Silva",
+    "municipio": "Jacobina",
+    "telefone": "7436222918",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2802252",
+    "nome": "Hospital Municipal de Jaguaquara",
+    "municipio": "Jaguaquara",
+    "telefone": "7335341053",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-211680",
+    "nome": "UPA",
+    "municipio": "Jaguaquara",
+    "telefone": "7335301176",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2601400",
+    "nome": "Hospital Municipal de Jaguarari",
+    "municipio": "Jaguarari",
+    "telefone": "7436192090",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2400693",
+    "nome": "Hospital Geral Prado Valadares",
+    "municipio": "Jequié",
+    "telefone": "7335287100",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-9362398",
+    "nome": "UPA",
+    "municipio": "Jequié",
+    "telefone": "71987473089",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-2304767",
+    "nome": "Hospital Geral de Jeremoabo",
+    "municipio": "Jeremoabo",
+    "telefone": "7532032306",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2483408",
+    "nome": "Hospital e Maternidade Júlia Maia",
+    "municipio": "Jiquiriçá",
+    "telefone": "7536512191",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-4028155",
+    "nome": "Hospital Regional de Juazeiro",
+    "municipio": "Juazeiro",
+    "telefone": "7436125625",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2533413",
+    "nome": "Hospital Municipal Paulo Souto",
+    "municipio": "Jucuruçu",
+    "telefone": "7336622201",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2602210",
+    "nome": "Hospital Municipal Álvaro Fagundes",
+    "municipio": "Lajedo do Tabocal",
+    "telefone": "7335561222",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2390078",
+    "nome": "Hospital e Maternidade Municipal Ranulfo José de Almeida",
+    "municipio": "Laje",
+    "telefone": "7536622634",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-9280871",
+    "nome": "Hospital Municipal Catharina Maria dos Reis",
+    "municipio": "Lamarão",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2802023",
+    "nome": "Hospital Geral Menandro de Faria",
+    "municipio": "Lauro de Freitas",
+    "telefone": "7133790099",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2483688",
+    "nome": "Hospital Municipal Sebastião Martins Alves",
+    "municipio": "Lençóis",
+    "telefone": "7533411996",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2487616",
+    "nome": "Hospital Municipal de Livramento (Hosp. Munic. Dr. Ulysses Celestino da Silva)",
+    "municipio": "Livramento de Nossa Senhora",
+    "telefone": "7734442223",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2492881",
+    "nome": "Hospital Municipal Julieta Sampaio",
+    "municipio": "Macajuba",
+    "telefone": "7432592402",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2492911",
+    "nome": "Hospital São Pedro",
+    "municipio": "Macarani",
+    "telefone": "7732742165",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-717573",
+    "nome": "UPA de Macaúbas",
+    "municipio": "Macaúbas",
+    "telefone": "7734731269",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-3289826",
+    "nome": "Hospital Municipal Dr. Eduardo Ribeiro Bahiana",
+    "municipio": "Madre de Deus",
+    "telefone": "7136044005",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-6436838",
+    "nome": "Centro de Saúde de Maetinga (Centro de Saúde Alexnaldo Pinheiro Bandeira)",
+    "municipio": "Maetinga",
+    "telefone": "7734722276",
+    "soros": ["Botrópico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2493578",
+    "nome": "Hospital Maternidade Municipal de Maiquinique",
+    "municipio": "Maiquinique",
+    "telefone": "7732752200",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4028511",
+    "nome": "Hospital Deputado Luís Eduardo Magalhães",
+    "municipio": "Mairi",
+    "telefone": "7436322111",
+    "soros": ["Botrópico"]
+  },
+  {
+    "id": "cnes-2600854",
+    "nome": "Hospital Municipal Dr. Alvaro Bezerra",
+    "municipio": "Maracás",
+    "telefone": "7335332132",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-3016986",
+    "nome": "Hospital Luiz Eduardo Magalhaes",
+    "municipio": "Marcionílio Souza",
+    "telefone": "75991810736",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-2627418",
+    "nome": "Hospital Geral de Mata de São João (Hosp. Munic. Dr. Eurico Goulart de Freitas)",
+    "municipio": "Mata de São João",
+    "telefone": "7136351005",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4028740",
+    "nome": "Hospital Municipal De medeiros Neto",
+    "municipio": "Medeiros Neto",
+    "telefone": "73998566821",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2498421",
+    "nome": "Hospital Português",
+    "municipio": "Miguel Calmon",
+    "telefone": "7436277803",
+    "soros": ["Botrópico"]
+  },
+  {
+    "id": "cnes-2498456",
+    "nome": "Hospital Municipal de Milagres",
+    "municipio": "Milagres",
+    "telefone": "7535452097",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-4028759",
+    "nome": "Hospital Municipal Monsenhor Berenguer",
+    "municipio": "Monte Santo",
+    "telefone": "7535120012",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-3320944",
+    "nome": "Unidade Mista Jonival Lucas",
+    "municipio": "Morpará",
+    "telefone": "7736632168",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2801906",
+    "nome": "Hospital Maternidade São Vicente de Paulo",
+    "municipio": "Morro do Chapéu",
+    "telefone": "7436532111",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2498790",
+    "nome": "Hospital Augusta Medrado",
+    "municipio": "Mucugê",
+    "telefone": "7533382100",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2498804",
+    "nome": "Hospital São José",
+    "municipio": "Mucuri",
+    "telefone": "7336052003",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2601575",
+    "nome": "Hospital Maternidade Clélia Rebouças",
+    "municipio": "Mutuípe",
+    "telefone": "7536352541",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2301601",
+    "nome": "Hospital Santa Casa de Misericórdia (Hospital Gonçalves Martins)",
+    "municipio": "Nazaré",
+    "telefone": "7536362016",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2526492",
+    "nome": "Hospital Edimir de Souza Costa",
+    "municipio": "Nova Canaã",
+    "telefone": "7332072182",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-6774792",
+    "nome": "Maternidade Valdionor Novais Nunes",
+    "municipio": "Nova Redenção",
+    "telefone": "7533452103",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2505843",
+    "nome": "Unidade Hospitalar Coracao de Jesus",
+    "municipio": "Nova Soure",
+    "telefone": "7534372113",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2771276",
+    "nome": "Unidade Mista de Saude Dr. João Cupertino da Silva",
+    "municipio": "Oliveira dos Brejinhos",
+    "telefone": "7736422438",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-6919162",
+    "nome": "Hospital Municipal Janaelson Da Silva Araruna Costa",
+    "municipio": "Ourolândia",
+    "telefone": "74999812134",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-4029607",
+    "nome": "Hospital Dr. Aurélio Justiniano Rocha",
+    "municipio": "Paramirim",
+    "telefone": "7734712021",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4029526",
+    "nome": "Hospital José Américo Resende",
+    "municipio": "Paramirim",
+    "telefone": "7734712241",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2601702",
+    "nome": "Hospital Municipal de Paratinga",
+    "municipio": "Paratinga",
+    "telefone": "7736642278",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4029623",
+    "nome": "Hospital Municipal Ismael Dias Trindade",
+    "municipio": "Paripiranga",
+    "telefone": "7532792255",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2508141",
+    "nome": "Hospital Arlete Magalhães",
+    "municipio": "Pau Brasil",
+    "telefone": "7382238303",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-2533480",
+    "nome": "Hospital Nair Alves de Souza",
+    "municipio": "Paulo Afonso",
+    "telefone": "7532822163",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2508176",
+    "nome": "Hospital Municipal de Piatã Doutor Hélio Macedo Araújo",
+    "municipio": "Piatã",
+    "telefone": "7734792163",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-5166292",
+    "nome": "Hospital Municipal Luis Eduardo Magalhães",
+    "municipio": "Pilão Arcado",
+    "telefone": "7435342709",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-4029801",
+    "nome": "Hospital Prof. Edgar Santos",
+    "municipio": "Pindobaçu",
+    "telefone": "7435482157",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4029844",
+    "nome": "Unidade Mista de Saúde (Hosp. Mun. Maria Pereira Barbosa)",
+    "municipio": "Piripá",
+    "telefone": "7734542561",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2601117",
+    "nome": "Hospital Municipal Nilton Ferreira dos Santos",
+    "municipio": "Planalto",
+    "telefone": "7734342206",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2601583",
+    "nome": "Hospital São Lucas",
+    "municipio": "Poções",
+    "telefone": "7734315448",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-7592191",
+    "nome": "UPA 24H Vilobaldo Macedo",
+    "municipio": "Poções",
+    "telefone": "7734315812",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-7187556",
+    "nome": "Hospital Municipal Dr. Carlito Silva",
+    "municipio": "Pojuca",
+    "telefone": "7136453271",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2600714",
+    "nome": "Unidade Hospitalar Nossa Senhora de Fátima",
+    "municipio": "Ponto Novo",
+    "telefone": "7436771387",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2802090",
+    "nome": "Hospital Luis Eduardo Magalhães",
+    "municipio": "Porto Seguro",
+    "telefone": "7332884911",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2600935",
+    "nome": "Hospital Maternidade de Potiraguá",
+    "municipio": "Potiraguá",
+    "telefone": "7332852140",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4030184",
+    "nome": "Centro de Saúde São João Batista",
+    "municipio": "Presidente Jânio Quadros",
+    "telefone": "7734922231",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2600730",
+    "nome": "Hospital Maternidade Luis Eduardo Magalhães",
+    "municipio": "Presidente Tancredo Neves",
+    "telefone": "7335401003",
+    "soros": ["Botrópico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2602032",
+    "nome": "Hospital Municipal Dr. Edson Silva",
+    "municipio": "Queimadas",
+    "telefone": "7536441323",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2598221",
+    "nome": "Hospital Municipal de Quijique (Hosp. Munic. Antonio Imbassahy)",
+    "municipio": "Quijingue",
+    "telefone": "7534872153",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2509377",
+    "nome": "Casa de Saúde de Remanso",
+    "municipio": "Remanso",
+    "telefone": "7435351051",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2509369",
+    "nome": "Hospital São Pedro",
+    "municipio": "Remanso",
+    "telefone": "7435351051",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2799790",
+    "nome": "Hospital Geral Santa Tereza",
+    "municipio": "Ribeira do Pombal",
+    "telefone": "7532781290",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2509547",
+    "nome": "Centro de Saúde Adelino Fernandes",
+    "municipio": "Ribeirão do Largo",
+    "telefone": "77991515857",
+    "soros": ["Botrópico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-2509830",
+    "nome": "Hospital do Sindicato dos Trabalhadores Rurais de Rio do Pires",
+    "municipio": "Rio do Pires",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2653699",
+    "nome": "Hospital e Maternidade Maria Amelia Menezes Santos",
+    "municipio": "Rio Real",
+    "telefone": "7534261242",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2510391",
+    "nome": "Santa Casa de Misericórdia de Ruy Barbosa (Hosp. Regional de Ruy Barbosa)",
+    "municipio": "Ruy Barbosa",
+    "telefone": "7532521092",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-7596871",
+    "nome": "UPA do Cabula",
     "municipio": "Salvador",
-    "telefone": "123456789",
-    "soros": ["Soro A", "Soro B"]
+    "telefone": "7133874745",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2510782",
+    "nome": "Hospital José Maria de Magalhães Neto",
+    "municipio": "Santa Cruz Cabrália",
+    "telefone": "7332821188",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2799804",
+    "nome": "Hospital Municipal Dr. José Borba",
+    "municipio": "Santa Maria da Vitória",
+    "telefone": "7734838925",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2510278",
+    "nome": "Hospital Municipal Petronilho Evangelista dos Santos",
+    "municipio": "Santa Luz",
+    "telefone": "7532652099",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2514435",
+    "nome": "Hospital Municipal Edite Nogueira Rangel",
+    "municipio": "Santa Teresinha",
+    "telefone": "7536392165",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2514311",
+    "nome": "Hospital Municipal Dr. Francisco Flores",
+    "municipio": "Santana",
+    "telefone": "7737842910",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2603284",
+    "nome": "Hospital Nossa Senhora da Natividade (Santa Casa de Misericórdia)",
+    "municipio": "Santo Amaro",
+    "telefone": "7532418700",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2514621",
+    "nome": "Hospital Nossa Senhora das Vitórias",
+    "municipio": "Santo Amaro",
+    "telefone": "7532081070",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-6414702",
+    "nome": "Hospital Regional de Santo Antônio de Jesus",
+    "municipio": "Santo Antônio de Jesus",
+    "telefone": "7536311400",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4032101",
+    "nome": "Hospital São Domingos",
+    "municipio": "São Domingos",
+    "telefone": "75982656665",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2520613",
+    "nome": "Hospital Nossa Senhora da Pompéia",
+    "municipio": "São Félix",
+    "telefone": "7534383900",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-5025729",
+    "nome": "Hospital Municipal Dr. José Bastos",
+    "municipio": "São Félix do Coribe",
+    "telefone": "7734911045",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2520168",
+    "nome": "Hospital Municipal de São Francisco do Conde (Hosp. Célia Almeida Lima)",
+    "municipio": "São Francisco do Conde",
+    "telefone": "7136518556",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2493330",
+    "nome": "Hospital Albino Leitão",
+    "municipio": "São Sebastião do Passé",
+    "telefone": "7136551121",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2523051",
+    "nome": "Hospital Municipal de Sapeaçu",
+    "municipio": "Sapeaçu",
+    "telefone": "7536272241",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-7223676",
+    "nome": "Hospital Municipal de Sátiro Dias",
+    "municipio": "Sátiro Dias",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2523787",
+    "nome": "Hospital Municipal Nossa Senhora da Saúde",
+    "municipio": "Saúde",
+    "telefone": "74981443031",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-9383298",
+    "nome": "Hospital Regional da Chapada Diamantina",
+    "municipio": "Seabra",
+    "telefone": "7533319400",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2523299",
+    "nome": "Hospital Municipal de Sebastião Laranjeiras (Hosp. Munic. Walter Leão Rocha)",
+    "municipio": "Sebastião Laranjeiras",
+    "telefone": "7736682100",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2770012",
+    "nome": "Hospital Dr. Antonio Monteiro",
+    "municipio": "Senhor do Bonfim",
+    "telefone": "7435444121",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2523310",
+    "nome": "Hospital Municipal Dr. Heitor Sento Sé",
+    "municipio": "Sento Sé",
+    "telefone": "7435372966",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4032497",
+    "nome": "Hospital Municipal Gilvan Wanderley de Farias",
+    "municipio": "Serra do Ramalho",
+    "telefone": "7736201361",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-4037594",
+    "nome": "Hospital Municipal Antonio Souza Fagundes",
+    "municipio": "Serra Dourada",
+    "telefone": "7736862072",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2801914",
+    "nome": "Hospital Municipal de Serrinha",
+    "municipio": "Serrinha",
+    "telefone": "7532612224",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-4032691",
+    "nome": "Hospital Jonas Ferreira da Silva",
+    "municipio": "Serrolândia",
+    "telefone": "7436312809",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2532387",
+    "nome": "Hospital Municipal de Simões Filho",
+    "municipio": "Simões Filho",
+    "telefone": "7132968500",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-3208419",
+    "nome": "Hospital Municipal Maria Pereira Macedo",
+    "municipio": "Sítio do Mato",
+    "telefone": "7736712391",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2524163",
+    "nome": "Hospital Municipal Maria Auxiliadora de Carvalho Torres",
+    "municipio": "Sobradinho",
+    "telefone": "7435372966",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Aracnídico"]
+  },
+  {
+    "id": "cnes-2525062",
+    "nome": "Hospital Municipal Jonival Lucas",
+    "municipio": "Souto Soares",
+    "telefone": "7533392106",
+    "soros": ["Escorpiônico"]
+  },
+  {
+    "id": "cnes-5835208",
+    "nome": "Unidade de Pronto Atendimento de Tanhaçu",
+    "municipio": "Tanhaçu",
+    "telefone": "7734591233",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2524740",
+    "nome": "Hospital Municipal Iomar Meireles",
+    "municipio": "Taperoá",
+    "telefone": "7536641771",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2524805",
+    "nome": "Hospital Municipal Dr. José Nery",
+    "municipio": "Tapiramutá",
+    "telefone": "74981380329",
+    "soros": ["Botrópico", "Crotálico"]
+  },
+  {
+    "id": "cnes-7964145",
+    "nome": "Unidade de Pronto Atendimento - UPA",
+    "municipio": "Teixeira de Freitas",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-5005027",
+    "nome": "Unidade Municipal Materno Infantil (UMMI)",
+    "municipio": "Teixeira de Freitas",
+    "telefone": "7332912763",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-4033043",
+    "nome": "Hospital Waldemar Ferreira de Araujo)",
+    "municipio": "Teofilândia",
+    "telefone": "75999703968",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-3010902",
+    "nome": "Unidade Mista Hospitalar Dr. Adelmário Pinheiro",
+    "municipio": "Tremedal",
+    "telefone": "7734942490",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico", "Araneídico"]
+  },
+  {
+    "id": "cnes-2814056",
+    "nome": "Hospital Mariano Penedo",
+    "municipio": "Tucano",
+    "telefone": "7532722240",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2525259",
+    "nome": "Hospital Municipal de Uauá (Hosp. Munic. Dr Jair Braga)",
+    "municipio": "Uauá",
+    "telefone": "7436731113",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2524996",
+    "nome": "Associação de Proteção a Maternidade e Infância Ubaíra (APMIU)",
+    "municipio": "Ubaíra",
+    "telefone": "7535442102",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2800527",
+    "nome": "Hospital Municipal Frei Silvério",
+    "municipio": "Una",
+    "telefone": "7332362247",
+    "soros": ["Botrópico"]
+  },
+  {
+    "id": "cnes-4033418",
+    "nome": "Hospital Municipal de Urandi (Hosp. Munic. Padre Antônio Manoel da Rocha)",
+    "municipio": "Urandi",
+    "telefone": "7734562184",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-6025692",
+    "nome": "Hospital Municipal de Utinga",
+    "municipio": "Utinga",
+    "telefone": "7533371745",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2525712",
+    "nome": "Santa Casa de Misericórdia de Valença",
+    "municipio": "Valença",
+    "telefone": "7536418400",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Laquético",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2598191",
+    "nome": "Hospital Municipal Jose Mota Araujo",
+    "municipio": "Valente",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2526042",
+    "nome": "Hospital Municipal João Sales Rios",
+    "municipio": "Várzea da Roça",
+    "telefone": "7436692470",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2644835",
+    "nome": "Hospital Municipal Rivorge Gonçalves Lima",
+    "municipio": "Várzea do Poço",
+    "telefone": "7436392110",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2526093",
+    "nome": "Hospital Padre Alfredo Haasler",
+    "municipio": "Várzea Nova",
+    "telefone": "7436592196",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2532883",
+    "nome": "UPA de Vera Cruz",
+    "municipio": "Vera Cruz",
+    "telefone": "7136333305",
+    "soros": ["Botrópico", "Crotálico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2525666",
+    "nome": "PSF II Idalina da Rocha Nonato",
+    "municipio": "Vereda",
+    "telefone": "7336612111",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-9060537",
+    "nome": "UPA de Vitória da Conquista",
+    "municipio": "Vitória da Conquista",
+    "telefone": "7734250785",
+    "soros": ["Botrópico", "Escorpiônico"]
+  },
+  {
+    "id": "cnes-2402076",
+    "nome": "Hospital Geral de Vitória da Conquista (Hosp. de Base de Vitória da Conquista)",
+    "municipio": "Vitória da Conquista",
+    "telefone": "7734246060",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2814048",
+    "nome": "Hospital e Maternidade Ponte Nova",
+    "municipio": "Wagner",
+    "telefone": "7533362223",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
+  },
+  {
+    "id": "cnes-2526239",
+    "nome": "Hospital Pantaleão Soares de Mello",
+    "municipio": "Wenceslau Guimarães",
+    "telefone": "7332782288",
+    "soros": [],
+    "supridoSobDemanda": true
+  },
+  {
+    "id": "cnes-2601729",
+    "nome": "Hospital Julieta Viana",
+    "municipio": "Xique-Xique",
+    "telefone": "7436611107",
+    "soros": [
+      "Botrópico",
+      "Crotálico",
+      "Elapídico",
+      "Escorpiônico",
+      "Araneídico"
+    ]
   }
 ]

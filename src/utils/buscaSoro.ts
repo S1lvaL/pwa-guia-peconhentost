@@ -1,6 +1,6 @@
 import unidadesJson from "../data/UnidadesSoro.json";
 import regioesJson from "../data/RegioesSaude.json";
-import type { UnidadeSoro } from "../types/UnidadeSoro.ts";
+import type { UnidadeSoro } from "../types/unidadeSoro.ts";
 
 //Formato de cada coisa
 const unidades = unidadesJson as unknown as UnidadeSoro[];
