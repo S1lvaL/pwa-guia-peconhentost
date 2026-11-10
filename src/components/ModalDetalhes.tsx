@@ -9,7 +9,8 @@ interface ModalDetalhesProps {
 }
 
 export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
-  const [abaAtiva, setAbaAtiva] = useState<"socorros" | "donts">("socorros");
+  const [abaAtiva, setAbaAtiva] = 
+  useState<"socorros" | "donts">("socorros");
 
   if (!animal) return null;
 

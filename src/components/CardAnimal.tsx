@@ -55,6 +55,12 @@ export function CardAnimal({
         <h3 className="font-bold text-letra text-[15px] leading-tight break-words">
           {animal.nome}
         </h3>
+
+        {animal.descricao && (
+          <p className="text-[12px] text-gray-600 leading-snug">
+            {animal.descricao}
+          </p>
+        )}
       </div>
 
       {/* Botão para fixar */}

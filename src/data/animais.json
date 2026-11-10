@@ -485,7 +485,6 @@
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima em repouso e hidratada.",
-      "Elevar o membro atingido.",
       "Buscar atendimento médico urgente para aplicação de soro antibotrópico."
     ],
     "oQueNaoFazer": [
@@ -550,7 +549,7 @@
     "periculosidade": "Perigo!",
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
-      "Manter a vítima em repouso e com o membro elevado.",
+      "Manter a vítima em repouso.",
       "Buscar atendimento hospitalar urgente."
     ],
     "oQueNaoFazer": [
@@ -617,7 +616,7 @@
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Manter a vítima em repouso absoluto e hidratada.",
-      "Buscar atendimento hospitalar urgente."
+      "Buscar atendimento hospitalar urgentemente."
     ],
     "oQueNaoFazer": [
       "Não fazer torniquete ou garrote.",
@@ -690,7 +689,7 @@
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Aplicar compressas mornas para aliviar a dor.",
-      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Tentar tirar foto do animal com cuidado. Se estiver morto, ultilize meios para pegar o bicho sem toca-lo. Se não estiver morto, não tente matar para que não haja uma nova picada.",
       "Encaminhar a vítima ao atendimento médico."
     ],
     "oQueNaoFazer": [
@@ -725,7 +724,7 @@
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Aplicar compressas mornas para aliviar a dor (não colocar gelo).",
-      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Tentar tirar foto do animal com cuidado. Se estiver morto, ultilize meios para pegar o bicho sem toca-lo. Se não estiver morto, não tente matar para que não haja uma nova picada.",
       "Encaminhar a vítima ao atendimento médico."
     ],
     "oQueNaoFazer": [
@@ -761,7 +760,7 @@
     "primeirosSocorros": [
       "Lavar o local com água e sabão.",
       "Aplicar compressas mornas para aliviar a dor (não aplicar gelo).",
-      "Tentar tirar foto do animal ou capturar (com cuidado).",
+      "Tentar tirar foto do animal com cuidado. Se estiver morto, ultilize meios para pegar o bicho sem toca-lo. Se não estiver morto, não tente matar para que não haja uma nova picada.",
       "Encaminhar a vítima ao atendimento médico para aplicação de soro antiescorpiônico."
     ],
     "oQueNaoFazer": [
