@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dadosAnimais from "../data/animais.json";
 import type { Animal as AnimalCatalogo } from "../types/animal";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import BottomNav from "../components/BottomNav";
-import { Phone } from "lucide-react";
+import { Phone, Pin } from "lucide-react";
+import {SeletorCidade} from "../components/SeletorCidade";
 
 type Aba = "animais" | "emergencia" | "prevencao";
 
@@ -148,6 +149,64 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [outroFiltro, setOutroFiltro] = useState("");
   const [animalSelecionado, setAnimalSelecionado] =
     useState<AnimalEmergencia | null>(null);
+  const [animalPendente, setAnimalPendente] = 
+    useState<AnimalEmergencia | null>(null);
+
+    // Recupera o animal fixado anteriormente
+  const [animalFixadoId, setAnimalFixadoId] = useState<string | null>(() => {
+  try {
+    return localStorage.getItem("animalFixadoEmergencia");
+  } catch {
+    return null;
+  }
+});
+
+  // Encontra o animal correspondente no catálogo
+  const animalFixado = animais.find(
+    (animal) => String(animal.id) === animalFixadoId) ?? null;
+
+  // Mantém a fixação salva no aplicativo
+  useEffect(() => {
+    if (animalFixadoId) {
+      localStorage.setItem("animalFixadoEmergencia", animalFixadoId);
+    } else {
+      localStorage.removeItem("animalFixadoEmergencia");
+    }
+  }, [animalFixadoId]);
+
+  // Remove uma fixação que não existe mais no catálogo
+useEffect(() => {
+  if (animalFixadoId && !animalFixado) {
+    setAnimalFixadoId(null);
+  }
+}, [animalFixadoId, animalFixado]);
+
+  // Fixa um animal ou abre a confirmação para substituir o atual
+const fixarAnimal = (animal: AnimalEmergencia) => {
+  if (animalFixadoId === String(animal.id)) {
+    return;
+  }
+
+  if (animalFixado) {
+    setAnimalPendente(animal);
+    return;
+  }
+
+  setAnimalFixadoId(String(animal.id));
+};
+
+// Confirma a substituição
+const confirmarSubstituicao = () => {
+  if (animalPendente) {
+    setAnimalFixadoId(String(animalPendente.id));
+    setAnimalPendente(null);
+  }
+};
+
+// Cancela a substituição
+const cancelarSubstituicao = () => {
+  setAnimalPendente(null);
+};
 
   // Limpa os filtros e a seleção ao sair do catálogo para a área de prevenção/checklist.
   const limparFiltros = () => {
@@ -273,6 +332,45 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
         </header>
 
         <main className="flex-1 space-y-4 overflow-y-auto px-[18px] pb-40 pt-4">
+          {/* Seletor de município e animal fixado */}
+      <section className="space-y-3">
+        <SeletorCidade />
+
+        {animalFixado && (
+          <div className="flex items-center justify-between gap-3 rounded-xl border border-[#bd0008] bg-white p-3 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setAnimalSelecionado(animalFixado)}
+              className="flex min-w-0 flex-1 items-center gap-2 text-left"
+            >
+        <Pin
+          size={19}
+          className="shrink-0 text-[#bd0008]"
+          fill="currentColor"
+        />
+
+          <div className="min-w-0">
+          <span className="block text-[10px] font-semibold uppercase text-[#777]">
+            Animal fixado para identificação
+          </span>
+
+          <span className="block truncate text-[14px] font-bold text-[#bd0008]">
+            {animalFixado.nome}
+          </span>
+          </div>
+        </button>
+
+      <button
+        type="button"
+        onClick={() => setAnimalFixadoId(null)}
+        className="shrink-0 rounded-lg px-2 py-2 text-[11px] font-bold text-[#bd0008] hover:bg-[#ffecef]"
+        >
+        Retirar
+          </button>
+          </div>
+        )}
+      </section>
+
           <section className="space-y-2">
             <div className="flex items-start gap-2">
               <span
@@ -468,6 +566,8 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                     key={animal.id}
                     animal={animal}
                     onClick={() => setAnimalSelecionado(animal)}
+                    onFixar={() => fixarAnimal(animal)}
+                    fixado={animalFixadoId === String(animal.id)}
                   />
                 ))
               ) : (
@@ -502,6 +602,47 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
           animal={animalSelecionado}
           onClose={() => setAnimalSelecionado(null)}
         />
+        {/* Confirmação para substituir animal fixado */}
+{animalPendente && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-5">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="titulo-confirmacao"
+      className="w-full max-w-[380px] rounded-2xl border-2 border-[#bd0008] bg-[#ffecef] p-5 shadow-xl"
+    >
+      <h2
+        id="titulo-confirmacao"
+        className="mb-3 text-[18px] font-extrabold text-[#bd0008]"
+      >
+        Substituir animal fixado?
+      </h2>
+
+      <p className="mb-5 text-[14px] leading-relaxed text-[#292929]">
+        O animal {animalFixado?.nome} já está fixado.
+        Deseja substituí-lo por {animalPendente.nome}?
+      </p>
+
+      <div className="flex justify-end gap-3">
+        <button
+          type="button"
+          onClick={cancelarSubstituicao}
+          className="rounded-xl border border-[#bd0008] bg-white px-5 py-2.5 text-[13px] font-bold text-[#bd0008] transition hover:bg-[#ffe0e4]"
+        >
+          Cancelar
+        </button>
+
+        <button
+          type="button"
+          onClick={confirmarSubstituicao}
+          className="rounded-xl bg-[#bd0008] px-6 py-2.5 text-[13px] font-bold text-white transition hover:bg-[#900006]"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+)}
       </div>
     </div>
   );

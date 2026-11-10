@@ -1,15 +1,21 @@
-import { ChevronRight } from "lucide-react";
+
+import { ChevronRight, Pin } from "lucide-react";
 import type { Animal } from "../types/animal";
 import { corPericulosidade } from "../utils/periculosidade";
 
 interface CardAnimalProps {
   animal: Animal;
   onClick: () => void;
+  onFixar?: () => void;
+  fixado?: boolean;
 }
 
-export function CardAnimal({ animal, onClick }: CardAnimalProps) {
-  /*Se for array pega o primeiro item
-   Se for string, usa ela diretamente.*/
+export function CardAnimal({
+  animal,
+  onClick,
+  onFixar,
+  fixado = false,
+}: CardAnimalProps) {
   const imagemCapa = Array.isArray(animal.imagem)
     ? animal.imagem[0]
     : animal.imagem;
@@ -19,9 +25,9 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
   return (
     <div
       onClick={onClick}
-      className="bg-white border border-cinza-borda drop-shadow-[0px_2px_4px_rgba(15,23,42,0.15)] flex gap-[16px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-verde-claro transition-all"
+      className="bg-white border border-cinza-borda drop-shadow-[0px_2px_4px_rgba(15,23,42,0.15)] flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-verde-claro transition-all"
     >
-      {/*Imagem do Animal*/}
+      {/* Imagem do animal */}
       <div className="relative rounded-[20px] shrink-0 size-[90px] overflow-hidden bg-slate-100">
         <img
           src={imagemCapa}
@@ -30,12 +36,13 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
         />
       </div>
 
-      {/*Conteúdo*/}
+      {/* Conteúdo */}
       <div className="flex flex-col gap-[6px] flex-1 min-w-0">
         <div className="flex gap-[6px] items-center flex-wrap">
-          <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda/30  px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
+          <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda/30 px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
             {animal.categoria}
           </span>
+
           {corBadge && (
             <span
               className={`${corBadge} px-[8px] py-[2px] rounded-[6px] font-bold text-[11px]`}
@@ -50,7 +57,32 @@ export function CardAnimal({ animal, onClick }: CardAnimalProps) {
         </h3>
       </div>
 
-      {/*Ícone Seta*/}
+      {/* Botão para fixar */}
+      {onFixar && (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            onFixar();
+          }}
+          aria-label={fixado ? "Animal já fixado" : `Fixar ${animal.nome}`}
+          aria-pressed={fixado}
+          title={fixado ? "Animal fixado" : "Fixar animal"}
+          className={`flex size-[36px] shrink-0 items-center justify-center rounded-full transition ${
+            fixado
+              ? "bg-[#ffecef] text-[#bd0008]"
+              : "bg-slate-100 text-slate-600 hover:bg-[#ffecef] hover:text-[#bd0008]"
+          }`}
+        >
+          <Pin
+            size={19}
+            fill={fixado ? "currentColor" : "none"}
+            strokeWidth={2}
+          />
+        </button>
+      )}
+
+      {/* Ícone de detalhes */}
       <ChevronRight
         className="size-[20px] text-letra/70 shrink-0"
         strokeWidth={2}
