@@ -7,6 +7,7 @@ import { filtrarPorRegiao } from "../utils/regiao";
 import animaisJson from "../data/animais.json";
 import type { Animal } from "../types/animal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
+import { UnidadesSoro } from "../components/UnidadesSoro";
 
 //Chave usada para salvar o progresso do checklist no navegador
 const CHAVE_STORAGE = "prevencao:itensChecados";
@@ -172,7 +173,14 @@ function TituloSecao({
 
 //Componente principal da tela
 //onVerTodos: função enviada pelo App para trocar para a aba "animais"
-export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
+//onVerUnidades: função enviada pelo App para abrir a lista completa de unidades (Emergência)
+export default function Prevencao({
+  onVerTodos,
+  onVerUnidades,
+}: {
+  onVerTodos?: () => void;
+  onVerUnidades?: () => void;
+}) {
   //Estado inicial como null (nenhum filtro selecionado = dicas gerais)
   const [areaAtiva, setAreaAtiva] = useState<Area | null>(null);
   const [itensChecados, setItensChecados] =
@@ -251,6 +259,9 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
 
         {/*Barra de localização + busca de cidade (componente compartilhado)*/}
         <SeletorCidade />
+
+        {/*Card das unidades referênci para o soro antiveneno*/}
+        <UnidadesSoro limite={1} onVerTodas={onVerUnidades} />
 
         {/*Card principal: animais da região (e da área, quando houver uma escolhida)*/}
         <section className="bg-verde-principal/87 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
