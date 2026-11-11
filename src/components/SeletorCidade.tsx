@@ -3,6 +3,33 @@ import { useState } from "react";
 import { useRegiao } from "../context/RegiaoContexto.tsx";
 import cidadesBiomasJson from "../data/CidadesBiomas.json";
 
+export type VarianteCor = "verde" | "vermelho";
+
+const cores = {
+  verde: {
+    barraFundo: "bg-verde-principal/10",
+    barraBorda: "border-verde-principal/40",
+    barraSombra: "shadow-verde-principal/20",
+    destaque: "text-verde-principal",
+    inputBorda: "border-verde-principal/40",
+    inputFocus: "focus:ring-verde-principal",
+    listaBorda: "border-verde-principal/40",
+    itemHover: "hover:bg-verde-principal/10",
+    exercao: "text-vermelho-principal",
+  },
+  vermelho: {
+    barraFundo: "bg-vermelho-principal/10",
+    barraBorda: "border-vermelho-principal/40",
+    barraSombra: "shadow-vermelho-principal/20",
+    destaque: "text-vermelho-principal",
+    inputBorda: "border-vermelho-principal/40",
+    inputFocus: "focus:ring-vermelho-principal",
+    listaBorda: "border-vermelho-principal/40",
+    itemHover: "hover:bg-vermelho-principal/10",
+    exercao: "text-verde-principal",
+  },
+} as const;
+
 //Lista as cidades do JSON para o filtro
 //Object.keys pega as CHAVES do JSON/
 const nomesCidades = Object.keys(cidadesBiomasJson);
@@ -14,11 +41,16 @@ const normalizar = (s: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
-export function SeletorCidade() {
+export function SeletorCidade({
+  variante = "verde",
+}: {
+  variante?: VarianteCor;
+}) {
   //Pega o estado do contexto de região para trocar se necessário
   const { municipio, setMunicipio } = useRegiao();
+  const c = cores[variante];
 
-  //Controla se o seletor está em modo de ediçãoe o que foi digitado (busca)
+  //Controla se o seletor está em modo de edição e o que foi digitado (busca)
   const [editando, setEditando] = useState(false);
   const [busca, setBusca] = useState("");
 
@@ -44,9 +76,11 @@ export function SeletorCidade() {
   return (
     <div className="space-y-2">
       {/*Barra de localização*/}
-      <div className="flex items-center gap-1.5 bg-verde-principal/10 border border-verde-principal/40 rounded-[16px] px-3 py-2 text-[13px] text-letra shadow-sm shadow-verde-principal/20">
+      <div
+        className={`flex items-center gap-1.5 ${c.barraFundo} border ${c.barraBorda} rounded-[16px] px-3 py-2 text-[13px] text-letra shadow-sm ${c.barraSombra}`}
+      >
         <svg
-          className="size-[18px] shrink-0 text-vermelho-principal"
+          className={`size-[18px] shrink-0 ${c.exercao}`}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -60,7 +94,7 @@ export function SeletorCidade() {
         </svg>
         <span className="flex-1">
           Sua localização atual:{" "}
-          <strong className="text-verde-principal">
+          <strong className={c.destaque}>
             {/*Se há cidade mostra "Cidade - BA"; se não, pede para escolher*/}
             {municipio ? `${municipio} - BA` : "Escolha sua cidade"}
           </strong>
@@ -68,7 +102,7 @@ export function SeletorCidade() {
         <button
           type="button"
           onClick={alternarBusca}
-          className="font-bold underline text-vermelho-principal"
+          className={`font-bold underline ${c.exercao}`}
         >
           {/*O texto do botão muda conforme o estado*/}
           {editando ? "[Cancelar]" : municipio ? "[Alterar]" : "[Escolher]"}
@@ -86,17 +120,19 @@ export function SeletorCidade() {
             autoComplete="off"
             placeholder="Digite o nome da cidade"
             aria-label="Buscar cidade"
-            className="w-full rounded-[12px] border border-verde-principal/40 bg-white px-3 py-2 text-[14px] text-letra outline-none focus:ring-2 focus:ring-verde-principal"
+            className={`w-full rounded-[12px] border ${c.inputBorda} bg-white px-3 py-2 text-[14px] text-letra outline-none focus:ring-2 ${c.inputFocus}`}
           />
           {/*Se houver sugestões, mostra a lista*/}
           {sugestoes.length > 0 && (
-            <ul className="rounded-[12px] border border-verde-principal/40 bg-white overflow-hidden shadow-sm">
+            <ul
+              className={`rounded-[12px] border ${c.listaBorda} bg-white overflow-hidden shadow-sm`}
+            >
               {sugestoes.map((cidade) => (
                 <li key={cidade}>
                   <button
                     type="button"
                     onClick={() => escolherCidade(cidade)}
-                    className="w-full text-left px-3 py-2 text-[14px] text-letra hover:bg-verde-principal/10"
+                    className={`w-full text-left px-3 py-2 text-[14px] text-letra ${c.itemHover}`}
                   >
                     {cidade} - BA
                   </button>

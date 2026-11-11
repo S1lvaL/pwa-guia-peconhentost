@@ -8,6 +8,7 @@ import animaisJson from "../data/animais.json";
 import type { Animal } from "../types/animal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
 import { UnidadesSoro } from "../components/UnidadesSoro";
+import { Logo } from "../components/Logo";
 
 //Chave usada para salvar o progresso do checklist no navegador
 const CHAVE_STORAGE = "prevencao:itensChecados";
@@ -176,7 +177,6 @@ function TituloSecao({
 //onVerUnidades: função enviada pelo App para abrir a lista completa de unidades (Emergência)
 export default function Prevencao({
   onVerTodos,
-  onVerUnidades,
 }: {
   onVerTodos?: () => void;
   onVerUnidades?: () => void;
@@ -238,33 +238,29 @@ export default function Prevencao({
     totalItens > 0 ? Math.round((totalConcluidos / totalItens) * 100) : 0;
 
   return (
-    <div className="bg-verde-fundo min-h-screen flex flex-col w-full max-w-full mx-auto pt-8 pb-10 overflow-y-auto">
-      <div className="p-4 space-y-5 flex-1">
+    <div className="bg-verde-fundo min-h-screen flex flex-col w-full max-w-full mx-auto pt-5 pb-5 overflow-y-auto">
+      <div className="p-4 space-y-4 flex-1">
         {/*Header*/}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-[40px] font-extrabold leading-[32px] text-verde-principal">
+            <h1 className="text-[40px] font-extrabold leading-[30px] text-verde-principal">
               Sistema de prevenção
             </h1>
             <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-1 pt-3">
               informação hoje, segurança sempre
             </p>
           </div>
-          {/*MUDAR QUANDO FIZERMOS NOSSA LOGO*/}
-          <div className="bg-[#fef3c7] px-3 py-2 rounded-[20px] flex items-center space-x-1.5 shrink-0">
-            <div className="w-2 h-2 rounded-full bg-[#601212]" />
-            <span className="text-[12px] font-bold text-[#601212]">Logo</span>
-          </div>
+          <Logo />
         </div>
 
         {/*Barra de localização + busca de cidade (componente compartilhado)*/}
         <SeletorCidade />
 
         {/*Card das unidades referênci para o soro antiveneno*/}
-        <UnidadesSoro limite={1} onVerTodas={onVerUnidades} />
+        <UnidadesSoro />
 
         {/*Card principal: animais da região (e da área, quando houver uma escolhida)*/}
-        <section className="bg-verde-principal/87 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/40">
+        <section className="bg-verde-principal/97 border-2 border-black/45 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/30">
           <h2 className="text-[18px] font-bold leading-tight">
             Animais Peçonhentos nesta Região
             {rotuloArea && <span> · {rotuloArea}</span>}
@@ -288,7 +284,7 @@ export default function Prevencao({
                   key={animal.id}
                   type="button"
                   onClick={() => setAnimalSelecionado(animal)}
-                  className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white rounded-[16px] p-2 text-left"
+                  className="snap-start shrink-0 w-[210px] flex items-center gap-2 bg-white border border-black rounded-[16px] p-2 text-left"
                 >
                   <img
                     src={
@@ -298,10 +294,10 @@ export default function Prevencao({
                     }
                     alt={animal.nome}
                     loading="lazy"
-                    className="w-[52px] h-[52px] rounded-[12px] object-cover bg-verde-principal/10"
+                    className="w-[52px] h-[52px] rounded-[12px] object-cover border border-verde-principal bg-verde-principal/10"
                   />
                   <div className="min-w-0">
-                    <strong className="block text-[13px] text-verde-principal truncate">
+                    <strong className="block text-[13px] text-verde-principal truncate ">
                       {animal.nome}
                     </strong>
                     <span className="text-[12px] text-vermelho-principal underline">
@@ -316,7 +312,7 @@ export default function Prevencao({
                 <button
                   type="button"
                   onClick={verTodos}
-                  className="snap-start shrink-0 w-[150px] flex items-center justify-center bg-white/15 border border-white/40 rounded-[16px] p-2 text-[13px] font-bold text-white"
+                  className="snap-start shrink-0 w-[150px] flex items-center justify-center bg-white/95 border border-verde-principal/40 rounded-[16px] p-2 text-[13px] shadow-sm shadow-verde-principal/20 font-bold text-vermelho-principal"
                 >
                   Ver todos (+{restantes})
                 </button>
@@ -344,7 +340,7 @@ export default function Prevencao({
                   className={`flex-1 flex flex-col items-center gap-1 px-1 py-2.5 rounded-[16px] text-[13px] font-bold transition border ${
                     isActive
                       ? "bg-verde-principal text-white border-verde-principal shadow-sm shadow-verde-principal/60"
-                      : "bg-verde-principal/10 text-verde-principal border-verde-principal/40 shadow-sm shadow-vermelho-principal/30"
+                      : "bg-verde-principal/15 text-verde-principal border-verde-principal/40 shadow-sm shadow-vermelho-principal/35"
                   }`}
                 >
                   <IconeArea area={id} />

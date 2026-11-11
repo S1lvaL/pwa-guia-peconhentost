@@ -2,6 +2,25 @@
 import type { UnidadeSoro } from "../types/unidadeSoro";
 import { formatarTelefone, linkLigar, linkRota } from "../utils/contatoUnidade";
 
+export type VarianteCor = "verde" | "vermelho";
+
+const cores = {
+  verde: {
+    borda: "border-verde-principal/50",
+    fundo: "bg-white/30",
+    sombra: "shadow-verde-principal/30",
+    titulo: "text-verde-principal/85",
+    link: "text-verde-principal",
+  },
+  vermelho: {
+    borda: "border-vermelho-principal/40",
+    fundo: "bg-vermelho-principal/10",
+    sombra: "shadow-vermelho-principal/20",
+    titulo: "text-vermelho-principal",
+    link: "text-vermelho-principal",
+  },
+} as const;
+
 //Ícone de telefone (do protótipo do Figma)
 function IconeTelefone() {
   return (
@@ -26,14 +45,20 @@ function IconeTelefone() {
 export function CardUnidadeSoro({
   unidade: u,
   detalhado = false,
+  variante = "verde",
 }: {
   unidade: UnidadeSoro;
   detalhado?: boolean;
+  variante?: VarianteCor;
 }) {
+  const c = cores[variante];
+
   return (
-    <article className="rounded-[10px] border border-verde-principal/30 bg-verde-principal/25 px-3 py-2 space-y-1 shadow-md shadow-verde-principal/20 w-full">
+    <article
+      className={`rounded-[10px] border ${c.borda} ${c.fundo} px-3 py-2 space-y-1 shadow-md ${c.sombra} w-full`}
+    >
       <div>
-        <strong className="block text-[14px] leading-snug text-verde-principal">
+        <strong className={`block text-[14px] leading-snug ${c.titulo}`}>
           {u.nome}
         </strong>
         <span className="text-[12px] text-letra/80">{u.municipio} - BA</span>
@@ -67,7 +92,7 @@ export function CardUnidadeSoro({
             Ligar · {formatarTelefone(u.telefone)}
           </a>
         ) : (
-          <span className="text-[12px] text-letra/80 items-rigth">
+          <span className="text-[12px] text-letra/80">
             Telefone não informado
           </span>
         )}
@@ -75,7 +100,7 @@ export function CardUnidadeSoro({
           href={linkRota(u)}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[12px] font-bold underline text-verde-principal"
+          className={`text-[12px] font-bold underline ${c.link}`}
         >
           Como chegar
         </a>

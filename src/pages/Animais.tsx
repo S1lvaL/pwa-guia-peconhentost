@@ -9,6 +9,7 @@ import type { Animal } from "../types/animal.ts";
 import { useRegiao } from "../context/RegiaoContexto";
 import { filtrarPorRegiao } from "../utils/regiao";
 import { AREAS } from "../data/DicasPrevencao";
+import { Logo } from "../components/Logo";
 
 //Tipos de categorias para filtro
 type CategoriaFiltro =
@@ -105,12 +106,12 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
 
   //Renderiza a página com o cabeçalho, campo de busca, filtros de categoria, lista de cards e modal de detalhes
   return (
-    <div className="bg-verde-fundo min-h-screen flex flex-col justify-between w-full max-w-full mx-auto pt-8 pb-6 px-4">
-      <div className="pt-[24px] px-[16px] space-y-[20px] flex-1">
+    <div className="bg-verde-fundo min-h-screen flex flex-col justify-between w-full max-w-full mx-auto pt-5 pb-5">
+      <div className="p-4 space-y-4 flex-1">
         {/*Header*/}
         <div className="flex items-center justify-between py-[5px]">
           <div className="flex flex-col gap-[2px]">
-            <h1 className="font-extrabold text-verde-principal text-[40px] leading-[32px]">
+            <h1 className="font-extrabold text-verde-principal text-[35px] leading-[32px]">
               Guia de Animais
             </h1>
             <p className="font-bold text-letra/80 text-[11px] uppercase tracking-wide mt-0.5 pt-3">
@@ -118,10 +119,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             </p>
           </div>
           {/*Vamos mudar essa parte para adicionar a logo, a imagem dela*/}
-          <div className="bg-[#fef3c7] flex gap-[4px] h-[40px] items-center px-[12px] rounded-[20px]">
-            <div className="size-[8px] bg-[#601212] rounded-full" />
-            <span className="font-bold text-[#601212] text-[12px]">Logo</span>
-          </div>
+          <Logo />
         </div>
 
         {/*Chip da região, aparece só quando veio do "Ver todos"; o ✕ desliga o filtro*/}
