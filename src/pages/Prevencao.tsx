@@ -175,14 +175,9 @@ function TituloSecao({
 //Componente principal da tela
 //onVerTodos: função enviada pelo App para trocar para a aba "animais"
 //onVerUnidades: função enviada pelo App para abrir a lista completa de unidades (Emergência)
-export default function Prevencao({
-  onVerTodos,
-}: {
-  onVerTodos?: () => void;
-  onVerUnidades?: () => void;
-}) {
+export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
   //Estado inicial como null (nenhum filtro selecionado = dicas gerais)
-  const [areaAtiva, setAreaAtiva] = useState<Area | null>(null);
+  const [areaAtiva, setAreaAtiva] = useState<Area>("casa");
   const [itensChecados, setItensChecados] =
     useState<Record<string, boolean>>(carregarProgresso);
 
@@ -208,12 +203,26 @@ export default function Prevencao({
     setItensChecados((prev) => ({ ...prev, [item]: !prev[item] }));
 
   //Dicas da área escolhida
-  const areaSelecionada = areaAtiva ? dadosPrevencao[areaAtiva] : null;
+  const areaSelecionada = dadosPrevencao[areaAtiva];
   const rotuloArea = AREAS.find((a) => a.id === areaAtiva)?.rotulo;
+
+  //Limpa somente o checklist da área selecionada, preservando as demais áreas
+  const limparChecklist = () => {
+    const itensDaArea = dadosPrevencao[areaAtiva];
+    if (!itensDaArea) return;
+
+    const chavesParaLimpar = [...itensDaArea.acoes, ...itensDaArea.evite];
+
+    setItensChecados((prev) => {
+      const atualizado = { ...prev };
+      chavesParaLimpar.forEach((item) => delete atualizado[item]);
+      return atualizado;
+    });
+  };
 
   //Animais que vão aparecer no card com base nos filtros (região, área e periculosidade)
   const animaisDaRegiao = filtrarPorRegiao(animais, municipio)
-    .filter((a) => !areaAtiva || (a.areas ?? []).includes(areaAtiva))
+    .filter((a) => (a.areas ?? []).includes(areaAtiva))
     .sort((a, b) => pesoPericulosidade(a) - pesoPericulosidade(b));
   //Só os primeiros animais cabem no card; "restantes" é quantos ficaram de fora
   const animaisVisiveis = animaisDaRegiao.slice(0, LIMITE_CARDS);
@@ -226,9 +235,9 @@ export default function Prevencao({
     onVerTodos?.();
   };
 
-  //Junta as duas listas da área ("domestica" e "evite") numa só
+  //Junta as duas listas da área ("acoes" e "evite") numa só
   const todosOsItens = areaSelecionada
-    ? [...areaSelecionada.domestica, ...areaSelecionada.evite]
+    ? [...areaSelecionada.acoes, ...areaSelecionada.evite]
     : [];
   const totalItens = todosOsItens.length;
   const totalConcluidos = todosOsItens.filter(
@@ -335,7 +344,7 @@ export default function Prevencao({
                   key={id}
                   role="tab"
                   aria-selected={isActive}
-                  onClick={() => setAreaAtiva(isActive ? null : id)}
+                  onClick={() => setAreaAtiva(id)}
                   //flex-col: ícone em cima e texto embaixo; flex-1: os 4 dividem a largura
                   className={`flex-1 flex flex-col items-center gap-1 px-1 py-2.5 rounded-[16px] text-[13px] font-bold transition border ${
                     isActive
@@ -354,16 +363,27 @@ export default function Prevencao({
           {areaAtiva && (
             <div className="space-y-1.5 pt-1">
               <div className="flex gap-1.5">
-                {[0, 1, 2, 3].map((segIndex) => (
-                  <div
-                    key={segIndex}
-                    className={`h-[6px] flex-1 rounded-[3px] transition-colors duration-300 ${
-                      (porcentagem / 100) * 4 > segIndex
-                        ? "bg-verde-principal"
-                        : "bg-verde-principal/25"
-                    }`}
-                  />
-                ))}
+                {[0, 1, 2, 3].map((segIndex) => {
+                  const inicio = segIndex * 25; // 0, 25, 50, 75
+                  const fim = inicio + 25; // 25, 50, 75, 100
+                  let largura = 0;
+                  if (porcentagem >= fim) largura = 100;
+                  else if (porcentagem > inicio) {
+                    largura = ((porcentagem - inicio) / 25) * 100;
+                  }
+
+                  return (
+                    <div
+                      key={segIndex}
+                      className="h-[6px] flex-1 rounded-[3px] bg-verde-principal/20 overflow-hidden"
+                    >
+                      <div
+                        className="h-full rounded-[3px] bg-verde-principal transition-all duration-300"
+                        style={{ width: `${largura}%` }}
+                      />
+                    </div>
+                  );
+                })}
               </div>
               <div className="flex justify-between text-[11px] text-letra">
                 <span className="font-semibold">Progresso do plano</span>
@@ -376,28 +396,20 @@ export default function Prevencao({
         </div>
 
         {/*Checklist*/}
-        {!areaSelecionada ? (
-          //Sem filtro: mostra as dicas gerais
-          <div className="space-y-3">
-            <TituloSecao>Dicas de manejo e checklist</TituloSecao>
-            <div className="space-y-2">
-              {dadosPrevencao.geral.map((item) => (
-                <ItemCheck
-                  key={item}
-                  texto={item}
-                  marcado={!!itensChecados[item]}
-                  onToggle={() => toggleCheck(item)}
-                />
-              ))}
-            </div>
-          </div>
-        ) : (
-          //Com filtro: mostra as dicas da área selecionada
+        {areaSelecionada && (
           <>
             <div className="space-y-3">
               <TituloSecao>Prevenção · {rotuloArea}</TituloSecao>
+              <button
+                type="button"
+                onClick={limparChecklist}
+                className="shrink-0 rounded-lg bg-vermelho-principal/10 border border-vermelho-principal/90 px-3 py-2 text-[12px] font-bold text-vermelho-principal"
+                aria-label={`Limpar checklist da área ${rotuloArea}`}
+              >
+                Limpar checklist
+              </button>
               <div className="space-y-2">
-                {areaSelecionada.domestica.map((item) => (
+                {areaSelecionada.acoes.map((item) => (
                   <ItemCheck
                     key={item}
                     texto={item}
