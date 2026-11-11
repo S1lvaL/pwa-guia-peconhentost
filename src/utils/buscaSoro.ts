@@ -17,7 +17,7 @@ for (const [regiao, municipios] of Object.entries(regioes)) {
   for (const municipio of municipios) {
     const chave = normalizar(municipio);
     if (regiaoMunicipio.has(chave)) {
-      console.warn("Municipio repetido em RegioesSaude.json: ${municipio");
+      console.warn(`Municipio repetido em RegioesSaude.json: ${municipio}`);
     }
     regiaoMunicipio.set(chave, regiao);
   }

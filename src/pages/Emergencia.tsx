@@ -6,6 +6,7 @@ import { ModalDetalhes } from "../components/ModalDetalhes";
 import BottomNav from "../components/BottomNav";
 import { Phone, Pin } from "lucide-react";
 import {SeletorCidade} from "../components/SeletorCidade";
+import { UnidadesSoro } from "../components/UnidadesSoro";
 
 type Aba = "animais" | "emergencia" | "prevencao";
 
@@ -568,6 +569,7 @@ const cancelarSubstituicao = () => {
                     onClick={() => setAnimalSelecionado(animal)}
                     onFixar={() => fixarAnimal(animal)}
                     fixado={animalFixadoId === String(animal.id)}
+                    mostrarDescricao={false}
                   />
                 ))
               ) : (

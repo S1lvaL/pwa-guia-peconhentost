@@ -8,6 +8,7 @@ interface CardAnimalProps {
   onClick: () => void;
   onFixar?: () => void;
   fixado?: boolean;
+  mostrarDescricao?: boolean;
 }
 
 export function CardAnimal({
@@ -15,6 +16,7 @@ export function CardAnimal({
   onClick,
   onFixar,
   fixado = false,
+  mostrarDescricao = true,
 }: CardAnimalProps) {
   const imagemCapa = Array.isArray(animal.imagem)
     ? animal.imagem[0]
@@ -56,7 +58,8 @@ export function CardAnimal({
           {animal.nome}
         </h3>
 
-        {animal.descricao && (
+        {/* Descrição opcional */}
+        {mostrarDescricao && animal.descricao && (
           <p className="text-[12px] text-gray-600 leading-snug">
             {animal.descricao}
           </p>

@@ -16,20 +16,14 @@ export interface Animal {
   nomesPopulares?: string[];
   categoria: string;
   imagem: string | string[];
-
   habitats?: Habitat[];
   areas?: Area[];
-
   sintomas?: string;
   sinaisSintomas?: string[];
   descricao?: string;
-
   primeirosSocorros?: string[];
   oQueNaoFazer?: string[];
-
   periculosidade?: "Risco moderado" | "Perigo!";
-
   caracteristicas?: string[];
-
   invasora?: boolean;
 }
