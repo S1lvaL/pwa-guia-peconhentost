@@ -1,6 +1,3 @@
-/*Interface que define a estrutura de dados de um Animal.
-  Garante a validação de tipos no TypeScript e evita a repetição de código.*/
-
 import type { Area } from "../data/DicasPrevencao";
 
 export type Habitat =

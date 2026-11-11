@@ -1,4 +1,3 @@
-/* Seletor de cidade para filtro de animais */
 import { useState } from "react";
 import { useRegiao } from "../context/RegiaoContexto.tsx";
 import cidadesBiomasJson from "../data/CidadesBiomas.json";

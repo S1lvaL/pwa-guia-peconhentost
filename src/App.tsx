@@ -16,10 +16,7 @@ export default function App() {
         <div className="relative flex flex-col w-full lg:max-w-[1024px] min-h-screen bg-verde-fundo shadow-xl overflow-x-clip pb-16">
           {/* Navegação de Telas*/}
           {abaAtiva === "prevencao" && (
-            <Prevencao
-              onVerTodos={() => setAbaAtiva("animais")}
-              onVerUnidades={() => setAbaAtiva("emergencia")}
-            />
+            <Prevencao onVerTodos={() => setAbaAtiva("animais")} />
           )}
 
           {abaAtiva === "emergencia" && (

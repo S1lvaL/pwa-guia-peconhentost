@@ -1,4 +1,3 @@
-
 import { ChevronRight, Pin } from "lucide-react";
 import type { Animal } from "../types/animal";
 import { corPericulosidade } from "../utils/periculosidade";
@@ -29,7 +28,7 @@ export function CardAnimal({
       onClick={onClick}
       className="bg-white border border-cinza-borda drop-shadow-[0px_2px_4px_rgba(15,23,42,0.15)] flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-verde-claro transition-all"
     >
-      {/* Imagem do animal */}
+      {/*Imagem do animal*/}
       <div className="relative rounded-[20px] shrink-0 size-[90px] overflow-hidden bg-slate-100">
         <img
           src={imagemCapa}

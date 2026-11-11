@@ -1,6 +1,7 @@
 //Card de UMA unidade de referência
 import type { UnidadeSoro } from "../types/unidadeSoro";
 import { formatarTelefone, linkLigar, linkRota } from "../utils/contatoUnidade";
+import { rotulosSoros } from "../utils/rotuloSoro";
 
 export type VarianteCor = "verde" | "vermelho";
 
@@ -61,27 +62,62 @@ export function CardUnidadeSoro({
         <strong className={`block text-[14px] leading-snug ${c.titulo}`}>
           {u.nome}
         </strong>
-        <span className="text-[12px] text-letra/80">{u.municipio} - BA</span>
+        <span className="block text-[12px] text-letra/80">
+          {u.municipio} - BA
+        </span>
+        {u.endereco && (
+          <span className="block text-[12px] text-letra/70 mt-0.5 leading-snug">
+            {u.endereco}
+          </span>
+        )}
       </div>
 
       {/*Só na versão detalhada: soros no local ou levados sob demanda*/}
       {detalhado && (
-        <p className="text-[12px] leading-snug text-letra">
+        <div className="text-[12px] leading-snug text-letra space-y-1">
           {(() => {
-            const soros = u.soros ?? [];
+            const lista = rotulosSoros(u.soros ?? []);
+
             if (u.supridoSobDemanda) {
-              return soros.length > 0
-                ? `Soro no local: ${soros.join(", ")}. Os demais são levados quando necessário.`
-                : "O soro é levado até a unidade quando há um acidente.";
+              if (lista.length === 0) {
+                return (
+                  <p>O soro é levado até a unidade quando há um acidente.</p>
+                );
+              }
+              return (
+                <>
+                  <p>Soro no local:</p>
+                  <ul className="list-disc pl-4 space-y-0.5">
+                    {lista.map((soro) => (
+                      <li key={soro}>{soro}</li>
+                    ))}
+                  </ul>
+                  <p className="text-letra/80">
+                    Os demais são levados quando necessário.
+                  </p>
+                </>
+              );
             }
-            return soros.length > 0
-              ? `Soros: ${soros.join(", ")}.`
-              : "Soros: não informado.";
+
+            if (lista.length === 0) {
+              return <p>Soros: não informado.</p>;
+            }
+
+            return (
+              <>
+                <p>Soros disponíveis:</p>
+                <ul className="list-disc pl-4 space-y-0.5">
+                  {lista.map((soro) => (
+                    <li key={soro}>{soro}</li>
+                  ))}
+                </ul>
+              </>
+            );
           })()}
-        </p>
+        </div>
       )}
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center  pt-1 gap-2">
         {u.telefone ? (
           <a
             href={linkLigar(u.telefone)}
