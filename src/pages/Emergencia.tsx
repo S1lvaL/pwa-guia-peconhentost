@@ -3,18 +3,10 @@ import dadosAnimais from "../data/animais.json";
 import type { Animal as AnimalCatalogo } from "../types/animal";
 import { CardAnimal } from "../components/CardAnimal";
 import { ModalDetalhes } from "../components/ModalDetalhes";
-import BottomNav from "../components/BottomNav";
 import { Phone, Pin } from "lucide-react";
 import { SeletorCidade } from "../components/SeletorCidade";
 import { Logo } from "../components/Logo";
 import { UnidadesSoro } from "../components/UnidadesSoro";
-
-type Aba = "animais" | "emergencia" | "prevencao";
-
-interface EmergenciaProps {
-  abaAtiva: Aba;
-  setAbaAtiva: (aba: Aba) => void;
-}
 
 type Categoria =
   | "escorpioes"
@@ -38,13 +30,7 @@ type Caracteristica =
   | "voador"
   | "enxame";
 
-type AnimalEmergencia = AnimalCatalogo & {
-  categoria: string;
-  caracteristicas?: Caracteristica[];
-  nomesPopulares?: string[];
-  descricao?: string;
-  sinaisSintomas?: string[];
-};
+type AnimalEmergencia = AnimalCatalogo;
 
 const normalizar = (texto: string) =>
   texto
@@ -153,7 +139,7 @@ function ItemCaracteristica({
   );
 }
 
-export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
+  export default function Emergencia() {
   const [pesquisa, setPesquisa] = useState("");
   // Controla a rolagem automática dos resultados
   const resultadosRef = useRef<HTMLElement | null>(null);
@@ -184,32 +170,35 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const animalFixado =
     animais.find((animal) => String(animal.id) === animalFixadoId) ?? null;
 
-  // Mantém a fixação salva no aplicativo
+  
+  // Mantém o animal fixado salvo e verifica se ele ainda existe
   useEffect(() => {
-    if (animalFixadoId) {
-      localStorage.setItem("animalFixadoEmergencia", animalFixadoId);
-    } else {
-      localStorage.removeItem("animalFixadoEmergencia");
+    try {
+      if (!animalFixadoId) {
+        localStorage.removeItem("animalFixadoEmergencia");
+        return;
+      }
+
+      const existe = animais.some(
+        (animal) => String(animal.id) === animalFixadoId
+      );
+
+      if (!existe) {
+        localStorage.removeItem("animalFixadoEmergencia");
+        setAnimalFixadoId(null);
+        return;
+      }
+
+      localStorage.setItem(
+        "animalFixadoEmergencia",
+        animalFixadoId
+      );
+    } catch (error) {
+      console.warn(
+        "Não foi possível acessar o armazenamento do animal fixado:",
+        error
+      );
     }
-  }, [animalFixadoId]);
-
-  // Remove uma fixação que não existe mais no catálogo
-  useEffect(() => {
-    if (!animalFixadoId) {
-      localStorage.removeItem("animalFixadoEmergencia");
-      return;
-    }
-
-    const existe = animais.some(
-      (animal) => String(animal.id) === animalFixadoId,
-    );
-
-    if (!existe) {
-      localStorage.removeItem("animalFixadoEmergencia");
-      return;
-    }
-
-    localStorage.setItem("animalFixadoEmergencia", animalFixadoId);
   }, [animalFixadoId]);
 
   // Fixa um animal ou abre a confirmação para substituir o atual
@@ -239,15 +228,6 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
     setAnimalPendente(null);
   };
 
-  // Limpa os filtros e a seleção ao sair do catálogo para a área de prevenção/checklist.
-  const limparFiltros = () => {
-    setPesquisa("");
-    setCategoriaAtiva(null);
-    setCaracteristicasAtivas([]);
-    setOutroFiltro("");
-    setAnimalSelecionado(null);
-  };
-
   const resultados = useMemo(() => {
     const termo = normalizar(pesquisa);
     const termoOutro = normalizar(outroFiltro);
@@ -258,7 +238,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
       );
       const categoriaNome = normalizar(animal.categoria);
       const descricaoAnimal = normalizar(animal.descricao ?? "");
-      const sintomasAnimal = (animal.sinaisSintomas ?? []).map(normalizar);
+      const sintomasAnimal = (animal.sintomas ?? []).map(normalizar);
 
       const correspondeTexto =
         !termo ||
@@ -644,16 +624,6 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             Emergência · Chamar SAMU (192)
           </a>
         </main>
-
-        <BottomNav
-          abaAtiva={abaAtiva}
-          setAbaAtiva={(novaAba) => {
-            if (novaAba === "prevencao") {
-              limparFiltros();
-            }
-            setAbaAtiva(novaAba);
-          }}
-        />
 
         <ModalDetalhes
           animal={animalSelecionado}

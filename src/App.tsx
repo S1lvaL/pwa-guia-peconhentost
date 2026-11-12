@@ -20,7 +20,7 @@ export default function App() {
           )}
 
           {abaAtiva === "emergencia" && (
-            <Emergencia abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
+            <Emergencia />
           )}
 
           {abaAtiva === "animais" && <Animais />}

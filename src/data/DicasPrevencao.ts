@@ -46,7 +46,7 @@ export const dadosPrevencao = {
     evite: [
       "Não ponha as mãos em buracos, sob pedras, troncos podres ou cupinzeiros.",
       "Evite mexer desprotegido em palhadas de milho, feijão, cana ou dormentes.",
-      "Não manuseie entulhos e resíduos rurai,s sem EPIs adequados.",
+      "Não manuseie entulhos e resíduos rurais sem EPIs adequados.",
       "Não se aproxime de colmeias sem proteção apropriada.",
       "Não use máquinas ou motores perto de colmeias: o ruído pode irritar as abelhas.",
     ],
