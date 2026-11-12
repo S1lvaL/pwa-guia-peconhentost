@@ -1241,29 +1241,33 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Perigo!",
-    "imagem": ["/imagens/abelha-africanizada.jpg"],
+    "imagem": ["/imagens/Abelha-africanizada.jpg"],
     "sintomas": [
-      "Dor aguda imediata;",
-      "Vermelhidão;",
-      "Inchaço local;",
-      "Em alérgicos: Causa choque anafilático (falta de ar, edema de glote E queda de pressão);",
-      "Em ataques de enxame (múltiplas picadas): provoca intoxicação grave com destruição muscular e insuficiência renal aguda."
+      "Dor aguda no local da ferroada;",
+      "Vermelhidão na pele;",
+      "Inchaço e coceira no local;",
+      "Em reações alérgicas: urticária, inchaço nos lábios ou no rosto, tontura e dificuldade para respirar;",
+      "Em ataques com muitas ferroadas: náuseas, vômitos, dor abdominal, fraqueza e alterações na pressão arterial."
     ],
     "primeirosSocorros": [
-      "Afastar-se imediatamente do enxame e buscar abrigo fechado.",
-      "Remover os ferrões da pele raspando suavemente com uma lâmina sem corte ou cartão rígido (evitando apertar a bolsa de veneno).",
-      "Lavar o local com água e sabão neutro e aplicar compressas frias para aliviar a dor e o inchaço.",
-      "Procurar atendimento médico de emergência imediatamente em caso de múltiplas picadas ou sinais de alergia (falta de ar, tontura, inchaço nos lábios ou olhos)."
+      "Afastar-se imediatamente do enxame e procurar abrigo em um local fechado.",
+      "Se houver ferrões visíveis na pele, removê-los rapidamente por raspagem, utilizando um objeto rígido, sem apertar o ferrão.",
+      "Lavar a região atingida com água e sabão.",
+      "Aplicar compressas frias para aliviar a dor e o inchaço.",
+      "Procurar atendimento médico de emergência imediatamente em caso de múltiplas ferroadas ou sinais de reação alérgica, como dificuldade para respirar, inchaço no rosto ou tontura."
     ],
     "oQueNaoFazer": [
-      "Não apertar nem puxar o ferrão com pinça ou unhas (isso espreme o saco de veneno e injeta mais toxina).",
-      "Não aplicar substâncias caseiras (pó de café, pasta de dente, lama ou ervas).",
-      "Não agitar os braços nem fazer movimentos bruscos perto do enxame.",
-      "Não tentar remover colmeias por conta própria."
+      "Não permanecer próximo ao enxame.",
+      "Não fazer movimentos bruscos ou tentar espantar as abelhas com as mãos.",
+      "Não apertar o ferrão durante a remoção.",
+      "Não aplicar receitas caseiras, álcool ou substâncias irritantes no local.",
+      "Não tentar retirar ou destruir a colmeia por conta própria."
     ],
     "descricao": "Abelha com listras amarelas e pretas no abdômen, extremamente defensiva.",
     "caracteristicas": [
-      "listras amarelas e pretas",
+      "listras",
+      "amarela",
+      "pretas",
       "asas transparentes",
       "ferrão",
       "voador",
@@ -1282,29 +1286,37 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": ["/imagens/abelha-tataira.jpg"],
+    "imagem": [
+      "/imagens/abelha-tataira.jpg",
+      "/imagens/abelha-tataira1.jpg"],
     "sintomas": [
-      "Queimação imediata na pele;",
-      "Vermelhidão intensa (eritema);",
-      "Formação de bolhas;",
-      "Feridas semelhantes a queimaduras químicas;",
-      "Seguidas de manchas escuras que demoram semanas para cicatrizar."
+      "Ardência intensa na região atingida;",
+      "Dor e vermelhidão na pele;",
+      "Irritação e formação de lesões semelhantes a queimaduras;",
+      "Inchaço na região afetada;",
+      "Em exposições mais intensas, pode ocorrer lesão mais extensa na pele."
     ],
     "primeirosSocorros": [
-      "Afastar-se do ninho sem esmagar as abelhas sobre a pele.",
-      "Lavar imediatamente a área atingida com água corrente abundante e sabão neutro para remover a secreção ácida.",
-      "Aplicar compressas frias para aliviar a ardência.",
-      "Procurar avaliação médica se houver formação de bolhas extensas ou contato com os olhos."
+      "Afastar-se imediatamente do ninho.",
+      "Lavar a região atingida com bastante água corrente para remover a secreção liberada pela abelha.",
+      "Lavar suavemente a pele com água e sabão neutro, sem esfregar.",
+      "Aplicar compressa fria para aliviar a ardência e o desconforto.",
+      "Procurar atendimento médico se houver lesões extensas, dor intensa ou contato da secreção com os olhos.",
+      "Em caso de contato com os olhos, lavar imediatamente com água corrente abundante e procurar atendimento médico."
     ],
     "oQueNaoFazer": [
-      "Não esfregar nem coçar a pele enquanto houver abelhas sobre o corpo.",
-      "Não estourar as bolhas formadas pela queimadura.",
-      "Não aplicar receitas caseiras, óleos ou álcool sobre a lesão."
+      "Não esfregar ou coçar a região atingida.",
+      "Não estourar possíveis bolhas na pele.",
+      "Não aplicar álcool, óleos, pomadas ou receitas caseiras sem orientação profissional.",
+      "Não tentar capturar ou esmagar as abelhas.",
+      "Não tentar retirar ou destruir o ninho por conta própria."
     ],
     "descricao": "Abelha nativa sem ferrão de cor amarelada/alaranjada que libera uma secreção cáustica ao morder a pele.",
     "caracteristicas": [
       "amarelada",
       "alaranjada",
+      "laranja",
+      "amarela",
       "sem ferrão",
       "não pica",
       "queimadura",
@@ -1322,28 +1334,34 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": ["/imagens/mamangava-de-toco.jpg"],
+    "imagem": ["/imagens/abelha-mamangava-de-toco.jpg"],
     "sintomas": [
-      "Dor local aguda;",
-      "Intensa (devido ao tamanho do ferrão);",
+      "Dor aguda no local da ferroada;",
+      "Vermelhidão;",
       "Inchaço;",
-      "Vermelhidão no local;",
-      "Risco de reação alérgica sistêmica apenas em pessoas sensíveis."
+      "Coceira ou sensação de ardência;",
+      "Em pessoas alérgicas: urticária, tontura e dificuldade para respirar."
     ],
     "primeirosSocorros": [
-      "Lavar o local da picada com água e sabão neutro.",
-      "Aplicar compressas frias ou gelo envolto em pano limpo por 15 minutos para reduzir a dor e o edema.",
-      "Procurar atendimento médico se surgirem sinais de alergia (falta de ar, urticária generalizada ou tontura)."
+      "Afastar-se do local onde ocorreu a ferroada para evitar novos acidentes.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria envolvida em um pano limpo para aliviar a dor e o inchaço.",
+      "Observar o surgimento de sinais de reação alérgica, como urticária, tontura ou dificuldade para respirar.",
+      "Procurar atendimento médico em caso de múltiplas ferroadas, reação intensa ou sinais de alergia."
     ],
     "oQueNaoFazer": [
-      "Não apertar nem manusear o inseto diretamente.",
-      "Não cortar, furar ou espremer o local da picada.",
-      "Não aplicar substâncias caseiras sobre o ferimento."
+      "Não tentar capturar, apertar ou manusear a abelha.",
+      "Não cortar, furar ou espremer o local da ferroada.",
+      "Não aplicar substâncias caseiras, álcool ou produtos irritantes.",
+      "Não mexer nos locais utilizados como ninhos."
     ],
     "descricao": "Abelha solitária grande, robusta e preta brilhante que escava ninhos em madeira seca.",
     "caracteristicas": [
       "grande",
-      "corpo preto brilhante",
+      "vermelha",
+      "laranja",
+      "preto",
+      "brilhante",
       "robusta",
       "asas escuras",
       "ferrão",
@@ -1361,29 +1379,36 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": ["/imagens/mamangava-de-chao.jpg"],
+    "imagem": [
+      "/imagens/abelha-mamangava-de-chao.jpg",
+      "/imagens/abelha-mamangava-de-chao1.jpg"],
     "sintomas": [
-      "Dor forte;",
-      "Latejante no local da ferroada;",
+      "Dor no local da ferroada;",
       "Vermelhidão;",
-      "Inchaço moderado;",
-      "OBS: Pode ferroar mais de uma vez por possuir ferrão liso."
+      "Inchaço;",
+      "Coceira ou ardência;",
+      "Em pessoas alérgicas: urticária, tontura e dificuldade para respirar."
     ],
     "primeirosSocorros": [
-      "Afastar-se do ninho no solo com calma.",
-      "Lavar a região afetada com água e sabão neutro.",
-      "Aplicar compressa fria no local para aliviar a dor.",
-      "Buscar atendimento médico em caso de múltiplas picadas ou reação alérgica."
+      "Afastar-se do ninho e evitar permanecer próximo à entrada do abrigo.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria envolvida em um pano limpo para aliviar a dor e o inchaço.",
+      "Observar o surgimento de sinais de reação alérgica, como urticária, tontura ou dificuldade para respirar.",
+      "Procurar atendimento médico em caso de múltiplas ferroadas ou reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não pisar ou mexer em buracos no solo onde há movimentação dessas abelhas.",
-      "Não espremer o local nem aplicar produtos caseiros."
+      "Não pisar, cavar ou mexer em buracos no solo onde há movimentação de abelhas.",
+      "Não tentar capturar ou apertar a abelha.",
+      "Não cortar, furar ou espremer o local da ferroada.",
+      "Não aplicar receitas caseiras ou substâncias irritantes.",
+      "Não tentar destruir o ninho por conta própria."
     ],
     "descricao": "Abelha grande, muito peluda e preta (ou com faixas amarelas) que constrói ninhos no solo.",
     "caracteristicas": [
       "grande",
       "peluda",
       "preta",
+      "amarela",
       "robusta",
       "ferrão",
       "voador",
@@ -1401,22 +1426,28 @@
     "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-das-orquideas.jpg"],
     "sintomas": [
-      "Dor leve a moderada;",
-      "Pequeno inchaço local apenas se a fêmea for apertada contra a pele;",
-      "Não ataca em enxames."
+      "Dor localizada, caso ocorra ferroada;",
+      "Vermelhidão;",
+      "Pequeno inchaço;",
+      "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-      "Lavar o local com água e sabão neutro.",
-      "Aplicar compressa fria caso haja desconforto leve."
+      "Afastar-se do inseto e evitar novas ferroadas.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica, como urticária, tontura ou dificuldade para respirar."
     ],
     "oQueNaoFazer": [
       "Não tentar capturar ou apertar a abelha com as mãos.",
-      "Não aplicar substâncias irritantes no local."
+      "Não espremer ou furar o local da ferroada.",
+      "Não aplicar substâncias caseiras ou produtos irritantes.",
+      "Não mexer nos ninhos."
     ],
     "descricao": "Abelha solitária de cores metálicas brilhantes (verde, azul ou dourado), muito dócil e comum em áreas de mata.",
     "caracteristicas": [
-      "verde metálico",
-      "azul metálico",
+      "verde", 
+      "metálico",
+      "azul",
       "brilhante",
       "ferrão",
       "voador",
@@ -1434,25 +1465,33 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Baixo risco",
-    "imagem": ["/imagens/abelha-do-suor.jpg"],
+    "imagem": [
+      "/imagens/abelha-do-suor.jpg",
+      "/imagens/abelha-do-suor1.jpg"],
     "sintomas": [
-      "Ardência leve",
-      "Passageira no local da picada",
-      "Geralmente quando a abelha é esmagada acidentalmente ao pousar na pele para lamber suor."
+      "Dor ou ardência leve no local da ferroada;",
+      "Pequena vermelhidão;",
+      "Inchaço localizado;",
+      "Coceira passageira."
     ],
     "primeirosSocorros": [
-      "Lavar a pele com água e sabão neutro.",
-      "Aplicar compressa fria se houver pequena vermelhidão."
+      "Afastar suavemente a abelha da pele, sem esmagá-la.",
+      "Lavar a região atingida com água e sabão neutro caso ocorra ferroada.",
+      "Aplicar compressa fria se houver dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não dar tapas na pele quando a abelha pousar (apenas soprar ou afastar suavemente).",
-      "Não coçar intensamente o local."
+      "Não dar tapas na pele para afastar a abelha.",
+      "Não apertar ou esmagar o inseto contra o corpo.",
+      "Não coçar intensamente a região atingida.",
+      "Não aplicar receitas caseiras no local."
     ],
     "descricao": "Abelha pequena, frequentemente de cor verde-metálica, atraída pelo sal do suor humano.",
     "caracteristicas": [
       "pequeno",
       "verde metálico",
       "ferrão",
+      "dourada",
       "voador",
       "baixo risco",
       "picada",
@@ -1467,27 +1506,29 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Baixo risco",
-    "imagem": ["/imagens/abelha-limao.jpg"],
+    "imagem": [
+      "/imagens/abelha-limao.jpg",
+      "/imagens/abelha-limao1.jpg"],
     "sintomas": [
-      "Não possui ferrão funcional",
-      "Libera uma secreção química com forte cheiro de limão (citral) que causa ardência",
-      "Irritação nos olhos",
-      "Mucosas",
-      "Pele sensível",
-      "Pode mordiscar levemente."
+      "Não há um quadro de sintomas humanos bem estabelecido para essa espécie;",
+      "Em caso de mordida ou contato com secreções, pode ocorrer desconforto ou irritação local."
     ],
     "primeirosSocorros": [
-      "Afastar-se do local sem esmagar as abelhas sobre o corpo.",
-      "Lavar imediatamente o rosto, olhos e pele atingida com água corrente abundante e sabão neutro.",
-      "Procurar atendimento médico se houver irritação ocular persistente."
+      "Afastar-se do ninho sem esmagar as abelhas sobre a pele.",
+      "Lavar a região que teve contato com a secreção utilizando bastante água corrente.",
+      "Se houver contato com os olhos, lavar imediatamente com água corrente abundante.",
+      "Procurar atendimento médico caso a irritação na pele ou nos olhos persista."
     ],
     "oQueNaoFazer": [
-      "Não esfregar os olhos caso a abelha tenha tido contato com o rosto.",
-      "Não esmagar o inseto contra a pele."
+      "Não tentar capturar ou esmagar a abelha.",
+      "Não esfregar os olhos ou a pele após o contato com a secreção.",
+      "Não aplicar álcool, óleos ou receitas caseiras na região atingida.",
+      "Não tentar retirar ou destruir o ninho por conta própria."
     ],
     "descricao": "Abelha nativa sem ferrão, escura e brilhante, conhecida pelo forte cheiro de limão que exala ao se defender ou saquear outras colmeias.",
     "caracteristicas": [
-      "preta brilhante",
+      "preta",
+      "brilhante",
       "sem ferrão",
       "não pica",
       "cheiro de limão",
@@ -1503,26 +1544,29 @@
     "nome": "Abelha Irapuá (Arapuá / Cachorro)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
-    "imagem": ["/imagens/abelha-irapua.jpg"],
+    "periculosidade": "Risco moderado",
+    "imagem": [
+      "/imagens/abelha-irapua.jpg",
+      "/imagens/abelha-irapua1.jpg"],
     "sintomas": [
-      "Não tem ferrão",
-      "Não inocula peçonha",
-      "Ataca em grande número mordiscando a pele",
-      "Enroscando-se nos cabelos;",
-      "Vômitos;",
-      "Tontura;",
-      "Queda de pressão;",
-      "OBS: Seu mel pode ser tóxico (venenoso por ingestão) dependendo das flores visitadas."
+      "Dor ou desconforto causado pelas mordidas;",
+      "Vermelhidão na região atingida;",
+      "Irritação e coceira local;",
+      "Desconforto quando as abelhas ficam presas aos cabelos ou pelos."
     ],
     "primeirosSocorros": [
-      "Afastar-se rapidamente do ninho (geralmente redondo e escuro, preso em árvores).",
-      "Retirar as abelhas dos cabelos e lavar as mordidas com água e sabão neutro.",
-      "Em caso de ingestão de mel silvestre seguida de tontura ou vômito, buscar atendimento médico imediato."
+      "Afastar-se do ninho para evitar novas mordidas.",
+      "Afastar cuidadosamente as abelhas dos cabelos e da pele, evitando esmagá-las contra o corpo.",
+      "Lavar as regiões atingidas pelas mordidas com água e sabão neutro.",
+      "Aplicar compressa fria se houver dor ou inchaço.",
+      "Procurar atendimento médico se houver lesões extensas, reação intensa ou sinais de alergia."
     ],
     "oQueNaoFazer": [
-      "Não tentar derrubar ou queimar os ninhos externos.",
-      "Não consumir mel extraído de ninhos de Irapuá sem procedência sanitária."
+      "Não tentar derrubar, queimar ou destruir o ninho.",
+      "Não esmagar as abelhas contra a pele ou os cabelos.",
+      "Não esfregar intensamente as regiões atingidas.",
+      "Não aplicar receitas caseiras ou substâncias irritantes.",
+      "Não consumir mel silvestre sem procedência sanitária."
     ],
     "descricao": "Abelha preta muito comum na Bahia que constrói ninhos externos arredondados e se defende mordiscando e enrolando nos cabelos.",
     "caracteristicas": [
@@ -1532,7 +1576,7 @@
       "enxame",
       "voador",
       "pequeno",
-      "baixo risco",
+      "risco moderado",
       "venenosa"
     ],
     "areas": ["trilha", "campo", "casa"]
@@ -1545,17 +1589,22 @@
     "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-cortadeira.jpg"],
     "sintomas": [
-      "Dor local leve a moderada;",
-      "Pequeno ponto avermelhado apenas se a fêmea for apertada contra a pele;",
-      "OBS: Não forma enxames defensivos."
+      "Dor localizada, caso ocorra ferroada;",
+      "Vermelhidão;",
+      "Pequeno inchaço;",
+      "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-      "Lavar o local da picada com água e sabão neutro.",
-      "Aplicar compressa fria por alguns minutos se houver desconforto."
+       "Afastar-se do inseto e evitar novas ferroadas.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não apertar ou capturar a abelha com as mãos nuas.",
-      "Não aplicar substâncias caseiras no local."
+      "Não tentar capturar ou apertar a abelha com as mãos.",
+      "Não espremer ou furar o local da ferroada.",
+      "Não aplicar receitas caseiras ou substâncias irritantes.",
+      "Não mexer nos ninhos."
     ],
     "descricao": "Abelha solitária de porte médio, com abdômen achatado e frequentemente com faixas claras, conhecida por recortar círculos nas folhas para fazer ninhos.",
     "caracteristicas": [
@@ -1564,6 +1613,8 @@
       "ferrão",
       "solitária",
       "voador",
+      "preta",
+      "branca",
       "baixo risco",
       "picada",
       "dor leve",
@@ -1577,19 +1628,26 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Baixo risco",
-    "imagem": ["/imagens/abelha-centris.jpg"],
+    "imagem": [
+      "/imagens/abelha-colhetadora.jpg",
+      "/imagens/abelha-colhetadora1.jpg"],
     "sintomas": [
-      "Dor aguda passageira;",
-      "Pequeno inchaço local no ponto da ferroada caso seja manuseada ou esmagada",
-      "OBS: Não ataca em grupo."
+      "Dor localizada, caso ocorra ferroada;",
+      "Vermelhidão;",
+      "Pequeno inchaço;",
+      "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-      "Lavar a região com água e sabão neutro.",
-      "Aplicar compressa fria para aliviar a dor local."
+      "Afastar-se do inseto para evitar novas ferroadas.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não apertar a abelha contra a pele.",
-      "Não espremer ou furar o local da picada."
+      "Não tentar capturar ou apertar a abelha.",
+      "Não espremer ou furar o local da ferroada.",
+      "Não aplicar substâncias caseiras ou produtos irritantes.",
+      "Não mexer nos ninhos."
     ],
     "descricao": "Abelha nativa robusta e veloz, muito comum em pomares e matas da Bahia (principal polinizadora da acerola e do murici).",
     "caracteristicas": [
@@ -1598,6 +1656,8 @@
       "ferrão",
       "solitária",
       "voador",
+      "preta",
+      "amarela",
       "baixo risco",
       "picada",
       "dor",
@@ -1613,22 +1673,29 @@
     "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-cuco.jpg"],
     "sintomas": [
-      "Picada rara;",
-      "Dor local leve;",
-      "Vermelhidão passageira se for pressionada contra a pele."
+      "Dor localizada, caso ocorra ferroada;",
+      "Vermelhidão;",
+      "Pequeno inchaço;",
+      "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-      "Lavar o local com água e sabão neutro.",
-      "Aplicar compressa fria caso haja pequena ardência."
+      "Afastar-se do inseto e evitar novas ferroadas.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não manusear ou apertar o inseto.",
-      "Não aplicar produtos caseiros no local."
+      "Não tentar capturar ou apertar a abelha.",
+      "Não espremer ou furar o local da ferroada.",
+      "Não aplicar receitas caseiras ou substâncias irritantes.",
+      "Não mexer nos ninhos de outras abelhas."
     ],
     "descricao": "Abelha solitária com aparência semelhante a uma vespa (poucos pelos e cores contrastantes) que põe ovos nos ninhos de outras abelhas.",
     "caracteristicas": [
       "aparência de vespa",
       "manchas",
+      "preta",
+      "branca",
       "ferrão",
       "solitária",
       "voador",
@@ -1645,25 +1712,33 @@
     "categoria": "abelhas",
     "habitats": ["caatinga", "cerrado", "mata-atlantica"],
     "periculosidade": "Baixo risco",
-    "imagem": ["/imagens/abelha-escavadora.jpg"],
+    "imagem": [
+      "/imagens/abelha-escavadora.jpg",
+      "/imagens/abelha-escavadora1.jpg"],
     "sintomas": [
-      "Dor leve localizada",
-      "Se a fêmea for esmagada acidentalmente",
-      "Mesmo quando fazem vários ninhos próximos em barrancos",
-      "São muito mansas."
+      "Dor localizada, caso ocorra ferroada;",
+      "Vermelhidão;",
+      "Pequeno inchaço;",
+      "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-      "Lavar o local com água e sabão neutro.",
-      "Aplicar compressa fria se houver leve inchaço."
+      "Afastar-se do local onde ocorreu o acidente.",
+      "Lavar a região atingida com água e sabão neutro.",
+      "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
+      "Procurar atendimento médico se surgirem sinais de reação alérgica."
     ],
     "oQueNaoFazer": [
-      "Não mexer nos buracos dos barrancos onde elas nidificam.",
-      "Não apertar o inseto com as mãos."
+      "Não mexer nos buracos dos barrancos onde as abelhas constroem seus ninhos.",
+      "Não tentar capturar ou apertar a abelha.",
+      "Não espremer ou furar o local da ferroada.",
+      "Não aplicar receitas caseiras ou substâncias irritantes."
     ],
     "descricao": "Abelha nativa de porte médio e corpo peludo que escava túneis em barrancos e solos argilosos.",
     "caracteristicas": [
       "peluda",
       "média",
+      "pequena",
+      "grande",
       "ferrão",
       "solitária",
       "voador",
