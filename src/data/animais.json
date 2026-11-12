@@ -1423,7 +1423,6 @@
     "nome": "Abelha-das-orquídeas",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica"],
-    "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-das-orquideas.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
@@ -1464,7 +1463,6 @@
     "nome": "Abelha-do-suor (Halictídeo)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
     "imagem": [
       "/imagens/abelha-do-suor.jpg",
       "/imagens/abelha-do-suor1.jpg"],
@@ -1505,7 +1503,6 @@
     "nome": "Abelha-limão (Iratim)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
     "imagem": [
       "/imagens/abelha-limao.jpg",
       "/imagens/abelha-limao1.jpg"],
@@ -1586,7 +1583,6 @@
     "nome": "Abelha-cortadeira-de-folhas",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-cortadeira.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
@@ -1627,7 +1623,6 @@
     "nome": "Abelha-coletora-de-óleo (Centris)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
     "imagem": [
       "/imagens/abelha-colhetadora.jpg",
       "/imagens/abelha-colhetadora1.jpg"],
@@ -1670,7 +1665,6 @@
     "nome": "Abelha-cuco (Abelha-parasita)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "periculosidade": "Baixo risco",
     "imagem": ["/imagens/abelha-cuco.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
@@ -1711,7 +1705,6 @@
     "nome": "Abelha-escavadora-de-barranco",
     "categoria": "abelhas",
     "habitats": ["caatinga", "cerrado", "mata-atlantica"],
-    "periculosidade": "Baixo risco",
     "imagem": [
       "/imagens/abelha-escavadora.jpg",
       "/imagens/abelha-escavadora1.jpg"],
