@@ -252,7 +252,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
         {/*Header*/}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-[40px] font-extrabold leading-[30px] text-verde-principal">
+            <h1 className="text-[35px] font-extrabold leading-[34px] text-verde-principal">
               Sistema de prevenção
             </h1>
             <p className="text-[12px] font-bold text-letra/75 uppercase tracking-wide mt-1 pt-3">
@@ -266,7 +266,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
         <SeletorCidade />
 
         {/*Card das unidades referênci para o soro antiveneno*/}
-        <UnidadesSoro />
+        <UnidadesSoro compacto />
 
         {/*Card principal: animais da região (e da área, quando houver uma escolhida)*/}
         <section className="bg-verde-principal/97 border-2 border-black/45 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/30">

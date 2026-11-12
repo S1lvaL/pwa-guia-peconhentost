@@ -9,16 +9,15 @@ interface ModalDetalhesProps {
 }
 
 export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
-  const [abaAtiva, setAbaAtiva] = 
-  useState<"socorros" | "donts">("socorros");
+  const [abaAtiva, setAbaAtiva] = useState<"socorros" | "donts">("socorros");
 
   if (!animal) return null;
 
   const corBadge = corPericulosidade(animal.periculosidade);
   const imagens = Array.isArray(animal.imagem)
-  ? animal.imagem
-  : [animal.imagem];
-  
+    ? animal.imagem
+    : [animal.imagem];
+
   return (
     //Fundo do modal ficar opaco e escurecido, cobrindo toda a tela
     <div className="fixed inset-0 z-40 bg-black/60 flex flex-col justify-end">
@@ -46,34 +45,33 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
 
         {/*Conteúdo principal*/}
         <div className="flex-1 overflow-y-auto flex flex-col gap-[16px] pr-1">
-          
-        {/* Fotos / Galeria */}
-        {imagens.length === 1 ? (
-          // Quando existir apenas uma foto, ela ganha mais espaço
-          <div className="relative h-[42vh] min-h-[240px] max-h-[420px] w-full shrink-0 overflow-hidden rounded-[16px] bg-slate-100">
-            <img
-              src={imagens[0]}
-              alt={animal.nome}
-              className="h-full w-full object-contain"
-            />
-          </div>
-        ) : (
-          // Quando houver várias fotos, mantém a galeria
-          <div className="grid grid-cols-2 gap-2 shrink-0">
-            {imagens.map((imgUrl, index) => (
-              <div
-                key={index}
-                className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
-              >
-                <img
-                  src={imgUrl}
-                  alt={`${animal.nome} - foto ${index + 1}`}
-                  className="size-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        )}
+          {/* Fotos / Galeria */}
+          {imagens.length === 1 ? (
+            // Quando existir apenas uma foto, ela ganha mais espaço
+            <div className="relative h-[42vh] min-h-[240px] max-h-[420px] w-full shrink-0 overflow-hidden rounded-[16px] bg-slate-100">
+              <img
+                src={imagens[0]}
+                alt={animal.nome}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          ) : (
+            // Quando houver várias fotos, mantém a galeria
+            <div className="grid grid-cols-2 gap-2 shrink-0">
+              {imagens.map((imgUrl, index) => (
+                <div
+                  key={index}
+                  className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
+                >
+                  <img
+                    src={imgUrl}
+                    alt={`${animal.nome} - foto ${index + 1}`}
+                    className="size-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/*Nome e Categorias*/}
           <div className="flex flex-col gap-[10px] shrink-0">
@@ -81,7 +79,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
               {animal.nome}
             </h2>
             <div className="flex gap-[8px] items-center">
-              <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] capitalize shadow-sm shadow-[#0e3d10]/40 ml-2">
+              <span className="bg-verde-principal/75 text-white border border-verde-principal px-[10px] py-[4px] rounded-[8px] font-bold text-[12px] capitalize  ml-2">
                 {animal.categoria}
               </span>
               {corBadge && (
@@ -95,47 +93,27 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           </div>
 
           {/*Sintomas Comuns*/}
-          {animal.sintomas && (
-            <div className="bg-destaque-fundo border border-destaque-borda p-[12px] rounded-[12px] flex gap-[12px] items-center shrink-0 ml-1">
+          {animal.sintomas && animal.sintomas.length > 0 && (
+            <div className="bg-destaque-fundo border border-destaque-borda p-[12px] rounded-[12px] flex gap-[12px] items-start shrink-0 ml-1">
               <div className="bg-[#fef3c7] size-[32px] rounded-[16px] flex items-center justify-center shrink-0">
-                {/*Icone de alerta*/}
                 <TriangleAlert
                   className="size-[18px] text-destaque-texto"
                   strokeWidth={2}
                   aria-hidden="true"
                 />
               </div>
-              <div className="flex flex-col gap-[2px] ">
+              <div className="flex flex-col gap-[2px] min-w-0">
                 <h4 className="font-bold text-destaque-texto text-[15px] leading-[18px]">
                   Sintomas Comuns
                 </h4>
-                <p className="font-medium text-letra text-[13px] leading-[18px]">
-                  {animal.sintomas}
-                </p>
+                <ul className="list-disc pl-4 font-medium text-letra text-[13px] leading-[18px] space-y-1">
+                  {animal.sintomas.map((sintoma: string) => (
+                    <li key={sintoma}>{sintoma}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           )}
-
-          {/* Características do animal */}
-          {animal.caracteristicas &&
-            animal.caracteristicas.length > 0 && (
-              <div className="bg-verde-principal/10 border border-verde-principal/30 p-3 rounded-xl">
-                <h4 className="font-bold text-verde-principal text-[15px] mb-2">
-                  Características
-                </h4>
-
-                <div className="flex flex-wrap gap-2">
-                  {animal.caracteristicas.map((caracteristica, index) => (
-                    <span
-                      key={index}
-                      className="bg-white border border-verde-principal/30 rounded-lg px-2 py-1 text-[12px] text-letra"
-                    >
-                      {caracteristica}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
 
           {/*Abas: Primeiros Socorros / O que NÃO fazer*/}
           <div className="flex flex-col gap-[12px] shrink-0 ml-2">

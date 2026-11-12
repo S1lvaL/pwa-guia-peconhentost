@@ -1,4 +1,3 @@
-
 import type { Area } from "../data/DicasPrevencao";
 
 export type Habitat =
@@ -16,8 +15,7 @@ export interface Animal {
   imagem: string | string[];
   habitats?: Habitat[];
   areas?: Area[];
-  sintomas?: string;
-  sinaisSintomas?: string[];
+  sintomas?: string[];
   descricao?: string;
   primeirosSocorros?: string[];
   oQueNaoFazer?: string[];

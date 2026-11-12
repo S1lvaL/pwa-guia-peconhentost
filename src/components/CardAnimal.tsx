@@ -26,8 +26,9 @@ export function CardAnimal({
   return (
     <div
       onClick={onClick}
-      className="bg-white border border-[#bd0008]/30 shadow-md shadow-[#bd0008]/25 flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-[#bd0008]/70 transition-all"
+      className="bg-white border border-verde-principal/30 shadow-sm shadow-verde-principal/20 flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-vermelho-principal/60 transition-all"
     >
+      {" "}
       {/*Imagem do animal*/}
       <div className="relative rounded-[20px] shrink-0 size-[90px] overflow-hidden bg-slate-100">
         <img
@@ -36,7 +37,6 @@ export function CardAnimal({
           className="object-cover size-full"
         />
       </div>
-
       {/* Conteúdo */}
       <div className="flex flex-col gap-[6px] flex-1 min-w-0">
         <h3 className="font-bold text-letra text-[15px] leading-tight break-words">
@@ -64,7 +64,6 @@ export function CardAnimal({
           </p>
         )}
       </div>
-
       {/* Botão para fixar */}
       {onFixar && (
         <button
@@ -89,7 +88,6 @@ export function CardAnimal({
           />
         </button>
       )}
-
       {/* Ícone de detalhes */}
       <ChevronRight
         className="size-[20px] text-letra/70 shrink-0"
