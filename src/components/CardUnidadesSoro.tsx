@@ -18,13 +18,15 @@ const cores = {
     titulo: "text-verde-principal/85",
     link: "text-verde-principal",
   },
+ 
   vermelho: {
-    borda: "border-vermelho-principal/40",
-    fundo: "bg-vermelho-principal/10",
-    sombra: "shadow-vermelho-principal/20",
-    titulo: "text-vermelho-principal",
-    link: "text-vermelho-principal",
+    borda: "border-[#bd0008]/40",
+    fundo: "bg-[#ffecef]",
+    sombra: "shadow-[#bd0008]/20",
+    titulo: "text-[#bd0008]",
+    link: "text-[#bd0008]",
   },
+
 } as const;
 
 // Ícone de telefone

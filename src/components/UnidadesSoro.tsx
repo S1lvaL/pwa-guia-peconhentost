@@ -16,16 +16,18 @@ const cores = {
     divisoria: "border-verde-principal/30",
     fundo: "bg-verde-principal/35",
   },
+  
   vermelho: {
-    borda: "border-vermelho-principal/40",
-    sombra: "shadow-vermelho-principal/20",
-    iconeFundo: "bg-vermelho-principal/10",
-    icone: "text-vermelho-principal",
-    titulo: "text-vermelho-principal",
-    seta: "text-vermelho-principal",
-    divisoria: "border-vermelho-principal/20",
-    fundo: "bg-vermelho-principal/8",
+    borda: "border-[#bd0008]/40",
+    sombra: "shadow-[#bd0008]/20",
+    iconeFundo: "bg-[#ffecef]",
+    icone: "text-[#bd0008]",
+    titulo: "text-[#bd0008]",
+    seta: "text-[#bd0008]",
+    divisoria: "border-[#bd0008]/20",
+    fundo: "bg-[#ffecef]",
   },
+
 } as const;
 
 //Ícone de hospital

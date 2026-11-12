@@ -26,7 +26,7 @@ export function CardAnimal({
   return (
     <div
       onClick={onClick}
-      className="bg-white border border-cinza-borda drop-shadow-[0px_2px_4px_rgba(15,23,42,0.15)] flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-verde-claro transition-all"
+      className="bg-white border border-[#bd0008]/30 shadow-md shadow-[#bd0008]/25 flex gap-[12px] items-center p-[12px] rounded-[16px] cursor-pointer hover:border-[#bd0008]/70 transition-all"
     >
       {/*Imagem do animal*/}
       <div className="relative rounded-[20px] shrink-0 size-[90px] overflow-hidden bg-slate-100">

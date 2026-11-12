@@ -16,17 +16,19 @@ const cores = {
     itemHover: "hover:bg-verde-principal/10",
     exercao: "text-vermelho-principal",
   },
+  
   vermelho: {
-    barraFundo: "bg-vermelho-principal/10",
-    barraBorda: "border-vermelho-principal/40",
-    barraSombra: "shadow-vermelho-principal/20",
-    destaque: "text-vermelho-principal",
-    inputBorda: "border-vermelho-principal/40",
-    inputFocus: "focus:ring-vermelho-principal",
-    listaBorda: "border-vermelho-principal/40",
-    itemHover: "hover:bg-vermelho-principal/10",
-    exercao: "text-verde-principal",
+    barraFundo: "bg-[#ffecef]",
+    barraBorda: "border-[#bd0008]/40",
+    barraSombra: "shadow-[#bd0008]/20",
+    destaque: "text-[#bd0008]",
+    inputBorda: "border-[#bd0008]/40",
+    inputFocus: "focus:ring-[#bd0008]",
+    listaBorda: "border-[#bd0008]/40",
+    itemHover: "hover:bg-[#ffecef]",
+    exercao: "text-[#bd0008]",
   },
+
 } as const;
 
 //Lista as cidades do JSON para o filtro

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import dadosAnimais from "../data/animais.json";
 import type { Animal as AnimalCatalogo } from "../types/animal";
 import { CardAnimal } from "../components/CardAnimal";
@@ -144,6 +144,11 @@ function ItemCaracteristica({
 
 export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   const [pesquisa, setPesquisa] = useState("");
+  // Controla a rolagem automática dos resultados
+  const resultadosRef = useRef<HTMLElement | null>(null);
+
+  // Identifica cada pesquisa realizada
+  const [buscaSolicitada, setBuscaSolicitada] = useState(0);
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
   const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<
     Caracteristica[]
@@ -270,6 +275,15 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
       );
     });
   }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
+    // Rola automaticamente até os animais encontrados
+  useEffect(() => {
+    if (buscaSolicitada > 0) {
+      resultadosRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [buscaSolicitada]);
 
   // A pesquisa, a categoria e o checklist funcionam como filtros independentes.
   // Ao começar a usar um deles, os filtros dos outros dois são limpos.
@@ -285,11 +299,12 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
       limparChecklist();
     }
   };
-
+ 
   const alternarCaracteristica = (valor: Caracteristica) => {
-    // Ao usar o checklist, limpa a pesquisa e a categoria.
+    // Limpa somente a pesquisa por texto.
+    // Mantém a categoria selecionada.
     setPesquisa("");
-    setCategoriaAtiva(null);
+
     setCaracteristicasAtivas((atuais) =>
       atuais.includes(valor)
         ? atuais.filter((item) => item !== valor)
@@ -298,23 +313,27 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
   };
 
   const alterarOutroFiltro = (valor: string) => {
-    // O campo "Outros" também faz parte do checklist.
+    // Mantém a categoria e as características selecionadas.
     setPesquisa("");
-    setCategoriaAtiva(null);
     setOutroFiltro(valor);
   };
 
   const selecionarCategoria = (id: Categoria) => {
-    // Ao usar uma categoria, limpa a pesquisa e todo o checklist.
+    // Limpa somente a pesquisa por texto.
+    // Preserva todas as características marcadas.
     setPesquisa("");
-    limparChecklist();
+
+    // Seleciona ou desmarca a categoria.
     setCategoriaAtiva((atual) => (atual === id ? null : id));
+
+    // Leva automaticamente até os resultados.
+    setBuscaSolicitada((atual) => atual + 1);
   };
 
   return (
     <div className="min-h-screen w-full bg-verde-fundo font-sans text-[#171717] sm:flex sm:justify-center sm:pt-5">
-      <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
-        {/* Cabeçalho no mesmo estilo da tela Prevenção */}
+    <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
+      {/* Cabeçalho no mesmo estilo da tela Prevenção */}
 
         <header className="flex justify-between items-center px-4 pt-8 pb-4 bg-verde-fundo">
           <div className="min-w-0">
@@ -395,13 +414,18 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 </p>
               </div>
             </div>
+            
             <form
               className="flex h-10 overflow-hidden rounded-lg border border-[#d4d4d4] shadow-sm shadow-vermelho-principal/10 focus-within:ring-2 focus-within:ring-[#c9000b]/30"
               onSubmit={(event) => {
                 event.preventDefault();
+
                 if (pesquisa.trim()) {
                   setCategoriaAtiva(null);
                   limparChecklist();
+
+                  // Solicita a pesquisa e a rolagem automática
+                  setBuscaSolicitada((atual) => atual + 1);
                 }
               }}
             >
@@ -409,10 +433,18 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 type="search"
                 value={pesquisa}
                 onChange={(event) => alterarPesquisa(event.target.value)}
+                onKeyDown={(event) => {
+                  // Ctrl + Espaço realiza a pesquisa
+                  if (event.ctrlKey && event.code === "Space") {
+                    event.preventDefault();
+                    event.currentTarget.form?.requestSubmit();
+                  }
+                }}
                 placeholder="Ex.: aranha-marrom, cascavel, escorpião..."
                 aria-label="Pesquisar animal ou grupo"
                 className="min-w-0 flex-1 px-3 text-[12px] text-verde-principal outline-none"
               />
+
               <button
                 type="submit"
                 className="bg-[#bd0008] px-3 text-[12px] font-bold text-white border border-vermelho-borda/30 shadow-sm shadow-vermelho-principal/10 transition hover:bg-[#900006]"
@@ -421,7 +453,6 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
               </button>
             </form>
           </section>
-
           <section>
             <h2 className="mb-2 flex items-center gap-2 text-[17px] font-bold">
               <svg
@@ -550,7 +581,9 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             )}
           </section>
 
-          <section>
+          <section 
+          ref={resultadosRef}
+          className="scroll-mt-4">
             <div className="mb-2 flex items-center gap-2">
               <h2 className="flex-1 text-[15px] font-bold">
                 Possíveis animais encontrados
