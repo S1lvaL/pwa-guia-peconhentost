@@ -497,6 +497,7 @@
     "caracteristicas": [
       "manchas irregulares",
       "manchas",
+      "pequeno",
       "cabeça triangular",
       "fosseta loreal",
       "terrestre",
@@ -507,7 +508,7 @@
   },
   {
     "id": "jararaca-da-seca",
-    "nome": "Jararaca da Seca",
+    "nome": "Jararaca da Seca/Malha de Cascavel",
     "categoria": "serpentes",
     "habitats": ["caatinga"],
     "imagem": ["/imagens/jararaca-da-seca.jpg"],
@@ -525,16 +526,15 @@
       "Não colocar nada sobre a ferida.",
       "Não ingerir álcool."
     ],
-    "descricao": "Serpente peçonhenta pequena, típica da Caatinga.",
+    "descricao": "Serpente peçonhenta pequena, de coloração castanho-avermelhada e manchas escuras pelo corpo.",
     "caracteristicas": [
-      "pequeno porte",
+      "pequeno",
       "manchas em forma de trapézio",
       "manchas",
       "Caatinga",
       "terrestre",
       "peçonhenta",
       "inchaço",
-      "tamanho pequeno",
       "picada"
     ],
     "areas": ["trilha", "campo"]
@@ -558,10 +558,10 @@
       "Não aplicar substâncias ou produtos caseiros.",
       "Não ingerir álcool."
     ],
-    "descricao": "Jararaca grande da Mata Atlântica, de picada muito grave.",
+    "descricao": "Jararaca grande, de picada muito grave e desenhos em formato de V invertido.",
     "caracteristicas": [
       "grande porte",
-      "tamanho grande",
+      "pequeno",
       "corpo robusto",
       "manchas em forma de V invertido",
       "manchas",
@@ -592,13 +592,14 @@
       "Não aplicar substâncias caseiras.",
       "Não ingerir álcool."
     ],
-    "descricao": "Maior serpente peçonhenta das Américas, de florestas úmidas.",
+    "descricao": "Maior serpente peçonhenta das Américas, de florestas úmidas e manchas escuras em formato de losangos.",
     "caracteristicas": [
       "escamas ásperas, parecidas com casca de jaca",
       "losangos escuros no dorso",
       "florestas úmidas",
-      "tamanho grande",
+      "grande",
       "terrestre",
+      "grande porte",
       "manchas",
       "picada",
       "peçonhenta"
@@ -624,7 +625,7 @@
       "Não aplicar substâncias caseiras.",
       "Não massagear a área nem ingerir bebida alcoólica."
     ],
-    "descricao": "Serpente peçonhenta com guizo na cauda, de áreas secas e abertas.",
+    "descricao": "Serpente de coloração acinzentada ou castanha e manchas em formato de losangos. Possui um chocalho característico na ponta da cauda..",
     "caracteristicas": [
       "guizo na cauda",
       "losangos no dorso",
@@ -632,6 +633,8 @@
       "cabeça triangular",
       "áreas secas e abertas",
       "urina escura",
+      "grande porte",
+      "grande",
       "terrestre",
       "picada",
       "peçonhenta"
@@ -658,7 +661,7 @@
       "Não ingerir álcool.",
       "Não andar."
     ],
-    "descricao": "Serpente de anéis coloridos e veneno neurotóxico potente.",
+    "descricao": "Serpente reconhecida pelos anéis coloridos, geralmente vermelhos, pretos e brancos, distribuídos pelo corpo e veneno neurotóxico potente.",
     "caracteristicas": [
       "vermelha",
       "preta",
@@ -671,6 +674,7 @@
       "hábitos subterrâneos",
       "veneno neurotóxico",
       "terrestre",
+      "pequeno",
       "picada",
       "pálpebras caídas",
       "falta de ar",
@@ -698,16 +702,16 @@
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
     ],
-    "descricao": "Escorpião amarelado com faixa escura, comum em cidades do Nordeste.",
+    "descricao": "Escorpião amarelado com faixa escura e um desenho triangular na região da cabeça.",
     "caracteristicas": [
       "amarelado",
       "faixa escura no dorso",
-      "tamanho pequeno",
+      "pequeno",
+      "muitas patas",
       "áreas urbanas",
       "ferrão",
       "picada",
       "terrestre",
-      "tamanho pequeno",
       "hábitos noturnos",
       "peçonhento"
     ],
@@ -733,7 +737,7 @@
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
     ],
-    "descricao": "Escorpião mais perigoso do Brasil, comum em áreas urbanas.",
+    "descricao": "Escorpião mais perigoso do Brasil, amarelo e comum em áreas urbanas.",
     "caracteristicas": [
       "amarelo-claro",
       "patas amarelas",
@@ -741,10 +745,11 @@
       "serrilha na cauda",
       "áreas urbanas",
       "ferrão",
+      "pequeno",
+      "muitas patas",
       "terrestre",
       "hábitos noturnos",
       "picada",
-      "pequeno",
       "peçonhento"
     ],
     "areas": ["trilha", "campo", "casa"]
@@ -769,14 +774,16 @@
       "Não aplicar substâncias caseiras (pó de café, folhas), nem colocar gelo.",
       "Não ingerir álcool."
     ],
-    "descricao": "Escorpião escuro de picada dolorosa, em geral menos grave.",
+    "descricao": "Escorpião marrom escuro de picada dolorosa, em geral menos grave.",
     "caracteristicas": [
       "marrom-escuro ou preto",
       "pinças robustas",
+      "muitas patas",
       "hábitos noturnos",
       "mata e áreas urbanas",
       "ferrão",
       "dor intensa",
+      "pequeno",
       "queimadura",
       "terrestre",
       "picada",
@@ -806,7 +813,6 @@
     ],
     "descricao": "Aranha pequena que se esconde em frestas, roupas e calçados.",
     "caracteristicas": [
-      "pequena",
       "cor marrom",
       "mancha em forma de violino no dorso",
       "hábitos noturnos",
@@ -816,7 +822,7 @@
       "terrestre",
       "dor",
       "manchas",
-      "tamanho pequeno",
+      "pequeno",
       "picada",
       "peçonhenta"
     ],
@@ -843,7 +849,7 @@
     ],
     "descricao": "Aranha grande e agressiva que ergue as patas da frente ao se defender.",
     "caracteristicas": [
-      "tamanho grande",
+      "grande",
       "marrom acinzentada",
       "ergue as patas",
       "não faz teia",
@@ -854,7 +860,6 @@
       "terrestre",
       "várias cores",
       "manchas",
-      "grande",
       "preto",
       "amarelo",
       "marrom",
@@ -891,6 +896,7 @@
       "muitas patas",
       "terrestre",
       "grave",
+      "pequeno",
       "manchas",
       "dor",
       "picada",
@@ -926,6 +932,7 @@
       "terrestre",
       "manchas",
       "picada",
+      "pequeno",
       "dor intensa",
       "peçonhenta"
     ],
@@ -957,10 +964,11 @@
       "preto",
       "alaranjado",
       "vermelho",
+      "muitas patas",
       "atraído pela luz",
       "queimadura",
       "terrestre",
-      "tamanho pequeno",
+      "pequeno",
       "não pica"
     ],
     "areas": ["trilha", "campo", "casa"]
@@ -989,13 +997,13 @@
       "besouro",
       "antena",
       "ferrão",
+      "muitas patas",
       "pequeno",
       "dor leve",
       "várias cores",
       "manchas",
       "preto, marrom e branco",
       "terrestre",
-      "tamanho pequeno",
       "não peçonhento"
     ],
     "areas": ["trilha", "campo"]
@@ -1026,6 +1034,8 @@
     "caracteristicas": [
       "corpo achatado e segmentado",
       "muitas patas",
+      "grande",
+      "pequeno",
       "antena",
       "ganchos venenosos perto da cabeça",
       "locais úmidos e escuros",
