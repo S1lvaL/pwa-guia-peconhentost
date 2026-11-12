@@ -309,7 +309,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
                     <strong className="block text-[13px] text-verde-principal truncate ">
                       {animal.nome}
                     </strong>
-                    <span className="text-[12px] text-vermelho-principal underline">
+                    <span className="text-[12px] font-bold text-vermelho-principal underline">
                       Ver detalhes
                     </span>
                   </div>

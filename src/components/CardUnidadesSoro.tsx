@@ -13,7 +13,7 @@ export type VarianteCor = "verde" | "vermelho";
 const cores = {
   verde: {
     borda: "border-verde-principal/50",
-    fundo: "bg-white/30",
+    fundo: "bg-white/55",
     sombra: "shadow-verde-principal/30",
     titulo: "text-verde-principal/85",
     link: "text-verde-principal",

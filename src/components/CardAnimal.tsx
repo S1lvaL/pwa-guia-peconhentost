@@ -39,8 +39,12 @@ export function CardAnimal({
 
       {/* Conteúdo */}
       <div className="flex flex-col gap-[6px] flex-1 min-w-0">
+        <h3 className="font-bold text-letra text-[15px] leading-tight break-words">
+          {animal.nome}
+        </h3>
+
         <div className="flex gap-[6px] items-center flex-wrap">
-          <span className="bg-verdeclaro-fundo text-verde-letra border border-cinza-borda/30 px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
+          <span className="bg-verde-principal/75 text-white border border-verde-principal/95 px-[8px] py-[2px] rounded-[6px] font-bold text-[11px] capitalize">
             {animal.categoria}
           </span>
 
@@ -52,10 +56,6 @@ export function CardAnimal({
             </span>
           )}
         </div>
-
-        <h3 className="font-bold text-letra text-[15px] leading-tight break-words">
-          {animal.nome}
-        </h3>
 
         {/* Descrição opcional */}
         {mostrarDescricao && animal.descricao && (
