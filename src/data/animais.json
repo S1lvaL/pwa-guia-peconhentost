@@ -1048,5 +1048,379 @@
       "peçonhenta"
     ],
     "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "abelha-africanizada",
+    "nome": "Abelha Africanizada (Europa/Orapuá)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Perigo!",
+    "imagem": ["/imagens/abelha-africanizada.jpg"],
+    "sintomas": "Dor aguda imediata, vermelhidão e inchaço local. Em alérgicos, causa choque anafilático (falta de ar, edema de glote, queda de pressão). Em ataques de enxame (múltiplas picadas), provoca intoxicação grave com destruição muscular (rabdomiólise) e insuficiência renal aguda.",
+    "primeirosSocorros": [
+      "Afastar-se imediatamente do enxame e buscar abrigo fechado.",
+      "Remover os ferrões da pele raspando suavemente com uma lâmina sem corte ou cartão rígido (evitando apertar a bolsa de veneno).",
+      "Lavar o local com água e sabão neutro e aplicar compressas frias para aliviar a dor e o inchaço.",
+      "Procurar atendimento médico de emergência imediatamente em caso de múltiplas picadas ou sinais de alergia (falta de ar, tontura, inchaço nos lábios ou olhos)."
+    ],
+    "oQueNaoFazer": [
+      "Não apertar nem puxar o ferrão com pinça ou unhas (isso espreme o saco de veneno e injeta mais toxina).",
+      "Não aplicar substâncias caseiras (pó de café, pasta de dente, lama ou ervas).",
+      "Não agitar os braços nem fazer movimentos bruscos perto do enxame.",
+      "Não tentar remover colmeias por conta própria."
+    ],
+    "descricao": "Abelha com listras amarelas e pretas no abdômen, extremamente defensiva.",
+    "caracteristicas": [
+      "listras amarelas e pretas",
+      "asas transparentes",
+      "ferrão",
+      "voador",
+      "enxame",
+      "picada",
+      "dor intensa",
+      "grave",
+      "pequeno",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "abelha-tataira",
+    "nome": "Abelha Tataíra (Caga-fogo)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Risco moderado",
+    "imagem": ["/imagens/abelha-tataira.jpg"],
+    "sintomas": "Queimação imediata na pele, vermelhidão intensa (eritema), formação de bolhas e feridas semelhantes a queimaduras químicas, seguidas de manchas escuras que demoram semanas para cicatrizar.",
+    "primeirosSocorros": [
+      "Afastar-se do ninho sem esmagar as abelhas sobre a pele.",
+      "Lavar imediatamente a área atingida com água corrente abundante e sabão neutro para remover a secreção ácida.",
+      "Aplicar compressas frias para aliviar a ardência.",
+      "Procurar avaliação médica se houver formação de bolhas extensas ou contato com os olhos."
+    ],
+    "oQueNaoFazer": [
+      "Não esfregar nem coçar a pele enquanto houver abelhas sobre o corpo.",
+      "Não estourar as bolhas formadas pela queimadura.",
+      "Não aplicar receitas caseiras, óleos ou álcool sobre a lesão."
+    ],
+    "descricao": "Abelha nativa sem ferrão de cor amarelada/alaranjada que libera uma secreção cáustica ao morder a pele.",
+    "caracteristicas": [
+      "amarelada",
+      "alaranjada",
+      "sem ferrão",
+      "não pica",
+      "queimadura",
+      "voador",
+      "enxame",
+      "pequeno",
+      "dor",
+      "venenosa"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "mamangava-de-toco",
+    "nome": "Mamangava-de-toco",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Risco moderado",
+    "imagem": ["/imagens/mamangava-de-toco.jpg"],
+    "sintomas": "Dor local aguda e intensa (devido ao tamanho do ferrão), inchaço e vermelhidão no local. Risco de reação alérgica sistêmica apenas em pessoas sensíveis.",
+    "primeirosSocorros": [
+      "Lavar o local da picada com água e sabão neutro.",
+      "Aplicar compressas frias ou gelo envolto em pano limpo por 15 minutos para reduzir a dor e o edema.",
+      "Procurar atendimento médico se surgirem sinais de alergia (falta de ar, urticária generalizada ou tontura)."
+    ],
+    "oQueNaoFazer": [
+      "Não apertar nem manusear o inseto diretamente.",
+      "Não cortar, furar ou espremer o local da picada.",
+      "Não aplicar substâncias caseiras sobre o ferimento."
+    ],
+    "descricao": "Abelha solitária grande, robusta e preta brilhante que escava ninhos em madeira seca.",
+    "caracteristicas": [
+      "grande",
+      "corpo preto brilhante",
+      "robusta",
+      "asas escuras",
+      "ferrão",
+      "voador",
+      "solitária",
+      "picada",
+      "dor intensa",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "mamangava-de-chao",
+    "nome": "Mamangava-de-chão",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "cerrado"],
+    "periculosidade": "Risco moderado",
+    "imagem": ["/imagens/mamangava-de-chao.jpg"],
+    "sintomas": "Dor forte e latejante no local da ferroada, vermelhidão e inchaço moderado. Pode ferroar mais de uma vez por possuir ferrão liso.",
+    "primeirosSocorros": [
+      "Afastar-se do ninho no solo com calma.",
+      "Lavar a região afetada com água e sabão neutro.",
+      "Aplicar compressa fria no local para aliviar a dor.",
+      "Buscar atendimento médico em caso de múltiplas picadas ou reação alérgica."
+    ],
+    "oQueNaoFazer": [
+      "Não pisar ou mexer em buracos no solo onde há movimentação dessas abelhas.",
+      "Não espremer o local nem aplicar produtos caseiros."
+    ],
+    "descricao": "Abelha grande, muito peluda e preta (ou com faixas amarelas) que constrói ninhos no solo.",
+    "caracteristicas": [
+      "grande",
+      "peluda",
+      "preta",
+      "robusta",
+      "ferrão",
+      "voador",
+      "picada",
+      "dor intensa",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "abelha-das-orquideas",
+    "nome": "Abelha-das-orquídeas",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-das-orquideas.jpg"],
+    "sintomas": "Dor leve a moderada e pequeno inchaço local apenas se a fêmea for apertada contra a pele; não ataca em enxames.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Aplicar compressa fria caso haja desconforto leve."
+    ],
+    "oQueNaoFazer": [
+      "Não tentar capturar ou apertar a abelha com as mãos.",
+      "Não aplicar substâncias irritantes no local."
+    ],
+    "descricao": "Abelha solitária de cores metálicas brilhantes (verde, azul ou dourado), muito dócil e comum em áreas de mata.",
+    "caracteristicas": [
+      "verde metálico",
+      "azul metálico",
+      "brilhante",
+      "ferrão",
+      "voador",
+      "solitária",
+      "baixo risco",
+      "picada",
+      "dor leve",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "abelha-do-suor",
+    "nome": "Abelha-do-suor (Halictídeo)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-do-suor.jpg"],
+    "sintomas": "Ardência leve e passageira no local da picada, geralmente quando a abelha é esmagada acidentalmente ao pousar na pele para lamber suor.",
+    "primeirosSocorros": [
+      "Lavar a pele com água e sabão neutro.",
+      "Aplicar compressa fria se houver pequena vermelhidão."
+    ],
+    "oQueNaoFazer": [
+      "Não dar tapas na pele quando a abelha pousar (apenas soprar ou afastar suavemente).",
+      "Não coçar intensamente o local."
+    ],
+    "descricao": "Abelha pequena, frequentemente de cor verde-metálica, atraída pelo sal do suor humano.",
+    "caracteristicas": [
+      "pequeno",
+      "verde metálico",
+      "ferrão",
+      "voador",
+      "baixo risco",
+      "picada",
+      "dor leve",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "abelha-limao",
+    "nome": "Abelha-limão (Iratim)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-limao.jpg"],
+    "sintomas": "Não possui ferrão funcional, mas libera uma secreção química com forte cheiro de limão (citral) que causa ardência e irritação nos olhos, mucosas e pele sensível, além de poder mordiscar levemente.",
+    "primeirosSocorros": [
+      "Afastar-se do local sem esmagar as abelhas sobre o corpo.",
+      "Lavar imediatamente o rosto, olhos e pele atingida com água corrente abundante e sabão neutro.",
+      "Procurar atendimento médico se houver irritação ocular persistente."
+    ],
+    "oQueNaoFazer": [
+      "Não esfregar os olhos caso a abelha tenha tido contato com o rosto.",
+      "Não esmagar o inseto contra a pele."
+    ],
+    "descricao": "Abelha nativa sem ferrão, escura e brilhante, conhecida pelo forte cheiro de limão que exala ao se defender ou saquear outras colmeias.",
+    "caracteristicas": [
+      "preta brilhante",
+      "sem ferrão",
+      "não pica",
+      "cheiro de limão",
+      "voador",
+      "pequeno",
+      "baixo risco",
+      "venenosa"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "abelha-irapua",
+    "nome": "Abelha Irapuá (Arapuá / Cachorro)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-irapua.jpg"],
+    "sintomas": "Não tem ferrão e não inocula peçonha, mas ataca em grande número mordiscando a pele e enroscando-se nos cabelos. Seu mel pode ser tóxico (venenoso por ingestão) dependendo das flores visitadas, causando vômitos, tontura e queda de pressão.",
+    "primeirosSocorros": [
+      "Afastar-se rapidamente do ninho (geralmente redondo e escuro, preso em árvores).",
+      "Retirar as abelhas dos cabelos e lavar as mordidas com água e sabão neutro.",
+      "Em caso de ingestão de mel silvestre seguida de tontura ou vômito, buscar atendimento médico imediato."
+    ],
+    "oQueNaoFazer": [
+      "Não tentar derrubar ou queimar os ninhos externos.",
+      "Não consumir mel extraído de ninhos de Irapuá sem procedência sanitária."
+    ],
+    "descricao": "Abelha preta muito comum na Bahia que constrói ninhos externos arredondados e se defende mordiscando e enrolando nos cabelos.",
+    "caracteristicas": [
+      "preta",
+      "sem ferrão",
+      "não pica",
+      "enxame",
+      "voador",
+      "pequeno",
+      "baixo risco",
+      "venenosa"
+    ],
+    "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "abelha-cortadeira-de-folhas",
+    "nome": "Abelha-cortadeira-de-folhas",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-cortadeira.jpg"],
+    "sintomas": "Dor local leve a moderada e pequeno ponto avermelhado apenas se a fêmea for apertada contra a pele; não forma enxames defensivos.",
+    "primeirosSocorros": [
+      "Lavar o local da picada com água e sabão neutro.",
+      "Aplicar compressa fria por alguns minutos se houver desconforto."
+    ],
+    "oQueNaoFazer": [
+      "Não apertar ou capturar a abelha com as mãos nuas.",
+      "Não aplicar substâncias caseiras no local."
+    ],
+    "descricao": "Abelha solitária de porte médio, com abdômen achatado e frequentemente com faixas claras, conhecida por recortar círculos nas folhas para fazer ninhos.",
+    "caracteristicas": [
+      "média",
+      "listras claras",
+      "ferrão",
+      "solitária",
+      "voador",
+      "baixo risco",
+      "picada",
+      "dor leve",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo", "casa"]
+  },
+  {
+    "id": "abelha-coletora-de-oleo",
+    "nome": "Abelha-coletora-de-óleo (Centris)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-centris.jpg"],
+    "sintomas": "Dor aguda passageira e pequeno inchaço local no ponto da ferroada caso seja manuseada ou esmagada; não ataca em grupo.",
+    "primeirosSocorros": [
+      "Lavar a região com água e sabão neutro.",
+      "Aplicar compressa fria para aliviar a dor local."
+    ],
+    "oQueNaoFazer": [
+      "Não apertar a abelha contra a pele.",
+      "Não espremer ou furar o local da picada."
+    ],
+    "descricao": "Abelha nativa robusta e veloz, muito comum em pomares e matas da Bahia (principal polinizadora da acerola e do murici).",
+    "caracteristicas": [
+      "robusta",
+      "peluda",
+      "ferrão",
+      "solitária",
+      "voador",
+      "baixo risco",
+      "picada",
+      "dor",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "abelha-cuco",
+    "nome": "Abelha-cuco (Abelha-parasita)",
+    "categoria": "abelhas",
+    "habitats": ["mata-atlantica", "caatinga", "cerrado"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-cuco.jpg"],
+    "sintomas": "Picada rara, causando apenas dor local leve e vermelhidão passageira se for pressionada contra a pele.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Aplicar compressa fria caso haja pequena ardência."
+    ],
+    "oQueNaoFazer": [
+      "Não manusear ou apertar o inseto.",
+      "Não aplicar produtos caseiros no local."
+    ],
+    "descricao": "Abelha solitária com aparência semelhante a uma vespa (poucos pelos e cores contrastantes) que põe ovos nos ninhos de outras abelhas.",
+    "caracteristicas": [
+      "aparência de vespa",
+      "manchas",
+      "ferrão",
+      "solitária",
+      "voador",
+      "baixo risco",
+      "picada",
+      "dor leve",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo"]
+  },
+  {
+    "id": "abelha-escavadora",
+    "nome": "Abelha-escavadora-de-barranco",
+    "categoria": "abelhas",
+    "habitats": ["caatinga", "cerrado", "mata-atlantica"],
+    "periculosidade": "Baixo risco",
+    "imagem": ["/imagens/abelha-escavadora.jpg"],
+    "sintomas": "Dor leve e localizado se a fêmea for esmagada acidentalmente; mesmo quando fazem vários ninhos próximos em barrancos, são muito mansas.",
+    "primeirosSocorros": [
+      "Lavar o local com água e sabão neutro.",
+      "Aplicar compressa fria se houver leve inchaço."
+    ],
+    "oQueNaoFazer": [
+      "Não mexer nos buracos dos barrancos onde elas nidificam.",
+      "Não apertar o inseto com as mãos."
+    ],
+    "descricao": "Abelha nativa de porte médio e corpo peludo que escava túneis em barrancos e solos argilosos.",
+    "caracteristicas": [
+      "peluda",
+      "média",
+      "ferrão",
+      "solitária",
+      "voador",
+      "baixo risco",
+      "picada",
+      "dor leve",
+      "peçonhenta"
+    ],
+    "areas": ["trilha", "campo"]
   }
 ]
