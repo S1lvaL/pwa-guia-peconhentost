@@ -1,3 +1,4 @@
+
 import type { Area } from "../data/DicasPrevencao";
 
 export type Habitat =

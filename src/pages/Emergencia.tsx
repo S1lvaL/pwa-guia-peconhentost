@@ -23,6 +23,7 @@ type Categoria =
   | "lacraias"
   | "besouros"
   | "aquaticos"
+  | "abelhas"
   | "anfibios";
 
 type Caracteristica =
@@ -33,7 +34,9 @@ type Caracteristica =
   | "manchas"
   | "terrestre"
   | "grande"
-  | "picada";
+  | "picada"
+  | "voador"
+  | "enxame";
 
 type AnimalEmergencia = AnimalCatalogo & {
   categoria: string;
@@ -61,6 +64,7 @@ const imagensCategoria: Record<Categoria, string> = {
   besouros: "/categorias/besouro.png",
   aquaticos: "/categorias/aquatico.png",
   anfibios: "/categorias/anfibio.png",
+  abelhas: "/categorias/abelha.png",
 };
 
 const categorias: {
@@ -82,7 +86,14 @@ const categorias: {
     nome: "Aquáticos",
     termos: ["aquaticos", "aquatico", "marinhos", "marinho"],
   },
-  { id: "anfibios", nome: "Anfíbios", termos: ["anfibios", "anfibio"] },
+  { id: "anfibios", 
+    nome: "Anfíbios", 
+    termos: ["anfibios", "anfibio"] },
+  {
+    id: "abelhas",
+    nome: "Abelhas",
+    termos: ["abelhas", "abelha", "mamangava", "mamangavas"]
+  },
 ];
 
 function IconeCategoria({ categoria }: { categoria: Categoria }) {
@@ -116,6 +127,8 @@ const filtrosDisponiveis: { valor: Caracteristica; rotulo: string }[] = [
   { valor: "terrestre", rotulo: "Ambiente terrestre" },
   { valor: "grande", rotulo: "Tamanho grande" },
   { valor: "picada", rotulo: "Dor na picada ou contato" },
+  { valor: "voador", rotulo: "Animal voador" },
+  { valor: "enxame", rotulo: "Presença de enxame" },
 ];
 
 function ItemCaracteristica({

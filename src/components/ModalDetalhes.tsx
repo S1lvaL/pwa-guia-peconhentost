@@ -116,6 +116,27 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
             </div>
           )}
 
+          {/* Características do animal */}
+          {animal.caracteristicas &&
+            animal.caracteristicas.length > 0 && (
+              <div className="bg-verde-principal/10 border border-verde-principal/30 p-3 rounded-xl">
+                <h4 className="font-bold text-verde-principal text-[15px] mb-2">
+                  Características
+                </h4>
+
+                <div className="flex flex-wrap gap-2">
+                  {animal.caracteristicas.map((caracteristica, index) => (
+                    <span
+                      key={index}
+                      className="bg-white border border-verde-principal/30 rounded-lg px-2 py-1 text-[12px] text-letra"
+                    >
+                      {caracteristica}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
           {/*Abas: Primeiros Socorros / O que NÃO fazer*/}
           <div className="flex flex-col gap-[12px] shrink-0 ml-2">
             <div className="flex gap-[8px]">

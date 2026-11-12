@@ -20,6 +20,7 @@ type CategoriaFiltro =
   | "lacraias"
   | "besouros"
   | "anfibios"
+  | "abelhas"
   | "aquaticos";
 
 //Remove acentos e deixa minúsculo
@@ -40,6 +41,7 @@ const listaCategorias: { id: CategoriaFiltro; label: string }[] = [
   { id: "besouros", label: "Besouros" },
   { id: "anfibios", label: "Anfíbios" },
   { id: "aquaticos", label: "Aquáticos" },
+  { id: "abelhas", label: "Abelhas" },
 ];
 
 //Usa a interface para definir uma props opcional e identificar qual animal foi selecionado
