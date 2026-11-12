@@ -10,6 +10,7 @@ interface ModalDetalhesProps {
 
 export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
   const [abaAtiva, setAbaAtiva] = useState<"socorros" | "donts">("socorros");
+  const [fotoAberta, setFotoAberta] = useState<string | null>(null);
 
   if (!animal) return null;
 
@@ -18,11 +19,16 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
     ? animal.imagem
     : [animal.imagem];
 
+  const fecharTudo = () => {
+    setFotoAberta(null);
+    onClose();
+  };
+
   return (
     //Fundo do modal ficar opaco e escurecido, cobrindo toda a tela
     <div className="fixed inset-0 z-40 bg-black/60 flex flex-col justify-end">
       {/*Fecha ao clicar fora*/}
-      <div className="absolute inset-0" onClick={onClose} />
+      <div className="absolute inset-0" onClick={fecharTudo} />
 
       {/*O Modal é posicionado acima do BottomNav*/}
       <div className="relative bg-white mx-2 sm:mx-6 lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(90vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
@@ -47,20 +53,25 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
         <div className="flex-1 overflow-y-auto flex flex-col gap-[16px] pr-1">
           {/* Fotos / Galeria */}
           {imagens.length === 1 ? (
-            // Quando existir apenas uma foto, ela ganha mais espaço
-            <div className="relative h-[42vh] min-h-[240px] max-h-[420px] w-full shrink-0 overflow-hidden rounded-[16px] bg-slate-100">
+            <button
+              type="button"
+              onClick={() => setFotoAberta(imagens[0])}
+              className="relative h-[42vh] min-h-[240px] max-h-[420px] w-full shrink-0 overflow-hidden rounded-[16px] bg-slate-100"
+            >
               <img
                 src={imagens[0]}
                 alt={animal.nome}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover object-center"
               />
-            </div>
+            </button>
           ) : (
             // Quando houver várias fotos, mantém a galeria
             <div className="grid grid-cols-2 gap-2 shrink-0">
               {imagens.map((imgUrl, index) => (
-                <div
+                <button
+                  type="button"
                   key={index}
+                  onClick={() => setFotoAberta(imgUrl)}
                   className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
                 >
                   <img
@@ -68,7 +79,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
                     alt={`${animal.nome} - foto ${index + 1}`}
                     className="size-full object-cover"
                   />
-                </div>
+                </button>
               ))}
             </div>
           )}
@@ -181,6 +192,28 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           Emergência · Chamar SAMU (192)
         </a>
       </div>
+
+      {fotoAberta && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4"
+          onClick={() => setFotoAberta(null)}
+        >
+          <button
+            type="button"
+            aria-label="Fechar foto"
+            className="absolute top-4 right-4 rounded-full bg-white/15 p-2 text-white"
+            onClick={() => setFotoAberta(null)}
+          >
+            <X className="size-5" />
+          </button>
+          <img
+            src={fotoAberta}
+            alt={animal.nome}
+            className="max-h-full max-w-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

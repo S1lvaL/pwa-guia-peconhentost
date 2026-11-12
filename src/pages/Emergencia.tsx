@@ -86,13 +86,11 @@ const categorias: {
     nome: "Aquáticos",
     termos: ["aquaticos", "aquatico", "marinhos", "marinho"],
   },
-  { id: "anfibios", 
-    nome: "Anfíbios", 
-    termos: ["anfibios", "anfibio"] },
+  { id: "anfibios", nome: "Anfíbios", termos: ["anfibios", "anfibio"] },
   {
     id: "abelhas",
     nome: "Abelhas",
-    termos: ["abelhas", "abelha", "mamangava", "mamangavas"]
+    termos: ["abelhas", "abelha", "mamangava", "mamangavas"],
   },
 ];
 
@@ -197,10 +195,22 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
 
   // Remove uma fixação que não existe mais no catálogo
   useEffect(() => {
-    if (animalFixadoId && !animalFixado) {
-      setAnimalFixadoId(null);
+    if (!animalFixadoId) {
+      localStorage.removeItem("animalFixadoEmergencia");
+      return;
     }
-  }, [animalFixadoId, animalFixado]);
+
+    const existe = animais.some(
+      (animal) => String(animal.id) === animalFixadoId,
+    );
+
+    if (!existe) {
+      localStorage.removeItem("animalFixadoEmergencia");
+      return;
+    }
+
+    localStorage.setItem("animalFixadoEmergencia", animalFixadoId);
+  }, [animalFixadoId]);
 
   // Fixa um animal ou abre a confirmação para substituir o atual
   const fixarAnimal = (animal: AnimalEmergencia) => {
@@ -288,7 +298,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
       );
     });
   }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
-    // Rola automaticamente até os animais encontrados
+  // Rola automaticamente até os animais encontrados
   useEffect(() => {
     if (buscaSolicitada > 0) {
       resultadosRef.current?.scrollIntoView({
@@ -312,7 +322,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
       limparChecklist();
     }
   };
- 
+
   const alternarCaracteristica = (valor: Caracteristica) => {
     // Limpa somente a pesquisa por texto.
     // Mantém a categoria selecionada.
@@ -345,8 +355,8 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
 
   return (
     <div className="min-h-screen w-full bg-verde-fundo font-sans text-[#171717] sm:flex sm:justify-center sm:pt-5">
-    <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
-      {/* Cabeçalho no mesmo estilo da tela Prevenção */}
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1024px] flex-col overflow-hidden bg-verde-fundo shadow-xl sm:min-h-[844px] sm:rounded-[25px]">
+        {/* Cabeçalho no mesmo estilo da tela Prevenção */}
 
         <header className="flex justify-between items-center px-4 pt-8 pb-4 bg-verde-fundo">
           <div className="min-w-0">
@@ -403,11 +413,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             )}
           </section>
 
-          <UnidadesSoro
-            detalhado
-            variante="vermelho"
-            compacto
-        />
+          <UnidadesSoro detalhado variante="vermelho" compacto />
 
           <section className="space-y-2">
             <div className="flex items-start gap-2">
@@ -427,7 +433,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
                 </p>
               </div>
             </div>
-            
+
             <form
               className="flex h-10 overflow-hidden rounded-lg border border-[#d4d4d4] shadow-sm shadow-vermelho-principal/10 focus-within:ring-2 focus-within:ring-[#c9000b]/30"
               onSubmit={(event) => {
@@ -594,9 +600,7 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             )}
           </section>
 
-          <section 
-          ref={resultadosRef}
-          className="scroll-mt-4">
+          <section ref={resultadosRef} className="scroll-mt-4">
             <div className="mb-2 flex items-center gap-2">
               <h2 className="flex-1 text-[15px] font-bold">
                 Possíveis animais encontrados
