@@ -15,7 +15,10 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
   if (!animal) return null;
 
   const corBadge = corPericulosidade(animal.periculosidade);
-
+  const imagens = Array.isArray(animal.imagem)
+  ? animal.imagem
+  : [animal.imagem];
+  
   return (
     //Fundo do modal ficar opaco e escurecido, cobrindo toda a tela
     <div className="fixed inset-0 z-40 bg-black/60 flex flex-col justify-end">
@@ -23,7 +26,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
       <div className="absolute inset-0" onClick={onClose} />
 
       {/*O Modal é posicionado acima do BottomNav*/}
-      <div className="relative bg-white mx-2 sm:mx-6 lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(75vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
+      <div className="relative bg-white mx-2 sm:mx-6 lg:mx-auto lg:w-full lg:max-w-[800px] max-h-[calc(90vh-64px)] mb-[76px] rounded-[32px] p-[16px] flex flex-col gap-[12px] drop-shadow-[0px_-8px_12px_rgba(0,0,0,0.15)] z-10 animate-in slide-in-from-bottom duration-300 overflow-hidden">
         {/* Barra superior / Fechar (Fixo no topo)*/}
         <div className="flex items-center justify-between h-[32px] shrink-0">
           <div className="size-[32px]" />
@@ -43,32 +46,34 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
 
         {/*Conteúdo principal*/}
         <div className="flex-1 overflow-y-auto flex flex-col gap-[16px] pr-1">
-          {/*Fotos/Galeria
-            As imagens se ajustam automaticamente com forme o tamanho da tela*/}
-          {Array.isArray(animal.imagem) ? (
-            <div className="grid grid-cols-2 gap-2 shrink-0">
-              {animal.imagem.map((imgUrl, index) => (
-                <div
-                  key={index}
-                  className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
-                >
-                  <img
-                    src={imgUrl}
-                    alt={`${animal.nome} - foto ${index + 1}`}
-                    className="size-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="aspect-video relative rounded-[13px] shrink-0 overflow-hidden bg-slate-100">
-              <img
-                src={animal.imagem}
-                alt={animal.nome}
-                className="size-full object-cover"
-              />
-            </div>
-          )}
+          
+        {/* Fotos / Galeria */}
+        {imagens.length === 1 ? (
+          // Quando existir apenas uma foto, ela ganha mais espaço
+          <div className="relative h-[42vh] min-h-[240px] max-h-[420px] w-full shrink-0 overflow-hidden rounded-[16px] bg-slate-100">
+            <img
+              src={imagens[0]}
+              alt={animal.nome}
+              className="h-full w-full object-contain"
+            />
+          </div>
+        ) : (
+          // Quando houver várias fotos, mantém a galeria
+          <div className="grid grid-cols-2 gap-2 shrink-0">
+            {imagens.map((imgUrl, index) => (
+              <div
+                key={index}
+                className="aspect-square relative rounded-[12px] overflow-hidden bg-slate-100"
+              >
+                <img
+                  src={imgUrl}
+                  alt={`${animal.nome} - foto ${index + 1}`}
+                  className="size-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
           {/*Nome e Categorias*/}
           <div className="flex flex-col gap-[10px] shrink-0">

@@ -1,6 +1,11 @@
-//Card de UMA unidade de referência
+
+// Card de UMA unidade de referência
 import type { UnidadeSoro } from "../types/unidadeSoro";
-import { formatarTelefone, linkLigar, linkRota } from "../utils/contatoUnidade";
+import {
+  formatarTelefone,
+  linkLigar,
+  linkRota,
+} from "../utils/contatoUnidade";
 import { rotulosSoros } from "../utils/rotuloSoro";
 
 export type VarianteCor = "verde" | "vermelho";
@@ -22,7 +27,7 @@ const cores = {
   },
 } as const;
 
-//Ícone de telefone (do protótipo do Figma)
+// Ícone de telefone
 function IconeTelefone() {
   return (
     <svg
@@ -47,24 +52,36 @@ export function CardUnidadeSoro({
   unidade: u,
   detalhado = false,
   variante = "verde",
+  compacto = false,
 }: {
   unidade: UnidadeSoro;
   detalhado?: boolean;
   variante?: VarianteCor;
+  compacto?: boolean;
 }) {
   const c = cores[variante];
 
   return (
     <article
-      className={`rounded-[10px] border ${c.borda} ${c.fundo} px-3 py-2 space-y-1 shadow-md ${c.sombra} w-full`}
+      className={`rounded-[10px] border ${c.borda} ${c.fundo} shadow-md ${c.sombra} w-full ${
+        compacto
+          ? "px-2.5 py-1.5 space-y-0.5"
+          : "px-3 py-2 space-y-1"
+      }`}
     >
       <div>
-        <strong className={`block text-[14px] leading-snug ${c.titulo}`}>
+        <strong
+          className={`block font-bold leading-snug ${
+            compacto ? "text-[13px]" : "text-[14px]"
+          } ${c.titulo}`}
+        >
           {u.nome}
         </strong>
+
         <span className="block text-[12px] text-letra/80">
           {u.municipio} - BA
         </span>
+
         {u.endereco && (
           <span className="block text-[12px] text-letra/70 mt-0.5 leading-snug">
             {u.endereco}
@@ -72,7 +89,7 @@ export function CardUnidadeSoro({
         )}
       </div>
 
-      {/*Só na versão detalhada: soros no local ou levados sob demanda*/}
+      {/* Só na versão detalhada: soros disponíveis */}
       {detalhado && (
         <div className="text-[12px] leading-snug text-letra space-y-1">
           {(() => {
@@ -81,9 +98,12 @@ export function CardUnidadeSoro({
             if (u.supridoSobDemanda) {
               if (lista.length === 0) {
                 return (
-                  <p>O soro é levado até a unidade quando há um acidente.</p>
+                  <p>
+                    O soro é levado até a unidade quando há um acidente.
+                  </p>
                 );
               }
+
               return (
                 <>
                   <p>Soro no local:</p>
@@ -117,7 +137,7 @@ export function CardUnidadeSoro({
         </div>
       )}
 
-      <div className="flex flex-wrap items-center  pt-1 gap-2">
+      <div className="flex flex-wrap items-center pt-1 gap-2">
         {u.telefone ? (
           <a
             href={linkLigar(u.telefone)}
@@ -132,6 +152,7 @@ export function CardUnidadeSoro({
             Telefone não informado
           </span>
         )}
+
         <a
           href={linkRota(u)}
           target="_blank"

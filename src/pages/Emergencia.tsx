@@ -371,7 +371,11 @@ export default function Emergencia({ abaAtiva, setAbaAtiva }: EmergenciaProps) {
             )}
           </section>
 
-          <UnidadesSoro detalhado variante="vermelho" />
+          <UnidadesSoro
+            detalhado
+            variante="vermelho"
+            compacto
+        />
 
           <section className="space-y-2">
             <div className="flex items-start gap-2">

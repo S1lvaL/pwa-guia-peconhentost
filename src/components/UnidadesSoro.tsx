@@ -81,10 +81,12 @@ export function UnidadesSoro({
   detalhado = false,
   iniciarAberto = false,
   variante = "verde",
+  compacto = false,
 }: {
-  detalhado?: boolean; //mostra também os soros em cada unidade
+  detalhado?: boolean;
   iniciarAberto?: boolean;
   variante?: VarianteCor;
+  compacto?: boolean;
 }) {
   const { municipio } = useRegiao();
   const [aberto, setAberto] = useState(iniciarAberto);
@@ -105,15 +107,25 @@ export function UnidadesSoro({
           onClick={() => setAberto((a) => !a)}
           aria-expanded={aberto}
           aria-controls={idPainel}
-          className="w-full flex items-center gap-3 p-4 text-left"
+          className={`w-full flex items-center text-left transition-all ${
+            compacto ? "gap-2 p-2.5" : "gap-3 p-4"
+        }`}
         >
           <span
-            className={`shrink-0 size-[44px] rounded-full ${c.iconeFundo} flex items-center justify-center`}
+            
+          className={`shrink-0 rounded-full ${c.iconeFundo} flex items-center justify-center ${
+            compacto ? "size-[36px]" : "size-[44px]"
+          }`}
+
           >
             <IconeHospital className={c.icone} />
           </span>
           <span
-            className={`flex-1 text-[18px] font-bold leading-tight ${c.titulo}`}
+            
+          className={`flex-1 font-bold leading-tight ${
+            compacto ? "text-[15px]" : "text-[18px]"
+          } ${c.titulo}`}
+
           >
             Unidades de referência para soro antiveneno
           </span>
@@ -125,7 +137,13 @@ export function UnidadesSoro({
       {aberto && (
         <div
           id={idPainel}
-          className="px-4 pb-4 space-y-3 max-h-[60vh] overflow-y-auto"
+          
+        className={`overflow-y-auto ${
+          compacto
+            ? "px-3 pb-3 space-y-2 max-h-[50vh]"
+            : "px-4 pb-4 space-y-3 max-h-[60vh]"
+        }`}
+
         >
           {/*Situação 1: ainda sem cidade escolhida*/}
           {!municipio && (
@@ -165,6 +183,7 @@ export function UnidadesSoro({
               unidade={u}
               detalhado={detalhado}
               variante={variante}
+              compacto={compacto}
             />
           ))}
 
