@@ -843,7 +843,8 @@
     ],
     "descricao": "Escorpião amarelado com faixa escura e um desenho triangular na região da cabeça.",
     "caracteristicas": [
-      "amarelado",
+      "amarelo",
+      "amarela",
       "faixa escura no dorso",
       "pequeno",
       "muitas patas",
@@ -884,7 +885,8 @@
     ],
     "descricao": "Escorpião mais perigoso do Brasil, amarelo e comum em áreas urbanas.",
     "caracteristicas": [
-      "amarelo-claro",
+      "amarelo",
+      "amarela",
       "patas amarelas",
       "cauda amarela",
       "serrilha na cauda",
@@ -928,7 +930,8 @@
     ],
     "descricao": "Escorpião marrom escuro de picada dolorosa, em geral menos grave.",
     "caracteristicas": [
-      "marrom-escuro ou preto",
+      "marrom",
+      "preto",
       "pinças robustas",
       "muitas patas",
       "hábitos noturnos",
@@ -1030,6 +1033,7 @@
       "manchas",
       "preto",
       "amarelo",
+      "amarela",
       "marrom",
       "picada",
       "peçonhenta"
@@ -1187,8 +1191,9 @@
     ],
     "descricao": "Inseto de aparência intimidadora e baixo risco.",
     "caracteristicas": [
-      "aparência de escorpião",
-      "pinças ou mandíbulas",
+      "escorpião",
+      "pinças",
+      "mandíbulas",
       "baixo risco",
       "besouro",
       "antena",
@@ -1198,7 +1203,9 @@
       "dor leve",
       "várias cores",
       "manchas",
-      "preto, marrom e branco",
+      "preto",
+      "marrom",
+      "branco",
       "terrestre",
       "não peçonhento"
     ],

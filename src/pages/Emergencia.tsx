@@ -37,7 +37,99 @@ const normalizar = (texto: string) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
+    .replace(/\s+/g, " ")
     .trim();
+
+// Palavras e expressões que representam características equivalentes.
+// Acrescente novos grupos aqui conforme o catálogo crescer.
+const equivalencias: string[][] = [
+  ["amarelo", "amarela", "amarelos", "amarelas", "amarelado", "amarelada", "amarelados", "amareladas"],
+  ["preto", "preta", "pretos", "pretas", "enegrecido", "enegrecida"],
+  ["vermelho", "vermelha", "vermelhos", "vermelhas", "avermelhado", "avermelhada", "avermelhados", "avermelhadas"],
+  ["branco", "branca", "brancos", "brancas", "esbranquiçado", "esbranquiçada"],
+  ["pequeno", "pequena", "pequenos", "pequenas"],
+  ["grande", "grandes"],
+  ["peludo", "peluda", "peludos", "peludas", "pelo", "pelos", "pelagem"],
+  ["listrado", "listrada", "listrados", "listradas", "listra", "listras"],
+  ["manchado", "manchada", "manchados", "manchadas", "mancha", "manchas"],
+  ["espinhoso", "espinhosa", "espinhosos", "espinhosas", "espinho", "espinhos"],
+  ["venenoso", "venenosa", "venenosos", "venenosas", "veneno", "peçonhento", "peçonhenta", "peçonhentos", "peçonhentas"],
+  ["aquático", "aquática", "aquáticos", "aquáticas"],
+  ["úmido", "úmida", "úmidos", "úmidas"],
+  ["ambiente", "ambientes", "habitat", "habitats"],
+  ["ferrão", "ferrões", "ferroada", "ferroadas"],
+  ["picada", "picadas", "mordida", "mordidas"],
+];
+
+// Termos de ligação que não descrevem uma característica por si só.
+// A negação ("não") é preservada para não inverter o sentido da pesquisa.
+const palavrasIgnoradas = new Set([
+  "possui", "possuem", "tem", "têm", "apresenta", "apresentam",
+  "com", "de", "do", "da", "dos", "das", "em", "no", "na",
+  "nos", "nas", "um", "uma", "uns", "umas", "o", "a", "os",
+  "as", "e", "que", "pode", "podem", "vive", "vivem",
+  "encontrado", "encontrada", "encontrados", "encontradas",
+  "corpo", "coloracao", "tonalidade", "aspecto", "animal",
+]);
+
+const normalizarPalavra = (palavra: string) => {
+  const limpa = normalizar(palavra).replace(/[^a-z0-9-]/g, "");
+  // Trata apenas plural simples; evita remover terminações que fazem
+  // parte da raiz de palavras diferentes.
+  if (limpa.length > 4 && limpa.endsWith("s")) {
+    return limpa.slice(0, -1);
+  }
+  return limpa;
+};
+
+const palavrasSemelhantes = (a: string, b: string) => {
+  const primeira = normalizarPalavra(a);
+  const segunda = normalizarPalavra(b);
+
+  if (!primeira || !segunda) return false;
+  if (primeira === segunda) return true;
+
+  return equivalencias.some((grupo) => {
+    const palavrasDoGrupo = grupo.map(normalizarPalavra);
+    return (
+      palavrasDoGrupo.includes(primeira) &&
+      palavrasDoGrupo.includes(segunda)
+    );
+  });
+};
+
+const extrairPalavrasPesquisa = (pesquisa: string) => {
+  const palavras = normalizar(pesquisa)
+    .split(/\s+/)
+    .map(normalizarPalavra)
+    .filter(Boolean);
+
+  const palavrasRelevantes = palavras.filter(
+    (palavra) => !palavrasIgnoradas.has(palavra),
+  );
+
+  // Se a pessoa digitou somente termos de ligação, mantém a pesquisa original.
+  return palavrasRelevantes.length > 0 ? palavrasRelevantes : palavras;
+};
+
+// Verifica se todas as palavras importantes da pesquisa aparecem
+// nos textos, aceitando variações de gênero, número e equivalências.
+const textoCorresponde = (pesquisa: string, textos: string[]) => {
+  const palavrasPesquisa = extrairPalavrasPesquisa(pesquisa);
+  const palavrasCadastradas = textos
+    .flatMap((texto) => normalizar(texto).split(/\s+/))
+    .map(normalizarPalavra)
+    .filter(Boolean);
+
+  return (
+    palavrasPesquisa.length > 0 &&
+    palavrasPesquisa.every((palavra) =>
+      palavrasCadastradas.some((cadastrada) =>
+        palavrasSemelhantes(palavra, cadastrada),
+      ),
+    )
+  );
+};
 
 const animais = dadosAnimais as AnimalEmergencia[];
 
@@ -146,6 +238,7 @@ export default function Emergencia() {
 
   // Identifica cada pesquisa realizada
   const [buscaSolicitada, setBuscaSolicitada] = useState(0);
+
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria | null>(null);
   const [caracteristicasAtivas, setCaracteristicasAtivas] = useState<
     Caracteristica[]
@@ -228,25 +321,26 @@ export default function Emergencia() {
     const termo = normalizar(pesquisa);
     const termoOutro = normalizar(outroFiltro);
 
-    return animais.filter((animal) => {
-      const nomes = [animal.nome, ...(animal.nomesPopulares ?? [])].map(
-        normalizar,
-      );
-      const categoriaNome = normalizar(animal.categoria);
-      const descricaoAnimal = normalizar(animal.descricao ?? "");
-      const sintomasAnimal = (animal.sintomas ?? []).map(normalizar);
+    const obterNomes = (animal: AnimalEmergencia) => [
+      animal.nome,
+      ...(animal.nomesPopulares ?? []),
+    ];
 
-      const correspondeTexto =
-        !termo ||
-        nomes.some((nome) => nome.includes(termo)) ||
-        categoriaNome.includes(termo) ||
-        categorias.some(
-          (categoria) =>
-            categoria.termos.some(
-              (item) => item.includes(termo) || termo.includes(item),
-            ) && categoriaCompativel(animal.categoria, categoria.id),
-        );
+    const obterTextosBusca = (animal: AnimalEmergencia): string[] => [
+      animal.nome,
+      ...(animal.nomesPopulares ?? []),
+      animal.categoria,
+      animal.descricao ?? "",
+      ...(animal.caracteristicas ?? []),
+      ...(animal.sintomas ?? []),
+      ...(animal.habitats ?? []),
+      ...(animal.areas ?? []),
+      ...(animal.primeirosSocorros ?? []),
+      ...(animal.oQueNaoFazer ?? []),
+    ];
 
+    // Mantém os filtros independentes da pesquisa textual.
+    const atendeFiltros = (animal: AnimalEmergencia) => {
       const correspondeCategoria =
         !categoriaAtiva ||
         categoriaCompativel(animal.categoria, categoriaAtiva);
@@ -255,25 +349,164 @@ export default function Emergencia() {
       const correspondeCaracteristicas =
         caracteristicasAtivas.length === 0 ||
         caracteristicasAtivas.every((item) =>
-          caracteristicasAnimal.includes(item),
+          caracteristicasAnimal.some((caracteristica) =>
+            palavrasSemelhantes(caracteristica, item),
+          ),
         );
 
-      // Filtro para o campo "Outros" (busca livre na descrição, nome ou sintomas)
       const correspondeOutro =
         !termoOutro ||
-        nomes.some((n) => n.includes(termoOutro)) ||
-        descricaoAnimal.includes(termoOutro) ||
-        sintomasAnimal.some((s) => s.includes(termoOutro)) ||
-        caracteristicasAnimal.some((c) => normalizar(c).includes(termoOutro));
+        textoCorresponde(termoOutro, obterTextosBusca(animal));
 
       return (
-        correspondeTexto &&
         correspondeCategoria &&
         correspondeCaracteristicas &&
         correspondeOutro
       );
+    };
+
+    const animaisFiltrados = animais.filter(atendeFiltros);
+
+    if (!termo) {
+      return animaisFiltrados;
+    }
+
+    // 1. NOME EXATO: se a pesquisa for exatamente o nome ou um nome
+    // popular cadastrado, retorna somente esse animal.
+    const animalComNomeExato = animaisFiltrados.find((animal) =>
+      obterNomes(animal).some((nome) => normalizar(nome) === termo),
+    );
+
+    if (animalComNomeExato) {
+      return [animalComNomeExato];
+    }
+
+    // 2. PESQUISA POR CATEGORIA: por exemplo, "cobra" mostra serpentes.
+    const palavrasTermo = extrairPalavrasPesquisa(termo);
+    const categoriaPesquisada =
+      palavrasTermo.length === 1
+        ? categorias.find((categoria) =>
+            categoria.termos.some((item) =>
+              palavrasSemelhantes(item, palavrasTermo[0]),
+            ),
+          )
+        : undefined;
+
+    if (categoriaPesquisada) {
+      return animaisFiltrados.filter((animal) =>
+        categoriaCompativel(animal.categoria, categoriaPesquisada.id),
+      );
+    }
+
+    // 3. PESQUISA POR CARACTERÍSTICAS, descrições, sintomas e habitat.
+    const resultadosPontuados = animaisFiltrados.map((animal, indice) => {
+      const textos = obterTextosBusca(animal);
+      const textosNormalizados = textos.map(normalizar);
+      const palavrasEncontradas = palavrasTermo.filter((palavra) =>
+        textos.some((texto) =>
+          normalizar(texto)
+            .split(/\s+/)
+            .some((cadastrada) =>
+              palavrasSemelhantes(palavra, cadastrada),
+            ),
+        ),
+      );
+
+      const todasPalavrasEncontradas =
+        palavrasTermo.length > 0 &&
+        palavrasEncontradas.length === palavrasTermo.length;
+
+      // Se todos os termos pesquisados aparecem no nome ou em um nome
+      // popular, o animal recebe prioridade máxima na lista.
+      const nomesNormalizados = obterNomes(animal).map((nome) =>
+        normalizar(nome).split(/\s+/),
+      );
+      const nomeCorrespondePesquisa =
+        palavrasTermo.length > 0 &&
+        nomesNormalizados.some((palavrasNome) =>
+          palavrasTermo.every((palavra) =>
+            palavrasNome.some((cadastrada) =>
+              palavrasSemelhantes(palavra, cadastrada),
+            ),
+          ),
+        );
+
+      let pontuacao = 0;
+      if (nomeCorrespondePesquisa) {
+        pontuacao += 200;
+      }
+
+      // A frase completa nos dados recebe prioridade.
+      if (textosNormalizados.some((texto) => texto.includes(termo))) {
+        pontuacao += 100;
+      }
+
+      // Dá mais peso às características e descrições do que à categoria.
+      const camposComPeso: { textos: string[]; peso: number }[] = [
+        { textos: [animal.nome, ...(animal.nomesPopulares ?? [])], peso: 8 },
+        { textos: [...(animal.caracteristicas ?? [])], peso: 10 },
+        { textos: [animal.descricao ?? ""], peso: 7 },
+        { textos: [...(animal.sintomas ?? [])], peso: 7 },
+        { textos: [...(animal.habitats ?? []), ...(animal.areas ?? [])], peso: 5 },
+        { textos: [animal.categoria], peso: 2 },
+        { textos: [...(animal.primeirosSocorros ?? []), ...(animal.oQueNaoFazer ?? [])], peso: 2 },
+      ];
+
+      camposComPeso.forEach(({ textos: campos, peso }) => {
+        const campoEncontrouPalavra = palavrasTermo.some((palavra) =>
+          campos.some((campo) =>
+            normalizar(campo)
+              .split(/\s+/)
+              .some((cadastrada) =>
+                palavrasSemelhantes(palavra, cadastrada),
+              ),
+          ),
+        );
+
+        if (campoEncontrouPalavra) {
+          pontuacao += peso;
+        }
+      });
+
+      pontuacao += palavrasEncontradas.length * 20;
+
+      if (todasPalavrasEncontradas) {
+        pontuacao += 50;
+      }
+
+      return {
+        animal,
+        indice,
+        pontuacao,
+        todasPalavrasEncontradas,
+        correspondeNome: nomeCorrespondePesquisa,
+      };
     });
+
+    // Prioriza animais que correspondem a todos os termos importantes.
+    let correspondentes = resultadosPontuados.filter(
+      (resultado) => resultado.todasPalavrasEncontradas,
+    );
+
+    // Se não houver correspondência completa, aceita resultados parciais.
+    if (correspondentes.length === 0) {
+      correspondentes = resultadosPontuados.filter(
+        (resultado) => resultado.pontuacao > 0,
+      );
+    }
+
+    return correspondentes
+      .sort(
+        (a, b) =>
+          // Correspondências no nome/nome popular sempre vêm antes
+          // de correspondências encontradas apenas na descrição ou características.
+          Number(b.correspondeNome) - Number(a.correspondeNome) ||
+          b.pontuacao - a.pontuacao ||
+          a.indice - b.indice,
+      )
+      .map((resultado) => resultado.animal);
   }, [pesquisa, categoriaAtiva, caracteristicasAtivas, outroFiltro]);
+
   // Rola automaticamente até os animais encontrados
   useEffect(() => {
     if (buscaSolicitada > 0) {
@@ -509,8 +742,7 @@ export default function Emergencia() {
               </button>
             )}
           </section>
-
-          <section className="rounded-xl border border-[#bd0008] bg-[#ffecef] shadow-md shadow-vermelho-principal/40 p-3">
+                    <section className="rounded-xl border border-[#bd0008] bg-[#ffecef] shadow-md shadow-vermelho-principal/40 p-3">
             <div className="mb-3 flex items-start gap-2">
               <span
                 className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#c50009] text-[14px] font-bold text-[#c50009]"
