@@ -121,7 +121,7 @@ export function SeletorCidade({
             autoComplete="off"
             placeholder="Digite o nome da cidade"
             aria-label="Buscar cidade"
-            className={`w-full rounded-[12px] border ${c.inputBorda} bg-white px-3 py-2 text-[14px] text-letra outline-none focus:ring-2 ${c.inputFocus}`}
+            className={`w-full rounded-[12px] border ${c.inputBorda} bg-white px-3 py-2 text-[16px] text-letra outline-none focus:ring-2 ${c.inputFocus}`}
           />
           {/*Se houver sugestões, mostra a lista*/}
           {sugestoes.length > 0 && (

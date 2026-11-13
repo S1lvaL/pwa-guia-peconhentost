@@ -171,7 +171,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome (ex: Peixe-Leão)..."
             enterKeyHint="search"
-            className="bg-transparent font-bold text-[14px] text-verde-principal placeholder-verde-principal/35 outline-none flex-1"
+            className="bg-transparent font-bold text-[16px] text-verde-principal placeholder-verde-principal/35 outline-none flex-1"
           />
           {busca && (
             <button

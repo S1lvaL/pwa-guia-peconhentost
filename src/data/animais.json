@@ -561,6 +561,7 @@
   {
     "id": "jararaca-malha-de-sapo",
     "nome": "Jararaca Malha de Sapo",
+    "nomesPopulares": ["jararaca malha de sapo","jararaca preguiçosa", "jararaca cabeça de patrona", "cobra maia"],
     "categoria": "serpentes",
     "habitats": ["mata-atlantica", "caatinga"],
     "imagem": ["imagens/jararaca-malha-de-sapo.jpg"],
@@ -599,6 +600,7 @@
   {
     "id": "jararaca-da-seca",
     "nome": "Jararaca da Seca/Malha de Cascavel",
+    "nomesPopulares": ["jararaca da seca","jararaca do sertão","jararaca malha de cascavel"],
     "categoria": "serpentes",
     "habitats": ["caatinga"],
     "imagem": ["imagens/jararaca-da-seca.jpg"],
@@ -638,6 +640,7 @@
   {
     "id": "jararacuçu",
     "nome": "Jararacuçu",
+    "nomesPopulares": ["jararacuçu", "urutu", "jararacuçu tapete", "jararacuçu cabeça de sapo", "jussu"],
     "categoria": "serpentes",
     "habitats": ["mata-atlantica"],
     "imagem": ["imagens/jararacuçu.jpg"],
@@ -679,6 +682,7 @@
   {
     "id": "surucucu-pico-de-jaca",
     "nome": "Surucucu Pico de Jaca",
+    "nomesPopulares": ["surucucu", "pico de jaca"],
     "categoria": "serpentes",
     "habitats": ["mata-atlantica"],
     "imagem": ["imagens/surucucu-pico-de-jaca.jpg"],
@@ -720,6 +724,7 @@
   {
     "id": "cascavel",
     "nome": "Cascavel",
+    "nomesPopulares": ["cascavel sul-americana", "cascavel do sertão", "maracamboia", "boicininga", "serpente de chocalho"],
     "categoria": "serpentes",
     "habitats": ["caatinga", "cerrado"],
     "imagem": ["imagens/cascavel-sul-americana.jpg"],
@@ -761,7 +766,8 @@
   },
   {
     "id": "coral-verdadeira",
-    "nome": "Coral Verdadeira",
+    "nome": "Cobra Coral",
+    "nomesPopulares": ["coral verdadeira", "coral", "cobra de anéis"],
     "categoria": "serpentes",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
@@ -810,6 +816,7 @@
   {
     "id": "escorpiao-do-nordeste",
     "nome": "Escorpião do Nordeste",
+    "nomesPopulares": ["escorpião amarelo","escorpião do nordeste"],
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
@@ -852,6 +859,7 @@
   {
     "id": "escorpiao-amarelo",
     "nome": "Escorpião Amarelo",
+    "nomesPopulares": ["escorpião amarelo", "escorpião amarelo do nordeste"],
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["caatinga", "cerrado"],
@@ -894,6 +902,7 @@
   {
     "id": "escorpiao-marrom",
     "nome": "Escorpião Marrom/Preto da Bahia",
+    "nomesPopulares": ["escorpião marrom", "escorpião preto da bahia"],
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
@@ -937,6 +946,7 @@
   {
     "id": "aranha-marrom",
     "nome": "Aranha Marrom",
+    "nomesPopulares": ["aranha marrom", "aranha violino", "aranha violinista", "aranha reclusa"],
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
@@ -981,6 +991,7 @@
   {
     "id": "aranha-armadeira",
     "nome": "Aranha Armadeira",
+    "nomesPopulares": ["aranha armadeira", "aranha macaco", "aranha de patas pra cima", "aranha de bananeira"],
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "cerrado"],
@@ -1028,6 +1039,7 @@
   {
     "id": "viuva-negra",
     "nome": "Aranha Viúva-Negra",
+    "nomesPopulares": ["aranha viúva-negra", "aranha assassina"],
     "categoria": "aranhas",
     "habitats": ["mata-atlantica", "caatinga"],
     "periculosidade": "Perigo!",
@@ -1072,6 +1084,7 @@
   {
     "id": "viuva-marrom",
     "nome": "Aranha Viúva-Marrom",
+    "nomesPopulares": ["aranha viúva marrom", "viúva cinzenta", "aranha geométrica", "viúva castanha", "aranha botão marrom", "aranha botão doméstica", "viúva negra loira"],
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica"],
@@ -1114,6 +1127,7 @@
   {
     "id": "besouro-poto",
     "nome": "Besouro Potó",
+    "nomesPopulares": ["besouro poto", "besouro de fogo", "besouro de luz", "besouro de lampião", "potó do sertão"],
     "categoria": "besouros",
     "habitats": ["caatinga", "cerrado"],
     "imagem": ["imagens/besouro-poto.jpg"],
@@ -1155,6 +1169,7 @@
   {
     "id": "besouro-escorpiao",
     "nome": "Besouro Escorpião",
+    "nomesPopulares": ["besouro escorpião"],
     "categoria": "besouros",
     "habitats": ["mata-atlantica"],
     "imagem": ["imagens/besouro-escorpiao.jpg"],
@@ -1192,6 +1207,7 @@
   {
     "id": "lacraias",
     "nome": "Lacraias",
+    "nomesPopulares": ["lacraia", "centopeia", "escolopendras"],
     "categoria": "lacraias",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": [
@@ -1200,8 +1216,7 @@
       "imagens/lacraia4.jpg"
     ],
     "sintomas": [
-      "Dor local forte;",
-      "Imediata (semelhante a uma queimação);",
+      "Dor local forte e imediata (semelhante a uma queimação)",
       "Inchaço local;",
       "Vermelhidão;",
       "Calor na região."
@@ -1238,6 +1253,7 @@
   {
     "id": "abelha-africanizada",
     "nome": "Abelha Africanizada (Europa/Orapuá)",
+    "nomesPopulares": ["abelha africanizada", "abelha europeia", "abelha assassina"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Perigo!",
@@ -1283,6 +1299,7 @@
   {
     "id": "abelha-tataira",
     "nome": "Abelha Tataíra (Caga-fogo)",
+    "nomesPopulares": ["abelha tataíra", "caga-fogo", "abelha de fogo", "mija fogo"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
@@ -1328,7 +1345,8 @@
   },
   {
     "id": "mamangava-de-toco",
-    "nome": "Mamangava-de-toco",
+    "nome": "Abelha Mamangava de Toco",
+    "nomesPopulares": ["abelha mamangava de toco", "abelha mamangava", "abelha de toco", "abelhão", "abelha carpinteira", "mangangá"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
@@ -1373,7 +1391,8 @@
   },
   {
     "id": "mamangava-de-chao",
-    "nome": "Mamangava-de-chão",
+    "nome": "Abelha Mamangava de chão",
+    "nomesPopulares": ["abelha mamangava de chão", "abelha do solo"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "cerrado"],
     "periculosidade": "Risco moderado",
@@ -1419,7 +1438,8 @@
   },
   {
     "id": "abelha-das-orquideas",
-    "nome": "Abelha-das-orquídeas",
+    "nome": "Abelha das Orquídeas",
+    "nomesPopulares": ["abelha das orquídeas", "abelha metálica", "abelha verde metálica"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica"],
     "imagem": ["imagens/abelha-das-orquideas.jpg"],
@@ -1459,7 +1479,8 @@
   },
   {
     "id": "abelha-do-suor",
-    "nome": "Abelha-do-suor (Halictídeo)",
+    "nome": "Abelha do Suor",
+    "nomesPopulares": ["abelha do suor", "abelha sudorípara", "abelha verde metálica"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": ["imagens/abelha-do-suor.jpg", "imagens/abelha-do-suor1.jpg"],
@@ -1497,7 +1518,8 @@
   },
   {
     "id": "abelha-limao",
-    "nome": "Abelha-limão (Iratim)",
+    "nome": "Abelha Limão",
+    "nomesPopulares": ["abelha do limão", "iratim", "iraxim", "aracim", "canudo", "sete portas", "abelha ladra", "pirata"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": ["imagens/abelha-limao.jpg", "imagens/abelha-limao1.jpg"],
@@ -1533,7 +1555,8 @@
   },
   {
     "id": "abelha-irapua",
-    "nome": "Abelha Irapuá (Arapuá / Cachorro)",
+    "nome": "Abelha Irapuá (Arapuá/Cachorro)",
+    "nomesPopulares": ["abelha irapuá", "arapua", "cachorro", "enrrola cabelo", "arapica", "arapu", "axupé", "caapuã", "cupira"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
@@ -1573,7 +1596,8 @@
   },
   {
     "id": "abelha-cortadeira-de-folhas",
-    "nome": "Abelha-cortadeira-de-folhas",
+    "nome": "Abelha Cortadeira de Folhas",
+    "nomesPopulares": ["abelha cortadeira", "abelha das folhas", "solitária"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": ["imagens/abelha-cortadeira.jpg"],
@@ -1613,7 +1637,8 @@
   },
   {
     "id": "abelha-coletora-de-oleo",
-    "nome": "Abelha-coletora-de-óleo (Centris)",
+    "nome": "Abelha Coletora de Óleo",
+    "nomesPopulares": ["abelha coletora", "abelha do óleo"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": [
@@ -1656,7 +1681,8 @@
   },
   {
     "id": "abelha-cuco",
-    "nome": "Abelha-cuco (Abelha-parasita)",
+    "nome": "Abelha Cuco (Abelha-parasita)",
+    "nomesPopulares": ["abelha cuco", "abelha parasita", "abelha cleptoparasita"],
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": ["imagens/abelha-cuco.jpg"],
@@ -1696,7 +1722,8 @@
   },
   {
     "id": "abelha-escavadora",
-    "nome": "Abelha-escavadora-de-barranco",
+    "nome": "Abelha Escavadora",
+    "nomesPopulares": ["abelha escavadora", "abelha do barranco", "abelha do solo"],
     "categoria": "abelhas",
     "habitats": ["caatinga", "cerrado", "mata-atlantica"],
     "imagem": [

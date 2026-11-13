@@ -127,7 +127,7 @@ function ItemCaracteristica({
   onToggle: (valor: Caracteristica) => void;
 }) {
   return (
-    <label className="flex min-h-[42px] cursor-pointer items-center gap-2 rounded-xl bg-white px-3 py-2 text-[12px] text-[#292929] shadow-sm has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-[#c9000b]">
+    <label className="flex min-h-[42px] cursor-pointer items-center gap-2 rounded-xl bg-white px-3 py-2 text-[16px] text-[#292929] shadow-sm has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-[#c9000b]">
       <input
         type="checkbox"
         checked={marcado}
@@ -437,7 +437,7 @@ export default function Emergencia() {
                 }}
                 placeholder="Ex.: aranha-marrom, cascavel, escorpião..."
                 aria-label="Pesquisar animal ou grupo"
-                className="min-w-0 flex-1 px-3 text-[12px] text-verde-principal outline-none"
+                className="min-w-0 flex-1 px-3 text-[16px] text-verde-principal outline-none"
               />
 
               <button
