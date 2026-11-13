@@ -34,8 +34,7 @@ function carregarMunicipio(): string | null {
   }
 }
 
-//Provider guarda os estados e entrega para as telas via contexto envolvendo-as
-//children são as telas que ficam dentro do provider, que podem acessar o contexto
+//Provider guarda os estados e entrega para as telas via contexto envolvendo-as children são as telas que ficam dentro do provider, que podem acessar o contexto
 export function RegiaoProvider({ children }: { children: ReactNode }) {
   const [municipio, setMunicipio] = useState<string | null>(carregarMunicipio);
   const [filtrarCatalogo, setFiltrarCatalogo] = useState(false);

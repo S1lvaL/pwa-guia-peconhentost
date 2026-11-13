@@ -2,7 +2,7 @@
 import { BriefcaseMedical, PawPrint, ShieldCheck } from "lucide-react";
 
 interface BottomNavProps {
-  //guarda qual das três abas está ativa
+  //Guarda qual das três abas está ativa
   abaAtiva: "animais" | "emergencia" | "prevencao";
   //Função para atualizar a aba selecionada
   setAbaAtiva: (aba: "animais" | "emergencia" | "prevencao") => void;

@@ -126,7 +126,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
             </div>
           )}
 
-          {/*Abas: Primeiros Socorros / O que NÃO fazer*/}
+          {/*Abas: Primeiros Socorros/O que NÃO fazer*/}
           <div className="flex flex-col gap-[12px] shrink-0 ml-2">
             <div className="flex gap-[8px]">
               <button
@@ -181,8 +181,7 @@ export function ModalDetalhes({ animal, onClose }: ModalDetalhesProps) {
           </div>
         </div>
 
-        {/*BOTÃO DE EMERGÊNCIA (Fixo na parte inferior do modal)
-          Duvida, vai levar ao telefone?*/}
+        {/*Botão de emergência (Fixo na parte inferior do modal)*/}
         <a
           href="tel:192"
           className="bg-vermelho-principal drop-shadow-[0px_4px_6px_rgba(220,38,38,0.25)] h-[56px] rounded-[16px] flex items-center justify-center gap-[12px] text-white font-bold text-[16px] shrink-0 mt-auto hover:bg-[#b91c1c] transition-colors"

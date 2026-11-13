@@ -1,6 +1,4 @@
-/*
-  Pagina de listagem de animais, com filtros por categoria e busca por nome
-*/
+/*Pagina de listagem de animais, com filtros por categoria e busca por nome*/
 import { useState } from "react"; //Hook (função especial) do React para guardar estados
 import dadosAnimais from "../data/animais.json";
 import { CardAnimal } from "../components/CardAnimal";
@@ -58,7 +56,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
     null,
   );
 
-  //Pega do contexto tudo o que vem da Prevenção ( cidade, se o filtro está ligado e a área escolhida)
+  //Pega do contexto tudo o que vem da Prevenção (cidade, se o filtro está ligado e a área escolhida)
   const {
     municipio,
     filtrarCatalogo,
@@ -120,7 +118,6 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
               Consulte espécies e saiba como agir
             </p>
           </div>
-          {/*Vamos mudar essa parte para adicionar a logo, a imagem dela*/}
           <Logo />
         </div>
 
@@ -184,8 +181,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
           )}
         </form>
 
-        {/*Filtros de Categoria
-          Transforma cada item num botão*/}
+        {/*Filtros de Categoria tansforma cada item num botão*/}
         <div className="sticky top-0 z-30 bg-verde-fundo -mx-[16px] px-[16px] py-2 overflow-x-auto no-scrollbar">
           <div className="flex gap-[8px] whitespace-nowrap">
             {listaCategorias.map((cat) => {
@@ -230,8 +226,7 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
         </div>
       </div>
 
-      {/*Componente do Modal
-        Aciona o modal caso seja selecionado*/}
+      {/*Componente do Modal, aciona o modal caso seja selecionado*/}
       <ModalDetalhes
         animal={animalSelecionado}
         onClose={() => setAnimalSelecionado(null)}
