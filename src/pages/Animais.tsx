@@ -141,12 +141,22 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
         )}
 
         {/*Campo de Busca*/}
-        <div className="bg-pesquisa-fundo flex gap-[10px] items-center px-[16px] py-[12px] rounded-[24px] border border-cinza-borda/60 shadow-sm shadow-vermelho-principal/30">
-          {/*Icone da lupa de forma vetorial*/}
+        {/*Campo de Busca*/}
+        <form
+          className="bg-pesquisa-fundo flex gap-[10px] items-center px-[16px] py-[12px] rounded-[24px] border border-cinza-borda/60 shadow-sm shadow-vermelho-principal/30"
+          onSubmit={(e) => {
+            e.preventDefault();
+            //Fecha o teclado no celular
+            if (document.activeElement instanceof HTMLElement) {
+              document.activeElement.blur();
+            }
+          }}
+        >
           <svg
             className="size-[18px] text-letra"
             fill="none"
             viewBox="0 0 18 18"
+            aria-hidden="true"
           >
             <path
               d="M12.5 12.5L16.5 16.5M14 8.5C14 11.5376 11.5376 14 8.5 14C5.46243 14 3 11.5376 3 8.5C3 5.46243 5.46243 3 8.5 3C11.5376 3 14 5.46243 14 8.5Z"
@@ -156,21 +166,23 @@ export default function Animais({ onSelectAnimal }: AnimaisProps) {
             />
           </svg>
           <input
-            type="text"
+            type="search"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder="Buscar por nome (ex: Peixe-Leão)..."
+            enterKeyHint="search"
             className="bg-transparent font-bold text-[14px] text-verde-principal placeholder-verde-principal/35 outline-none flex-1"
           />
           {busca && (
             <button
+              type="button"
               onClick={() => setBusca("")}
               className="text-vermelho-principal text-[12px] font-bold"
             >
               ✕
             </button>
           )}
-        </div>
+        </form>
 
         {/*Filtros de Categoria
           Transforma cada item num botão*/}

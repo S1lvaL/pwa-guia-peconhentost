@@ -5,7 +5,7 @@
     "categoria": "anfibios",
     "nomesPopulares": ["rã, sapo, perereca"],
     "habitats": ["caatinga", "cerrado"],
-    "imagem": "/imagens/perereca-capacete.jpg",
+    "imagem": "imagens/perereca-capacete.jpg",
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor intensa que dura horas;",
@@ -44,7 +44,7 @@
     "nomesPopulares": ["sapo cururu", "sapo boi"],
     "categoria": "anfibios",
     "habitats": ["caatinga", "cerrado", "mata-atlantica"],
-    "imagem": "/imagens/sapo-cururu.jpg",
+    "imagem": "imagens/sapo-cururu.jpg",
     "sintomas": [
       "Nos olhos: dor lancinante, conjuntivite química severa e inchaço palpebral;",
       "Na boca: dormência, queimação e salivação excessiva;",
@@ -79,7 +79,7 @@
     "periculosidade": "Risco moderado",
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/caravela-portuguesa.jpg",
+    "imagem": "imagens/caravela-portuguesa.jpg",
     "sintomas": [
       "Dor intensa no local;",
       "Em caso de maior absorção de toxinas: mal-estar, dor de cabeça, náuseas, vômitos, espasmos musculares, febre e arritmias cardíacas."
@@ -114,7 +114,7 @@
     "periculosidade": "Risco moderado",
     "categoria": "aquaticos",
     "habitats": ["marinho", "agua-doce"],
-    "imagem": ["/imagens/agua-viva.jpg", "/imagens/agua-viva-invertida.jpg"],
+    "imagem": ["imagens/agua-viva.jpg", "imagens/agua-viva-invertida.jpg"],
     "sintomas": [
       "Dor intensa;",
       "Inchaço;",
@@ -152,7 +152,7 @@
     "categoria": "aquaticos",
     "nomesPopulares": ["agua-viva", "caravela"],
     "habitats": ["marinho"],
-    "imagem": "/imagens/vespa-mar.jpg",
+    "imagem": "imagens/vespa-mar.jpg",
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor imediata e excruciante;",
@@ -194,10 +194,10 @@
     "categoria": "aquaticos",
     "habitats": ["marinho"],
     "imagem": [
-      "/imagens/anemona-tubo.jpg",
-      "/imagens/anemona-caribe.jpg",
-      "/imagens/anemona-praia.jpg",
-      "/imagens/anemona-praia2.jpg"
+      "imagens/anemona-tubo.jpg",
+      "imagens/anemona-caribe.jpg",
+      "imagens/anemona-praia.jpg",
+      "imagens/anemona-praia2.jpg"
     ],
     "sintomas": [
       "Sensação de queimação;",
@@ -239,7 +239,7 @@
     "nomesPopulares": ["anemona"],
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/coral.jpg",
+    "imagem": "imagens/coral.jpg",
     "sintomas": [
       "Coceira;",
       "Dor aguda;",
@@ -279,11 +279,11 @@
     "categoria": "aquaticos",
     "habitats": ["marinho", "agua-doce"],
     "imagem": [
-      "/imagens/arraia-pintada.jpg",
-      "/imagens/arraia-fogo.jpg",
-      "/imagens/arraia-prego.jpg",
-      "/imagens/arraia-manteiga.jpg",
-      "/imagens/arraia-chita.jpg"
+      "imagens/arraia-pintada.jpg",
+      "imagens/arraia-fogo.jpg",
+      "imagens/arraia-prego.jpg",
+      "imagens/arraia-manteiga.jpg",
+      "imagens/arraia-chita.jpg"
     ],
     "periculosidade": "Perigo!",
     "sintomas": [
@@ -326,11 +326,11 @@
     "periculosidade": "Perigo!",
     "habitats": ["marinho", "agua-doce"],
     "imagem": [
-      "/imagens/bagre-amarelo.jpg",
-      "/imagens/bagre-mandijuba.jpg",
-      "/imagens/bagre-bandeira.jpg",
-      "/imagens/bagre-guri.jpg",
-      "/imagens/bagre-aricu.jpg"
+      "imagens/bagre-amarelo.jpg",
+      "imagens/bagre-mandijuba.jpg",
+      "imagens/bagre-bandeira.jpg",
+      "imagens/bagre-guri.jpg",
+      "imagens/bagre-aricu.jpg"
     ],
     "sintomas": [
       "Dor intensa;",
@@ -370,7 +370,7 @@
     "nome": "Ouriço-do-Mar / Pinaúna",
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/pinauna.jpg",
+    "imagem": "imagens/pinauna.jpg",
     "sintomas": [
       "Dor intensa imediata;",
       "Inflamação;",
@@ -405,7 +405,7 @@
     "nome": "Peixe-Sapo / Niquim",
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/peixe-sapo.jpg",
+    "imagem": "imagens/peixe-sapo.jpg",
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor intensa;",
@@ -445,7 +445,7 @@
     "nome": "Peixe-Escorpião",
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/peixe-escorpiao.jpg",
+    "imagem": "imagens/peixe-escorpiao.jpg",
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor extrema;",
@@ -485,7 +485,7 @@
     "nome": "Peixe-Leão",
     "categoria": "aquaticos",
     "habitats": ["marinho"],
-    "imagem": "/imagens/peixe-leao.jpg",
+    "imagem": "imagens/peixe-leao.jpg",
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor forte;",
@@ -527,7 +527,7 @@
     "categoria": "aquaticos",
     "nomesPopulares": ["peixe"],
     "habitats": ["marinho"],
-    "imagem": ["/imagens/baiacu.jpg", "/imagens/baiacu-mirim.jpg"],
+    "imagem": ["imagens/baiacu.jpg", "imagens/baiacu-mirim.jpg"],
     "periculosidade": "Perigo!",
     "sintomas": [
       "Fase leve: dormência nos lábios, língua, náuseas e diarreia;",
@@ -563,7 +563,7 @@
     "nome": "Jararaca Malha de Sapo",
     "categoria": "serpentes",
     "habitats": ["mata-atlantica", "caatinga"],
-    "imagem": ["/imagens/jararaca-malha-de-sapo.jpg"],
+    "imagem": ["imagens/jararaca-malha-de-sapo.jpg"],
     "sintomas": [
       "Dor intensa local;",
       "Inchaço (edema);",
@@ -601,7 +601,7 @@
     "nome": "Jararaca da Seca/Malha de Cascavel",
     "categoria": "serpentes",
     "habitats": ["caatinga"],
-    "imagem": ["/imagens/jararaca-da-seca.jpg"],
+    "imagem": ["imagens/jararaca-da-seca.jpg"],
     "sintomas": [
       "Dor;",
       "Inchaço progressivo no local;",
@@ -640,7 +640,7 @@
     "nome": "Jararacuçu",
     "categoria": "serpentes",
     "habitats": ["mata-atlantica"],
-    "imagem": ["/imagens/jararacuçu.jpg"],
+    "imagem": ["imagens/jararacuçu.jpg"],
     "sintomas": [
       "Dor extrema local;",
       "Edema volumoso;",
@@ -681,7 +681,7 @@
     "nome": "Surucucu Pico de Jaca",
     "categoria": "serpentes",
     "habitats": ["mata-atlantica"],
-    "imagem": ["/imagens/surucucu-pico-de-jaca.jpg"],
+    "imagem": ["imagens/surucucu-pico-de-jaca.jpg"],
     "sintomas": [
       "Dor intensa;",
       "Edema local;",
@@ -722,7 +722,7 @@
     "nome": "Cascavel",
     "categoria": "serpentes",
     "habitats": ["caatinga", "cerrado"],
-    "imagem": ["/imagens/cascavel-sul-americana.jpg"],
+    "imagem": ["imagens/cascavel-sul-americana.jpg"],
     "periculosidade": "Perigo!",
     "sintomas": [
       "Dor;",
@@ -765,7 +765,7 @@
     "categoria": "serpentes",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/coral-verdadeira.jpg"],
+    "imagem": ["imagens/coral-verdadeira.jpg"],
     "sintomas": [
       "Dor discreta no local;",
       "Pálpebras caídas;",
@@ -813,7 +813,7 @@
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/escorpiao-do-nordeste.jpg"],
+    "imagem": ["imagens/escorpiao-do-nordeste.jpg"],
     "sintomas": [
       "Dor intensa;",
       "Imediata no local;",
@@ -855,7 +855,7 @@
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["caatinga", "cerrado"],
-    "imagem": ["/imagens/escorpiao-amarelo.jpg"],
+    "imagem": ["imagens/escorpiao-amarelo.jpg"],
     "sintomas": [
       "Dor local muito intensa;",
       "Ardor;",
@@ -897,7 +897,7 @@
     "categoria": "escorpiões",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/escorpiao-marrom.jpg"],
+    "imagem": ["imagens/escorpiao-marrom.jpg"],
     "sintomas": [
       "Dor intensa imediata;",
       "Edema;",
@@ -940,7 +940,7 @@
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/aranha-marrom.jpg"],
+    "imagem": ["imagens/aranha-marrom.jpg"],
     "sintomas": [
       "Dor de início imediato no local;",
       "Dormência regional;",
@@ -984,7 +984,7 @@
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica", "cerrado"],
-    "imagem": ["/imagens/aranha-armadeira.jpg"],
+    "imagem": ["imagens/aranha-armadeira.jpg"],
     "sintomas": [
       "Dor extremamente intensa imediata;",
       "Inchaço;",
@@ -1031,7 +1031,7 @@
     "categoria": "aranhas",
     "habitats": ["mata-atlantica", "caatinga"],
     "periculosidade": "Perigo!",
-    "imagem": ["/imagens/viuva-negra-do-norte.jpg"],
+    "imagem": ["imagens/viuva-negra-do-norte.jpg"],
     "sintomas": [
       "Dor local com sensação de queimadura;",
       "Dores musculares intensas;",
@@ -1075,7 +1075,7 @@
     "categoria": "aranhas",
     "periculosidade": "Perigo!",
     "habitats": ["mata-atlantica"],
-    "imagem": ["/imagens/viuva-marrom.jpg"],
+    "imagem": ["imagens/viuva-marrom.jpg"],
     "sintomas": [
       "Dor local intensa que pode irradiar;",
       "Suor excessivo;",
@@ -1116,7 +1116,7 @@
     "nome": "Besouro Potó",
     "categoria": "besouros",
     "habitats": ["caatinga", "cerrado"],
-    "imagem": ["/imagens/besouro-poto.jpg"],
+    "imagem": ["imagens/besouro-poto.jpg"],
     "sintomas": [
       "Sensação de queimação;",
       "Vermelhidão (eritema);",
@@ -1157,7 +1157,7 @@
     "nome": "Besouro Escorpião",
     "categoria": "besouros",
     "habitats": ["mata-atlantica"],
-    "imagem": ["/imagens/besouro-escorpiao.jpg"],
+    "imagem": ["imagens/besouro-escorpiao.jpg"],
     "sintomas": [
       "Dor leve a moderada no local da pinça ou beliscão;",
       "Pequena vermelhidão ou edema passageiro (não possuem peçonha tóxica relevante para humanos)."
@@ -1195,9 +1195,9 @@
     "categoria": "lacraias",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": [
-      "/imagens/lacraia1.jpg",
-      "/imagens/lacraia2.jpg",
-      "/imagens/lacraia4.jpg"
+      "imagens/lacraia1.jpg",
+      "imagens/lacraia2.jpg",
+      "imagens/lacraia4.jpg"
     ],
     "sintomas": [
       "Dor local forte;",
@@ -1241,7 +1241,7 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Perigo!",
-    "imagem": ["/imagens/Abelha-africanizada.jpg"],
+    "imagem": ["imagens/Abelha-africanizada.jpg"],
     "sintomas": [
       "Dor aguda no local da ferroada;",
       "Vermelhidão na pele;",
@@ -1286,9 +1286,7 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": [
-      "/imagens/abelha-tataira.jpg",
-      "/imagens/abelha-tataira1.jpg"],
+    "imagem": ["imagens/abelha-tataira.jpg", "imagens/abelha-tataira1.jpg"],
     "sintomas": [
       "Ardência intensa na região atingida;",
       "Dor e vermelhidão na pele;",
@@ -1334,7 +1332,7 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": ["/imagens/abelha-mamangava-de-toco.jpg"],
+    "imagem": ["imagens/abelha-mamangava-de-toco.jpg"],
     "sintomas": [
       "Dor aguda no local da ferroada;",
       "Vermelhidão;",
@@ -1380,8 +1378,9 @@
     "habitats": ["mata-atlantica", "cerrado"],
     "periculosidade": "Risco moderado",
     "imagem": [
-      "/imagens/abelha-mamangava-de-chao.jpg",
-      "/imagens/abelha-mamangava-de-chao1.jpg"],
+      "imagens/abelha-mamangava-de-chao.jpg",
+      "imagens/abelha-mamangava-de-chao1.jpg"
+    ],
     "sintomas": [
       "Dor no local da ferroada;",
       "Vermelhidão;",
@@ -1423,7 +1422,7 @@
     "nome": "Abelha-das-orquídeas",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica"],
-    "imagem": ["/imagens/abelha-das-orquideas.jpg"],
+    "imagem": ["imagens/abelha-das-orquideas.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
       "Vermelhidão;",
@@ -1444,7 +1443,7 @@
     ],
     "descricao": "Abelha solitária de cores metálicas brilhantes (verde, azul ou dourado), muito dócil e comum em áreas de mata.",
     "caracteristicas": [
-      "verde", 
+      "verde",
       "metálico",
       "azul",
       "brilhante",
@@ -1463,9 +1462,7 @@
     "nome": "Abelha-do-suor (Halictídeo)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": [
-      "/imagens/abelha-do-suor.jpg",
-      "/imagens/abelha-do-suor1.jpg"],
+    "imagem": ["imagens/abelha-do-suor.jpg", "imagens/abelha-do-suor1.jpg"],
     "sintomas": [
       "Dor ou ardência leve no local da ferroada;",
       "Pequena vermelhidão;",
@@ -1503,9 +1500,7 @@
     "nome": "Abelha-limão (Iratim)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": [
-      "/imagens/abelha-limao.jpg",
-      "/imagens/abelha-limao1.jpg"],
+    "imagem": ["imagens/abelha-limao.jpg", "imagens/abelha-limao1.jpg"],
     "sintomas": [
       "Não há um quadro de sintomas humanos bem estabelecido para essa espécie;",
       "Em caso de mordida ou contato com secreções, pode ocorrer desconforto ou irritação local."
@@ -1542,9 +1537,7 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "periculosidade": "Risco moderado",
-    "imagem": [
-      "/imagens/abelha-irapua.jpg",
-      "/imagens/abelha-irapua1.jpg"],
+    "imagem": ["imagens/abelha-irapua.jpg", "imagens/abelha-irapua1.jpg"],
     "sintomas": [
       "Dor ou desconforto causado pelas mordidas;",
       "Vermelhidão na região atingida;",
@@ -1583,7 +1576,7 @@
     "nome": "Abelha-cortadeira-de-folhas",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/abelha-cortadeira.jpg"],
+    "imagem": ["imagens/abelha-cortadeira.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
       "Vermelhidão;",
@@ -1591,7 +1584,7 @@
       "Coceira ou ardência leve."
     ],
     "primeirosSocorros": [
-       "Afastar-se do inseto e evitar novas ferroadas.",
+      "Afastar-se do inseto e evitar novas ferroadas.",
       "Lavar a região atingida com água e sabão neutro.",
       "Aplicar compressa fria caso haja dor, vermelhidão ou inchaço.",
       "Procurar atendimento médico se surgirem sinais de reação alérgica."
@@ -1624,8 +1617,9 @@
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
     "imagem": [
-      "/imagens/abelha-colhetadora.jpg",
-      "/imagens/abelha-colhetadora1.jpg"],
+      "imagens/abelha-colhetadora.jpg",
+      "imagens/abelha-colhetadora1.jpg"
+    ],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
       "Vermelhidão;",
@@ -1665,7 +1659,7 @@
     "nome": "Abelha-cuco (Abelha-parasita)",
     "categoria": "abelhas",
     "habitats": ["mata-atlantica", "caatinga", "cerrado"],
-    "imagem": ["/imagens/abelha-cuco.jpg"],
+    "imagem": ["imagens/abelha-cuco.jpg"],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
       "Vermelhidão;",
@@ -1706,8 +1700,9 @@
     "categoria": "abelhas",
     "habitats": ["caatinga", "cerrado", "mata-atlantica"],
     "imagem": [
-      "/imagens/abelha-escavadora.jpg",
-      "/imagens/abelha-escavadora1.jpg"],
+      "imagens/abelha-escavadora.jpg",
+      "imagens/abelha-escavadora1.jpg"
+    ],
     "sintomas": [
       "Dor localizada, caso ocorra ferroada;",
       "Vermelhidão;",

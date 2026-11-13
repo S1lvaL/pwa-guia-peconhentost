@@ -43,14 +43,14 @@ const animais = dadosAnimais as AnimalEmergencia[];
 
 // Mapeamento corrigido para a pasta "categoria" (no singular)
 const imagensCategoria: Record<Categoria, string> = {
-  escorpioes: "/categorias/escorpiao.png",
-  serpentes: "/categorias/serpente.png",
-  aranhas: "/categorias/aranha.png",
-  lacraias: "/categorias/lacraia.png",
-  besouros: "/categorias/besouro.png",
-  aquaticos: "/categorias/aquatico.png",
-  anfibios: "/categorias/anfibio.png",
-  abelhas: "/categorias/abelha.png",
+  escorpioes: "categorias/escorpiao.png",
+  serpentes: "categorias/serpente.png",
+  aranhas: "categorias/aranha.png",
+  lacraias: "categorias/lacraia.png",
+  besouros: "categorias/besouro.png",
+  aquaticos: "categorias/aquatico.png",
+  anfibios: "categorias/anfibio.png",
+  abelhas: "categorias/abelha.png",
 };
 
 const categorias: {
@@ -139,7 +139,7 @@ function ItemCaracteristica({
   );
 }
 
-  export default function Emergencia() {
+export default function Emergencia() {
   const [pesquisa, setPesquisa] = useState("");
   // Controla a rolagem automática dos resultados
   const resultadosRef = useRef<HTMLElement | null>(null);
@@ -170,7 +170,6 @@ function ItemCaracteristica({
   const animalFixado =
     animais.find((animal) => String(animal.id) === animalFixadoId) ?? null;
 
-  
   // Mantém o animal fixado salvo e verifica se ele ainda existe
   useEffect(() => {
     try {
@@ -180,7 +179,7 @@ function ItemCaracteristica({
       }
 
       const existe = animais.some(
-        (animal) => String(animal.id) === animalFixadoId
+        (animal) => String(animal.id) === animalFixadoId,
       );
 
       if (!existe) {
@@ -189,14 +188,11 @@ function ItemCaracteristica({
         return;
       }
 
-      localStorage.setItem(
-        "animalFixadoEmergencia",
-        animalFixadoId
-      );
+      localStorage.setItem("animalFixadoEmergencia", animalFixadoId);
     } catch (error) {
       console.warn(
         "Não foi possível acessar o armazenamento do animal fixado:",
-        error
+        error,
       );
     }
   }, [animalFixadoId]);
