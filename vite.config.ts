@@ -13,11 +13,11 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg"],
       manifest: {
-        name: "Guia de Animais Peçonhentos e Venenosos",
-        short_name: "Guia",
+        name: "PeçoMed: Guia de Animais Peçonhentos e Venenosos",
+        short_name: "PeçoMed",
         description:
           "Identifique animais peçonhentos e venenosos, veja os primeiros socorros e dicas de prevenção, mesmo sem internet.",
-        theme_color: "#0e3d10",
+        theme_color: "#edf8ee",
         background_color: "#f4faf6",
         display: "standalone",
         orientation: "portrait",
