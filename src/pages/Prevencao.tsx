@@ -49,6 +49,7 @@ const svgProps = {
   strokeLinejoin: "round" as const,
   "aria-hidden": true,
 };
+
 //Função para renderizar o ícone correto com base na área selecionada
 function IconeArea({ area }: { area: Area }) {
   switch (area) {
@@ -95,88 +96,114 @@ function IconeArea({ area }: { area: Area }) {
   }
 }
 
-//Um item do checklist (uma dica que pode ser marcada)
+//Um item do checklist interativo ("O que fazer")
 function ItemCheck({
-  texto,
+  titulo,
+  descricao,
   marcado,
   onToggle,
-  tipo = "fazer",
 }: {
-  texto: string;
+  titulo: string;
+  descricao: string;
   marcado: boolean;
   onToggle: () => void;
-  tipo?: "fazer" | "evite";
 }) {
-  const evite = tipo === "evite";
-  /*O <label> faz o card inteiro funcionar como botão de marcar/desmarcar
-    has-[:focus-visible] mostra um contorno quando o item é selecionado pelo teclado*/
   return (
-    <label
-      className={`p-4 rounded-[16px] flex items-center space-x-4 cursor-pointer border shadow-sm has-[:focus-visible]:ring-2 ${
-        evite
-          ? "bg-vermelho-principal/15 border-vermelho-principal/40 has-[:focus-visible]:ring-vermelho-principal"
-          : "bg-verde-principal/15 border-verde-principal/40 has-[:focus-visible]:ring-verde-principal"
-      }`}
-    >
+    <label className="p-3 rounded-[14px] flex items-start gap-3 cursor-pointer border shadow-sm bg-verde-principal/15 border-verde-principal/40 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-verde-principal transition-opacity">
       <input
         type="checkbox"
         checked={marcado}
         onChange={onToggle}
         className="sr-only"
       />
-      {/*Desenho da caixinha: fica escura com check quando marcado*/}
       <span
         aria-hidden
-        className={`w-6 h-6 rounded-[6px] border-2 flex items-center justify-center shrink-0 text-[14px] font-extrabold ${
+        className={`mt-0.5 w-5 h-5 rounded-[6px] border-2 flex items-center justify-center shrink-0 text-[12px] font-extrabold transition-colors ${
           marcado
-            ? evite
-              ? "border-vermelho-principal bg-vermelho-principal text-white"
-              : "border-verde-principal bg-verde-principal text-white"
-            : evite
-              ? "border-vermelho-principal bg-white"
-              : "border-verde-principal bg-white"
+            ? "border-verde-principal bg-verde-principal text-white"
+            : "border-verde-principal bg-white"
         }`}
       >
         {marcado && "✓"}
       </span>
-      {/*Texto da dica: riscado e mais apagado quando marcado*/}
-      <span
-        className={`text-[14px] font-medium text-letra leading-snug flex-1 ${
-          marcado ? "line-through opacity-60" : ""
+      <div
+        className={`flex-1 leading-snug ${
+          marcado ? "line-through opacity-55" : ""
         }`}
       >
-        {texto}
-      </span>
+        <strong className="block text-[14px] font-bold text-letra">
+          {titulo}
+        </strong>
+        <span className="block text-[12px] text-letra/80 mt-0.5">
+          {descricao}
+        </span>
+      </div>
     </label>
+  );
+}
+
+//Card de alerta fixo sem checkbox ("O que evitar")
+function ItemEvite({
+  titulo,
+  descricao,
+}: {
+  titulo: string;
+  descricao: string;
+}) {
+  return (
+    <div className="p-3 rounded-[14px] flex items-start gap-3 border shadow-sm bg-vermelho-principal/12 border-vermelho-principal/40">
+      <span
+        aria-hidden
+        className="mt-0.5 w-5 h-5 rounded-full bg-vermelho-principal text-white flex items-center justify-center shrink-0 text-[11px] font-extrabold"
+      >
+        ✕
+      </span>
+      <div className="flex-1 leading-snug">
+        <strong className="block text-[14px] font-bold text-vermelho-principal">
+          {titulo}
+        </strong>
+        <span className="block text-[12px] text-letra/85 mt-0.5">
+          {descricao}
+        </span>
+      </div>
+    </div>
   );
 }
 
 function TituloSecao({
   children,
   tipo = "fazer",
+  acaoDireita,
 }: {
   children: React.ReactNode;
   tipo?: "fazer" | "evite";
+  acaoDireita?: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center space-x-2">
-      <div className="w-1 h-5 bg-vermelho-principal rounded-sm" />
-      <h3
-        className={`text-[16px] font-bold ${
-          tipo === "evite" ? "text-vermelho-principal" : "text-verde-principal"
-        }`}
-      >
-        {children}
-      </h3>
+    <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center space-x-2">
+        <div
+          className={`w-1 h-5 rounded-sm ${
+            tipo === "evite" ? "bg-vermelho-principal" : "bg-verde-principal"
+          }`}
+        />
+        <h3
+          className={`text-[16px] font-bold ${
+            tipo === "evite"
+              ? "text-vermelho-principal"
+              : "text-verde-principal"
+          }`}
+        >
+          {children}
+        </h3>
+      </div>
+      {acaoDireita}
     </div>
   );
 }
 
 //Componente principal da tela
-//onVerTodos: função enviada pelo App para trocar para a aba "animais"
-//onVerUnidades: função enviada pelo App para abrir a lista completa de unidades (Emergência)
 export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
-  //Estado inicial como null (nenhum filtro selecionado = dicas gerais)
   const [areaAtiva, setAreaAtiva] = useState<Area>("casa");
   const [itensChecados, setItensChecados] =
     useState<Record<string, boolean>>(carregarProgresso);
@@ -186,7 +213,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
     null,
   );
 
-  //Cidade escolhida e filtros do catálogo (vêm do contexto, então não se perdem ao trocar de aba)
+  //Cidade escolhida e filtros do catálogo
   const { municipio, setFiltrarCatalogo, setAreaCatalogo } = useRegiao();
 
   //Salva toda vez que o progresso mudar
@@ -198,9 +225,9 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
     }
   }, [itensChecados]);
 
-  //Marca ou desmarca uma dica
-  const toggleCheck = (item: string) =>
-    setItensChecados((prev) => ({ ...prev, [item]: !prev[item] }));
+  //Marca ou desmarca uma dica (usando areaAtiva + titulo para evitar conflito entre abas)
+  const toggleCheck = (chave: string) =>
+    setItensChecados((prev) => ({ ...prev, [chave]: !prev[chave] }));
 
   //Dicas da área escolhida
   const areaSelecionada = dadosPrevencao[areaAtiva];
@@ -208,14 +235,13 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
 
   //Limpa somente o checklist da área selecionada, preservando as demais áreas
   const limparChecklist = () => {
-    const itensDaArea = dadosPrevencao[areaAtiva];
-    if (!itensDaArea) return;
-
-    const chavesParaLimpar = [...itensDaArea.acoes, ...itensDaArea.evite];
+    if (!areaSelecionada) return;
 
     setItensChecados((prev) => {
       const atualizado = { ...prev };
-      chavesParaLimpar.forEach((item) => delete atualizado[item]);
+      areaSelecionada.acoes.forEach((item) => {
+        delete atualizado[`${areaAtiva}:${item.titulo}`];
+      });
       return atualizado;
     });
   };
@@ -224,24 +250,21 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
   const animaisDaRegiao = filtrarPorRegiao(animais, municipio)
     .filter((a) => (a.areas ?? []).includes(areaAtiva))
     .sort((a, b) => pesoPericulosidade(a) - pesoPericulosidade(b));
-  //Só os primeiros animais cabem no card; "restantes" é quantos ficaram de fora
+
   const animaisVisiveis = animaisDaRegiao.slice(0, LIMITE_CARDS);
   const restantes = animaisDaRegiao.length - LIMITE_CARDS;
 
-  //Função chamada quando clicar em "ver todos" para mudar de aba se ela existir
   const verTodos = () => {
     setFiltrarCatalogo(true);
     setAreaCatalogo(areaAtiva);
     onVerTodos?.();
   };
 
-  //Junta as duas listas da área ("acoes" e "evite") numa só
-  const todosOsItens = areaSelecionada
-    ? [...areaSelecionada.acoes, ...areaSelecionada.evite]
-    : [];
-  const totalItens = todosOsItens.length;
-  const totalConcluidos = todosOsItens.filter(
-    (item) => itensChecados[item],
+  //Progresso calculado sobre as ações positivas da área ativa
+  const itensAcao = areaSelecionada?.acoes ?? [];
+  const totalItens = itensAcao.length;
+  const totalConcluidos = itensAcao.filter(
+    (item) => itensChecados[`${areaAtiva}:${item.titulo}`],
   ).length;
   const porcentagem =
     totalItens > 0 ? Math.round((totalConcluidos / totalItens) * 100) : 0;
@@ -262,13 +285,13 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           <Logo />
         </div>
 
-        {/*Barra de localização + busca de cidade (componente compartilhado)*/}
+        {/*Barra de localização + busca de cidade*/}
         <SeletorCidade />
 
-        {/*Card das unidades referênci para o soro antiveneno*/}
+        {/*Card das unidades referência para o soro antiveneno*/}
         <UnidadesSoro compacto />
 
-        {/*Card principal: animais da região (e da área, quando houver uma escolhida)*/}
+        {/*Card principal: animais da região*/}
         <section className="bg-verde-principal/97 border-2 border-black/45 text-white p-4 rounded-[24px] space-y-3 shadow-md shadow-verde-principal/30">
           <h2 className="text-[18px] font-bold leading-tight">
             Animais Peçonhentos nesta Região
@@ -286,7 +309,6 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
               {areaAtiva ? "esta área nesta" : "esta"} região ainda.
             </p>
           ) : (
-            /*Lista que rola para o lado (overflow-x-auto) e "encaixa" cada card*/
             <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1">
               {animaisVisiveis.map((animal) => (
                 <button
@@ -306,7 +328,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
                     className="w-[52px] h-[52px] rounded-[12px] object-cover border border-verde-principal bg-verde-principal/10"
                   />
                   <div className="min-w-0">
-                    <strong className="block text-[13px] text-verde-principal truncate ">
+                    <strong className="block text-[13px] text-verde-principal truncate">
                       {animal.nome}
                     </strong>
                     <span className="text-[12px] font-bold text-vermelho-principal underline">
@@ -316,7 +338,6 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
                 </button>
               ))}
 
-              {/*Último card: aparece só quando há mais animais do que o limite*/}
               {restantes > 0 && (
                 <button
                   type="button"
@@ -345,7 +366,6 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setAreaAtiva(id)}
-                  //flex-col: ícone em cima e texto embaixo; flex-1: os 4 dividem a largura
                   className={`flex-1 flex flex-col items-center gap-1 px-1 py-2.5 rounded-[16px] text-[13px] font-bold transition border ${
                     isActive
                       ? "bg-verde-principal text-white border-verde-principal shadow-sm shadow-verde-principal/60"
@@ -359,13 +379,13 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
             })}
           </div>
 
-          {/*Progresso SOMENTE quando algum filtro estiver ativo*/}
+          {/*Barra de progresso da área ativa*/}
           {areaAtiva && (
             <div className="space-y-1.5 pt-1">
               <div className="flex gap-1.5">
                 {[0, 1, 2, 3].map((segIndex) => {
-                  const inicio = segIndex * 25; // 0, 25, 50, 75
-                  const fim = inicio + 25; // 25, 50, 75, 100
+                  const inicio = segIndex * 25;
+                  const fim = inicio + 25;
                   let largura = 0;
                   if (porcentagem >= fim) largura = 100;
                   else if (porcentagem > inicio) {
@@ -395,41 +415,51 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           )}
         </div>
 
-        {/*Checklist*/}
+        {/*Checklist de Ações + Alertas de Risco*/}
         {areaSelecionada && (
           <>
-            <div className="space-y-3">
-              <TituloSecao>Prevenção · {rotuloArea}</TituloSecao>
-              <button
-                type="button"
-                onClick={limparChecklist}
-                className="shrink-0 rounded-lg bg-vermelho-principal/10 border border-vermelho-principal/90 px-3 py-2 text-[12px] font-bold text-vermelho-principal"
-                aria-label={`Limpar checklist da área ${rotuloArea}`}
+            <div className="space-y-2.5">
+              <TituloSecao
+                acaoDireita={
+                  totalConcluidos > 0 && (
+                    <button
+                      type="button"
+                      onClick={limparChecklist}
+                      className="shrink-0 rounded-lg bg-vermelho-principal/10 border border-vermelho-principal/40 px-2.5 py-1 text-[11px] font-bold text-vermelho-principal"
+                      aria-label={`Limpar checklist da área ${rotuloArea}`}
+                    >
+                      Limpar ({totalConcluidos})
+                    </button>
+                  )
+                }
               >
-                Limpar checklist
-              </button>
+                O que fazer · {rotuloArea}
+              </TituloSecao>
+
               <div className="space-y-2">
-                {areaSelecionada.acoes.map((item) => (
-                  <ItemCheck
-                    key={item}
-                    texto={item}
-                    marcado={!!itensChecados[item]}
-                    onToggle={() => toggleCheck(item)}
-                  />
-                ))}
+                {areaSelecionada.acoes.map((item) => {
+                  const chave = `${areaAtiva}:${item.titulo}`;
+                  return (
+                    <ItemCheck
+                      key={chave}
+                      titulo={item.titulo}
+                      descricao={item.descricao}
+                      marcado={!!itensChecados[chave]}
+                      onToggle={() => toggleCheck(chave)}
+                    />
+                  );
+                })}
               </div>
             </div>
 
-            <div className="space-y-3 pt-2">
-              <TituloSecao tipo="evite">Evite</TituloSecao>
+            <div className="space-y-2.5 pt-3">
+              <TituloSecao tipo="evite">O que evitar</TituloSecao>
               <div className="space-y-2">
                 {areaSelecionada.evite.map((item) => (
-                  <ItemCheck
-                    key={item}
-                    texto={item}
-                    tipo="evite"
-                    marcado={!!itensChecados[item]}
-                    onToggle={() => toggleCheck(item)}
+                  <ItemEvite
+                    key={item.titulo}
+                    titulo={item.titulo}
+                    descricao={item.descricao}
                   />
                 ))}
               </div>
@@ -437,6 +467,7 @@ export default function Prevencao({ onVerTodos }: { onVerTodos?: () => void }) {
           </>
         )}
       </div>
+
       <ModalDetalhes
         animal={animalSelecionado}
         onClose={() => setAnimalSelecionado(null)}
